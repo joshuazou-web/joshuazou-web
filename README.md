@@ -1,5 +1,7 @@
 # AI / FinTech Product + Technical Engineering
 
+**Recruiting contact:** [zouzhihuajosh@outlook.com](mailto:zouzhihuajosh@outlook.com)
+
 I turn **market and financial-system problems** into product rules, technical
 prototypes, and measurable operating workflows.
 
@@ -147,8 +149,3 @@ evaluation, human review, and workflow automation
   configuration, or personal data may be involved.
 - Identity, employment, and non-public education details can be verified
   through the résumé and interview process.
-
-## Contact
-
-For recruiting and project-related conversations:
-**[zouzhihuajosh@outlook.com](mailto:zouzhihuajosh@outlook.com)**
