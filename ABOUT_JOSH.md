@@ -1,81 +1,41 @@
-# Josh, off duty
+# 工作之外
 
-When I am not thinking about products, financial systems, or why a perfectly
-reasonable prototype has found a completely unreasonable way to fail, I am
-usually doing one of four things: chasing a basketball, chasing a frisbee,
-chasing a heavier number in the gym, or chasing an idea down a historical
-rabbit hole.
+今天跟 AI 聊了很久。
 
-Apparently, my hobbies involve a lot of chasing.
+一开始只是想把作品集改得更完整一些。聊着聊着，它问了我一个很简单的问题：
 
-I love **AI, philosophy, business, history, and life itself**—which is a
-convenient way of saying that my browser tabs are never under control.
+> 如果不谈学校、项目和工作，你会怎样介绍自己？
 
-AI makes me ask what can be built. Philosophy asks why it should matter.
-Business asks whether anyone genuinely needs it. History asks what happened
-the last time people were this confident. Life eventually reminds me to close
-the laptop and go play basketball.
+我想了一会儿，发现简历很擅长记录一个人做成了什么，却不太会记录，一个人为什么会对这个世界保持兴趣。
 
-## I voluntarily explain finance on the internet
+我喜欢 AI。最初是因为它能让很多事情做得更快，后来慢慢觉得，更有意思的问题其实是：当工具越来越聪明，人应该把什么留给自己？
 
-I make Chinese short-form content through **简单财经** and **简单说** on
-Douyin. The goal is to talk about finance, AI, business, history, and
-philosophy without sounding like someone has trapped the audience inside a
-three-hour lecture.
+也许是判断，也许是责任，也许是在没有标准答案的时候，仍然愿意多想一步。
 
-A 60-second video can take several hours to write. This is either dedication
-to clarity or an extremely inefficient way to discover that one sentence was
-unnecessary.
+我也喜欢商业。一个想法从纸上走进现实，会遇到真实的需求、成本、人性和取舍。很多听起来很好的概念，最后都要回答同一个朴素的问题：它究竟有没有为谁解决一点实际问题？
 
-## Sports, in three levels of questionable judgment
+历史和哲学则让我偶尔退后一步。
 
-- **Basketball:** the sport I love most, and a reliable weekly reminder that
-  my confidence in a shot sometimes travels farther than the ball.
-- **Ultimate frisbee:** fast, social, and built around the phrase “one last
-  point,” which usually means at least three more points.
-- **Strength training:** compound interest for the body—except the soreness
-  arrives immediately and the returns insist on a much longer reporting
-  period.
+我喜欢阳明心学里的知行合一，也会读《易经》《道德经》《资治通鉴》和《毛泽东全集》。它们并不提供同一种答案，却都在讨论变化、选择、实践，以及人在复杂处境中如何行动。
 
-I like the competitive part, but mostly I enjoy the feeling of getting a
-little better at something that cannot be improved by editing a slide.
+有时读历史，会发现今天让人焦虑的新问题，过去的人也曾用另一种方式遇见过。读哲学也不是为了显得深刻，只是提醒自己，观点可以锋利，生活仍要保留分寸。我的书架因此显得专业方向不太统一，不过暂时不准备替它做职业规划。
 
-## My bookshelf refuses to pick a lane
+我还在抖音做「简单财经」和「简单说」。
 
-I am fascinated by Chinese philosophy and history. I return often to Wang
-Yangming’s idea of the **unity of knowledge and action**—partly because it is
-profound, and partly because “knowing without doing” is an elegant definition
-of highly decorated procrastination.
+尝试把财经、AI、商业、历史和哲学讲得简单一点。不是为了证明自己懂得很多，而是因为把一件复杂的事情讲明白，本身就是一次重新理解。一分钟的视频有时会改上几个小时——后来才发现，把话说短，往往比把话说长更花时间。
 
-I also read Mao Zedong’s writings on **practice and contradiction** as
-historical and philosophical methods: ways to examine what happens when ideas
-meet changing conditions, competing forces, and reality.
+当然，生活不能一直停留在脑子里。
 
-Some frequently revisited books:
+我喜欢篮球、飞盘和健身。运动的时候，反馈总是很诚实：球进没进，传得到不到位，最后一个动作还能不能完成，都不太接受包装。篮球也常提醒我，有些判断出手时很自信，最后还是会打铁。
 
-- **I Ching (《易经》):** for thinking about change when change refuses to
-  submit a roadmap.
-- **Tao Te Ching (《道德经》):** for the possibility that I may be making the
-  roadmap too complicated.
-- **Zizhi Tongjian (《资治通鉴》):** for evidence that people have been
-  repeating surprisingly familiar mistakes for a very long time.
-- **Collected Works of Mao Zedong (《毛泽东全集》):** for sustained thinking
-  about practice, contradiction, organization, and action.
+健身也让我重新理解自律。它不像一句很响亮的口号，更像古人说的慎独——没有人提醒的时候，依然愿意把眼前这一点做好。但自律也不应该把生活塞得太满。道家讲留白，运动也需要恢复，人好像也是一样。
 
-The shelf is not optimized for ideological consistency. It looks more like a
-historian, a philosopher, and a slightly over-caffeinated finance student are
-sharing one library card.
+所以我热爱 AI，热爱哲学，热爱商业，热爱历史，也热爱生活。
 
-## The person behind the portfolio
+这几件事并不冲突。AI 让我看见未来的可能，商业让我面对现实，历史和哲学帮我校准方向，而生活提醒我，不要把所有时间都变成一张等待优化的表格。
 
-I like systems, but not only software systems: a team moving on a basketball
-court, habits accumulating in training, ideas changing across history, and
-stories becoming clearer after the fifth rewrite.
-
-So the short version is simple: I enjoy learning difficult things, explaining
-them in plain language, staying active, and occasionally discovering that the
-“final draft” was only the warm-up.
+大概我想要的状态就是这样：保持好奇，也保持分寸；愿意认真工作，也认真吃饭、运动、读书和与人相处。知道什么时候继续往前，也知道什么时候可以停下来，打一场球，让答案再慢一点出现。
 
 ---
 
-**[← Back to the product and technical portfolio](README.md)**
+**[← 返回产品与技术作品集](README.md)**
