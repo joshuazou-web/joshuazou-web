@@ -170,8 +170,7 @@ output evaluation, human review, and workflow automation
 
 ## 工作之外 / Beyond the portfolio
 
-A quieter personal note on AI, business, history, philosophy, sport, and
-learning to live with curiosity without turning life into another optimization
-problem.
+A lighter personal note on AI, business, philosophy, history, sport, and why
+my bookshelf has so far resisted every attempt at career planning.
 
-**[Read the personal note →](ABOUT_JOSH.md)**
+**[Meet Josh outside the build →](ABOUT_JOSH.md)**
