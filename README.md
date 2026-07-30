@@ -168,10 +168,10 @@ output evaluation, human review, and workflow automation
 - Identity, employment, and non-public education details can be verified
   through the résumé and interview process.
 
-## One more page: Josh beyond the build
+## 工作之外 / Beyond the portfolio
 
-For the version of Josh that is not measured in test cases: basketball,
-frisbee, strength training, short-form finance content, Chinese philosophy,
-and a bookshelf that has firmly refused to specialize.
+A quieter personal note on AI, business, history, philosophy, sport, and
+learning to live with curiosity without turning life into another optimization
+problem.
 
-**[Meet Josh beyond the portfolio →](ABOUT_JOSH.md)**
+**[Read the personal note →](ABOUT_JOSH.md)**
