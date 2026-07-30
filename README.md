@@ -1,98 +1,48 @@
-# Zhihua Zou
+# AI / FinTech Product + Engineering
 
-### AI / FinTech Product · Payments · Risk · Trading Systems · Web3
+I work at the intersection of **market understanding, product judgment, and
+hands-on technical delivery**. My focus is turning financial or risk-related
+problems into clear product rules, testable prototypes, and measurable
+operating workflows.
 
-MSc Digital Financial Technology candidate at the National University of
-Singapore, graduating in January 2027. I work at the intersection of financial
-product logic, technical implementation, and evidence-based decision-making.
-
-I am currently targeting 2027 graduate opportunities in Singapore and
-Shenzhen / the Greater Bay Area:
-
-- AI Product Manager / Technical Product Manager
-- FinTech, payments, digital banking, risk, or trading product roles
-- Product Strategy / Product Operations
+Currently pursuing an MSc in Digital Financial Technology at the National
+University of Singapore, expected January 2027.
 
 ## What I bring
 
-- **Financial-product thinking:** translate lending, payments, risk, and
-  trading logic into user journeys, policy rules, KPIs, and failure scenarios.
-- **Technical fluency:** work across Python, SQL, Solidity, React, AWS
-  serverless services, APIs, backtesting, and GitHub Actions.
-- **Product execution:** decompose requirements, build and test prototypes,
-  review AI-assisted outputs, and communicate trade-offs across business and
-  engineering contexts.
-- **Commercial judgment:** experience in FinTech delivery, investment research,
-  due diligence, user assessment, and partnership coordination.
+| Product & market | Technology & delivery |
+| --- | --- |
+| User journeys, requirements, product trade-offs, KPI design, risk controls | Python, SQL, APIs, cloud architecture, Solidity, backtesting, test design |
+| Lending, payments, trading, financial risk, security-awareness products | AI-assisted prototyping, data validation, monitoring, fail-safe workflows |
+| Translate ambiguous market problems into inspectable product decisions | Translate product decisions into working technical artifacts |
 
-## Selected product and technical work
+## Selected case studies
 
-### Risk-Based DeFi Lending
+| Case | Product and market question | Technical evidence |
+| --- | --- | --- |
+| [Risk-Based DeFi Lending](https://github.com/joshuazou-web/risk-based-defi-lending-case-study) | How should an external risk signal change lending terms and user eligibility? | Flask risk API, on-chain policy architecture, access controls, test evidence |
+| [Algorithmic FX Product](https://github.com/joshuazou-web/algorithmic-fx-product-case) | How does a trading idea become a transparent, monitorable, and safely operated product? | Causal backtesting, regime logic, dashboard, fail-closed practice execution |
+| [ThinkBeforeClick](https://github.com/joshuazou-web/think-before-click-product-case) | How can localized simulation create a learning loop for users and an action loop for enterprises? | AWS serverless architecture, event model, analytics, reporting, privacy controls |
 
-Full-stack lending prototype that maps an off-chain demonstration score to
-on-chain LTV, annual interest rate, liquidation threshold, and borrowing
-capacity.
+Each repository includes an interactive product demo, an engineering
+problem-to-method breakdown, validation evidence, and selected reviewed code.
 
-- Flask score API, Solidity policy engine, React DApp, and automated CI.
-- Portfolio hardening prevents borrowers from assigning their own risk scores
-  and rejects missing or stale scores.
-- **Documented individual scope:** Python risk-scoring service and Flask API;
-  smart-contract and frontend components are team output.
+## How I approach a problem
 
-### ThinkBeforeClick
+```text
+Market context
+    → user and operating problem
+    → product rules and trade-offs
+    → technical prototype
+    → validation and failure analysis
+    → next iteration
+```
 
-Serverless phishing-awareness SaaS prototype with localized individual learning
-and enterprise campaign analytics.
+## Portfolio boundary
 
-- 10 simulations and 10 teachable-moment pages.
-- Tested with 23 participants; reported satisfaction was 4.2/5 for individual
-  users and 4.5/5 for enterprise participants.
-- **Honourable Mention Award**, 27th NUS School of Computing STePS Term Project
-  Showcase, November 2025.
-- Five-person NUS team project; product metrics and implementation describe the
-  team deliverable.
+The case-study repositories contain screenshots, architecture, decision
+documents, validation evidence, and a small number of reviewed excerpts. Full
+implementations remain private because some work was completed in academic
+teams and may include sensitive configuration or shared intellectual property.
 
-### Algorithmic FX Trading & Monitoring
-
-Offline-first EUR/USD research and monitoring prototype combining
-regime-switching logic, causal backtesting, validation controls, and guarded
-OANDA practice execution.
-
-- One-bar signal lag, turnover-cost accounting, split-sample reporting, and 12
-  offline tests.
-- Broker network access and order submission are disabled by default; production
-  OANDA configuration is rejected.
-- Team project; no individual implementation claim is made without supporting
-  project records.
-
-> The three NUS repositories are currently private while team consent, course
-> publication rules, contribution wording, and licensing are being confirmed.
-> Code links will be added only after those checks are complete.
-
-## Experience highlights
-
-- **Huatai International — FinTech Intern:** supported blockchain-enabled
-  financial-product workflows; used Python, SQL, and MySQL for product analysis,
-  backend validation, and iteration recommendations.
-- **AI Star — Angel Investor & Co-Founder:** evaluated users, commercial models,
-  and investment cases; coordinated stakeholders around payment and
-  supply-chain-finance opportunities.
-- **Sequoia Capital — Investment Analyst Intern:** researched 50+
-  cybersecurity companies and built valuation and competitive analyses.
-
-## Education
-
-- **National University of Singapore** — MSc Digital Financial Technology,
-  expected January 2027
-- **Macquarie University** — Bachelor of Applied Economics, 2025
-
-## Working toolkit
-
-`Product discovery` · `Requirements decomposition` · `User/process flows` ·
-`KPI and evaluation design` · `Risk controls` · `Python` · `SQL` · `Solidity` ·
-`React` · `AWS Lambda` · `Dash` · `GitHub Actions`
-
----
-
-Open to 2027 graduate roles where financial logic, technology, and product
-execution meet.
+Contact details are provided on my résumé.
