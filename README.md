@@ -139,8 +139,8 @@ evaluation, human review, and workflow automation
 
 ## Privacy and source boundary
 
-- Real name, employer names, direct contact details, earlier education, and
-  complete employment chronology are intentionally not published here.
+- Real name, employer names, phone number, earlier education, and complete
+  employment chronology are intentionally not published here.
 - Public case studies contain product evidence, architecture, validation, and
   small reviewed excerpts.
 - Complete implementations remain private where team ownership, course rules,
@@ -148,5 +148,7 @@ evaluation, human review, and workflow automation
 - Identity, employment, and non-public education details can be verified
   through the résumé and interview process.
 
-Contact details are provided only in the résumé shared for a specific
-application.
+## Contact
+
+For recruiting and project-related conversations:
+**[zouzhihuajosh@outlook.com](mailto:zouzhihuajosh@outlook.com)**
