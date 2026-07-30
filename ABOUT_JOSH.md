@@ -1,41 +1,103 @@
-# 工作之外
+# Josh, Outside the Build
 
-今天跟 AI 聊了很久。
+Today I asked AI to help improve my portfolio.
 
-一开始只是想把作品集改得更完整一些。聊着聊着，它问了我一个很简单的问题：
+A few prompts later, the portfolio was better—and the AI had quietly assigned
+me homework:
 
-> 如果不谈学校、项目和工作，你会怎样介绍自己？
+> Who are you when you are not talking about school, products, or work?
 
-我想了一会儿，发现简历很擅长记录一个人做成了什么，却不太会记录，一个人为什么会对这个世界保持兴趣。
+Fair question. Résumés are very good at recording what a person has done. They
+are less helpful at explaining why that person keeps opening new browser tabs
+at 1 a.m.
 
-我喜欢 AI。最初是因为它能让很多事情做得更快，后来慢慢觉得，更有意思的问题其实是：当工具越来越聪明，人应该把什么留给自己？
+In my case, the tabs are usually about **AI, business, philosophy, history, or
+sport**. Occasionally all five. My browser has stopped asking for an
+explanation.
 
-也许是判断，也许是责任，也许是在没有标准答案的时候，仍然愿意多想一步。
+## AI made me faster—and more curious
 
-我也喜欢商业。一个想法从纸上走进现实，会遇到真实的需求、成本、人性和取舍。很多听起来很好的概念，最后都要回答同一个朴素的问题：它究竟有没有为谁解决一点实际问题？
+I first became interested in AI because it could make work faster. Then the
+more interesting question appeared: if tools become increasingly intelligent,
+what should humans insist on keeping?
 
-历史和哲学则让我偶尔退后一步。
+My current answer is judgment, responsibility, and the willingness to think
+one step further when there is no clean answer. AI can generate ten options
+before breakfast; deciding which one should exist is still our problem.
 
-我喜欢阳明心学里的知行合一，也会读《易经》《道德经》《资治通鉴》和《毛泽东全集》。它们并不提供同一种答案，却都在讨论变化、选择、实践，以及人在复杂处境中如何行动。
+That is also why I enjoy business. A promising idea eventually has to meet
+customers, costs, incentives, deadlines, and the occasional spreadsheet that
+disagrees with everyone in the room. Business asks a wonderfully impolite
+question:
 
-有时读历史，会发现今天让人焦虑的新问题，过去的人也曾用另一种方式遇见过。读哲学也不是为了显得深刻，只是提醒自己，观点可以锋利，生活仍要保留分寸。我的书架因此显得专业方向不太统一，不过暂时不准备替它做职业规划。
+> Did this actually solve a problem for someone?
 
-我还在抖音做「简单财经」和「简单说」。
+I like that question.
 
-尝试把财经、AI、商业、历史和哲学讲得简单一点。不是为了证明自己懂得很多，而是因为把一件复杂的事情讲明白，本身就是一次重新理解。一分钟的视频有时会改上几个小时——后来才发现，把话说短，往往比把话说长更花时间。
+## My bookshelf has no career plan
 
-当然，生活不能一直停留在脑子里。
+History and philosophy help me step back when everything begins to look
+urgent.
 
-我喜欢篮球、飞盘和健身。运动的时候，反馈总是很诚实：球进没进，传得到不到位，最后一个动作还能不能完成，都不太接受包装。篮球也常提醒我，有些判断出手时很自信，最后还是会打铁。
+I often return to Wang Yangming's idea of the unity of knowledge and action,
+and I read the *I Ching*, *Tao Te Ching*, *Zizhi Tongjian*, and the collected
+works of Mao Zedong. They do not offer the same answers, but they keep circling
+similar questions: change, contradiction, choice, practice, and how people act
+when circumstances refuse to cooperate.
 
-健身也让我重新理解自律。它不像一句很响亮的口号，更像古人说的慎独——没有人提醒的时候，依然愿意把眼前这一点做好。但自律也不应该把生活塞得太满。道家讲留白，运动也需要恢复，人好像也是一样。
+The reading list is not especially optimized for one category. My bookshelf
+has therefore failed every career-planning exercise I have given it. I have
+decided to let it explore.
 
-所以我热爱 AI，热爱哲学，热爱商业，热爱历史，也热爱生活。
+Philosophy, to me, is not about sounding profound at dinner. It is a reminder
+that a viewpoint can be sharp while a person remains measured—and that being
+confident is not the same thing as being correct, an insight also generously
+provided by financial markets.
 
-这几件事并不冲突。AI 让我看见未来的可能，商业让我面对现实，历史和哲学帮我校准方向，而生活提醒我，不要把所有时间都变成一张等待优化的表格。
+## I explain complicated things on the internet
 
-大概我想要的状态就是这样：保持好奇，也保持分寸；愿意认真工作，也认真吃饭、运动、读书和与人相处。知道什么时候继续往前，也知道什么时候可以停下来，打一场球，让答案再慢一点出现。
+I create Chinese short-form content through **简单财经** and **简单说**, where I
+talk about finance, AI, business, history, and philosophy in plain language.
+
+The aim is not to demonstrate how much I know. It is to find out whether I
+understand something well enough to make it clear to someone else.
+
+A one-minute video can take several hours to write. This has taught me that
+making something shorter is often a surprisingly time-consuming activity.
+Apparently, simplicity has expensive production costs.
+
+## Sport keeps the feedback honest
+
+When I have spent enough time inside my own head, I play basketball, throw a
+frisbee, or go to the gym.
+
+Sport is refreshingly direct. The shot went in or it did not. The pass reached
+its target or it became an unexpected gift to the other team. No amount of
+presentation design changes the result.
+
+Basketball has been particularly useful for personal development: it regularly
+reminds me that a decision can feel excellent at the moment of release and
+still hit the rim.
+
+Training has also changed how I think about discipline. It is less like a
+dramatic motivational speech and more like *慎独*—doing the next small thing
+properly when nobody is watching. At the same time, recovery matters. Taoism
+appreciates empty space; muscles do too.
+
+## So, who am I outside the portfolio?
+
+I love AI because it opens new possibilities. I love business because it makes
+possibilities answer to reality. History and philosophy help me check the
+direction, while sport and everyday life remind me not to turn every waking
+hour into another optimization problem.
+
+I am still working on the balance: staying curious without becoming scattered,
+working seriously without taking myself too seriously, and knowing when to
+keep pushing—and when the wiser decision is to close the laptop, find a court,
+and allow the answer to arrive a little later.
+
+So far, the system is still in beta. Fortunately, I enjoy iteration.
 
 ---
 
-**[← 返回产品与技术作品集](README.md)**
+**[← Back to the product and technical portfolio](README.md)**
