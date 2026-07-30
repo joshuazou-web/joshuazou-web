@@ -170,8 +170,8 @@ output evaluation, human review, and workflow automation
 
 ## One more page: Josh beyond the build
 
-Products, repositories, and metrics show how I work. They do not fully explain
-why basketball spacing, Wang Yangming, short-form finance content, and an
-overly ambitious reading list all end up in the same mental toolkit.
+For the version of Josh that is not measured in test cases: basketball,
+frisbee, strength training, short-form finance content, Chinese philosophy,
+and a bookshelf that has firmly refused to specialize.
 
 **[Meet Josh beyond the portfolio →](ABOUT_JOSH.md)**
