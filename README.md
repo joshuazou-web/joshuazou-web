@@ -167,3 +167,11 @@ output evaluation, human review, and workflow automation
   configuration, or personal data may be involved.
 - Identity, employment, and non-public education details can be verified
   through the résumé and interview process.
+
+## One more page: Josh beyond the build
+
+Products, repositories, and metrics show how I work. They do not fully explain
+why basketball spacing, Wang Yangming, short-form finance content, and an
+overly ambitious reading list all end up in the same mental toolkit.
+
+**[Meet Josh beyond the portfolio →](ABOUT_JOSH.md)**
