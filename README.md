@@ -25,6 +25,23 @@ expected **January 2027**.
 | --- | --- | --- |
 | User journeys, requirements, product trade-offs, KPI design, risk controls | Python, SQL, APIs, cloud architecture, Solidity, backtesting, test design | Due diligence, market mapping, cross-functional communication, iteration planning |
 | Lending, payments, trading, financial risk, security-awareness products | AI-assisted prototyping, data validation, monitoring, fail-safe workflows | Convert incomplete information into explicit assumptions and testable decisions |
+| Translate ambiguous market problems into inspectable product decisions | Codex, Claude Code, Cursor, and multi-agent engineering workflows | Review generated work through tests, diffs, evidence checks, and human acceptance |
+
+## Agentic development workflow
+
+I use coding agents as an engineering system rather than a code-completion
+shortcut:
+
+- Use **Codex, Claude Code, and Cursor** to inspect unfamiliar repositories,
+  trace dependencies, convert requirements into implementation plans, and
+  deliver coordinated multi-file changes.
+- Decompose work across agents for parallel research, implementation, testing,
+  privacy/security review, and technical documentation.
+- Define context, tool permissions, acceptance criteria, and evaluation cases
+  before implementation; verify generated work with tests, diffs, runtime
+  checks, and manual review.
+- Build repeatable workflows that move from product requirement to prototype,
+  validation evidence, documented trade-offs, and a reviewable Git history.
 
 ## Selected product and technical work
 
@@ -136,8 +153,9 @@ test scenarios, risk controls, competitor and use-case research
 **Technical engineering:** Python, SQL, Flask APIs, Solidity, React, AWS
 serverless architecture, backtesting, dashboards, automated tests
 
-**AI workflow:** prototype generation, test-set construction, output
-evaluation, human review, and workflow automation
+**AI and agentic engineering:** Codex, Claude Code, Cursor, multi-agent task
+decomposition, repository analysis, prototype generation, test construction,
+output evaluation, human review, and workflow automation
 
 ## Privacy and source boundary
 
