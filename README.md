@@ -1,176 +1,129 @@
-# AI / FinTech Product + Technical Engineering
+<h1 align="center">Josh — Developer Experience & AI Engineering</h1>
 
-**Recruiting contact:** [zouzhihuajosh@outlook.com](mailto:zouzhihuajosh@outlook.com)
+<p align="center">
+  Building bilingual developer tools, trustworthy AI demos, and reviewable agent workflows.<br>
+  Singapore · NUS MSc Digital Financial Technology · Mandarin / English
+</p>
 
-I turn **market and financial-system problems** into product rules, technical
-prototypes, and measurable operating workflows.
+<p align="center">
+  <a href="mailto:zouzhihuajosh@outlook.com">Email</a> ·
+  <a href="https://github.com/joshuazou-web?tab=repositories">Repositories</a> ·
+  <a href="ABOUT_JOSH.md">Beyond the portfolio</a>
+</p>
 
-My working range covers product discovery, financial and risk logic, software
-design, hands-on implementation, validation, and commercial analysis. I am
-currently preparing for 2027 graduate opportunities along two connected
-tracks:
+<img align="right" width="145" src="assets/avatar-josh-500.png" alt="Josh" />
 
-| Product roles | Technical roles |
-| --- | --- |
-| AI / Technical Product Manager | FinTech / Product Engineer |
-| Payments, digital banking, risk, or trading products | Python backend and financial systems |
-| Product Strategy / Product Operations | Blockchain / DeFi and trading-system development |
+## What I build
 
-**National University of Singapore (NUS)** — MSc Digital Financial Technology,
-expected **January 2027**.
+I turn unclear developer and product problems into runnable examples, explicit
+system rules, and evidence that another person can verify.
 
-## Capability profile
+- **Developer experience:** Python and TypeScript quick starts, API debugging,
+  demos, technical documentation, evals, and failure analysis.
+- **AI safety and reliability:** credential redaction, approval gates,
+  deterministic fallbacks, rate controls, audit trails, and human review.
+- **Bilingual communication:** Mandarin-first explanations with English parity
+  for developers, product teams, founders, and regional communities.
 
-| Product & market | Technical engineering | Execution & judgment |
-| --- | --- | --- |
-| User journeys, requirements, product trade-offs, KPI design, risk controls | Python, SQL, APIs, cloud architecture, Solidity, backtesting, test design | Due diligence, market mapping, cross-functional communication, iteration planning |
-| Lending, payments, trading, financial risk, security-awareness products | AI-assisted prototyping, data validation, monitoring, fail-safe workflows | Convert incomplete information into explicit assumptions and testable decisions |
-| Translate ambiguous market problems into inspectable product decisions | Codex, Claude Code, Cursor, and multi-agent engineering workflows | Review generated work through tests, diffs, evidence checks, and human acceptance |
+I am currently completing an **MSc in Digital Financial Technology at the
+National University of Singapore**, expected January 2027.
 
-## Agentic development workflow
+<br clear="right" />
 
-I use coding agents as an engineering system rather than a code-completion
-shortcut:
+## Featured builds
 
-- Use **Codex, Claude Code, and Cursor** to inspect unfamiliar repositories,
-  trace dependencies, convert requirements into implementation plans, and
-  deliver coordinated multi-file changes.
-- Decompose work across agents for parallel research, implementation, testing,
-  privacy/security review, and technical documentation.
-- Define context, tool permissions, acceptance criteria, and evaluation cases
-  before implementation; verify generated work with tests, diffs, runtime
-  checks, and manual review.
-- Build repeatable workflows that move from product requirement to prototype,
-  validation evidence, documented trade-offs, and a reviewable Git history.
+### 1. DEBUG.CN — Mandarin OpenAI API Debugging Copilot
 
-## Selected product and technical work
+A bilingual, safety-first workbench that turns OpenAI API and SDK failures into
+reviewable evidence, root causes, minimal fixes, and verification checks.
 
-### 1. Risk-Based DeFi Lending
+- React + FastAPI with server-side secret redaction and a deterministic fallback.
+- Eight error categories, 24 backend tests, and a public 20-case eval passing 20/20.
+- Source-level controls: 3 live calls/client/minute, 25/process/UTC day,
+  1,600 output tokens, 30-second upstream timeout, and `store=false`.
+- **Validation boundary:** the Structured Outputs integration path is implemented;
+  successful real-model validation remains pending account quota.
 
-Designed a product case around one practical question: how should an external
-risk signal change borrowing capacity, price, and liquidation behavior?
+**[Source](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot)** ·
+**[Public demo](https://ctkhkof0ez.feishuapp.com/app/app_17c3qmjxcq2)** ·
+**[3-minute bilingual video](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot/releases/download/v0.1.0/DEBUG-CN-3min-bilingual-demo-subtitled.mp4)**
 
-- Translated risk into inspectable LTV, interest-rate, liquidation-threshold,
-  and health-factor rules.
-- Built the documented Python scoring-service and Flask API area; connected the
-  service boundary to on-chain policy and authorization design.
-- Added an interactive policy simulator, engineering decision record,
-  validation evidence, and reviewed backend/Solidity excerpts.
+### 2. Agent Control Plane
 
-**[Case study](https://github.com/joshuazou-web/risk-based-defi-lending-case-study)**
-· **[Interactive demo](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/)**
+A Python governance CLI for agent workflows with machine-checkable authority,
+approval gates, append-only traces, resumable task folders, and reproducible
+propose-check-execute-record-escalate examples.
 
-### 2. Algorithmic FX Trading & Monitoring
+**[Source and quick start](https://github.com/joshuazou-web/agent-control-plane)**
 
-Reframed an EUR/USD strategy from “signal generation” into a trading-product
-workflow covering research assumptions, causal validation, monitoring, and
-guarded practice execution.
+### 3. ThinkBeforeClick — Security Learning SaaS
 
-- Used ADX to select trend or range behavior and made the active state
-  explainable to researchers and operators.
-- Applied a one-bar signal lag and turnover-cost accounting to avoid
-  same-close execution and free-switching assumptions.
-- Separated offline research from broker access; network and order submission
-  fail closed behind multiple explicit gates.
+A Singapore-localized security-learning product connecting learner feedback
+with enterprise analytics and follow-up. A five-person team shipped an AWS
+prototype; the course-project evaluation involved 23 participants and received
+an Honourable Mention at a computing project showcase.
 
-**[Case study](https://github.com/joshuazou-web/algorithmic-fx-product-case)**
-· **[Interactive demo](https://joshuazou-web.github.io/algorithmic-fx-product-case/)**
+**[Case study](https://github.com/joshuazou-web/think-before-click-product-case)** ·
+**[Safe demo](https://joshuazou-web.github.io/think-before-click-product-case/)**
 
-### 3. ThinkBeforeClick
+### 4. Risk-Based DeFi Lending
 
-Connected a localized security-learning experience with an enterprise
-analytics and follow-up workflow.
+A product and engineering case translating external risk signals into explicit
+LTV, interest-rate, liquidation-threshold, and health-factor rules, backed by a
+Python/Flask scoring service and documented trust boundaries.
 
-- Structured the product around two loops: immediate learner feedback and
-  aggregate enterprise action.
-- The team prototype covered 10 simulation/learning pairs, serverless cloud
-  services, analytics, and reporting.
-- Course-project evaluation involved 23 participants; the project received an
-  Honourable Mention at a computing project showcase.
-- The public reconstruction adds a safe, no-tracking demo plus tenant,
-  idempotency, minimization, and retention design.
+**[Case study](https://github.com/joshuazou-web/risk-based-defi-lending-case-study)** ·
+**[Interactive demo](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/)**
 
-**[Case study](https://github.com/joshuazou-web/think-before-click-product-case)**
-· **[Safe demo](https://joshuazou-web.github.io/think-before-click-product-case/)**
+<details>
+<summary><strong>More product engineering work</strong></summary>
 
-## Anonymized experience evidence
+### Algorithmic FX Trading & Monitoring
 
-The organizations and identifying details are intentionally omitted. Full
-employment and education history is available in the résumé shared directly
-with recruiters.
+An explainable trading-product workflow covering regime logic, causal
+validation, turnover costs, monitoring, and fail-closed practice execution.
 
-### Financial-technology product delivery
+**[Case study](https://github.com/joshuazou-web/algorithmic-fx-product-case)** ·
+**[Interactive demo](https://joshuazou-web.github.io/algorithmic-fx-product-case/)**
 
-- Supported the iteration and delivery of blockchain-enabled financial-product
-  workflows across product and engineering teams.
-- Used Python, SQL, and relational databases to analyze product data, validate
-  backend workflows, and turn findings into iteration recommendations.
-- Researched AI-enabled risk controls, distributed ledgers, digital currency,
-  DeFi, and emerging financial-service use cases, translating technical
-  concepts into product implications.
-
-### Cybersecurity market and investment research
-
-- Analyzed **50+ cybersecurity companies** and produced **100+ pages** of
-  research covering operating risk, competition, financial performance, and
-  sector trends.
-- Built NPV/IRR and public-market valuation comparisons for three listed
-  cybersecurity leaders and converted the evidence into investment views.
-
-### Early-stage product and investment work
-
-- Used DCF/CAPM and Python/SQL-supported due diligence to inform an equity
-  investment in an automation-focused venture.
-- Assessed user segments, product economics, and commercial models; contributed
-  to product strategy, market prioritization, and operational decisions.
-- Coordinated discussions across public-company, commerce, and manufacturing
-  stakeholders around payment and supply-chain-finance opportunities.
-
-### Venture sourcing and product screening
-
-- Engaged **50+ founders** and shortlisted **20+ teams** across AI credit
-  scoring, supply-chain finance, DeFi, and digital identity.
-- Evaluated opportunities through user need, business model, technical
-  feasibility, and risk—not technology labels alone.
+</details>
 
 ## How I work
 
 ```text
-Market context
-    → user and operating problem
-    → product rules and trade-offs
-    → technical prototype
-    → validation and failure analysis
-    → commercial and operating decision
+Developer or market signal
+    → reproducible problem
+    → explicit assumptions and constraints
+    → smallest useful prototype
+    → tests, evals, and failure analysis
+    → documentation and feedback
     → next iteration
 ```
 
-## Working toolkit
+| Build | Validate | Communicate |
+| --- | --- | --- |
+| Python, TypeScript, React, FastAPI, Flask, SQL, AWS, Solidity | Tests, evals, redaction, rate limits, fail-safe controls, audit trails | Mandarin/English demos, quick starts, technical content, product handoffs |
 
-**Product:** requirements decomposition, user/process flows, product metrics,
-test scenarios, risk controls, competitor and use-case research
+## Experience signals
 
-**Technical engineering:** Python, SQL, Flask APIs, Solidity, React, AWS
-serverless architecture, backtesting, dashboards, automated tests
+- Worked across product and engineering on blockchain-enabled financial-product
+  workflows, backend validation, data reconciliation, and test priorities.
+- Built and reviewed AI, FinTech, cloud, cybersecurity, lending, and trading
+  prototypes with explicit safety and trust boundaries.
+- Conducted startup sourcing, market research, and cross-functional stakeholder
+  work across financial services, commerce, and manufacturing contexts.
+- Use Codex, Claude Code, and Cursor as reviewable engineering systems, with
+  acceptance criteria, tests, diffs, runtime checks, and human approval.
 
-**AI and agentic engineering:** Codex, Claude Code, Cursor, multi-agent task
-decomposition, repository analysis, prototype generation, test construction,
-output evaluation, human review, and workflow automation
+## Public-work boundary
 
-## Privacy and source boundary
+Public repositories contain portfolio-safe code, architecture, validation, and
+reviewed examples. Team-owned implementations, credentials, private data, and
+restricted configuration remain private. Full employment and education details
+are available directly to recruiters.
 
-- Real name, employer names, phone number, earlier education, and complete
-  employment chronology are intentionally not published here.
-- Public case studies contain product evidence, architecture, validation, and
-  small reviewed excerpts.
-- Complete implementations remain private where team ownership, course rules,
-  configuration, or personal data may be involved.
-- Identity, employment, and non-public education details can be verified
-  through the résumé and interview process.
+---
 
-## 工作之外 / Beyond the portfolio
-
-A lighter personal note on AI, business, philosophy, history, sport, and why
-my bookshelf has so far resisted every attempt at career planning.
-
-**[Meet Josh outside the build →](ABOUT_JOSH.md)**
+<p align="center">
+  Interested in developer experience, applied AI, and technical product work in Singapore and APAC.
+</p>
