@@ -32,7 +32,17 @@ National University of Singapore**, expected January 2027.
 
 ## Featured builds
 
-### 1. DEBUG.CN — Mandarin OpenAI API Debugging Copilot
+### 1. DecisiveEval — Coding-Agent Evaluation Stability
+
+An auditable Python research system for testing whether a Coding Agent decision
+survives defensible changes to grading, runtime, failure handling, cost, and
+latency policy. The v0.1 checkpoint ships a real CLI, immutable evidence
+receipts, repeated-run/bootstrap paths, 26 public JSON Schemas, and 103 passing
+tests. It also publishes failed experiments and explicitly leaves real-world
+hypothesis validation open rather than claiming a premature result.
+
+**[Source, protocol, and quick start](https://github.com/joshuazou-web/decisive-eval)**
+### 2. DEBUG.CN — Mandarin OpenAI API Debugging Copilot
 
 A bilingual, safety-first workbench that turns OpenAI API and SDK failures into
 reviewable evidence, root causes, minimal fixes, and verification checks.
@@ -48,7 +58,7 @@ reviewable evidence, root causes, minimal fixes, and verification checks.
 **[Public demo](https://ctkhkof0ez.feishuapp.com/app/app_17c3qmjxcq2)** ·
 **[3-minute bilingual video](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot/releases/download/v0.1.0/DEBUG-CN-3min-bilingual-demo-subtitled.mp4)**
 
-### 2. Agent Control Plane
+### 3. Agent Control Plane
 
 A Python governance CLI for agent workflows with machine-checkable authority,
 approval gates, append-only traces, resumable task folders, and reproducible
@@ -56,7 +66,7 @@ propose-check-execute-record-escalate examples.
 
 **[Source and quick start](https://github.com/joshuazou-web/agent-control-plane)**
 
-### 3. ThinkBeforeClick — Security Learning SaaS
+### 4. ThinkBeforeClick — Security Learning SaaS
 
 A Singapore-localized security-learning product connecting learner feedback
 with enterprise analytics and follow-up. A five-person team shipped an AWS
@@ -66,7 +76,7 @@ an Honourable Mention at a computing project showcase.
 **[Case study](https://github.com/joshuazou-web/think-before-click-product-case)** ·
 **[Safe demo](https://joshuazou-web.github.io/think-before-click-product-case/)**
 
-### 4. Risk-Based DeFi Lending
+### 5. Risk-Based DeFi Lending
 
 A product and engineering case translating external risk signals into explicit
 LTV, interest-rate, liquidation-threshold, and health-factor rules, backed by a
