@@ -32,7 +32,38 @@ National University of Singapore**, expected January 2027.
 
 ## Featured builds
 
-### 1. DecisiveEval — Coding-Agent Evaluation Stability
+### 1. OpsSignal — AI-Assisted Operational Workload Intelligence
+
+An operational analytics system for an internal Business Technology queue. It
+turns an inconsistent multi-channel ticket feed into a versioned taxonomy, a
+validated warehouse, a six-page dashboard, and an AI triage policy that routes
+its own uncertainty to a human.
+
+- **Definitions first:** taxonomy v1.1.0 — 6 dimensions, 51 values, 257 source
+  aliases — each with a definition, a worked example, and the boundary case
+  people actually confuse. It lives in code, the documentation is generated from
+  it, and a test fails if the two drift apart.
+- **Pipeline:** raw → staging → marts → audit on DuckDB. Idempotent, incremental,
+  19 severity-tiered validation checks, and automatic rollback to the last good
+  dataset on failure, proven by a fault-injection drill. 166 automated tests.
+- **Analytics:** 21 mart tables covering backlog ageing, P50/P90 cycle time, SLA
+  compliance and breach drivers, Pareto workload analysis, repeated-request
+  clusters, and data-quality health — each metric defined exactly once, in SQL.
+- **Classifier:** TF-IDF + logistic regression, 0.842 accuracy / 0.836 macro F1
+  on a held-out split, at a confidence threshold selected on validation that
+  auto-classifies 84% of tickets. Held-out agreement is 92.3% on auto-accepted
+  tickets versus 50.0% on the review queue — the evidence that the policy sends
+  the harder work to a person rather than into the metrics.
+- **Human review:** append-only audit trail; corrections outrank the model,
+  survive refreshes and retrains, and flow back into the reported numbers.
+- **Data boundary:** every ticket is **synthetic** and labelled as such on each
+  dashboard page. The single efficiency figure is an explicitly assumption-based
+  estimate, never presented as a business benefit.
+
+**[Source and quick start](https://github.com/joshuazou-web/opssignal)** ·
+**[Case study](https://github.com/joshuazou-web/opssignal/blob/main/CASE_STUDY.md)**
+
+### 2. DecisiveEval — Coding-Agent Evaluation Stability
 
 An auditable Python research system for testing whether a Coding Agent decision
 survives defensible changes to grading, runtime, failure handling, cost, and
@@ -42,7 +73,7 @@ tests. It also publishes failed experiments and explicitly leaves real-world
 hypothesis validation open rather than claiming a premature result.
 
 **[Source, protocol, and quick start](https://github.com/joshuazou-web/decisive-eval)**
-### 2. DEBUG.CN — Mandarin OpenAI API Debugging Copilot
+### 3. DEBUG.CN — Mandarin OpenAI API Debugging Copilot
 
 A bilingual, safety-first workbench that turns OpenAI API and SDK failures into
 reviewable evidence, root causes, minimal fixes, and verification checks.
@@ -58,7 +89,7 @@ reviewable evidence, root causes, minimal fixes, and verification checks.
 **[Public demo](https://ctkhkof0ez.feishuapp.com/app/app_17c3qmjxcq2)** ·
 **[3-minute bilingual video](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot/releases/download/v0.1.0/DEBUG-CN-3min-bilingual-demo-subtitled.mp4)**
 
-### 3. Agent Control Plane
+### 4. Agent Control Plane
 
 A Python governance CLI for agent workflows with machine-checkable authority,
 approval gates, append-only traces, resumable task folders, and reproducible
@@ -66,7 +97,7 @@ propose-check-execute-record-escalate examples.
 
 **[Source and quick start](https://github.com/joshuazou-web/agent-control-plane)**
 
-### 4. ThinkBeforeClick — Security Learning SaaS
+### 5. ThinkBeforeClick — Security Learning SaaS
 
 A Singapore-localized security-learning product connecting learner feedback
 with enterprise analytics and follow-up. A five-person team shipped an AWS
@@ -76,7 +107,7 @@ an Honourable Mention at a computing project showcase.
 **[Case study](https://github.com/joshuazou-web/think-before-click-product-case)** ·
 **[Safe demo](https://joshuazou-web.github.io/think-before-click-product-case/)**
 
-### 5. Risk-Based DeFi Lending
+### 6. Risk-Based DeFi Lending
 
 A product and engineering case translating external risk signals into explicit
 LTV, interest-rate, liquidation-threshold, and health-factor rules, backed by a
