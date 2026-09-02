@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <title>Josh — FinTech AI Product</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1730"/>
+      <stop offset="0.55" stop-color="#102D57"/>
+      <stop offset="1" stop-color="#173C73"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0.1" y1="1" x2="0.9" y2="0">
+      <stop offset="0" stop-color="#4E9DFF"/>
+      <stop offset="0.6" stop-color="#5FD3E8"/>
+      <stop offset="1" stop-color="#7BE8C4"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#bg)"/>
+  <g transform="translate(0,-14)">
+    <g opacity="0.10" stroke="#A8CBFF" stroke-width="2">
+      <line x1="96" y1="160" x2="404" y2="160"/>
+      <line x1="96" y1="230" x2="404" y2="230"/>
+      <line x1="96" y1="300" x2="404" y2="300"/>
+      <line x1="96" y1="370" x2="404" y2="370"/>
+    </g>
+    <g fill="#A8CBFF" opacity="0.20">
+      <rect x="140" y="300" width="28" height="70" rx="8"/>
+      <rect x="200" y="264" width="28" height="106" rx="8"/>
+      <rect x="260" y="286" width="28" height="84" rx="8"/>
+      <rect x="320" y="222" width="28" height="148" rx="8"/>
+    </g>
+    <path d="M152 262 L216 326 L350 178" fill="none" stroke="url(#mark)"
+          stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

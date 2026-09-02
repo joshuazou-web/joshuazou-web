@@ -1,170 +1,140 @@
-<h1 align="center">Josh — Developer Experience & AI Engineering</h1>
+<h1 align="center">Josh — FinTech AI Product</h1>
 
 <p align="center">
-  Building bilingual developer tools, trustworthy AI demos, and reviewable agent workflows.<br>
-  Singapore · NUS MSc Digital Financial Technology · Mandarin / English
+  I build AI products for financial risk, trading, and operations — and I publish the
+  evaluation evidence and the limits next to them.<br>
+  Singapore · NUS MSc Digital Financial Technology (Jan 2027) · Mandarin / English
 </p>
 
 <p align="center">
   <a href="mailto:zouzhihuajosh@outlook.com">Email</a> ·
-  <a href="https://github.com/joshuazou-web?tab=repositories">Repositories</a> ·
+  <a href="https://www.linkedin.com/in/zouzhihuajosh">LinkedIn</a> ·
+  <a href="https://github.com/joshuazou-web?tab=repositories">All repositories</a> ·
   <a href="ABOUT_JOSH.md">Beyond the portfolio</a>
 </p>
 
-<img align="right" width="145" src="assets/avatar-josh-500.png" alt="Josh" />
+<img align="right" width="150" src="assets/avatar-josh-500.png" alt="" />
 
 ## What I build
 
-I turn unclear developer and product problems into runnable examples, explicit
-system rules, and evidence that another person can verify.
+I take unclear financial, user, and risk problems and turn them into product decisions
+that someone else can check: explicit rules, a runnable prototype, and a number with a
+stated boundary around it.
 
-- **Developer experience:** Python and TypeScript quick starts, API debugging,
-  demos, technical documentation, evals, and failure analysis.
-- **AI safety and reliability:** credential redaction, approval gates,
-  deterministic fallbacks, rate controls, audit trails, and human review.
-- **Bilingual communication:** Mandarin-first explanations with English parity
-  for developers, product teams, founders, and regional communities.
-
-I am currently completing an **MSc in Digital Financial Technology at the
-National University of Singapore**, expected January 2027.
+- **AI product judgment.** Where AI adds incremental value against LLM, agent, and RAG
+  capability boundaries — measured on accuracy, confidence, failure analysis, human
+  review, and user trust, not on demo polish.
+- **Risk and financial domain.** Credit, market, and operational risk expressed as
+  explicit policy: thresholds, gates, fallbacks, and reconciliation.
+- **Evidence and honest limits.** Every project below ships its own numbers, and says
+  where those numbers stop being valid.
 
 <br clear="right" />
 
-## Featured builds
+## Start here
 
-### 1. OpsSignal — AI-Assisted Operational Workload Intelligence
+Different teams need different evidence. Pick the row that matches your role:
 
-An operational analytics system for an internal Business Technology queue. It
-turns an inconsistent multi-channel ticket feed into a versioned taxonomy, a
-validated warehouse, a six-page dashboard, and an AI triage policy that routes
-its own uncertainty to a human.
+| If you are hiring for | Start with these |
+| --- | --- |
+| **FinTech / AI Product** *(primary)* | [Risk-Based DeFi Lending](#1-fintech-risk-trading--lending) · [Algorithmic FX](#1-fintech-risk-trading--lending) · [OpsSignal](#3-data-operations--trust-products) |
+| **AI Product Manager** | [Converge](#2-agents-evaluation--reliability) · [Volc Agent Launchpad](#2-agents-evaluation--reliability) · [OpsSignal](#3-data-operations--trust-products) |
+| **Technical PM / AI Engineering** | [DecisiveEval](#2-agents-evaluation--reliability) · [Agent Control Plane](#2-agents-evaluation--reliability) · [DEBUG.CN](#4-developer-experience--ai-tooling) |
+| **Data & Operations / BizTech** | [OpsSignal](#3-data-operations--trust-products) · [ThinkBeforeClick](#3-data-operations--trust-products) |
 
-- **Definitions first:** taxonomy v1.1.0 — 6 dimensions, 51 values, 257 source
-  aliases — each with a definition, a worked example, and the boundary case
-  people actually confuse. It lives in code, the documentation is generated from
-  it, and a test fails if the two drift apart.
-- **Pipeline:** raw → staging → marts → audit on DuckDB. Idempotent, incremental,
-  19 severity-tiered validation checks, and automatic rollback to the last good
-  dataset on failure, proven by a fault-injection drill. 166 automated tests.
-- **Analytics:** 21 mart tables covering backlog ageing, P50/P90 cycle time, SLA
-  compliance and breach drivers, Pareto workload analysis, repeated-request
-  clusters, and data-quality health — each metric defined exactly once, in SQL.
-- **Classifier:** TF-IDF + logistic regression, 0.842 accuracy / 0.836 macro F1
-  on a held-out split, at a confidence threshold selected on validation that
-  auto-classifies 84% of tickets. Held-out agreement is 92.3% on auto-accepted
-  tickets versus 50.0% on the review queue — the evidence that the policy sends
-  the harder work to a person rather than into the metrics.
-- **Human review:** append-only audit trail; corrections outrank the model,
-  survive refreshes and retrains, and flow back into the reported numbers.
-- **Data boundary:** every ticket is **synthetic** and labelled as such on each
-  dashboard page. The single efficiency figure is an explicitly assumption-based
-  estimate, never presented as a business benefit.
+A project appearing in more than one row is deliberate — it means that work carries
+more than one kind of evidence.
 
-**[Source and quick start](https://github.com/joshuazou-web/opssignal)** ·
-**[Case study](https://github.com/joshuazou-web/opssignal/blob/main/CASE_STUDY.md)**
+## Work by area
 
-### 2. DecisiveEval — Coding-Agent Evaluation Stability
+### 1. FinTech: risk, trading & lending
 
-An auditable Python research system for testing whether a Coding Agent decision
-survives defensible changes to grading, runtime, failure handling, cost, and
-latency policy. The v0.1 checkpoint ships a real CLI, immutable evidence
-receipts, repeated-run/bootstrap paths, 26 public JSON Schemas, and 103 passing
-tests. It also publishes failed experiments and explicitly leaves real-world
-hypothesis validation open rather than claiming a premature result.
+**Proves:** turning market and credit risk into explicit, testable product rules.
 
-**[Source, protocol, and quick start](https://github.com/joshuazou-web/decisive-eval)**
-### 3. DEBUG.CN — Mandarin OpenAI API Debugging Copilot
+*Domain grounding:* NUS MSc Digital Financial Technology · FinTech intern at **Huatai
+International**, on a blockchain-finance product — smart-contract, backend, acceptance
+and exception workflows, with Python/SQL validation and reconciliation · investment
+analyst intern at **Sequoia Capital**, researching the cybersecurity sector.
 
-A bilingual, safety-first workbench that turns OpenAI API and SDK failures into
-reviewable evidence, root causes, minimal fixes, and verification checks.
+| Project | What it proves | Evidence |
+| --- | --- | --- |
+| **Risk-Based DeFi Lending**<br>[Case study](https://github.com/joshuazou-web/risk-based-defi-lending-case-study) · [Demo](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/) | External risk signals become explicit LTV, interest-rate, liquidation-threshold and health-factor policy | Python/Flask scoring service, documented trust boundaries, selected code, interactive demo |
+| **Algorithmic FX Trading & Monitoring**<br>[Case study](https://github.com/joshuazou-web/algorithmic-fx-product-case) · [Demo](https://joshuazou-web.github.io/algorithmic-fx-product-case/) | Market-regime logic that survives causal validation and turnover costs | Causal backtesting, monitoring design, fail-closed practice execution |
+| **SoAI 2026 High-Beta Leader**<br>[Repository](https://github.com/joshuazou-web/SoAI-2026-High-Beta-Leader) | Committing to a frozen strategy under competition rules instead of fitting after the fact | Frozen high-beta leader strategy, SoAI 2026 AI Algorithmic Trading Competition entry |
 
-- React + FastAPI with server-side secret redaction and a deterministic fallback.
-- Eight error categories, 24 backend tests, and a public 20-case eval passing 20/20.
-- Source-level controls: 3 live calls/client/minute, 25/process/UTC day,
-  1,600 output tokens, 30-second upstream timeout, and `store=false`.
-- **Validation boundary:** the Structured Outputs integration path is implemented;
-  successful real-model validation remains pending account quota.
+### 2. Agents, evaluation & reliability
 
-**[Source](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot)** ·
-**[Public demo](https://ctkhkof0ez.feishuapp.com/app/app_17c3qmjxcq2)** ·
-**[3-minute bilingual video](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot/releases/download/v0.1.0/DEBUG-CN-3min-bilingual-demo-subtitled.mp4)**
+**Proves:** deciding when *not* to use an LLM, and proving an agent behaves under pressure.
 
-### 4. Agent Control Plane
+| Project | What it proves | Evidence |
+| --- | --- | --- |
+| **Converge** — proactive clarification & recommendation<br>[Repository](https://github.com/joshuazou-web/techjam-converge) | Incomplete and shifting intent modelled as an inverse user model with explicit task state; expected-information-gain clarification and confidence-gated recommendations | **0.976 vs 0.107 baseline** on the official 200-session evaluator; 28 tests, ablation and stress checks. Deliberately no LLM where interpretable rules sufficed. *Bounded to a closed catalog and synthetic users — not real conversion or retention.* |
+| **Volc Agent Launchpad** — agent safety & audit<br>[Repository](https://github.com/joshuazou-web/volc-agent-launchpad) | Prompt injection, privilege escalation and dangerous-command risk mapped to a three-layer guardrail with block / allow / human-review outcomes | **138 passed, 1 skipped**; 8 demo scenarios, false-positive corpora, audit trails, type checks and production build passing. *A prototype — not proof of complete attack coverage.* |
+| **DecisiveEval**<br>[Repository](https://github.com/joshuazou-web/decisive-eval) | Whether a coding-agent decision survives defensible changes to grading, runtime, failure handling, cost and latency policy | 26 public JSON Schemas, 103 tests, immutable evidence receipts, repeated-run and bootstrap paths. *Publishes its failed experiments and leaves real-world validation open.* |
+| **Agent Control Plane**<br>[Repository](https://github.com/joshuazou-web/agent-control-plane) | Machine-checkable authority and approval gates for agent workflows | Append-only traces, resumable task folders, reproducible propose-check-execute-record-escalate examples |
+| **PropTech Agent Reliability Lab**<br>[Repository](https://github.com/joshuazou-web/proptech-agent-reliability-lab) | Debugging agent failures against a realistic customer problem | Synthetic PropTech practice lab on FastAPI + Streamlit |
 
-A Python governance CLI for agent workflows with machine-checkable authority,
-approval gates, append-only traces, resumable task folders, and reproducible
-propose-check-execute-record-escalate examples.
+### 3. Data, operations & trust products
 
-**[Source and quick start](https://github.com/joshuazou-web/agent-control-plane)**
+**Proves:** instrumenting a workflow, then handing uncertainty back to a human on purpose.
 
-### 5. ThinkBeforeClick — Security Learning SaaS
+| Project | What it proves | Evidence |
+| --- | --- | --- |
+| **OpsSignal** — operations analytics & human-AI workflow<br>[Repository](https://github.com/joshuazou-web/opssignal) | An explainable model chosen over an LLM for cost, control and explainability, with a review queue that exposes model uncertainty | **0.842 held-out accuracy, 0.836 Macro-F1**; at a 0.65 threshold, **84.0% auto-coverage and 92.3% agreement** among auto-classified held-out samples. 3,600 synthetic tickets into 6 dimensions, 51 values, 21 marts; 19 validations and 166 tests passed. |
+| **ThinkBeforeClick** — anti-scam learning product<br>[Case study](https://github.com/joshuazou-web/think-before-click-product-case) · [Demo](https://joshuazou-web.github.io/think-before-click-product-case/) | Learner feedback connected to enterprise analytics with responsible safeguards, shipped by a 5-person team on AWS | 23-person course test: **4.3/5 usability, 4.2/5 individual and 4.5/5 enterprise-participant satisfaction**; NUS STePS Honourable Mention (2025). *Course sample only.* |
 
-A Singapore-localized security-learning product connecting learner feedback
-with enterprise analytics and follow-up. A five-person team shipped an AWS
-prototype; the course-project evaluation involved 23 participants and received
-an Honourable Mention at a computing project showcase.
+### 4. Developer experience & AI tooling
 
-**[Case study](https://github.com/joshuazou-web/think-before-click-product-case)** ·
-**[Safe demo](https://joshuazou-web.github.io/think-before-click-product-case/)**
+**Proves:** making another person's failure legible, in two languages.
 
-### 6. Risk-Based DeFi Lending
-
-A product and engineering case translating external risk signals into explicit
-LTV, interest-rate, liquidation-threshold, and health-factor rules, backed by a
-Python/Flask scoring service and documented trust boundaries.
-
-**[Case study](https://github.com/joshuazou-web/risk-based-defi-lending-case-study)** ·
-**[Interactive demo](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/)**
-
-<details>
-<summary><strong>More product engineering work</strong></summary>
-
-### Algorithmic FX Trading & Monitoring
-
-An explainable trading-product workflow covering regime logic, causal
-validation, turnover costs, monitoring, and fail-closed practice execution.
-
-**[Case study](https://github.com/joshuazou-web/algorithmic-fx-product-case)** ·
-**[Interactive demo](https://joshuazou-web.github.io/algorithmic-fx-product-case/)**
-
-</details>
+| Project | What it proves | Evidence |
+| --- | --- | --- |
+| **DEBUG.CN** — Mandarin OpenAI API debugging copilot<br>[Repository](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot) · [Demo](https://ctkhkof0ez.feishuapp.com/app/app_17c3qmjxcq2) · [3-min bilingual video](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot/releases/download/v0.1.0/DEBUG-CN-3min-bilingual-demo-subtitled.mp4) | API and SDK failures turned into reviewable evidence, root causes, minimal fixes and verification checks | 8 error categories, 24 backend tests, 20/20 public eval; server-side secret redaction, deterministic fallback, source-level rate and token controls. *Structured Outputs path implemented; real-model validation pending account quota.* |
+| **白盒 · wbox** — presentation rehearsal for students<br>[Repository](https://github.com/joshuazou-web/wbox) | Helping students genuinely understand the AI-assisted coursework they are about to defend | Mandarin-first product: predicted questions, Q&A rehearsal, presentation pack |
 
 ## How I work
 
 ```text
-Developer or market signal
-    → reproducible problem
-    → explicit assumptions and constraints
-    → smallest useful prototype
-    → tests, evals, and failure analysis
-    → documentation and feedback
-    → next iteration
+Market, user, or risk signal
+    -> reproducible problem
+    -> explicit assumptions and capability boundaries
+    -> smallest useful prototype
+    -> evaluation, failure analysis, human review
+    -> stated limits and next iteration
 ```
 
 | Build | Validate | Communicate |
 | --- | --- | --- |
-| Python, TypeScript, React, FastAPI, Flask, SQL, AWS, Solidity | Tests, evals, redaction, rate limits, fail-safe controls, audit trails | Mandarin/English demos, quick starts, technical content, product handoffs |
+| Python, TypeScript, SQL, FastAPI, React, AWS Serverless, DuckDB, Solidity, Git | Metric trees, instrumentation and funnels, rule/model evaluation, confidence and failure analysis, redaction, rate limits, audit trails, usability testing | PRDs and flows, conversational UI, Mandarin/English demos and quick starts, acceptance and retrospectives |
+
+I use Codex and Claude Code for ideation and code and test drafts. I own the product
+decisions, the reproducibility, and the truth boundaries.
 
 ## Experience signals
 
-- Worked across product and engineering on blockchain-enabled financial-product
-  workflows, backend validation, data reconciliation, and test priorities.
-- Built and reviewed AI, FinTech, cloud, cybersecurity, lending, and trading
-  prototypes with explicit safety and trust boundaries.
-- Conducted startup sourcing, market research, and cross-functional stakeholder
-  work across financial services, commerce, and manufacturing contexts.
-- Use Codex, Claude Code, and Cursor as reviewable engineering systems, with
-  acceptance criteria, tests, diffs, runtime checks, and human approval.
+- **Huatai International** — FinTech intern (Jul–Nov 2024). Iteration and launch
+  coordination for a blockchain-finance product; assessed AI risk, CBDC, DLT, DeFi and
+  digital-human concepts by user value, feasibility, risk and cost.
+- **AI Star** — angel investor and co-founder (2022–present). Segmentation, pricing and
+  unit economics, feature prioritisation, and partner communication for an early-stage
+  education product.
+- **Sequoia Capital** — investment analyst intern (Jan–May 2024). Researched dozens of
+  cybersecurity companies across customer need, commercialisation and technology trends.
+- **MiraclePlus** — campus scout (Mar–Aug 2023). Sourced and screened early-stage
+  ventures; interviewed founders on pain points, differentiation and validation paths.
+- **Recognition** — First Prize and Best Entrepreneurship Award, National Innovation &
+  Entrepreneurship Challenge (Macau cross-border e-commerce); Budweiser
+  digital-transformation study, [DOI 10.54691/bcpbm.v38i.3909](https://doi.org/10.54691/bcpbm.v38i.3909).
 
 ## Public-work boundary
 
-Public repositories contain portfolio-safe code, architecture, validation, and
-reviewed examples. Team-owned implementations, credentials, private data, and
-restricted configuration remain private. Full employment and education details
-are available directly to recruiters.
+Public repositories contain portfolio-safe code, architecture, validation, and reviewed
+examples. Team-owned implementations, credentials, private data, and restricted
+configuration remain private. Demo datasets are synthetic unless stated otherwise. Full
+employment and education details are available directly to recruiters.
 
 ---
 
 <p align="center">
-  Interested in developer experience, applied AI, and technical product work in Singapore and APAC.
+  Open to FinTech and AI product roles in Singapore and APAC, graduating January 2027.
 </p>
