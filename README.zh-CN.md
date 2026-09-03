@@ -163,7 +163,7 @@ Agent 的结论，换一套合理的评分方式、运行时、失败政策、�
 | --- | --- | --- |
 | Python、TypeScript、SQL、FastAPI、React、AWS Serverless、DuckDB、Solidity、Git | 指标树、规则与模型评测、置信度与失败分析、审计轨迹、脱敏、限流、可用性测试 | PRD、流程设计、对话式界面、中英文演示、验收与复盘 |
 
-我使用 Codex 和 Claude Code协助构思，以及生成代码与测试初稿。产品判断、验证设计、可复现性和
+我使用 Codex 和 Claude Code 协助构思，以及生成代码与测试初稿。产品判断、验证设计、可复现性和
 真实性边界由我负责。
 
 ## 我从哪里来
