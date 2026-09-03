@@ -41,7 +41,7 @@ Different teams need different evidence. Pick the row that matches your role:
 
 | If you are hiring for | Start with these |
 | --- | --- |
-| **FinTech / AI Product** | [Risk-Based DeFi Lending](#1-fintech-risk-trading--lending) · [Algorithmic FX](#1-fintech-risk-trading--lending) · [OpsSignal](#3-data-operations--trust-products) |
+| **FinTech / AI Product** | [CrossBorder RiskOps](#1-fintech-risk-trading--lending) · [WealthGuard Copilot](#1-fintech-risk-trading--lending) · [OpsSignal](#3-data-operations--trust-products) |
 | **AI Product Manager** | [Converge](#2-agents-evaluation--reliability) · [Volc Agent Launchpad](#2-agents-evaluation--reliability) · [OpsSignal](#3-data-operations--trust-products) |
 | **Technical PM / AI Engineering** | [DecisiveEval](#2-agents-evaluation--reliability) · [Agent Control Plane](#2-agents-evaluation--reliability) · [DEBUG.CN](#4-developer-experience--ai-tooling) |
 | **Data & Operations / BizTech** | [OpsSignal](#3-data-operations--trust-products) · [ThinkBeforeClick](#3-data-operations--trust-products) |
@@ -62,6 +62,8 @@ analyst intern at **Sequoia Capital**, researching the cybersecurity sector.
 
 | Project | What it proves | Evidence |
 | --- | --- | --- |
+| **CrossBorder RiskOps** — payment risk operations workbench<br>[Repository](https://github.com/joshuazou-web/crossborder-riskops) | Deterministic rules find the risk, an AI copilot organises the evidence, and only a person decides — a boundary enforced in code rather than promised in a prompt | 20 rules carrying severity, rationale and evidence; 6,000 transactions across 5 seeds; 26.9% escalated to a human; 304 tests. Every figure in the repo is produced by its own eval harness, and a test fails if the README drifts from it. *All data synthetic; never run in production.* |
+| **WealthGuard Copilot** — evidence-grounded research protection<br>[Repository](https://github.com/joshuazou-web/wealthguard-copilot) | An ambiguous wealth or securities question turned into a bounded, evidence-backed research task, with the advice boundary held by a deterministic policy engine outside the model | Page- and paragraph-level dated evidence retrieval, financial arithmetic delegated to tested deterministic functions, full decision trace in a review-and-audit view, committed regression and citation-evaluation runs, 14-day dogfood protocol. *Educational and research use only — not investment advice; never places trades.* |
 | **Risk-Based DeFi Lending**<br>[Case study](https://github.com/joshuazou-web/risk-based-defi-lending-case-study) · [Demo](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/) | External risk signals become explicit LTV, interest-rate, liquidation-threshold and health-factor policy | Python/Flask scoring service, documented trust boundaries, selected code, interactive demo |
 | **Algorithmic FX Trading & Monitoring**<br>[Case study](https://github.com/joshuazou-web/algorithmic-fx-product-case) · [Demo](https://joshuazou-web.github.io/algorithmic-fx-product-case/) | Market-regime logic that survives causal validation and turnover costs | Causal backtesting, monitoring design, fail-closed practice execution |
 | **SoAI 2026 High-Beta Leader**<br>[Repository](https://github.com/joshuazou-web/SoAI-2026-High-Beta-Leader) | Committing to a frozen strategy under competition rules instead of fitting after the fact | Frozen high-beta leader strategy, SoAI 2026 AI Algorithmic Trading Competition entry |

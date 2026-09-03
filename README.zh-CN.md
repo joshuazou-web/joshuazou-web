@@ -36,7 +36,7 @@
 
 | 如果你在招 | 建议从这几个开始 |
 | --- | --- |
-| **金融科技 / AI 产品** | [Risk-Based DeFi Lending](#1-金融科技风险交易与借贷) · [Algorithmic FX](#1-金融科技风险交易与借贷) · [OpsSignal](#3-数据运营与信任产品) |
+| **金融科技 / AI 产品** | [CrossBorder RiskOps](#1-金融科技风险交易与借贷) · [WealthGuard Copilot](#1-金融科技风险交易与借贷) · [OpsSignal](#3-数据运营与信任产品) |
 | **AI 产品经理** | [Converge](#2-agent评测与可靠性) · [Volc Agent Launchpad](#2-agent评测与可靠性) · [OpsSignal](#3-数据运营与信任产品) |
 | **技术产品经理 / AI 工程** | [DecisiveEval](#2-agent评测与可靠性) · [Agent Control Plane](#2-agent评测与可靠性) · [DEBUG.CN](#4-开发者体验与-ai-工具) |
 | **数据与运营 / BizTech** | [OpsSignal](#3-数据运营与信任产品) · [ThinkBeforeClick](#3-数据运营与信任产品) |
@@ -55,6 +55,8 @@
 
 | 项目 | 证明了什么 | 证据 |
 | --- | --- | --- |
+| **CrossBorder RiskOps** — 跨境支付风险运营工作台<br>[仓库](https://github.com/joshuazou-web/crossborder-riskops) | 确定性规则负责发现风险，AI 助手负责组织证据，决定只能由人来下——这条边界写在代码里强制执行，而不是靠提示词承诺 | 20 条带严重度、理由和证据字段的规则；6,000 笔交易、5 个随机种子；26.9% 转人工；304 个测试。仓库里每个数字都由它自己的评测流程生成，README 与输出一旦漂移测试就会失败。*数据全部为合成数据，从未在生产环境运行。* |
+| **WealthGuard Copilot** — 证据锚定的研究保护层<br>[仓库](https://github.com/joshuazou-web/wealthguard-copilot) | 把一个模糊的财富或证券问题，变成有边界、有证据支撑的研究任务；建议边界由模型之外的确定性策略引擎把守 | 页级与段落级的带日期证据检索、金融计算交由经测试的确定性函数、可复核审计视图中的完整决策轨迹、已提交的回归与引用评测运行、14 天 dogfood 验证方案。*仅供教育与研究用途，不构成投资建议；不下单、不连接券商账户。* |
 | **Risk-Based DeFi Lending**<br>[案例](https://github.com/joshuazou-web/risk-based-defi-lending-case-study) · [演示](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/) | 把外部风险信号变成明确的 LTV、利率、清算阈值与健康因子策略 | Python/Flask 评分服务、成文的信任边界、精选代码、可交互演示 |
 | **Algorithmic FX Trading & Monitoring**<br>[案例](https://github.com/joshuazou-web/algorithmic-fx-product-case) · [演示](https://joshuazou-web.github.io/algorithmic-fx-product-case/) | 能经受因果验证和换手成本检验的市场状态逻辑 | 因果回测、监控设计、fail-closed 的模拟执行 |
 | **SoAI 2026 High-Beta Leader**<br>[仓库](https://github.com/joshuazou-web/SoAI-2026-High-Beta-Leader) | 在比赛规则下先冻结策略，而不是事后拟合 | 冻结的 high-beta leader 策略，SoAI 2026 AI 算法交易大赛参赛作品 |
