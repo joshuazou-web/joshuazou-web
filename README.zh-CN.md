@@ -2,11 +2,16 @@
   <a href="README.md">English</a> · <strong>中文</strong>
 </p>
 
-<h1 align="center">邹志华 Josh — 金融科技 AI 产品</h1>
+<h1 align="center">邹志华 Josh</h1>
 
 <p align="center">
-  我为金融风险、交易与运营场景做 AI 产品，并把评测证据和它的边界一起公开。<br>
-  新加坡 · 新加坡国立大学 数字金融科技硕士（2027 年 1 月毕业） · 中文 / 英文
+  <strong>我不想让金融 AI 只是说得更像专家。<br>
+  我想让每一个重要判断，都能被追问、复现，也能在越界前停下来。</strong>
+</p>
+
+<p align="center">
+  金融科技 × AI 产品 · 新加坡<br>
+  新加坡国立大学 数字金融科技硕士 · 2027 年 1 月毕业 · 中文 / English
 </p>
 
 <p align="center">
@@ -18,116 +23,172 @@
 
 <img align="right" width="150" src="assets/avatar-josh-500.png" alt="" />
 
-## 我做什么
+## 我一直在追一个问题
 
-我把模糊的金融、用户与风险问题，转化成别人可以复核的产品决策：明确的规则、能跑起来的原型，
-以及一个说清楚了适用边界的数字。
+很多 AI 产品都在努力回答得更快、更像专家。但当一个答案会影响资金、风险或人的下一步行动时，
+“听起来合理”远远不够。
 
-- **AI 产品判断。** 在 LLM、Agent、RAG 的能力边界上判断 AI 到底带来多少增量价值——用准确率、
-  置信度、失败分析、人工复核和用户信任来衡量，而不是用 demo 的精致程度。
-- **风险与金融领域。** 把信用风险、市场风险和运营风险写成明确的策略：阈值、闸门、兜底、对账。
-- **证据与诚实的边界。** 下面每个项目都带自己的数字，并且说明这些数字在哪里不再成立。
+系统依据了什么？关键数字是谁算的？资料是否已经过期？模型不确定时会不会停下来？如果它与人
+意见不同，最后是谁做决定？
+
+我做的项目都围绕这组问题展开：
+
+> **把模糊问题变成明确任务，把模型能力关进可检查的边界，再把不确定性交还给人。**
+
+这条方向来自几段看似不同的经历：在红杉研究网络安全企业，在华泰参与区块链金融产品，在 NUS
+学习数字金融科技，也做过创业、投资与产品落地。它们最终汇聚成同一种工作方式——先把业务里的
+风险、例外和责任说清楚，再决定 AI 应该站在哪一层。
 
 <br clear="right" />
 
-## 从哪里开始看
+## 如果你只有五分钟
 
-不同团队需要不同的证据。找到和你岗位对应的那一行：
+先看这三个项目。它们分别回答了我最关心的三个问题。
 
-| 如果你在招 | 建议从这几个开始 |
-| --- | --- |
-| **金融科技 / AI 产品** | [CrossBorder RiskOps](#1-金融科技风险交易与借贷) · [WealthGuard Copilot](#1-金融科技风险交易与借贷) · [OpsSignal](#3-数据运营与信任产品) |
-| **AI 产品经理** | [Converge](#2-agent评测与可靠性) · [Volc Agent Launchpad](#2-agent评测与可靠性) · [OpsSignal](#3-数据运营与信任产品) |
-| **技术产品经理 / AI 工程** | [DecisiveEval](#2-agent评测与可靠性) · [Agent Control Plane](#2-agent评测与可靠性) · [DEBUG.CN](#4-开发者体验与-ai-工具) |
-| **数据与运营 / BizTech** | [OpsSignal](#3-数据运营与信任产品) · [ThinkBeforeClick](#3-数据运营与信任产品) |
+### 1. 当一笔跨境支付触发九个风险信号，AI 应该做什么？
 
-同一个项目出现在多行是有意为之——说明这份工作承载了不止一种证据。
+[**CrossBorder RiskOps →**](https://github.com/joshuazou-web/crossborder-riskops)
 
-## 按能力分类的作品
+不是替分析师决定放行或拦截，而是找出真正重要的两项证据、指出缺失信息，并把决定留给人。
 
-### 1. 金融科技：风险、交易与借贷
+我构建了完整的跨境支付生命周期、20 条确定性风险规则、一个可解释模型、人工复核队列与
+hash-chained 审计记录。系统在代码层禁止 AI 提交最终决定，而不是只在 Prompt 里请求它“谨慎”。
 
-**证明的能力：** 把市场风险和信用风险，变成明确、可测试的产品规则。
+- 6,000 笔合成交易，跨 5 个固定随机种子评测；
+- 召回率 97.01% ± 0.42%，精确率 80.06% ± 1.49%；
+- 304 个自动化测试；
+- 所有数据均为合成数据，从未在生产环境运行。
 
-*领域基础：* 新加坡国立大学 数字金融科技硕士 · **华泰国际** 金融科技实习——区块链金融产品的
-智能合约、后端、验收与异常流程，用 Python/SQL 做校验与对账 · **红杉资本** 投研实习，研究网络
-安全赛道。
+### 2. 当顾客自己都还没想清楚要买什么，系统该问什么？
 
-| 项目 | 证明了什么 | 证据 |
-| --- | --- | --- |
-| **CrossBorder RiskOps** — 跨境支付风险运营工作台<br>[仓库](https://github.com/joshuazou-web/crossborder-riskops) | 确定性规则负责发现风险，AI 助手负责组织证据，决定只能由人来下——这条边界写在代码里强制执行，而不是靠提示词承诺 | 20 条带严重度、理由和证据字段的规则；6,000 笔交易、5 个随机种子；26.9% 转人工；304 个测试。仓库里每个数字都由它自己的评测流程生成，README 与输出一旦漂移测试就会失败。*数据全部为合成数据，从未在生产环境运行。* |
-| **WealthGuard Copilot** — 证据锚定的研究保护层<br>[仓库](https://github.com/joshuazou-web/wealthguard-copilot) | 把一个模糊的财富或证券问题，变成有边界、有证据支撑的研究任务；建议边界由模型之外的确定性策略引擎把守 | 页级与段落级的带日期证据检索、金融计算交由经测试的确定性函数、可复核审计视图中的完整决策轨迹、已提交的回归与引用评测运行、14 天 dogfood 验证方案。*仅供教育与研究用途，不构成投资建议；不下单、不连接券商账户。* |
-| **Risk-Based DeFi Lending**<br>[案例](https://github.com/joshuazou-web/risk-based-defi-lending-case-study) · [演示](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/) | 把外部风险信号变成明确的 LTV、利率、清算阈值与健康因子策略 | Python/Flask 评分服务、成文的信任边界、精选代码、可交互演示 |
-| **Algorithmic FX Trading & Monitoring**<br>[案例](https://github.com/joshuazou-web/algorithmic-fx-product-case) · [演示](https://joshuazou-web.github.io/algorithmic-fx-product-case/) | 能经受因果验证和换手成本检验的市场状态逻辑 | 因果回测、监控设计、fail-closed 的模拟执行 |
-| **SoAI 2026 High-Beta Leader**<br>[仓库](https://github.com/joshuazou-web/SoAI-2026-High-Beta-Leader) | 在比赛规则下先冻结策略，而不是事后拟合 | 冻结的 high-beta leader 策略，SoAI 2026 AI 算法交易大赛参赛作品 |
+[**Converge →**](https://github.com/joshuazou-web/techjam-converge)
 
-### 2. Agent、评测与可靠性
+不是把顾客的每句话继续塞进搜索框，而是反过来问：如果某个商品真是目标，顾客会不会说出刚才
+那些话？下一道问题又能排除多少错误答案？
 
-**证明的能力：** 判断什么时候*不该*用 LLM，以及证明一个 Agent 在压力下的真实表现。
+Converge 用逆向用户模型、期望信息增益和置信度门控，把推荐变成一个逐轮收敛的过程。它也让我
+验证了一件很重要的事：**能解释、能复现的规则已经足够时，不必为了“更 AI”而调用 LLM。**
 
-| 项目 | 证明了什么 | 证据 |
-| --- | --- | --- |
-| **Converge** — 主动澄清与推荐<br>[仓库](https://github.com/joshuazou-web/techjam-converge) | 用逆向用户模型和显式任务状态刻画不完整、会变化的意图；基于期望信息增益的澄清与置信度门控的推荐 | 官方 200 轮会话评测 **0.976 对比基线 0.107**；28 个测试，消融与压力检查。在可解释规则足够的地方刻意不用 LLM。*边界：限定于封闭品类和合成用户，不代表真实转化或留存。* |
-| **Volc Agent Launchpad** — Agent 安全与审计<br>[仓库](https://github.com/joshuazou-web/volc-agent-launchpad) | 把提示注入、权限提升和危险命令风险，映射到放行 / 拦截 / 转人工三态的三层护栏 | **138 通过，1 跳过**；8 个演示场景、误报语料、审计轨迹，类型检查与生产构建均通过。*边界：这是原型，不等于完整的攻击覆盖。* |
-| **DecisiveEval**<br>[仓库](https://github.com/joshuazou-web/decisive-eval) | 一个 Coding Agent 的结论，能否在评分、运行时、失败处理、成本与延迟策略发生合理变化后依然成立 | 26 个公开 JSON Schema、103 个测试、不可变证据回执、重复运行与自助采样路径。*同时公开失败的实验，并明确保留真实世界验证这一未决问题。* |
-| **Agent Control Plane**<br>[仓库](https://github.com/joshuazou-web/agent-control-plane) | Agent 工作流中可被机器校验的授权与审批闸门 | 只追加的执行轨迹、可恢复的任务目录、可复现的"提议-检查-执行-记录-升级"示例 |
-| **PropTech Agent Reliability Lab**<br>[仓库](https://github.com/joshuazou-web/proptech-agent-reliability-lab) | 面向真实客户问题去调试 Agent 的失败 | 基于 FastAPI + Streamlit 的合成 PropTech 练习场 |
+- 官方 200 会话评测 TechnicalScore：**0.976，对比基线 0.107**；
+- 200/200 会话找到目标，平均 1.96 轮；
+- 零 token、零模型费用；
+- 消融实验与改写压力测试公开在仓库中；
+- 限定于封闭商品目录和合成用户，不代表真实转化率或留存。
 
-### 3. 数据、运营与信任产品
+### 3. 当用户问“SPY 适合我吗”，为什么不能马上回答？
 
-**证明的能力：** 把一条工作流埋点量化，然后有意识地把不确定性交回给人。
+[**WealthGuard Copilot →**](https://github.com/joshuazou-web/wealthguard-copilot)
 
-| 项目 | 证明了什么 | 证据 |
-| --- | --- | --- |
-| **OpsSignal** — 运营分析与人机协作工作流<br>[仓库](https://github.com/joshuazou-web/opssignal) | 出于成本、可控性和可解释性选择可解释模型而非 LLM，并用复核队列把模型的不确定性暴露出来 | **留出集准确率 0.842，Macro-F1 0.836**；在 0.65 阈值下 **自动覆盖率 84.0%、一致率 92.3%**。3,600 条合成工单归入 6 个维度、51 个取值、21 张 mart 表；19 项校验与 166 个测试通过。 |
-| **ThinkBeforeClick** — 反诈学习产品<br>[案例](https://github.com/joshuazou-web/think-before-click-product-case) · [演示](https://joshuazou-web.github.io/think-before-click-product-case/) | 把学习者反馈与企业侧分析连起来，并配有负责任的防护措施；5 人团队在 AWS 上交付 | 23 人课程测试：**可用性 4.3/5、个人满意度 4.2/5、企业参与者满意度 4.5/5**；NUS STePS 优异奖（2025）。*边界：仅为课程样本。* |
+因为投资期限、流动性需求和亏损承受能力中的任何一项，都可能改变研究路径。
 
-### 4. 开发者体验与 AI 工具
+WealthGuard 先找出最可能改变路径的那一项缺失信息，只问一个问题；随后检索带日期和页码的官方
+资料，用确定性程序完成金融计算，并展示从问题到结论的完整研究轨迹。要求交易或保证收益时，
+系统通过模型之外的策略引擎拒绝。
 
-**证明的能力：** 把别人的失败讲清楚——用两种语言。
+- 13 份 SEC、港交所、深交所与证监会官方原始文件；
+- 1,714 个带位置与 checksum 的证据片段；
+- 126 个固定种子策略回归案例和 39 个官方引用追溯案例；
+- 仅用于教育与研究，不构成投资建议；不连接券商，也不执行交易。
 
-| 项目 | 证明了什么 | 证据 |
-| --- | --- | --- |
-| **DEBUG.CN** — 中文 OpenAI API 排错助手<br>[仓库](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot) · [演示](https://ctkhkof0ez.feishuapp.com/app/app_17c3qmjxcq2) · [3 分钟双语视频](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot/releases/download/v0.1.0/DEBUG-CN-3min-bilingual-demo-subtitled.mp4) | 把 API 与 SDK 的失败，变成可复核的证据、根因、最小修复和验证步骤 | 8 类错误、24 个后端测试、20/20 公开评测；服务端密钥脱敏、确定性兜底、源码级的频率与 token 控制。*边界：Structured Outputs 路径已实现，真实模型验证待账户配额。* |
-| **白盒 · wbox** — 面向学生的答辩陪练<br>[仓库](https://github.com/joshuazou-web/wbox) | 帮学生真正搞懂他们即将答辩的、用 AI 做出来的课程项目 | 中文优先的产品：被问预测、问答演练、汇报包 |
+## 同一条主线，继续往下走
 
-## 我的工作方式
+### 让 Agent 在获得能力之前，先获得边界
+
+[**Volc Agent Launchpad**](https://github.com/joshuazou-web/volc-agent-launchpad) 把提示注入、
+权限提升和危险命令映射成放行、拦截与人工复核三种结果。它包含 8 个演示场景、误报语料、
+审计轨迹，以及 138 个通过、1 个跳过的测试。它是安全原型，不代表完整攻击覆盖。
+
+[**Agent Control Plane**](https://github.com/joshuazou-web/agent-control-plane) 把“你可以做什么”
+从 Prompt 文本变成机器可执行的权限策略：default deny、人工审批、预算限制、一次性 gate 和
+hash-linked audit。目标不是让 Agent 更聪明，而是让它的权力更明确、更难被意外绕过。
+
+[**DecisiveEval**](https://github.com/joshuazou-web/decisive-eval) 追问更底层的问题：一个 Coding
+Agent 的结论，换一套合理的评分方式、运行时、失败政策、成本或延迟假设后，还成立吗？项目包含
+26 个公开 JSON Schema、103 个测试、不可变证据回执，也公开没有成功的实验。
+
+[**PropTech Agent Reliability Lab**](https://github.com/joshuazou-web/proptech-agent-reliability-lab)
+则把这些可靠性问题放进一个合成的真实客户场景里，用 FastAPI 与 Streamlit 观察 Agent 如何失败、
+恢复和被调试。
+
+### 让“不确定”进入工作流，而不是藏在模型分数里
+
+[**OpsSignal**](https://github.com/joshuazou-web/opssignal) 从 3,600 条合成运营工单中识别问题结构。
+我选择可解释模型而不是 LLM，并设计了一条明确的人机分工线：高置信度结果自动流转，低置信度结果
+进入复核队列。
+
+- 留出集准确率 0.842，Macro-F1 0.836；
+- 在 0.65 阈值下，自动覆盖率 84.0%，自动分类样本一致率 92.3%；
+- 19 项数据校验与 166 个自动化测试。
+
+[**DEBUG.CN**](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot) 把 OpenAI API
+和 SDK 报错整理成可复核的证据、根因、最小修复与验证步骤。它不是再生成一段“可能有用”的解释，
+而是帮助中文开发者知道下一步应该检查什么。项目覆盖 8 类错误、24 个后端测试和 20/20 公开评测，
+并包含服务端密钥脱敏、速率限制、token 控制与确定性兜底。
+
+### 其他金融与产品实验
+
+- [**Risk-Based DeFi Lending**](https://github.com/joshuazou-web/risk-based-defi-lending-case-study)：
+  把外部风险信号变成明确的 LTV、利率、清算阈值和健康因子策略。
+  [交互演示](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/)
+- [**Algorithmic FX Trading & Monitoring**](https://github.com/joshuazou-web/algorithmic-fx-product-case)：
+  用因果回测、换手成本和 fail-closed 模拟执行检查市场状态逻辑。
+  [交互演示](https://joshuazou-web.github.io/algorithmic-fx-product-case/)
+- [**SoAI 2026 High-Beta Leader**](https://github.com/joshuazou-web/SoAI-2026-High-Beta-Leader)：
+  在比赛规则下提前冻结策略，而不是看到结果后再拟合。
+- [**ThinkBeforeClick**](https://github.com/joshuazou-web/think-before-click-product-case)：
+  5 人团队在 AWS 上交付的反诈学习产品；23 人课程测试中，可用性 4.3/5，并获 NUS STePS
+  Honourable Mention（2025）。[交互演示](https://joshuazou-web.github.io/think-before-click-product-case/)
+- [**白盒 · wbox**](https://github.com/joshuazou-web/wbox)：
+  面向学生的中文答辩陪练，帮助他们真正理解自己即将展示的 AI 辅助课程项目。
+
+## 我怎么做产品
+
+我通常从一个不太漂亮、但很真实的问题开始：
 
 ```text
-市场、用户或风险信号
-    -> 可复现的问题
-    -> 明确的假设与能力边界
-    -> 最小可用原型
-    -> 评测、失败分析、人工复核
-    -> 写明边界，进入下一轮
+一个市场、用户或风险信号
+        ↓
+把它变成可以复现的问题
+        ↓
+写清假设、权限与失败边界
+        ↓
+做出最小但完整的产品闭环
+        ↓
+评测、找失败、设计人工复核
+        ↓
+公开数字，也公开数字在哪里失效
 ```
 
 | 构建 | 验证 | 沟通 |
 | --- | --- | --- |
-| Python、TypeScript、SQL、FastAPI、React、AWS Serverless、DuckDB、Solidity、Git | 指标树、埋点与漏斗、规则与模型评测、置信度与失败分析、脱敏、频率限制、审计轨迹、可用性测试 | PRD 与流程、对话式界面、中英文演示与快速上手、验收与复盘 |
+| Python、TypeScript、SQL、FastAPI、React、AWS Serverless、DuckDB、Solidity、Git | 指标树、规则与模型评测、置信度与失败分析、审计轨迹、脱敏、限流、可用性测试 | PRD、流程设计、对话式界面、中英文演示、验收与复盘 |
 
-我用 Codex 和 Claude Code 做构思以及代码和测试的初稿。产品决策、可复现性和真实性边界由我自己负责。
+我使用 Codex 和 Claude Code协助构思，以及生成代码与测试初稿。产品判断、验证设计、可复现性和
+真实性边界由我负责。
 
-## 经历信号
+## 我从哪里来
 
-- **华泰国际** — 金融科技实习（2024 年 7 月–11 月）。参与一款区块链金融产品的迭代与上线协调；
-  从用户价值、可行性、风险和成本角度评估 AI 风险、CBDC、DLT、DeFi 与数字人等方向。
-- **AI Star** — 天使投资人与联合创始人（2022 年至今）。为一款早期教育产品做用户分层、定价与
-  单位经济模型、功能优先级和合作方沟通。
-- **红杉资本** — 投研实习（2024 年 1 月–5 月）。从客户需求、商业化和技术趋势三个角度研究了
-  数十家网络安全公司。
-- **奇绩创坛** — 校园寻访（2023 年 3 月–8 月）。寻找并筛选早期项目；与创始人访谈，评估痛点、
-  差异化与验证路径。
-- **获奖与发表** — 全国创新创业挑战赛一等奖及最佳创业奖（跨境电商方向）；百威数字化转型
-  研究，[DOI 10.54691/bcpbm.v38i.3909](https://doi.org/10.54691/bcpbm.v38i.3909)。
+- **华泰国际｜金融科技实习，2024.07–2024.11**  
+  参与区块链金融产品的迭代与上线协调；从用户价值、可行性、风险和成本角度评估 AI 风险、
+  CBDC、DLT、DeFi 与数字人等方向。
+- **AI Star｜天使投资人与联合创始人，2022–至今**  
+  负责早期教育产品的用户分层、定价与单位经济模型、功能优先级和合作方沟通。
+- **红杉资本｜投资分析实习，2024.01–2024.05**  
+  从客户需求、商业化和技术趋势出发，研究数十家网络安全企业。
+- **奇绩创坛｜校园寻访，2023.03–2023.08**  
+  寻找并筛选早期项目，与创始人讨论痛点、差异化和验证路径。
+- **其他成果**  
+  全国创新创业挑战赛一等奖及最佳创业奖（跨境电商方向）；百威数字化转型研究，
+  [DOI 10.54691/bcpbm.v38i.3909](https://doi.org/10.54691/bcpbm.v38i.3909)。
 
-## 公开范围说明
+## 公开范围
 
-公开仓库中的代码、架构、验证与示例均已做过可公开处理。团队所有的实现、凭证、私有数据和受限
-配置不会公开。除非另有说明，演示数据均为合成数据。完整的工作与教育经历可直接向招聘方提供。
+公开仓库只包含适合公开的代码、架构、评测与示例。团队所有的实现、凭证、私有数据和受限配置
+不会公开。除非另有说明，演示数据均为合成数据。完整工作与教育经历可直接向招聘方提供。
 
 ---
 
 <p align="center">
-  正在寻找深圳、香港、新加坡以及其他主要科技与金融中心的金融科技 / AI 产品岗位，2027 年 1 月毕业。
+  正在寻找深圳、香港、新加坡及其他主要科技与金融中心的金融科技 / AI 产品岗位。<br>
+  如果你也在思考 AI 应该做什么、又应该在哪里停下，欢迎联系我。
 </p>
