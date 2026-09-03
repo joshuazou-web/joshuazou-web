@@ -129,7 +129,7 @@ decisions, the reproducibility, and the truth boundaries.
 - **MiraclePlus** — campus scout (Mar–Aug 2023). Sourced and screened early-stage
   ventures; interviewed founders on pain points, differentiation and validation paths.
 - **Recognition** — First Prize and Best Entrepreneurship Award, National Innovation &
-  Entrepreneurship Challenge (Macau cross-border e-commerce); Budweiser
+  Entrepreneurship Challenge (cross-border e-commerce); Budweiser
   digital-transformation study, [DOI 10.54691/bcpbm.v38i.3909](https://doi.org/10.54691/bcpbm.v38i.3909).
 
 ## Public-work boundary
