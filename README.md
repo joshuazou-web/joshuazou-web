@@ -1,3 +1,7 @@
+<p align="left">
+  <strong>English</strong> · <a href="README.zh-CN.md">中文</a>
+</p>
+
 <h1 align="center">Josh — FinTech AI Product</h1>
 
 <p align="center">
@@ -37,7 +41,7 @@ Different teams need different evidence. Pick the row that matches your role:
 
 | If you are hiring for | Start with these |
 | --- | --- |
-| **FinTech / AI Product** *(primary)* | [Risk-Based DeFi Lending](#1-fintech-risk-trading--lending) · [Algorithmic FX](#1-fintech-risk-trading--lending) · [OpsSignal](#3-data-operations--trust-products) |
+| **FinTech / AI Product** | [Risk-Based DeFi Lending](#1-fintech-risk-trading--lending) · [Algorithmic FX](#1-fintech-risk-trading--lending) · [OpsSignal](#3-data-operations--trust-products) |
 | **AI Product Manager** | [Converge](#2-agents-evaluation--reliability) · [Volc Agent Launchpad](#2-agents-evaluation--reliability) · [OpsSignal](#3-data-operations--trust-products) |
 | **Technical PM / AI Engineering** | [DecisiveEval](#2-agents-evaluation--reliability) · [Agent Control Plane](#2-agents-evaluation--reliability) · [DEBUG.CN](#4-developer-experience--ai-tooling) |
 | **Data & Operations / BizTech** | [OpsSignal](#3-data-operations--trust-products) · [ThinkBeforeClick](#3-data-operations--trust-products) |
@@ -136,5 +140,6 @@ employment and education details are available directly to recruiters.
 ---
 
 <p align="center">
-  Open to FinTech and AI product roles in Singapore and APAC, graduating January 2027.
+  Open to FinTech and AI product roles in Shenzhen, Hong Kong, Singapore, and other
+  major technology and financial hubs. Graduating January 2027.
 </p>
