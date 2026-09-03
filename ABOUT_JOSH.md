@@ -1,4 +1,4 @@
-# Josh, Outside the Build
+# Zou Zhihua (Josh), Outside the Build
 
 Today I asked AI to help improve my portfolio.
 

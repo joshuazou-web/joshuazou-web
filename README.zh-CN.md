@@ -2,7 +2,7 @@
   <a href="README.md">English</a> · <strong>中文</strong>
 </p>
 
-<h1 align="center">Josh — 金融科技 AI 产品</h1>
+<h1 align="center">邹志华 Josh — 金融科技 AI 产品</h1>
 
 <p align="center">
   我为金融风险、交易与运营场景做 AI 产品，并把评测证据和它的边界一起公开。<br>

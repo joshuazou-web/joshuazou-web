@@ -2,7 +2,7 @@
   <strong>English</strong> · <a href="README.zh-CN.md">中文</a>
 </p>
 
-<h1 align="center">Josh — FinTech AI Product</h1>
+<h1 align="center">Zou Zhihua (Josh) — FinTech AI Product</h1>
 
 <p align="center">
   I build AI products for financial risk, trading, and operations — and I publish the
