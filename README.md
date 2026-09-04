@@ -63,7 +63,32 @@ the final decision in code—not through a prompt asking it to be careful.
 - 304 automated tests;
 - all data is synthetic, and the system has never run in production.
 
-### 2. The shopper has not fully decided what they want. What should the system ask?
+### 2. A user asks, “Is SPY suitable for me?” Why not answer immediately?
+
+[**WealthGuard Copilot →**](https://github.com/joshuazou-web/wealthguard-copilot)
+
+Because horizon, liquidity needs, or loss tolerance could each change the research path.
+
+WealthGuard identifies the one missing fact most likely to change that path and asks one question.
+It then retrieves dated, page-level official evidence, delegates financial arithmetic to
+deterministic tools, and exposes the full research trail. Requests to trade or guarantee a return
+are refused by a policy engine outside the model.
+
+- 13 original documents from the SEC, HKEX, SZSE, and CSRC;
+- 1,714 evidence chunks bound to locations and checksums;
+- 126 fixed-seed policy regression cases and 39 official citation-trace cases;
+- for education and research only—not investment advice; no brokerage connection or execution path.
+
+### 3. ThinkBeforeClick
+
+- [**ThinkBeforeClick**](https://github.com/joshuazou-web/think-before-click-product-case):
+  an anti-scam learning product shipped by a five-person team on AWS; a 23-person course test
+  reported 4.3/5 usability, and the project received a 2025 NUS STePS Honourable Mention.
+  [Interactive demo](https://joshuazou-web.github.io/think-before-click-product-case/)
+
+## The same thread, taken further
+
+### The shopper has not fully decided what they want. What should the system ask?
 
 [**Converge →**](https://github.com/joshuazou-web/techjam-converge)
 
@@ -81,24 +106,6 @@ not automatically make the product better.**
 - zero tokens and zero model cost;
 - public ablations and paraphrase stress tests;
 - bounded to a closed catalog and synthetic users—not evidence of real conversion or retention.
-
-### 3. A user asks, “Is SPY suitable for me?” Why not answer immediately?
-
-[**WealthGuard Copilot →**](https://github.com/joshuazou-web/wealthguard-copilot)
-
-Because horizon, liquidity needs, or loss tolerance could each change the research path.
-
-WealthGuard identifies the one missing fact most likely to change that path and asks one question.
-It then retrieves dated, page-level official evidence, delegates financial arithmetic to
-deterministic tools, and exposes the full research trail. Requests to trade or guarantee a return
-are refused by a policy engine outside the model.
-
-- 13 original documents from the SEC, HKEX, SZSE, and CSRC;
-- 1,714 evidence chunks bound to locations and checksums;
-- 126 fixed-seed policy regression cases and 39 official citation-trace cases;
-- for education and research only—not investment advice; no brokerage connection or execution path.
-
-## The same thread, taken further
 
 ### Give agents boundaries before giving them authority
 
@@ -148,10 +155,6 @@ deterministic fallback.
   execution. [Interactive demo](https://joshuazou-web.github.io/algorithmic-fx-product-case/)
 - [**SoAI 2026 High-Beta Leader**](https://github.com/joshuazou-web/SoAI-2026-High-Beta-Leader):
   a strategy frozen before the competition outcome rather than fitted afterward.
-- [**ThinkBeforeClick**](https://github.com/joshuazou-web/think-before-click-product-case):
-  an anti-scam learning product shipped by a five-person team on AWS; a 23-person course test
-  reported 4.3/5 usability, and the project received a 2025 NUS STePS Honourable Mention.
-  [Interactive demo](https://joshuazou-web.github.io/think-before-click-product-case/)
 - [**白盒 · wbox**](https://github.com/joshuazou-web/wbox):
   a Mandarin-first presentation rehearsal product that helps students genuinely understand the
   AI-assisted coursework they are about to defend.

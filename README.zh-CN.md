@@ -59,23 +59,7 @@ hash-chained 审计记录。系统在代码层禁止 AI 提交最终决定，而
 - 304 个自动化测试；
 - 所有数据均为合成数据，从未在生产环境运行。
 
-### 2. 当顾客自己都还没想清楚要买什么，系统该问什么？
-
-[**Converge →**](https://github.com/joshuazou-web/techjam-converge)
-
-不是把顾客的每句话继续塞进搜索框，而是反过来问：如果某个商品真是目标，顾客会不会说出刚才
-那些话？下一道问题又能排除多少错误答案？
-
-Converge 用逆向用户模型、期望信息增益和置信度门控，把推荐变成一个逐轮收敛的过程。它也让我
-验证了一件很重要的事：**能解释、能复现的规则已经足够时，不必为了“更 AI”而调用 LLM。**
-
-- 官方 200 会话评测 TechnicalScore：**0.976，对比基线 0.107**；
-- 200/200 会话找到目标，平均 1.96 轮；
-- 零 token、零模型费用；
-- 消融实验与改写压力测试公开在仓库中；
-- 限定于封闭商品目录和合成用户，不代表真实转化率或留存。
-
-### 3. 当用户问“SPY 适合我吗”，为什么不能马上回答？
+### 2. 当用户问“SPY 适合我吗”，为什么不能马上回答？
 
 [**WealthGuard Copilot →**](https://github.com/joshuazou-web/wealthguard-copilot)
 
@@ -90,7 +74,29 @@ WealthGuard 先找出最可能改变路径的那一项缺失信息，只问一�
 - 126 个固定种子策略回归案例和 39 个官方引用追溯案例；
 - 仅用于教育与研究，不构成投资建议；不连接券商，也不执行交易。
 
+### 3. ThinkBeforeClick
+
+- [**ThinkBeforeClick**](https://github.com/joshuazou-web/think-before-click-product-case)：
+  5 人团队在 AWS 上交付的反诈学习产品；23 人课程测试中，可用性 4.3/5，并获 NUS STePS
+  Honourable Mention（2025）。[交互演示](https://joshuazou-web.github.io/think-before-click-product-case/)
+
 ## 同一条主线，继续往下走
+
+### 当顾客自己都还没想清楚要买什么，系统该问什么？
+
+[**Converge →**](https://github.com/joshuazou-web/techjam-converge)
+
+不是把顾客的每句话继续塞进搜索框，而是反过来问：如果某个商品真是目标，顾客会不会说出刚才
+那些话？下一道问题又能排除多少错误答案？
+
+Converge 用逆向用户模型、期望信息增益和置信度门控，把推荐变成一个逐轮收敛的过程。它也让我
+验证了一件很重要的事：**能解释、能复现的规则已经足够时，不必为了“更 AI”而调用 LLM。**
+
+- 官方 200 会话评测 TechnicalScore：**0.976，对比基线 0.107**；
+- 200/200 会话找到目标，平均 1.96 轮；
+- 零 token、零模型费用；
+- 消融实验与改写压力测试公开在仓库中；
+- 限定于封闭商品目录和合成用户，不代表真实转化率或留存。
 
 ### 让 Agent 在获得能力之前，先获得边界
 
@@ -135,9 +141,6 @@ Agent 的结论，换一套合理的评分方式、运行时、失败政策、�
   [交互演示](https://joshuazou-web.github.io/algorithmic-fx-product-case/)
 - [**SoAI 2026 High-Beta Leader**](https://github.com/joshuazou-web/SoAI-2026-High-Beta-Leader)：
   在比赛规则下提前冻结策略，而不是看到结果后再拟合。
-- [**ThinkBeforeClick**](https://github.com/joshuazou-web/think-before-click-product-case)：
-  5 人团队在 AWS 上交付的反诈学习产品；23 人课程测试中，可用性 4.3/5，并获 NUS STePS
-  Honourable Mention（2025）。[交互演示](https://joshuazou-web.github.io/think-before-click-product-case/)
 - [**白盒 · wbox**](https://github.com/joshuazou-web/wbox)：
   面向学生的中文答辩陪练，帮助他们真正理解自己即将展示的 AI 辅助课程项目。
 
