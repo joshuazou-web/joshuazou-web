@@ -75,16 +75,16 @@ WealthGuard 先找出最可能改变路径的那一项缺失信息，只问一�
 - 126 个固定种子策略回归案例和 39 个官方引用追溯案例；
 - 仅用于教育与研究，不构成投资建议；不连接券商，也不执行交易。
 
-### 3. 从 FinSafe 到 ThinkBeforeClick：如何把课程原型优化成更安全、更完整的产品案例？
+### 3. 从 ThinkBeforeClick 到 FinSafe：如何把课程原型优化成更安全、更完整的产品案例？
 
-[**ThinkBeforeClick——FinSafe 优化版 →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
+[**FinSafe——由 ThinkBeforeClick 优化而来 →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
 [**安全交互演示**](https://joshuazou-web.github.io/think-before-click-product-case/)
 
-FinSafe 最初是一个 5 人 NUS 云计算课程团队项目：团队用 AWS Serverless 原型连接面向个人的本地化
+ThinkBeforeClick 最初是一个 5 人 NUS 云计算课程团队项目：团队用 AWS Serverless 原型连接面向个人的本地化
 钓鱼识别教育与面向企业的授权模拟分析。课程项目测试包含 15 名个人学习者和 8 名企业决策者，
 可用性评分为 4.3/5，并获得 2025 NUS STePS Showcase Honourable Mention。
 
-在公开作品集版本中，我将这套基础重新梳理并优化为 ThinkBeforeClick。它保留原有的双边产品闭环，
+在后续公开作品集版本中，我将这套基础进一步优化为 FinSafe。它保留原有的双边产品闭环，
 同时把三个边界讲清楚：团队原型真正实现了什么、现有证据能够支持什么，以及走向生产仍需补齐什么。
 
 - 安全演示只使用通用场景和合成分析，不发送邮件、不保存回答，也不包含追踪；
