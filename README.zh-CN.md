@@ -75,23 +75,23 @@ WealthGuard 先找出最可能改变路径的那一项缺失信息，只问一�
 - 126 个固定种子策略回归案例和 39 个官方引用追溯案例；
 - 仅用于教育与研究，不构成投资建议；不连接券商，也不执行交易。
 
-### 3. 当学习者点开一条逼真的钓鱼信息，产品下一步应该做什么？
+### 3. 从 FinSafe 到 ThinkBeforeClick：如何把课程原型优化成更安全、更完整的产品案例？
 
-[**ThinkBeforeClick →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
+[**ThinkBeforeClick——FinSafe 优化版 →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
 [**安全交互演示**](https://joshuazou-web.github.io/think-before-click-product-case/)
 
-不能只停在一张笼统的警告页。产品应该立刻把误判变成一次可理解的学习时刻，再帮助获得授权的
-安全团队看见聚合后的行为模式，并据此安排有针对性的后续培训。
+FinSafe 最初是一个 5 人 NUS 云计算课程团队项目：团队用 AWS Serverless 原型连接面向个人的本地化
+钓鱼识别教育与面向企业的授权模拟分析。课程项目测试包含 15 名个人学习者和 8 名企业决策者，
+可用性评分为 4.3/5，并获得 2025 NUS STePS Showcase Honourable Mention。
 
-一个 5 人 NUS 团队交付了 AWS Serverless 原型，把两条旅程连接起来：面向个人的本地化钓鱼识别
-教育，以及面向企业管理员的授权模拟与分析。公开作品集明确保留团队归属边界，原始团队实现仍为
-私有内容。
+在公开作品集版本中，我将这套基础重新梳理并优化为 ThinkBeforeClick。它保留原有的双边产品闭环，
+同时把三个边界讲清楚：团队原型真正实现了什么、现有证据能够支持什么，以及走向生产仍需补齐什么。
 
-- 课程项目测试包含 15 名个人学习者和 8 名企业决策者；
-- 可用性评分为 4.3/5，两组满意度分别为 4.2/5 和 4.5/5；
-- 原型连接静态客户端、Cognito、API Gateway、12 个 Python Lambda handler、DynamoDB、S3 与 SES；
-- 项目获得 2025 NUS STePS Showcase Honourable Mention；
-- 安全公开演示不发送邮件，也不记录用户数据。
+- 安全演示只使用通用场景和合成分析，不发送邮件、不保存回答，也不包含追踪；
+- 产品案例与工程案例把个人的即时学习连接到企业的后续培训决策，而不是停在一张数据看板；
+- 新增概念化事件合约与脱敏后的聚合逻辑，让“行为事件如何变成后续行动”可检查，同时不公开团队私有源码；
+- 优化方案补入 token 绑定的租户授权、收件人白名单、假名化、幂等、数据留存、审计与紧急停止机制；
+- 公开案例不主张个人独占成果，也不宣称已达到生产就绪，原始团队实现仍保持私有。
 
 ## 同一套产品逻辑，应用到更多场景
 

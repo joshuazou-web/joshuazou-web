@@ -83,25 +83,30 @@ are refused by a policy engine outside the model.
 - 126 fixed-seed policy regression cases and 39 official citation-trace cases;
 - for education and research only—not investment advice; no brokerage connection or execution path.
 
-### 3. A learner clicks a convincing phishing message. What should the product do next?
+### 3. From FinSafe to ThinkBeforeClick: how do you make a course prototype safer and more useful?
 
-[**ThinkBeforeClick →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
+[**ThinkBeforeClick — the optimised FinSafe case →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
 [**Safe interactive demo**](https://joshuazou-web.github.io/think-before-click-product-case/)
 
-It should not stop at a generic warning page. It should turn the mistake into an immediate teachable
-moment, then help an authorised security team see aggregate patterns and plan targeted follow-up.
+FinSafe began as a five-person NUS Cloud Computing team project: an AWS serverless prototype
+connecting localised phishing education for individuals with authorised campaign analytics for
+enterprises. The team tested it with 15 individual learners and 8 enterprise decision-makers,
+reported 4.3/5 usability, and received an Honourable Mention at the 2025 NUS STePS Showcase.
 
-A five-person NUS team shipped an AWS serverless prototype connecting two journeys: localised
-phishing education for individuals and authorised campaign analytics for enterprise administrators.
-The public portfolio case makes the team boundary explicit and keeps the original implementation
-private.
+For the portfolio version, I reworked that foundation as ThinkBeforeClick. I preserved the original
+two-sided product loop, but made three distinctions explicit: what the team prototype implemented,
+what the available evidence actually supports, and what a production version would still need.
 
-- 15 individual learners and 8 enterprise decision-makers participated in the course-project test;
-- reported usability was 4.3/5, with satisfaction of 4.2/5 and 4.5/5 respectively;
-- the prototype connected a static client, Cognito, API Gateway, 12 Python Lambda handlers,
-  DynamoDB, S3, and SES;
-- the project received an Honourable Mention at the 2025 NUS STePS Showcase;
-- the safe public demo sends no email and records no user data.
+- the safe demo uses a generic scenario and synthetic analytics; it sends no email, stores no
+  answer, and contains no tracking;
+- the product and engineering cases connect a learner's teachable moment to an enterprise follow-up
+  decision instead of ending at a dashboard;
+- a new conceptual event contract and a sanitised aggregation excerpt make the event-to-action path
+  inspectable without publishing the private team source;
+- the proposed hardening adds token-bound tenant authorisation, recipient allowlists,
+  pseudonymisation, idempotency, retention controls, auditability, and an emergency stop;
+- the public case claims neither sole ownership nor production readiness, and keeps the original
+  implementation private.
 
 ## The same product logic, applied elsewhere
 
