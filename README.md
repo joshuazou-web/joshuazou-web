@@ -83,9 +83,9 @@ are refused by a policy engine outside the model.
 - 126 fixed-seed policy regression cases and 39 official citation-trace cases;
 - for education and research only—not investment advice; no brokerage connection or execution path.
 
-### 3. From ThinkBeforeClick to FinSafe: how do you make a course prototype safer and more useful?
+### 3. From ThinkBeforeClick to ThinkBeforeClick—FinSafe: how do you make a course prototype safer and more useful?
 
-[**FinSafe — optimised from ThinkBeforeClick →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
+[**ThinkBeforeClick—FinSafe →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
 [**Safe interactive demo**](https://joshuazou-web.github.io/think-before-click-product-case/)
 
 ThinkBeforeClick began as a five-person NUS Cloud Computing team project: an AWS serverless prototype
@@ -93,9 +93,10 @@ connecting localised phishing education for individuals with authorised campaign
 enterprises. The team tested it with 15 individual learners and 8 enterprise decision-makers,
 reported 4.3/5 usability, and received an Honourable Mention at the 2025 NUS STePS Showcase.
 
-For the later portfolio version, I developed that foundation into FinSafe. I preserved the original
-two-sided product loop, but made three distinctions explicit: what the team prototype implemented,
-what the available evidence actually supports, and what a production version would still need.
+For the later portfolio version, I developed that foundation into ThinkBeforeClick—FinSafe. I
+preserved the original two-sided product loop, but made three distinctions explicit: what the team
+prototype implemented, what the available evidence actually supports, and what a production version
+would still need.
 
 - the safe demo uses a generic scenario and synthetic analytics; it sends no email, stores no
   answer, and contains no tracking;
