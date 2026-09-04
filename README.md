@@ -5,8 +5,8 @@
 <h1 align="center">Zou Zhihua (Josh)</h1>
 
 <p align="center">
-  <strong>I do not want financial AI to merely sound more like an expert.<br>
-  I want every consequential judgment to be challengeable, reproducible, and able to stop before it crosses a boundary.</strong>
+  <strong>I do not want AI and digital products to hide consequential decisions behind a polished interface.<br>
+  I want them to make evidence visible, authority explicit, and the next human action safer.</strong>
 </p>
 
 <p align="center">
@@ -25,15 +25,17 @@
 
 ## The question behind my work
 
-A lot of AI products try to answer faster and sound more expert. But when an answer can affect
-money, risk, or a person's next action, sounding plausible is nowhere near enough.
+A lot of AI and digital products try to answer faster, automate more, and look more capable. But
+when a product can affect money, risk, or a person's next action, a plausible answer is nowhere near
+enough.
 
 What evidence did the system use? Who calculated the important number? Is the source still current?
-Will the model stop when it is uncertain? If the AI and the human disagree, who actually decides?
+Who has authority to decide? Will the model stop when it is uncertain? And when it should not decide,
+does the product still help a person take the next step?
 
 My projects keep returning to the same idea:
 
-> **Turn an ambiguous problem into an explicit task, put model capability inside inspectable boundaries, and deliberately return uncertainty to a human.**
+> **Turn an ambiguous problem into an explicit task, put model and automation capability inside inspectable boundaries, and make the next human action clear.**
 
 That direction grew out of experiences that initially looked unrelated: researching cybersecurity
 companies at Sequoia, working on a blockchain-finance product at Huatai International, studying
@@ -45,7 +47,9 @@ where AI belongs.
 
 ## If you have five minutes
 
-Start with these three projects. Each answers one of the questions I care about most.
+Start with these three projects. They move from a payment-operations decision, to an investment-
+research question, to a security-learning loop—but follow the same product logic: keep consequential
+authority explicit, make the evidence inspectable, and design what happens next.
 
 ### 1. Nine risk signals fire on a cross-border payment. What should the AI do?
 
@@ -79,16 +83,32 @@ are refused by a policy engine outside the model.
 - 126 fixed-seed policy regression cases and 39 official citation-trace cases;
 - for education and research only—not investment advice; no brokerage connection or execution path.
 
-### 3. ThinkBeforeClick
+### 3. A learner clicks a convincing phishing message. What should the product do next?
 
-- [**ThinkBeforeClick**](https://github.com/joshuazou-web/think-before-click-product-case):
-  an anti-scam learning product shipped by a five-person team on AWS; a 23-person course test
-  reported 4.3/5 usability, and the project received a 2025 NUS STePS Honourable Mention.
-  [Interactive demo](https://joshuazou-web.github.io/think-before-click-product-case/)
+[**ThinkBeforeClick →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
+[**Safe interactive demo**](https://joshuazou-web.github.io/think-before-click-product-case/)
 
-## The same thread, taken further
+It should not stop at a generic warning page. It should turn the mistake into an immediate teachable
+moment, then help an authorised security team see aggregate patterns and plan targeted follow-up.
 
-### The shopper has not fully decided what they want. What should the system ask?
+A five-person NUS team shipped an AWS serverless prototype connecting two journeys: localised
+phishing education for individuals and authorised campaign analytics for enterprise administrators.
+The public portfolio case makes the team boundary explicit and keeps the original implementation
+private.
+
+- 15 individual learners and 8 enterprise decision-makers participated in the course-project test;
+- reported usability was 4.3/5, with satisfaction of 4.2/5 and 4.5/5 respectively;
+- the prototype connected a static client, Cognito, API Gateway, 12 Python Lambda handlers,
+  DynamoDB, S3, and SES;
+- the project received an Honourable Mention at the 2025 NUS STePS Showcase;
+- the safe public demo sends no email and records no user data.
+
+## The same product logic, applied elsewhere
+
+The projects below extend that pattern from deciding what to ask, to routing uncertainty through a
+workflow, to encoding authority in software.
+
+### Ask the question that reduces uncertainty
 
 [**Converge →**](https://github.com/joshuazou-web/techjam-converge)
 
@@ -106,6 +126,23 @@ not automatically make the product better.**
 - zero tokens and zero model cost;
 - public ablations and paraphrase stress tests;
 - bounded to a closed catalog and synthetic users—not evidence of real conversion or retention.
+
+### Put uncertainty into the workflow instead of hiding it inside a score
+
+[**OpsSignal**](https://github.com/joshuazou-web/opssignal) finds structure in 3,600 synthetic
+operations tickets. I chose an interpretable model over an LLM, then drew an explicit human-AI
+boundary: high-confidence results can flow automatically; uncertain cases enter a review queue.
+
+- 0.842 held-out accuracy and 0.836 Macro-F1;
+- at a 0.65 threshold, 84.0% auto-coverage and 92.3% agreement among auto-classified samples;
+- 19 data validations and 166 automated tests.
+
+[**DEBUG.CN**](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot) turns OpenAI
+API and SDK failures into reviewable evidence, root causes, minimal fixes, and verification steps.
+It is designed to help Mandarin-speaking developers know what to inspect next—not to generate one
+more plausible explanation. The project covers eight error categories, 24 backend tests, and a
+20/20 public evaluation, with server-side secret redaction, rate and token controls, and a
+deterministic fallback.
 
 ### Give agents boundaries before giving them authority
 
@@ -127,23 +164,6 @@ immutable evidence receipts, and the experiments that did not work.
 [**PropTech Agent Reliability Lab**](https://github.com/joshuazou-web/proptech-agent-reliability-lab)
 puts those reliability questions inside a synthetic but recognisable customer workflow, using
 FastAPI and Streamlit to observe how agents fail, recover, and get debugged.
-
-### Put uncertainty into the workflow instead of hiding it inside a score
-
-[**OpsSignal**](https://github.com/joshuazou-web/opssignal) finds structure in 3,600 synthetic
-operations tickets. I chose an interpretable model over an LLM, then drew an explicit human-AI
-boundary: high-confidence results can flow automatically; uncertain cases enter a review queue.
-
-- 0.842 held-out accuracy and 0.836 Macro-F1;
-- at a 0.65 threshold, 84.0% auto-coverage and 92.3% agreement among auto-classified samples;
-- 19 data validations and 166 automated tests.
-
-[**DEBUG.CN**](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot) turns OpenAI
-API and SDK failures into reviewable evidence, root causes, minimal fixes, and verification steps.
-It is designed to help Mandarin-speaking developers know what to inspect next—not to generate one
-more plausible explanation. The project covers eight error categories, 24 backend tests, and a
-20/20 public evaluation, with server-side secret redaction, rate and token controls, and a
-deterministic fallback.
 
 ### Other financial and product experiments
 
