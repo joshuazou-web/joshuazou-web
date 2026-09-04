@@ -48,7 +48,7 @@
 
 ### 1. 当一笔跨境支付触发九个风险信号，AI 应该做什么？
 
-[**CrossBorder RiskOps →**](https://github.com/joshuazou-web/crossborder-riskops)
+[**CrossBorder AML RiskOps →**](https://github.com/joshuazou-web/crossborder-riskops)
 
 不是替分析师决定放行或拦截，而是找出真正重要的两项证据、指出缺失信息，并把决定留给人。
 

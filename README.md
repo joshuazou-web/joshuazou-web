@@ -53,7 +53,7 @@ authority explicit, make the evidence inspectable, and design what happens next.
 
 ### 1. Nine risk signals fire on a cross-border payment. What should the AI do?
 
-[**CrossBorder RiskOps →**](https://github.com/joshuazou-web/crossborder-riskops)
+[**CrossBorder AML RiskOps →**](https://github.com/joshuazou-web/crossborder-riskops)
 
 It should not decide whether to release or hold the payment. It should identify the two signals that
 matter, expose missing evidence, and leave the decision to a person.
