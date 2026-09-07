@@ -2,6 +2,10 @@
   <a href="README.md">English</a> · <strong>中文</strong>
 </p>
 
+<p align="center">
+  <a href="assets/zhihua-zou-ai-product-business-casebook-zh-cn.pdf"><strong>AI 产品商业案例集合（中文版，PDF）→</strong></a>
+</p>
+
 <h1 align="center">邹志华 Josh</h1>
 
 <p align="center">
