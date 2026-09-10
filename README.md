@@ -52,8 +52,8 @@ where AI belongs.
 ## If you have five minutes
 
 Start with these three projects. They move from a payment-operations decision, to an investment-
-research question, to a security-learning loop—but follow the same product logic: keep consequential
-authority explicit, make the evidence inspectable, and design what happens next.
+research question, to the last seconds before a payment—but follow the same product logic: keep
+consequential authority explicit, make the evidence inspectable, and design what happens next.
 
 ### 1. Nine risk signals fire on a cross-border payment. What should the AI do?
 
@@ -63,17 +63,26 @@ It should not decide whether to release or hold the payment. It should identify 
 matter, expose missing evidence, and leave the decision to a person.
 
 I built a cross-border payment lifecycle, 20 deterministic risk rules, an interpretable model, a
-human review queue, and a hash-chained audit trail. The system prevents an AI actor from committing
-the final decision in code—not through a prompt asking it to be careful.
+human review queue, and a hash-chained audit trail. No language model participates in detection,
+prioritisation, or routing. A copilot now sits in the one place it belongs: it summarises the case,
+explains each signal with citations, names the missing information that would settle the question,
+answers the analyst's follow-up question from a wider packet, and may abstain. A tired analyst
+asking it to “just approve this one” is refused before any model call—and the refusal is not the
+safeguard. The brief schema has no decision field and the audit log rejects an AI actor, so the
+answer has no path to become an outcome.
 
-- 6,000 synthetic transactions evaluated across five fixed seeds;
-- 97.01% ± 0.42% recall and 80.06% ± 1.49% precision;
-- 304 automated tests;
+- 6,000 synthetic transactions across five independently generated worlds: 97.01% ± 0.42% recall,
+  80.06% ± 1.49% precision, and a 6.95% ± 0.47% false-positive rate at a 27.08% ± 0.42% review rate;
+- raw alert precision 0.223, rising to 0.870 at review capacity—the ordering is the product;
+- 453 automated tests, including an adversarial suite aimed at the copilot's grounding gate;
+- a real OpenAI-compatible model is opt-in through one environment variable; the demo, the tests,
+  and every published metric run on the deterministic provider with no key, and figures from a live
+  model are labelled separately;
 - all data is synthetic, and the system has never run in production.
 
 ### 2. A user asks, “Is SPY suitable for me?” Why not answer immediately?
 
-[**WealthGuard Copilot →**](https://github.com/joshuazou-web/wealthguard-copilot)
+[**WealthGuard Proofline →**](https://github.com/joshuazou-web/wealthguard-proofline)
 
 Because horizon, liquidity needs, or loss tolerance could each change the research path.
 
@@ -82,36 +91,75 @@ It then retrieves dated, page-level official evidence, delegates financial arith
 deterministic tools, and exposes the full research trail. Requests to trade or guarantee a return
 are refused by a policy engine outside the model.
 
-- 13 original documents from the SEC, HKEX, SZSE, and CSRC;
-- 1,714 evidence chunks bound to locations and checksums;
+The project has since been repositioned around what a fluent securities assistant cannot easily
+prove on its own: **evidence and version validation before an answer is trusted, and bad-case
+governance after one fails.** A language model may turn already-selected evidence into language.
+Its output has to pass schema and citation validation, and a timeout or a malformed response
+degrades to the deterministic path, a caution, or an abstention. Policy, arithmetic, dates,
+confidence, and audit never depend on a model name.
+
+- 13 original documents from the SEC, HKEX, SZSE, and CSRC, parsed into 1,714 evidence chunks bound
+  to page or paragraph locations and SHA-256 checksums;
 - 126 fixed-seed policy regression cases and 39 official citation-trace cases;
-- for education and research only—not investment advice; no brokerage connection or execution path.
+- a quality-operations surface with 16 error types, expected-versus-actual traces, ownership, and
+  regression links, so a failed answer becomes an attributable case instead of a complaint;
+- for education and research only—not investment advice; no brokerage connection or execution
+  path; an independent prototype with no institutional affiliation.
 
-### 3. From ThinkBeforeClick to ThinkBeforeClick—FinSafe: how do you make a course prototype safer and more useful?
+### 3. What if the anti-scam lesson arrived at the moment the money was about to move?
 
-[**ThinkBeforeClick—FinSafe →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
-[**Safe interactive demo**](https://joshuazou-web.github.io/think-before-click-product-case/)
+[**ThinkBeforeClick FinSafe →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
+[**Live FinSafe demo**](https://joshuazou-web.github.io/think-before-click-product-case/finsafe/) ·
+[**Original team-prototype case**](https://joshuazou-web.github.io/think-before-click-product-case/)
 
-ThinkBeforeClick began as a five-person NUS Cloud Computing team project: an AWS serverless prototype
-connecting localised phishing education for individuals with authorised campaign analytics for
-enterprises. The team tested it with 15 individual learners and 8 enterprise decision-makers,
-reported 4.3/5 usability, and received an Honourable Mention at the 2025 NUS STePS Showcase.
+ThinkBeforeClick began as a five-person NUS Cloud Computing team project: an AWS serverless
+prototype connecting localised phishing education for individuals with authorised campaign
+analytics for enterprises. The course report records 23 participants, 4.3/5 usability, and an
+Honourable Mention at the 27th NUS STePS Showcase.
 
-For the later portfolio version, I developed that foundation into ThinkBeforeClick—FinSafe. I
-preserved the original two-sided product loop, but made three distinctions explicit: what the team
-prototype implemented, what the available evidence actually supports, and what a production version
-would still need.
+The harder product question came next: would any of that knowledge still surface while urgency,
+authority, secrecy, or a promised return was pushing someone toward an irreversible payment?
+FinSafe moves the intervention to that moment—`message → risk signals → scam stage → deterministic
+intervention → independent verification → user decision → micro-learning`—with 10 scam categories,
+16 sourced signals, a nine-stage state model, and a five-level intervention ladder. A business
+payment pack adds the dimension the consumer flow never modelled: **how much money is about to
+move** sets a floor under the intervention level that signal rules may raise but never lower.
 
-- the safe demo uses a generic scenario and synthetic analytics; it sends no email, stores no
-  answer, and contains no tracking;
-- the product and engineering cases connect a learner's teachable moment to an enterprise follow-up
-  decision instead of ending at a dashboard;
-- a new conceptual event contract and a sanitised aggregation excerpt make the event-to-action path
-  inspectable without publishing the private team source;
-- the proposed hardening adds token-bound tenant authorisation, recipient allowlists,
-  pseudonymisation, idempotency, retention controls, auditability, and an emergency stop;
-- the public case claims neither sole ownership nor production readiness, and keeps the original
-  implementation private.
+The result worth reading is a baseline rather than the headline. An LLM without deterministic
+safety rules reached 95.2% critical-signal recall but only 29.2% intervention accuracy. With rules
+owning the intervention level and the model restricted to suggesting known signal IDs and
+explaining them, accuracy is 97.5% at the same recall, with 0% over-intervention.
+
+- 161 fixed consumer cases and 82 locked business cases, each measured against three baselines;
+  removing only the amount dimension pushes business under-intervention from 0% to 22.0%;
+- six failing indirect-language cases stay visible rather than being deleted to improve the score;
+- the demo runs entirely in the browser on a deterministic mock provider—no API key, no email, no
+  tracking, and pasted text is redacted before analysis;
+- the 23-person pilot tested the original prototype, not FinSafe, and no figure from it is
+  presented as a FinSafe result; the private team implementation stays private;
+- a portfolio P0—not a bank product, a fraud verdict, or a payment blocker.
+
+## Where a model is allowed to speak
+
+Three of the projects above now integrate a language model. Two others deliberately do not. It is
+the same decision made once per problem, and the boundary is written in code rather than in a
+prompt.
+
+| Project | What the model may do | What it can never do |
+| --- | --- | --- |
+| **CrossBorder RiskOps** | Summarise a case, explain signals with citations, answer the analyst's second question, abstain | Detect, prioritise, route, or commit an outcome—the brief schema has no decision field and the audit log rejects an AI actor |
+| **WealthGuard Proofline** | Turn already-selected, dated evidence into language | Choose policy, compute a number, date a source, or set a confidence level |
+| **FinSafe** | Suggest candidate signals from existing IDs and explain them in plain language | Lower an intervention level a deterministic rule has already set |
+| **DEBUG.CN** | Turn an API failure into evidence, root cause, a minimal fix, and verification steps | Reach a live key, skip server-side redaction, or bypass rate and token controls |
+
+Four properties are shared. The deterministic provider is the default, so the demo, the tests, and
+every published number run without a key. Model output is schema-validated and rejected when it
+invents an identifier. A timeout or malformed response degrades to the rules rather than to a
+partial recommendation. And every metric is labelled with the provider that produced it.
+
+The two projects that say no are the other half of the same judgment: **Converge** and
+**OpsSignal** already had interpretable, reproducible rules that were sufficient, so a model would
+have added cost and variance without adding correctness.
 
 ## The same product logic, applied elsewhere
 
@@ -129,7 +177,8 @@ would eliminate the most wrong answers?
 Converge combines an inverse user model, expected information gain, and confidence-gated
 recommendations to make the conversation converge. It also let me test an important product
 judgment: **when interpretable and reproducible rules are already sufficient, adding an LLM does
-not automatically make the product better.**
+not automatically make the product better**—which is also why the projects that do use one keep it
+inside a schema and outside the decision.
 
 - TechnicalScore **0.976 versus a 0.107 baseline** on the official 200-session evaluator;
 - the target was surfaced in 200/200 sessions, in 1.96 turns on average;
@@ -209,7 +258,7 @@ publish the number—and where the number stops being valid
 
 | Build | Validate | Communicate |
 | --- | --- | --- |
-| Python, TypeScript, SQL, FastAPI, React, AWS Serverless, DuckDB, Solidity, Git | Metric trees, rule/model evaluation, confidence and failure analysis, audit trails, redaction, rate limits, usability testing | PRDs, workflow design, conversational UI, Mandarin/English demos, acceptance and retrospectives |
+| Python, TypeScript, SQL, FastAPI, React, AWS Serverless, DuckDB, Solidity, Git, OpenAI-compatible LLM providers behind a schema | Metric trees, rule/model evaluation, schema-bound model output, provider-labelled metrics, confidence and failure analysis, audit trails, redaction, rate limits, usability testing | PRDs, workflow design, conversational UI, Mandarin/English demos, acceptance and retrospectives |
 
 I use Codex and Claude Code to assist with ideation and first drafts of code and tests. I own the
 product judgment, validation design, reproducibility, and truth boundaries.
