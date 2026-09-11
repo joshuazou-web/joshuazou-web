@@ -224,6 +224,17 @@ immutable evidence receipts, and the experiments that did not work.
 puts those reliability questions inside a synthetic but recognisable customer workflow, using
 FastAPI and Streamlit to observe how agents fail, recover, and get debugged.
 
+### Write down the variable nobody else is tracking
+
+- [**被允许动的钱 · The Money AI Is Allowed to Move**](https://github.com/joshuazou-web/money-ai-is-allowed-to-move):
+  a 40-page independent projection of fintech's next decade, tracking one variable — how much money an
+  AI is allowed to move without a human reviewing each transaction — and arguing that this, not model
+  capability, decides who ends up owning the rails. An L0–L4 automation-depth ladder graded on liability
+  rather than capability; the four control rights (data, entry, execution, liability); six falsifiable
+  bets with dated windows; ten quarterly tracking signals. Every forward-looking claim carries its own
+  falsification condition, and the appendix publishes the errata from the fact-check rather than a
+  disclaimer. [Read it](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/)
+
 ### Other financial and product experiments
 
 - [**Risk-Based DeFi Lending**](https://github.com/joshuazou-web/risk-based-defi-lending-case-study):
