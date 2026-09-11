@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" role="img" aria-label="Authority boundary mark">
+  <rect width="500" height="500" fill="#0B1B2E"/>
+  <g opacity="0.30" stroke="#24384F" stroke-width="1.5">
+    <path d="M0 125 H500 M0 250 H500 M0 375 H500 M125 0 V500 M250 0 V500 M375 0 V500"/>
+  </g>
+  <g stroke-linecap="round" fill="none">
+    <path d="M104 178 H396" stroke="#4493F8" stroke-width="19"/>
+    <path d="M104 250 H396" stroke="#4493F8" stroke-width="19"/>
+    <path d="M104 322 H214" stroke="#DB6D28" stroke-width="19"/>
+    <path d="M256 322 H396" stroke="#DB6D28" stroke-width="14" stroke-dasharray="3 26" opacity="0.45"/>
+  </g>
+  <path d="M236 122 V378" stroke="#E6EDF3" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="214" cy="322" r="24" fill="#0B1B2E" stroke="#DB6D28" stroke-width="15"/>
+</svg>

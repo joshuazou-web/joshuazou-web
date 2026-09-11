@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 268" width="1200" height="268" role="img" aria-label="Zou Zhihua (Josh) — FinTech and AI Product, Singapore">
+  <rect width="1200" height="268" rx="10" fill="#FFFFFF"/>
+  <rect x="0.5" y="0.5" width="1199" height="267" rx="9.5" fill="none" stroke="#D8DEE4"/>
+  <rect x="0" y="0" width="1200" height="3" rx="1.5" fill="#0969DA"/>
+
+  <text x="64" y="74" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13.5" letter-spacing="2.6" fill="#0969DA" font-weight="600">FINTECH × AI PRODUCT · SINGAPORE</text>
+  <text x="62" y="139" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif" font-size="50" font-weight="700" letter-spacing="-1.4" fill="#0B1B2E">Zou Zhihua<tspan fill="#7D8FA1" font-weight="600"> (Josh)</tspan></text>
+  <text x="64" y="180" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif" font-size="19" fill="#3A4C60">Make evidence visible. Make authority explicit.</text>
+  <text x="64" y="209" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif" font-size="19" fill="#3A4C60">Make the next human action safer.</text>
+  <text x="64" y="240" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12.5" letter-spacing="1.1" fill="#8C9BA8">NUS MSc Digital Financial Technology · graduating Jan 2027 · Mandarin / English</text>
+
+  <g transform="translate(880,44)">
+    <text x="0" y="8" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" letter-spacing="1.8" fill="#8C9BA8">AUTHORITY BOUNDARY</text>
+    <g stroke-linecap="round" fill="none">
+      <path d="M6 52 H236" stroke="#0969DA" stroke-width="4"/>
+      <path d="M6 96 H236" stroke="#0969DA" stroke-width="4"/>
+      <path d="M6 140 H108" stroke="#BC4C00" stroke-width="4"/>
+      <path d="M132 140 H236" stroke="#BC4C00" stroke-width="3" stroke-dasharray="2 9" opacity="0.42"/>
+    </g>
+    <path d="M120 28 V166" stroke="#0B1B2E" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="108" cy="140" r="6.5" fill="#FFFFFF" stroke="#BC4C00" stroke-width="4"/>
+    <text x="6" y="190" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1" fill="#8C9BA8">explain · summarise</text>
+    <text x="151" y="190" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="10.5" letter-spacing="1" fill="#BC4C00">decide</text>
+  </g>
+</svg>
