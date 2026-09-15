@@ -5,7 +5,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img alt="Zou Zhihua (Josh) — FinTech × AI Product, Singapore. Make evidence visible. Make authority explicit. Make the next human action safer." src="assets/hero-light.svg">
+  <img alt="Zou Zhihua (Josh) — Cross-border FinTech Product. Payments, risk and AI across China, the Greater Bay Area and Singapore." src="assets/hero-light.svg">
 </picture>
 
 <p align="center">
@@ -49,6 +49,26 @@ Each case carries the business proposition, the product mechanism, reproducible 
 </td>
 </tr>
 </table>
+
+## Cross-border FinTech portfolio
+
+I focus on one domain: **how businesses move money across borders, and how product, risk, compliance,
+and AI should work together around that movement.** I grew up in Shenzhen, studied applied economics
+in Macau, and now study Digital Financial Technology at NUS in Singapore. That route connects Chinese
+business context, the Greater Bay Area, and Southeast Asia in one product perspective.
+
+> **Cross-border FinTech is the domain. Payments and risk are the product core. AI is a controlled
+> workflow capability—not the identity of the product.**
+
+| Product case | The operating question | What it proves |
+| --- | --- | --- |
+| **[China-to-Singapore Payment Corridor](portfolio/china-to-singapore-payment-corridor.md)** · [中文](portfolio/china-to-singapore-payment-corridor.zh-CN.md) | How should a Chinese merchant collect SGD, manage FX, pay suppliers, and reconcile settlement through one coherent product? | Corridor strategy, KYB, local collection, ledger, FX, payout, partner boundaries, metrics, and a 12-week MVP |
+| **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | When 900 accounts alert and a team can open only 60, which cases deserve attention—and what may AI do? | Payment lifecycle, AML/risk operations, evidence, queue capacity, human authority, and reproducible evaluation |
+| **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | When a financial question is underspecified, what should the product clarify and what evidence can it trust? | One-question clarification, official-source retrieval, citation/version governance, policy and calculation boundaries |
+| **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | What should happen in the final seconds before a consumer or business sends a risky payment? | Payment-stage intervention, deterministic controls, independent verification, and amount-aware business safeguards |
+
+The four cases cover one continuous problem: **enter a market, move money, monitor risk, explain
+financial evidence, and intervene before an unsafe decision—without giving a model hidden authority.**
 
 ## The question behind my work
 

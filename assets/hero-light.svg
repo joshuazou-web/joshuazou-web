@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 268" width="1200" height="268" role="img" aria-label="Zou Zhihua (Josh) — FinTech and AI Product, Singapore">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 268" width="1200" height="268" role="img" aria-label="Zou Zhihua (Josh) — Cross-border FinTech Product">
   <rect width="1200" height="268" rx="10" fill="#FFFFFF"/>
   <rect x="0.5" y="0.5" width="1199" height="267" rx="9.5" fill="none" stroke="#D8DEE4"/>
   <rect x="0" y="0" width="1200" height="3" rx="1.5" fill="#0969DA"/>
 
-  <text x="64" y="74" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13.5" letter-spacing="2.6" fill="#0969DA" font-weight="600">FINTECH × AI PRODUCT · SINGAPORE</text>
+  <text x="64" y="74" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="13.5" letter-spacing="2.6" fill="#0969DA" font-weight="600">CROSS-BORDER FINTECH PRODUCT · PAYMENTS · RISK · AI</text>
   <text x="62" y="139" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif" font-size="50" font-weight="700" letter-spacing="-1.4" fill="#0B1B2E">Zou Zhihua<tspan fill="#7D8FA1" font-weight="600"> (Josh)</tspan></text>
-  <text x="64" y="180" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif" font-size="19" fill="#3A4C60">Make evidence visible. Make authority explicit.</text>
-  <text x="64" y="209" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif" font-size="19" fill="#3A4C60">Make the next human action safer.</text>
-  <text x="64" y="240" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12.5" letter-spacing="1.1" fill="#8C9BA8">NUS MSc Digital Financial Technology · graduating Jan 2027 · Mandarin / English</text>
+  <text x="64" y="180" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif" font-size="19" fill="#3A4C60">Build usable, traceable ways to move money across borders.</text>
+  <text x="64" y="209" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif" font-size="19" fill="#3A4C60">Use AI to improve the workflow—not to hide authority.</text>
+  <text x="64" y="240" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="12.5" letter-spacing="1.1" fill="#8C9BA8">NUS MSc Digital Financial Technology · China / Singapore · Mandarin / English</text>
 
   <g transform="translate(880,44)">
     <text x="0" y="8" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace" font-size="11" letter-spacing="1.8" fill="#8C9BA8">AUTHORITY BOUNDARY</text>
