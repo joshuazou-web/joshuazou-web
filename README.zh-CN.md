@@ -37,12 +37,11 @@
 
 | 产品案例 | 核心运营问题 | 证明的能力 |
 | --- | --- | --- |
-| **[中国企业进入新加坡的支付走廊方案](portfolio/china-to-singapore-payment-corridor.zh-CN.md)** · [English](portfolio/china-to-singapore-payment-corridor.md) | 中国企业如何在一个产品内完成SGD收款、FX、供应商付款和结算对账？ | 走廊战略、KYB、本地收款、账本、FX、付款、合作边界、指标与12周MVP |
 | **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | 900个账户预警、团队每天只能调查60个时，哪些案件应优先，AI又可以做什么？ | 支付生命周期、AML/风险运营、证据、队列产能、人工权限和可复现评测 |
 | **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | 金融问题信息不足时，产品该澄清什么，又能相信哪些证据？ | 每轮一个关键澄清、官方证据检索、引用/版本治理，以及政策与计算边界 |
 | **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | 个人或企业即将发出高风险付款前，产品应该怎样介入？ | 支付前干预、确定性控制、独立验证和考虑金额的企业支付保护 |
 
-四个案例覆盖一条连续链路：**进入市场、移动资金、监控风险、解释金融证据，并在不安全决策发生前介入；
+三个案例遵循一条连续的产品逻辑：**移动资金、监控风险、解释金融证据，并在不安全决策发生前介入；
 同时不让模型获得隐藏的执行权限。**
 
 ## 我一直在追一个问题

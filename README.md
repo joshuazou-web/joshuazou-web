@@ -62,13 +62,12 @@ business context, the Greater Bay Area, and Southeast Asia in one product perspe
 
 | Product case | The operating question | What it proves |
 | --- | --- | --- |
-| **[China-to-Singapore Payment Corridor](portfolio/china-to-singapore-payment-corridor.md)** · [中文](portfolio/china-to-singapore-payment-corridor.zh-CN.md) | How should a Chinese merchant collect SGD, manage FX, pay suppliers, and reconcile settlement through one coherent product? | Corridor strategy, KYB, local collection, ledger, FX, payout, partner boundaries, metrics, and a 12-week MVP |
 | **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | When 900 accounts alert and a team can open only 60, which cases deserve attention—and what may AI do? | Payment lifecycle, AML/risk operations, evidence, queue capacity, human authority, and reproducible evaluation |
 | **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | When a financial question is underspecified, what should the product clarify and what evidence can it trust? | One-question clarification, official-source retrieval, citation/version governance, policy and calculation boundaries |
 | **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | What should happen in the final seconds before a consumer or business sends a risky payment? | Payment-stage intervention, deterministic controls, independent verification, and amount-aware business safeguards |
 
-The four cases cover one continuous problem: **enter a market, move money, monitor risk, explain
-financial evidence, and intervene before an unsafe decision—without giving a model hidden authority.**
+The three cases follow one continuous product logic: **move money, monitor risk, explain financial
+evidence, and intervene before an unsafe decision—without giving a model hidden authority.**
 
 ## The question behind my work
 
