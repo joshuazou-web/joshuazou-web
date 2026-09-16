@@ -1,0 +1,1945 @@
+{
+  "generated_at": "2026-09-16T07:00:00+00:00",
+  "disclaimer": "Every business, supplier, payment, document, amount and result in this snapshot is synthetic and was produced by a seeded generator. Nothing here has run in production, and no licence, bank partner, customer or real transaction is involved.",
+  "overview": {
+    "businesses": 1,
+    "payments": 2,
+    "settled_payments": 2,
+    "open_cases": 0,
+    "open_exceptions": 0,
+    "events": 16,
+    "audit_entries": 25,
+    "audit_status": "verified",
+    "audit_head": "fe20db13e4e6d84a43d05f55ca6dd463ef35bb28a3a162e79e01128cfc4b76a9",
+    "audit_summary": "25 entries verified; head fe20db13e4e6... A partial edit would break this chain.",
+    "ledger_balanced": true,
+    "ai_refusals": 1,
+    "quarantined_events": 0,
+    "duplicate_attempts": 0,
+    "flagship_payment_id": "pay_cos00002c"
+  },
+  "demo_transcript": [
+    "KYB approved: Anchor Commerce (Singapore) Pte. Ltd., UEN 202604821K — approval refused until both required documents were on file.",
+    "Collected SGD 240,000.00 against collection reference ANCHOR-COLLECT-0417.",
+    "A routine SGD 8,400.00 invoice to the same supplier was created, approved by one person, submitted and settled — the baseline this corridor is expected to produce.",
+    "Six days before the payment, Meridian Components' bank account was changed from ...4417 to ...8830 on the strength of an email.",
+    "pay_cos00002c: SGD 12,500.00 to Meridian Components, invoice INV-4821 and purchase order PO-4821 attached.",
+    "Risk: band critical on payee_account_change, beneficiary_unverified, evidence_incomplete, prepayment_pressure (rules 1.0.0, no model involved).",
+    "Intervention: level 4 — 2 approvers and callback_known_contact, obtain_change_authorisation, hold_and_document required. A payee-account change or payee-name mismatch on a payment of this size is pinned to a stop; averaging it against the other inputs is exactly the mistake this rule exists to prevent.",
+    "Case case_cos00001n opened at priority 1; the payment is held until a compliance officer closes it.",
+    "Copilot brief: 12,500.00 SGD to Meridian Components Pte. Ltd. (SG, account ending 8830) for SUPPLIER_INVOICE. 4 evidence item(s) on file; 2 required document(s) still missing. Missing: a signed account-change authorisation on company letterhead, a record of the callback to a known contact.",
+    "Treasury called back a number already on file, obtained a signed change authorisation, and filed both against the payment.",
+    "A compliance officer closed the investigation case. The copilot could not have: `case.close` is not in its permission set.",
+    "Asked to approve the payment itself, the copilot was refused: the AI copilot may not commit 'payment.approve' on pay_cos00002c. It can assemble the evidence and say what is missing; the decision is a person's.",
+    "Two different approvers released the payment; the same person twice is refused.",
+    "Settled: net 12,490.20 SGD after an SGD 9.80 fee.",
+    "Three-way reconciliation: 2 matched, 0 exception(s), 0.00 SGD unexplained."
+  ],
+  "businesses": [
+    {
+      "business_id": "biz_sz0015",
+      "legal_name": "Anchor Commerce (Singapore) Pte. Ltd.",
+      "uen": "202604821K",
+      "entity_country": "SG",
+      "review_status": "approved",
+      "submitted_at": "2026-04-02T09:00:00+00:00",
+      "decided_at": "2026-04-10T11:20:00+00:00",
+      "decided_by": "compliance.lead",
+      "expected_monthly_volume": {
+        "minor_units": 40000000,
+        "currency": "SGD",
+        "display": "400,000.00 SGD"
+      },
+      "missing_evidence": [],
+      "evidence_ids": [
+        "ev_cos00001c",
+        "ev_cos00002u",
+        "ev_cos00003g",
+        "ev_cos00004o",
+        "ev_cos00005u",
+        "ev_cos00006m",
+        "ev_cos000077",
+        "ev_cos00008o"
+      ],
+      "balances": {
+        "available": {
+          "minor_units": 21910000,
+          "currency": "SGD",
+          "display": "219,100.00 SGD"
+        },
+        "pending": {
+          "minor_units": 0,
+          "currency": "SGD",
+          "display": "0.00 SGD"
+        },
+        "reserved": {
+          "minor_units": 0,
+          "currency": "SGD",
+          "display": "0.00 SGD"
+        },
+        "payable": {
+          "minor_units": 0,
+          "currency": "SGD",
+          "display": "0.00 SGD"
+        }
+      }
+    }
+  ],
+  "beneficiaries": [
+    {
+      "beneficiary_id": "ben_ben0193h",
+      "business_id": "biz_sz0015",
+      "display_name": "Meridian Components Pte. Ltd.",
+      "bank_country": "SG",
+      "account_last4": "8830",
+      "previous_account_last4": "4417",
+      "last_changed_at": "2026-09-08T08:40:00+00:00",
+      "verified_at": "2026-09-14T11:20:00+00:00",
+      "verification_is_current": true,
+      "change_count": 1
+    },
+    {
+      "beneficiary_id": "ben_ben02072",
+      "business_id": "biz_sz0015",
+      "display_name": "Straits Freight Services Pte. Ltd.",
+      "bank_country": "SG",
+      "account_last4": "9022",
+      "previous_account_last4": null,
+      "last_changed_at": null,
+      "verified_at": null,
+      "verification_is_current": false,
+      "change_count": 0
+    }
+  ],
+  "payments": [
+    {
+      "payment": {
+        "payment_id": "pay_cos00001h",
+        "business_id": "biz_sz0015",
+        "beneficiary_id": "ben_ben0193h",
+        "amount_minor": 840000,
+        "currency": "SGD",
+        "amount_display": "8,400.00 SGD",
+        "purpose_code": "SUPPLIER_INVOICE",
+        "business_instruction_id": "PO-4402",
+        "state": "settled",
+        "intervention_level": 1,
+        "required_approvals": 1,
+        "approvals": [
+          "dec_cosd00002s"
+        ],
+        "required_verifications": [],
+        "completed_verifications": [],
+        "outstanding_verifications": [],
+        "blocking_cases": [],
+        "case_ids": [],
+        "created_at": "2026-05-05T10:00:00+00:00",
+        "settled_at": "2026-05-06T16:00:00+00:00"
+      },
+      "business": {
+        "business_id": "biz_sz0015",
+        "legal_name": "Anchor Commerce (Singapore) Pte. Ltd.",
+        "uen": "202604821K",
+        "review_status": "approved"
+      },
+      "beneficiary": {
+        "beneficiary_id": "ben_ben0193h",
+        "display_name": "Meridian Components Pte. Ltd.",
+        "bank_country": "SG",
+        "account_last4": "8830",
+        "previous_account_last4": "4417",
+        "last_changed_at": "2026-09-08T08:40:00+00:00",
+        "verified_at": "2026-09-14T11:20:00+00:00",
+        "verification_is_current": true
+      },
+      "assessment": {
+        "assessment_id": "ra_cos00001q",
+        "band": "low",
+        "score": 10,
+        "rules_version": "1.0.0",
+        "signals": [
+          {
+            "signal_id": "first_payment_to_beneficiary",
+            "severity": "low",
+            "summary": "No settled payment to Meridian Components Pte. Ltd. exists yet",
+            "facts": {
+              "prior_settled": 0
+            }
+          }
+        ]
+      },
+      "intervention": {
+        "payment_id": "pay_cos00001h",
+        "selected_level": 1,
+        "amount_tier": "t1",
+        "amount_floor": 0,
+        "payee_known": true,
+        "drivers": [
+          "signal_rule"
+        ],
+        "signal_ids": [
+          "first_payment_to_beneficiary"
+        ],
+        "required_approvals": 1,
+        "required_verifications": [],
+        "policy": "The amount alone warrants a reminder to check the payee against the contract.",
+        "why_not_weaker": "A weaker level would not address first_payment_to_beneficiary.",
+        "why_not_stronger": "No deterministic rule supports a stronger intervention from the available inputs.",
+        "engine_version": "1.0.0"
+      },
+      "evidence": {
+        "subject_id": "pay_cos00001h",
+        "subject_type": "payment",
+        "evidence_ids": [
+          "ev_cos00003g",
+          "ev_cos00004o",
+          "ev_cos00005u",
+          "ev_cos00006m",
+          "ev_cos000077",
+          "ev_cos00008o"
+        ],
+        "required_kinds": [
+          "invoice",
+          "purchase_order",
+          "beneficiary_change_authorisation",
+          "callback_record"
+        ],
+        "missing_kinds": [
+          "beneficiary_change_authorisation",
+          "callback_record"
+        ],
+        "complete": false
+      },
+      "evidence_items": [
+        {
+          "evidence_id": "ev_cos00003g",
+          "kind": "invoice",
+          "title": "Invoice INV-4402",
+          "issuer": "Meridian Components Pte. Ltd.",
+          "issued_at": "2026-04-28T09:00:00+00:00",
+          "excerpt": "Invoice INV-4402, SGD 8,400.00, components order, net 30 days.",
+          "checksum": "12fbdecf119129264dfa41f734ebbf7d4d619985d6ecc16b528a00f9af632539",
+          "location": "page 1"
+        },
+        {
+          "evidence_id": "ev_cos00004o",
+          "kind": "purchase_order",
+          "title": "Purchase order PO-4402",
+          "issuer": "Anchor Commerce (Singapore) Pte. Ltd.",
+          "issued_at": "2026-04-26T09:00:00+00:00",
+          "excerpt": "PO-4402 authorises SGD 8,400.00 to Meridian Components Pte. Ltd.",
+          "checksum": "10f2996bae9c8d8868b7ed83f63f8dd4fbca0993e87f1a7834ef26ad578cc2ef",
+          "location": "line 1"
+        },
+        {
+          "evidence_id": "ev_cos00005u",
+          "kind": "invoice",
+          "title": "Invoice INV-4821",
+          "issuer": "Meridian Components Pte. Ltd.",
+          "issued_at": "2026-09-02T09:00:00+00:00",
+          "excerpt": "Invoice INV-4821, SGD 12,500.00, components order, due 30 September 2026.",
+          "checksum": "b23163a8592e1707acaa9f67d7a17de75a46fa5db0e6cf5059c5f0a8c6f50668",
+          "location": "page 1"
+        },
+        {
+          "evidence_id": "ev_cos00006m",
+          "kind": "purchase_order",
+          "title": "Purchase order PO-4821",
+          "issuer": "Anchor Commerce (Singapore) Pte. Ltd.",
+          "issued_at": "2026-08-29T09:00:00+00:00",
+          "excerpt": "PO-4821 authorises SGD 12,500.00 to Meridian Components Pte. Ltd. for components.",
+          "checksum": "033dc7528b3f6d67b8b931f80aa1ff14b44c209f068d5ab6a9f71febe5d9237b",
+          "location": "line 1"
+        },
+        {
+          "evidence_id": "ev_cos000077",
+          "kind": "callback_record",
+          "title": "Callback record — Meridian Components",
+          "issuer": "Anchor Commerce treasury",
+          "issued_at": "2026-09-14T10:05:00+00:00",
+          "excerpt": "Called the number on file (not the number in the email) on 14 September 2026 and spoke to the finance manager, who confirmed the account change and the invoice amount.",
+          "checksum": "995d387f1ba705b7ea84efdcc133570ea90fb6fb4c33b5c187e62dfd89c558d3",
+          "location": "call log entry 2026-09-14"
+        },
+        {
+          "evidence_id": "ev_cos00008o",
+          "kind": "beneficiary_change_authorisation",
+          "title": "Account change authorisation on letterhead",
+          "issuer": "Meridian Components Pte. Ltd.",
+          "issued_at": "2026-09-14T11:05:00+00:00",
+          "excerpt": "Signed and dated authorisation confirming the change of collection account to the account ending 8830, countersigned by two directors.",
+          "checksum": "3852b476d49e27f47042930e224aad87006c845245aa42760311d9ee4e0531e4",
+          "location": "page 1"
+        }
+      ],
+      "cases": [],
+      "settlement": {
+        "settlement_id": "stl_cos00001y",
+        "gross": "8,400.00 SGD",
+        "fee": "6.50 SGD",
+        "net": "8,393.50 SGD",
+        "value_date": "2026-05-06T16:00:00+00:00",
+        "provider_reference": "PSP-4402-STL"
+      },
+      "timeline": [
+        {
+          "event_id": "evt_cos000034",
+          "seq": 3,
+          "type": "payment.created",
+          "occurred_at": "2026-05-05T10:00:00+00:00",
+          "actor_role": "treasury_operator",
+          "actor_id": "treasury.ops",
+          "subject": {
+            "payment": "pay_cos00001h",
+            "business": "biz_sz0015",
+            "beneficiary": "ben_ben0193h"
+          },
+          "payload": {
+            "amount_minor": 840000,
+            "currency": "SGD",
+            "purpose_code": "SUPPLIER_INVOICE",
+            "evidence_ids": [
+              "ev_cos00003g",
+              "ev_cos00004o"
+            ]
+          }
+        },
+        {
+          "event_id": "evt_cos00004e",
+          "seq": 4,
+          "type": "risk.assessed",
+          "occurred_at": "2026-05-05T10:00:00+00:00",
+          "actor_role": "system",
+          "actor_id": "risk.rules",
+          "subject": {
+            "payment": "pay_cos00001h",
+            "beneficiary": "ben_ben0193h"
+          },
+          "payload": {
+            "assessment_id": "ra_cos00001q",
+            "band": "low",
+            "score": 10,
+            "signals": [
+              "first_payment_to_beneficiary"
+            ],
+            "rules_version": "1.0.0"
+          }
+        },
+        {
+          "event_id": "evt_cos00005j",
+          "seq": 5,
+          "type": "intervention.required",
+          "occurred_at": "2026-05-05T10:00:00+00:00",
+          "actor_role": "system",
+          "actor_id": "intervention.engine",
+          "subject": {
+            "payment": "pay_cos00001h",
+            "business": "biz_sz0015"
+          },
+          "payload": {
+            "payment_id": "pay_cos00001h",
+            "selected_level": 1,
+            "amount_tier": "t1",
+            "amount_floor": 0,
+            "payee_known": true,
+            "drivers": [
+              "signal_rule"
+            ],
+            "signal_ids": [
+              "first_payment_to_beneficiary"
+            ],
+            "required_approvals": 1,
+            "required_verifications": [],
+            "policy": "The amount alone warrants a reminder to check the payee against the contract.",
+            "why_not_weaker": "A weaker level would not address first_payment_to_beneficiary.",
+            "why_not_stronger": "No deterministic rule supports a stronger intervention from the available inputs.",
+            "engine_version": "1.0.0"
+          }
+        },
+        {
+          "event_id": "evt_cos00006m",
+          "seq": 6,
+          "type": "payment.approved",
+          "occurred_at": "2026-05-05T11:00:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.chen",
+          "subject": {
+            "payment": "pay_cos00001h",
+            "business": "biz_sz0015"
+          },
+          "payload": {
+            "approvals": [
+              "dec_cosd00002s"
+            ],
+            "required_approvals": 1,
+            "intervention_level": 1
+          }
+        },
+        {
+          "event_id": "evt_cos00007g",
+          "seq": 7,
+          "type": "payment.submitted",
+          "occurred_at": "2026-05-05T11:05:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.chen",
+          "subject": {
+            "payment": "pay_cos00001h",
+            "business": "biz_sz0015"
+          },
+          "payload": {
+            "amount_minor": 840000,
+            "currency": "SGD"
+          }
+        },
+        {
+          "event_id": "evt_cos000080",
+          "seq": 8,
+          "type": "payment.settled",
+          "occurred_at": "2026-05-06T16:00:00+00:00",
+          "actor_role": "system",
+          "actor_id": "provider.webhook",
+          "subject": {
+            "payment": "pay_cos00001h",
+            "business": "biz_sz0015"
+          },
+          "payload": {
+            "settlement_id": "stl_cos00001y"
+          }
+        }
+      ],
+      "audit": [
+        {
+          "entry_id": "aud_cos000075",
+          "seq": 7,
+          "occurred_at": "2026-05-05T10:00:00+00:00",
+          "actor_role": "treasury_operator",
+          "actor_id": "treasury.ops",
+          "action": "payment.create",
+          "summary": "created 8,400.00 SGD to ben_ben0193h for SUPPLIER_INVOICE",
+          "entry_hash": "1a583a475b8a4a7e419b9a03024cab77f2e554dd32004b9d74b20e1f0c1b0844"
+        },
+        {
+          "entry_id": "aud_cos00008e",
+          "seq": 8,
+          "occurred_at": "2026-05-05T10:00:00+00:00",
+          "actor_role": "system",
+          "actor_id": "risk.rules",
+          "action": "risk.assess",
+          "summary": "1 signal(s), band low (rules 1.0.0); no model participated",
+          "entry_hash": "8f40665e61585d79481673c727bd737d0e26055cf8c3ebc628e9b9ff332353ed"
+        },
+        {
+          "entry_id": "aud_cos00009s",
+          "seq": 9,
+          "occurred_at": "2026-05-05T10:00:00+00:00",
+          "actor_role": "system",
+          "actor_id": "intervention.engine",
+          "action": "payment.create",
+          "summary": "intervention level 1: 1 approver(s), verifications required: none",
+          "entry_hash": "6a3c8f789ed158782ecfaf65bb0cb60389b9183513442e5036b32476e5c077ef"
+        },
+        {
+          "entry_id": "aud_cos00010d",
+          "seq": 10,
+          "occurred_at": "2026-05-05T11:00:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.chen",
+          "action": "payment.approve",
+          "summary": "approver.chen committed payment.approve (reviewed_and_authorised)",
+          "entry_hash": "3616070d8755c6e392b5cf52603885bb3914bffd81ff81bf75569106e83dc1e0"
+        },
+        {
+          "entry_id": "aud_cos00011z",
+          "seq": 11,
+          "occurred_at": "2026-05-05T11:05:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.chen",
+          "action": "payment.submit",
+          "summary": "submitted 8,400.00 SGD to the rail",
+          "entry_hash": "1ac8323d8f93b704f403fcd6c4b3b9208276e4cf0e81bda045ea00acdec27bf5"
+        }
+      ]
+    },
+    {
+      "payment": {
+        "payment_id": "pay_cos00002c",
+        "business_id": "biz_sz0015",
+        "beneficiary_id": "ben_ben0193h",
+        "amount_minor": 1250000,
+        "currency": "SGD",
+        "amount_display": "12,500.00 SGD",
+        "purpose_code": "SUPPLIER_INVOICE",
+        "business_instruction_id": "PO-4821",
+        "state": "settled",
+        "intervention_level": 4,
+        "required_approvals": 2,
+        "approvals": [
+          "dec_cosd00005j",
+          "dec_cosd00006r"
+        ],
+        "required_verifications": [
+          "callback_known_contact",
+          "obtain_change_authorisation",
+          "hold_and_document"
+        ],
+        "completed_verifications": [
+          "obtain_change_authorisation",
+          "callback_known_contact",
+          "hold_and_document"
+        ],
+        "outstanding_verifications": [],
+        "blocking_cases": [],
+        "case_ids": [
+          "case_cos00001n"
+        ],
+        "created_at": "2026-09-14T09:05:00+00:00",
+        "settled_at": "2026-09-15T15:05:00+00:00"
+      },
+      "business": {
+        "business_id": "biz_sz0015",
+        "legal_name": "Anchor Commerce (Singapore) Pte. Ltd.",
+        "uen": "202604821K",
+        "review_status": "approved"
+      },
+      "beneficiary": {
+        "beneficiary_id": "ben_ben0193h",
+        "display_name": "Meridian Components Pte. Ltd.",
+        "bank_country": "SG",
+        "account_last4": "8830",
+        "previous_account_last4": "4417",
+        "last_changed_at": "2026-09-08T08:40:00+00:00",
+        "verified_at": "2026-09-14T11:20:00+00:00",
+        "verification_is_current": true
+      },
+      "assessment": {
+        "assessment_id": "ra_cos000026",
+        "band": "critical",
+        "score": 100,
+        "rules_version": "1.0.0",
+        "signals": [
+          {
+            "signal_id": "payee_account_change",
+            "severity": "critical",
+            "summary": "Meridian Components Pte. Ltd. changed bank account 6 day(s) ago, from ...4417 to ...8830",
+            "facts": {
+              "days_since_change": 6,
+              "previous_account_last4": "4417",
+              "new_account_last4": "8830",
+              "change_count": 1
+            }
+          },
+          {
+            "signal_id": "beneficiary_unverified",
+            "severity": "high",
+            "summary": "No current verification for Meridian Components Pte. Ltd.: the verification on file pre-dates the account change",
+            "facts": {
+              "verified_at": "2026-05-03T09:30:00+00:00",
+              "verification_method": "callback_to_number_on_file"
+            }
+          },
+          {
+            "signal_id": "evidence_incomplete",
+            "severity": "medium",
+            "summary": "Required supporting documents are missing: beneficiary_change_authorisation, callback_record",
+            "facts": {
+              "missing": [
+                "beneficiary_change_authorisation",
+                "callback_record"
+              ]
+            }
+          },
+          {
+            "signal_id": "prepayment_pressure",
+            "severity": "high",
+            "summary": "The instruction note contains 'pay today'",
+            "facts": {
+              "matched_phrase": "pay today"
+            }
+          }
+        ]
+      },
+      "intervention": {
+        "payment_id": "pay_cos00002c",
+        "selected_level": 4,
+        "amount_tier": "t2",
+        "amount_floor": 2,
+        "payee_known": false,
+        "drivers": [
+          "large_payment_payee_change_override",
+          "signal_rule"
+        ],
+        "signal_ids": [
+          "payee_account_change",
+          "beneficiary_unverified",
+          "evidence_incomplete",
+          "prepayment_pressure"
+        ],
+        "required_approvals": 2,
+        "required_verifications": [
+          "callback_known_contact",
+          "obtain_change_authorisation",
+          "hold_and_document"
+        ],
+        "policy": "Stop. A second approver and an independent callback are required before this payment may be submitted.",
+        "why_not_weaker": "A payee-account change or payee-name mismatch on a payment of this size is pinned to a stop; averaging it against the other inputs is exactly the mistake this rule exists to prevent.",
+        "why_not_stronger": "Level 4 is the maximum.",
+        "engine_version": "1.0.0"
+      },
+      "evidence": {
+        "subject_id": "pay_cos00002c",
+        "subject_type": "payment",
+        "evidence_ids": [
+          "ev_cos00003g",
+          "ev_cos00004o",
+          "ev_cos00005u",
+          "ev_cos00006m",
+          "ev_cos000077",
+          "ev_cos00008o"
+        ],
+        "required_kinds": [
+          "invoice",
+          "purchase_order",
+          "beneficiary_change_authorisation",
+          "callback_record"
+        ],
+        "missing_kinds": [],
+        "complete": true
+      },
+      "evidence_items": [
+        {
+          "evidence_id": "ev_cos00005u",
+          "kind": "invoice",
+          "title": "Invoice INV-4821",
+          "issuer": "Meridian Components Pte. Ltd.",
+          "issued_at": "2026-09-02T09:00:00+00:00",
+          "excerpt": "Invoice INV-4821, SGD 12,500.00, components order, due 30 September 2026.",
+          "checksum": "b23163a8592e1707acaa9f67d7a17de75a46fa5db0e6cf5059c5f0a8c6f50668",
+          "location": "page 1"
+        },
+        {
+          "evidence_id": "ev_cos00006m",
+          "kind": "purchase_order",
+          "title": "Purchase order PO-4821",
+          "issuer": "Anchor Commerce (Singapore) Pte. Ltd.",
+          "issued_at": "2026-08-29T09:00:00+00:00",
+          "excerpt": "PO-4821 authorises SGD 12,500.00 to Meridian Components Pte. Ltd. for components.",
+          "checksum": "033dc7528b3f6d67b8b931f80aa1ff14b44c209f068d5ab6a9f71febe5d9237b",
+          "location": "line 1"
+        },
+        {
+          "evidence_id": "ev_cos000077",
+          "kind": "callback_record",
+          "title": "Callback record — Meridian Components",
+          "issuer": "Anchor Commerce treasury",
+          "issued_at": "2026-09-14T10:05:00+00:00",
+          "excerpt": "Called the number on file (not the number in the email) on 14 September 2026 and spoke to the finance manager, who confirmed the account change and the invoice amount.",
+          "checksum": "995d387f1ba705b7ea84efdcc133570ea90fb6fb4c33b5c187e62dfd89c558d3",
+          "location": "call log entry 2026-09-14"
+        },
+        {
+          "evidence_id": "ev_cos00008o",
+          "kind": "beneficiary_change_authorisation",
+          "title": "Account change authorisation on letterhead",
+          "issuer": "Meridian Components Pte. Ltd.",
+          "issued_at": "2026-09-14T11:05:00+00:00",
+          "excerpt": "Signed and dated authorisation confirming the change of collection account to the account ending 8830, countersigned by two directors.",
+          "checksum": "3852b476d49e27f47042930e224aad87006c845245aa42760311d9ee4e0531e4",
+          "location": "page 1"
+        },
+        {
+          "evidence_id": "ev_cos00003g",
+          "kind": "invoice",
+          "title": "Invoice INV-4402",
+          "issuer": "Meridian Components Pte. Ltd.",
+          "issued_at": "2026-04-28T09:00:00+00:00",
+          "excerpt": "Invoice INV-4402, SGD 8,400.00, components order, net 30 days.",
+          "checksum": "12fbdecf119129264dfa41f734ebbf7d4d619985d6ecc16b528a00f9af632539",
+          "location": "page 1"
+        },
+        {
+          "evidence_id": "ev_cos00004o",
+          "kind": "purchase_order",
+          "title": "Purchase order PO-4402",
+          "issuer": "Anchor Commerce (Singapore) Pte. Ltd.",
+          "issued_at": "2026-04-26T09:00:00+00:00",
+          "excerpt": "PO-4402 authorises SGD 8,400.00 to Meridian Components Pte. Ltd.",
+          "checksum": "10f2996bae9c8d8868b7ed83f63f8dd4fbca0993e87f1a7834ef26ad578cc2ef",
+          "location": "line 1"
+        }
+      ],
+      "cases": [
+        {
+          "case_id": "case_cos00001n",
+          "kind": "aml_investigation",
+          "title": "12,500.00 SGD to Meridian Components Pte. Ltd.: payee_account_change, beneficiary_unverified, evidence_incomplete, prepayment_pressure",
+          "priority": 1,
+          "state": "closed",
+          "sla_due_at": "2026-09-14T13:07:00+00:00",
+          "closure_reason": "verified_change_no_further_action"
+        }
+      ],
+      "settlement": {
+        "settlement_id": "stl_cos00002d",
+        "gross": "12,500.00 SGD",
+        "fee": "9.80 SGD",
+        "net": "12,490.20 SGD",
+        "value_date": "2026-09-15T09:05:00+00:00",
+        "provider_reference": "PSP-4821-STL"
+      },
+      "timeline": [
+        {
+          "event_id": "evt_cos000106",
+          "seq": 10,
+          "type": "payment.created",
+          "occurred_at": "2026-09-14T09:05:00+00:00",
+          "actor_role": "treasury_operator",
+          "actor_id": "treasury.ops",
+          "subject": {
+            "payment": "pay_cos00002c",
+            "business": "biz_sz0015",
+            "beneficiary": "ben_ben0193h"
+          },
+          "payload": {
+            "amount_minor": 1250000,
+            "currency": "SGD",
+            "purpose_code": "SUPPLIER_INVOICE",
+            "evidence_ids": [
+              "ev_cos00005u",
+              "ev_cos00006m"
+            ]
+          }
+        },
+        {
+          "event_id": "evt_cos00011x",
+          "seq": 11,
+          "type": "risk.assessed",
+          "occurred_at": "2026-09-14T09:07:00+00:00",
+          "actor_role": "system",
+          "actor_id": "risk.rules",
+          "subject": {
+            "payment": "pay_cos00002c",
+            "beneficiary": "ben_ben0193h"
+          },
+          "payload": {
+            "assessment_id": "ra_cos000026",
+            "band": "critical",
+            "score": 100,
+            "signals": [
+              "payee_account_change",
+              "beneficiary_unverified",
+              "evidence_incomplete",
+              "prepayment_pressure"
+            ],
+            "rules_version": "1.0.0"
+          }
+        },
+        {
+          "event_id": "evt_cos000124",
+          "seq": 12,
+          "type": "intervention.required",
+          "occurred_at": "2026-09-14T09:07:00+00:00",
+          "actor_role": "system",
+          "actor_id": "intervention.engine",
+          "subject": {
+            "payment": "pay_cos00002c",
+            "business": "biz_sz0015"
+          },
+          "payload": {
+            "payment_id": "pay_cos00002c",
+            "selected_level": 4,
+            "amount_tier": "t2",
+            "amount_floor": 2,
+            "payee_known": false,
+            "drivers": [
+              "large_payment_payee_change_override",
+              "signal_rule"
+            ],
+            "signal_ids": [
+              "payee_account_change",
+              "beneficiary_unverified",
+              "evidence_incomplete",
+              "prepayment_pressure"
+            ],
+            "required_approvals": 2,
+            "required_verifications": [
+              "callback_known_contact",
+              "obtain_change_authorisation",
+              "hold_and_document"
+            ],
+            "policy": "Stop. A second approver and an independent callback are required before this payment may be submitted.",
+            "why_not_weaker": "A payee-account change or payee-name mismatch on a payment of this size is pinned to a stop; averaging it against the other inputs is exactly the mistake this rule exists to prevent.",
+            "why_not_stronger": "Level 4 is the maximum.",
+            "engine_version": "1.0.0"
+          }
+        },
+        {
+          "event_id": "evt_cos000138",
+          "seq": 13,
+          "type": "case.opened",
+          "occurred_at": "2026-09-14T09:07:00+00:00",
+          "actor_role": "system",
+          "actor_id": "risk.rules",
+          "subject": {
+            "payment": "pay_cos00002c",
+            "business": "biz_sz0015"
+          },
+          "payload": {
+            "case_id": "case_cos00001n",
+            "kind": "aml_investigation",
+            "priority": 1
+          }
+        },
+        {
+          "event_id": "evt_cos00014b",
+          "seq": 14,
+          "type": "payment.approved",
+          "occurred_at": "2026-09-14T13:05:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.chen",
+          "subject": {
+            "payment": "pay_cos00002c",
+            "business": "biz_sz0015"
+          },
+          "payload": {
+            "approvals": [
+              "dec_cosd00005j",
+              "dec_cosd00006r"
+            ],
+            "required_approvals": 2,
+            "intervention_level": 4
+          }
+        },
+        {
+          "event_id": "evt_cos00015m",
+          "seq": 15,
+          "type": "payment.submitted",
+          "occurred_at": "2026-09-14T13:10:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.chen",
+          "subject": {
+            "payment": "pay_cos00002c",
+            "business": "biz_sz0015"
+          },
+          "payload": {
+            "amount_minor": 1250000,
+            "currency": "SGD"
+          }
+        },
+        {
+          "event_id": "evt_cos00016f",
+          "seq": 16,
+          "type": "payment.settled",
+          "occurred_at": "2026-09-15T15:05:00+00:00",
+          "actor_role": "system",
+          "actor_id": "provider.webhook",
+          "subject": {
+            "payment": "pay_cos00002c",
+            "business": "biz_sz0015"
+          },
+          "payload": {
+            "settlement_id": "stl_cos00002d"
+          }
+        }
+      ],
+      "audit": [
+        {
+          "entry_id": "aud_cos00013l",
+          "seq": 13,
+          "occurred_at": "2026-09-14T09:05:00+00:00",
+          "actor_role": "treasury_operator",
+          "actor_id": "treasury.ops",
+          "action": "payment.create",
+          "summary": "created 12,500.00 SGD to ben_ben0193h for SUPPLIER_INVOICE",
+          "entry_hash": "f3c132d1f878d2db622f851dc1150c761d7dc1075727904bee71226eca22b129"
+        },
+        {
+          "entry_id": "aud_cos000141",
+          "seq": 14,
+          "occurred_at": "2026-09-14T09:07:00+00:00",
+          "actor_role": "system",
+          "actor_id": "risk.rules",
+          "action": "risk.assess",
+          "summary": "4 signal(s), band critical (rules 1.0.0); no model participated",
+          "entry_hash": "cbb4acd4286580cd7def062e6536179f800f4ae1cd40e67dccfa6fef97e2747b"
+        },
+        {
+          "entry_id": "aud_cos00015b",
+          "seq": 15,
+          "occurred_at": "2026-09-14T09:07:00+00:00",
+          "actor_role": "system",
+          "actor_id": "intervention.engine",
+          "action": "payment.create",
+          "summary": "intervention level 4: 2 approver(s), verifications required: callback_known_contact, obtain_change_authorisation, hold_and_document",
+          "entry_hash": "62a8a64463fe8c58058396487e2ba4be7a4895ccfa5cfcc6aafb8a939a40fa02"
+        },
+        {
+          "entry_id": "aud_cos00017k",
+          "seq": 17,
+          "occurred_at": "2026-09-14T11:15:00+00:00",
+          "actor_role": "treasury_operator",
+          "actor_id": "treasury.ops",
+          "action": "payment.verify",
+          "summary": "treasury.ops completed obtain_change_authorisation",
+          "entry_hash": "6d1bf9b289d4bb764ddc5da729425cecab3587088894c59cee4170dcec4d0556"
+        },
+        {
+          "entry_id": "aud_cos000186",
+          "seq": 18,
+          "occurred_at": "2026-09-14T11:20:00+00:00",
+          "actor_role": "treasury_operator",
+          "actor_id": "treasury.ops",
+          "action": "payment.verify",
+          "summary": "treasury.ops completed callback_known_contact",
+          "entry_hash": "228453e90257e67fe26e2f0feb0b2f6a928ec944ecef70ddf480ed2849de1392"
+        },
+        {
+          "entry_id": "aud_cos00020o",
+          "seq": 20,
+          "occurred_at": "2026-09-14T11:25:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.lim",
+          "action": "payment.verify",
+          "summary": "approver.lim completed hold_and_document",
+          "entry_hash": "bbc651b929448b68c7546179299bee6d31ac778b833ecac87e46a3d0d341a1c8"
+        },
+        {
+          "entry_id": "aud_cos00022u",
+          "seq": 22,
+          "occurred_at": "2026-09-14T12:35:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.lim",
+          "action": "payment.approve",
+          "summary": "approver.lim committed payment.approve (reviewed_and_authorised)",
+          "entry_hash": "ad5409c88bee189cd99dc2769595e310177c8b14b0dcf9aef45ae88f014a873a"
+        },
+        {
+          "entry_id": "aud_cos00023e",
+          "seq": 23,
+          "occurred_at": "2026-09-14T13:05:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.chen",
+          "action": "payment.approve",
+          "summary": "approver.chen committed payment.approve (reviewed_and_authorised)",
+          "entry_hash": "2fd3e5c8b954c95a711660762e9d8c213af40cfeb96e5ca74a94934d2d4da8c9"
+        },
+        {
+          "entry_id": "aud_cos00024r",
+          "seq": 24,
+          "occurred_at": "2026-09-14T13:10:00+00:00",
+          "actor_role": "payment_approver",
+          "actor_id": "approver.chen",
+          "action": "payment.submit",
+          "summary": "submitted 12,500.00 SGD to the rail",
+          "entry_hash": "277cde4ad325258b29fca6fa485a1621ebfabc0a2185e3eceb8f2473dd65b174"
+        }
+      ]
+    }
+  ],
+  "cases": {
+    "within_capacity": [],
+    "backlog": [],
+    "capacity": 3
+  },
+  "evidence": [
+    {
+      "evidence_id": "ev_cos00001c",
+      "kind": "incorporation_document",
+      "title": "ACRA business profile — Anchor Commerce (Singapore) Pte. Ltd.",
+      "issuer": "Synthetic registry extract",
+      "issued_at": "2026-03-18T09:00:00+00:00",
+      "location": "page 1",
+      "excerpt": "Incorporated 18 March 2026. UEN 202604821K. Principal activity: wholesale trade.",
+      "checksum": "be42c027c071491f26b46513f04d14e96d9e9ea088c87a74e0cc233bfe6dad05",
+      "business_id": "biz_sz0015",
+      "payment_id": null,
+      "beneficiary_id": null,
+      "status": "current"
+    },
+    {
+      "evidence_id": "ev_cos00002u",
+      "kind": "ownership_declaration",
+      "title": "Beneficial ownership declaration",
+      "issuer": "Anchor Commerce (Shenzhen) Ltd.",
+      "issued_at": "2026-04-01T09:00:00+00:00",
+      "location": "clause 3",
+      "excerpt": "Parent entity Anchor Commerce (Shenzhen) Ltd. holds 100%. Two directors declared, both resident in the PRC.",
+      "checksum": "9e9c84a039ca62ebcdcfb9c97a2c35126352cf7fb663bf8d6adac43ce7fe8985",
+      "business_id": "biz_sz0015",
+      "payment_id": null,
+      "beneficiary_id": null,
+      "status": "current"
+    },
+    {
+      "evidence_id": "ev_cos00003g",
+      "kind": "invoice",
+      "title": "Invoice INV-4402",
+      "issuer": "Meridian Components Pte. Ltd.",
+      "issued_at": "2026-04-28T09:00:00+00:00",
+      "location": "page 1",
+      "excerpt": "Invoice INV-4402, SGD 8,400.00, components order, net 30 days.",
+      "checksum": "12fbdecf119129264dfa41f734ebbf7d4d619985d6ecc16b528a00f9af632539",
+      "business_id": "biz_sz0015",
+      "payment_id": "pay_cos00001h",
+      "beneficiary_id": "ben_ben0193h",
+      "status": "current"
+    },
+    {
+      "evidence_id": "ev_cos00004o",
+      "kind": "purchase_order",
+      "title": "Purchase order PO-4402",
+      "issuer": "Anchor Commerce (Singapore) Pte. Ltd.",
+      "issued_at": "2026-04-26T09:00:00+00:00",
+      "location": "line 1",
+      "excerpt": "PO-4402 authorises SGD 8,400.00 to Meridian Components Pte. Ltd.",
+      "checksum": "10f2996bae9c8d8868b7ed83f63f8dd4fbca0993e87f1a7834ef26ad578cc2ef",
+      "business_id": "biz_sz0015",
+      "payment_id": "pay_cos00001h",
+      "beneficiary_id": "ben_ben0193h",
+      "status": "current"
+    },
+    {
+      "evidence_id": "ev_cos00005u",
+      "kind": "invoice",
+      "title": "Invoice INV-4821",
+      "issuer": "Meridian Components Pte. Ltd.",
+      "issued_at": "2026-09-02T09:00:00+00:00",
+      "location": "page 1",
+      "excerpt": "Invoice INV-4821, SGD 12,500.00, components order, due 30 September 2026.",
+      "checksum": "b23163a8592e1707acaa9f67d7a17de75a46fa5db0e6cf5059c5f0a8c6f50668",
+      "business_id": "biz_sz0015",
+      "payment_id": "pay_cos00002c",
+      "beneficiary_id": "ben_ben0193h",
+      "status": "current"
+    },
+    {
+      "evidence_id": "ev_cos00006m",
+      "kind": "purchase_order",
+      "title": "Purchase order PO-4821",
+      "issuer": "Anchor Commerce (Singapore) Pte. Ltd.",
+      "issued_at": "2026-08-29T09:00:00+00:00",
+      "location": "line 1",
+      "excerpt": "PO-4821 authorises SGD 12,500.00 to Meridian Components Pte. Ltd. for components.",
+      "checksum": "033dc7528b3f6d67b8b931f80aa1ff14b44c209f068d5ab6a9f71febe5d9237b",
+      "business_id": "biz_sz0015",
+      "payment_id": "pay_cos00002c",
+      "beneficiary_id": "ben_ben0193h",
+      "status": "current"
+    },
+    {
+      "evidence_id": "ev_cos000077",
+      "kind": "callback_record",
+      "title": "Callback record — Meridian Components",
+      "issuer": "Anchor Commerce treasury",
+      "issued_at": "2026-09-14T10:05:00+00:00",
+      "location": "call log entry 2026-09-14",
+      "excerpt": "Called the number on file (not the number in the email) on 14 September 2026 and spoke to the finance manager, who confirmed the account change and the invoice amount.",
+      "checksum": "995d387f1ba705b7ea84efdcc133570ea90fb6fb4c33b5c187e62dfd89c558d3",
+      "business_id": "biz_sz0015",
+      "payment_id": "pay_cos00002c",
+      "beneficiary_id": "ben_ben0193h",
+      "status": "current"
+    },
+    {
+      "evidence_id": "ev_cos00008o",
+      "kind": "beneficiary_change_authorisation",
+      "title": "Account change authorisation on letterhead",
+      "issuer": "Meridian Components Pte. Ltd.",
+      "issued_at": "2026-09-14T11:05:00+00:00",
+      "location": "page 1",
+      "excerpt": "Signed and dated authorisation confirming the change of collection account to the account ending 8830, countersigned by two directors.",
+      "checksum": "3852b476d49e27f47042930e224aad87006c845245aa42760311d9ee4e0531e4",
+      "business_id": "biz_sz0015",
+      "payment_id": "pay_cos00002c",
+      "beneficiary_id": "ben_ben0193h",
+      "status": "current"
+    }
+  ],
+  "ledger": {
+    "balanced": true,
+    "journals": [
+      {
+        "journal_id": "led_cos00001s",
+        "posted_at": "2026-04-15T10:30:00+00:00",
+        "description": "collection col_cos00001o attributed from pe_collect_0417",
+        "payment_id": null,
+        "reverses_journal_id": null,
+        "legs": [
+          {
+            "account": "EXTERNAL:SGD",
+            "amount": {
+              "minor_units": -24000000,
+              "currency": "SGD",
+              "display": "-240,000.00 SGD"
+            },
+            "memo": "collection col_cos00001o attributed from pe_collect_0417"
+          },
+          {
+            "account": "biz_sz0015:SGD:available",
+            "amount": {
+              "minor_units": 24000000,
+              "currency": "SGD",
+              "display": "240,000.00 SGD"
+            },
+            "memo": "collection col_cos00001o attributed from pe_collect_0417"
+          }
+        ]
+      },
+      {
+        "journal_id": "led_cos00004x",
+        "posted_at": "2026-05-05T11:05:00+00:00",
+        "description": "payout pay_cos00001h submitted",
+        "payment_id": "pay_cos00001h",
+        "reverses_journal_id": null,
+        "legs": [
+          {
+            "account": "biz_sz0015:SGD:available",
+            "amount": {
+              "minor_units": -840000,
+              "currency": "SGD",
+              "display": "-8,400.00 SGD"
+            },
+            "memo": "payout pay_cos00001h submitted"
+          },
+          {
+            "account": "biz_sz0015:SGD:payable",
+            "amount": {
+              "minor_units": 840000,
+              "currency": "SGD",
+              "display": "8,400.00 SGD"
+            },
+            "memo": "payout pay_cos00001h submitted"
+          }
+        ]
+      },
+      {
+        "journal_id": "led_cos00007h",
+        "posted_at": "2026-05-06T16:00:00+00:00",
+        "description": "payout pay_cos00001h settled",
+        "payment_id": "pay_cos00001h",
+        "reverses_journal_id": null,
+        "legs": [
+          {
+            "account": "biz_sz0015:SGD:payable",
+            "amount": {
+              "minor_units": -840000,
+              "currency": "SGD",
+              "display": "-8,400.00 SGD"
+            },
+            "memo": "payout pay_cos00001h settled"
+          },
+          {
+            "account": "EXTERNAL:SGD",
+            "amount": {
+              "minor_units": 840000,
+              "currency": "SGD",
+              "display": "8,400.00 SGD"
+            },
+            "memo": "payout pay_cos00001h settled"
+          }
+        ]
+      },
+      {
+        "journal_id": "led_cos00010b",
+        "posted_at": "2026-09-14T13:10:00+00:00",
+        "description": "payout pay_cos00002c submitted",
+        "payment_id": "pay_cos00002c",
+        "reverses_journal_id": null,
+        "legs": [
+          {
+            "account": "biz_sz0015:SGD:available",
+            "amount": {
+              "minor_units": -1250000,
+              "currency": "SGD",
+              "display": "-12,500.00 SGD"
+            },
+            "memo": "payout pay_cos00002c submitted"
+          },
+          {
+            "account": "biz_sz0015:SGD:payable",
+            "amount": {
+              "minor_units": 1250000,
+              "currency": "SGD",
+              "display": "12,500.00 SGD"
+            },
+            "memo": "payout pay_cos00002c submitted"
+          }
+        ]
+      },
+      {
+        "journal_id": "led_cos000133",
+        "posted_at": "2026-09-15T15:05:00+00:00",
+        "description": "payout pay_cos00002c settled",
+        "payment_id": "pay_cos00002c",
+        "reverses_journal_id": null,
+        "legs": [
+          {
+            "account": "biz_sz0015:SGD:payable",
+            "amount": {
+              "minor_units": -1250000,
+              "currency": "SGD",
+              "display": "-12,500.00 SGD"
+            },
+            "memo": "payout pay_cos00002c settled"
+          },
+          {
+            "account": "EXTERNAL:SGD",
+            "amount": {
+              "minor_units": 1250000,
+              "currency": "SGD",
+              "display": "12,500.00 SGD"
+            },
+            "memo": "payout pay_cos00002c settled"
+          }
+        ]
+      }
+    ]
+  },
+  "reconciliation": {
+    "settlements": [
+      {
+        "settlement_id": "stl_cos00001y",
+        "payment_id": "pay_cos00001h",
+        "gross": {
+          "minor_units": 840000,
+          "currency": "SGD",
+          "display": "8,400.00 SGD"
+        },
+        "fee": {
+          "minor_units": 650,
+          "currency": "SGD",
+          "display": "6.50 SGD"
+        },
+        "net": {
+          "minor_units": 839350,
+          "currency": "SGD",
+          "display": "8,393.50 SGD"
+        },
+        "value_date": "2026-05-06T16:00:00+00:00",
+        "provider_reference": "PSP-4402-STL"
+      },
+      {
+        "settlement_id": "stl_cos00002d",
+        "payment_id": "pay_cos00002c",
+        "gross": {
+          "minor_units": 1250000,
+          "currency": "SGD",
+          "display": "12,500.00 SGD"
+        },
+        "fee": {
+          "minor_units": 980,
+          "currency": "SGD",
+          "display": "9.80 SGD"
+        },
+        "net": {
+          "minor_units": 1249020,
+          "currency": "SGD",
+          "display": "12,490.20 SGD"
+        },
+        "value_date": "2026-09-15T09:05:00+00:00",
+        "provider_reference": "PSP-4821-STL"
+      }
+    ],
+    "exceptions": []
+  },
+  "events": [
+    {
+      "event_id": "evt_cos00001q",
+      "seq": 1,
+      "type": "business.submitted",
+      "occurred_at": "2026-04-02T09:00:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "merchant.finance",
+      "subject": {
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "legal_name": "Anchor Commerce (Singapore) Pte. Ltd.",
+        "uen": "202604821K"
+      }
+    },
+    {
+      "event_id": "evt_cos00002j",
+      "seq": 2,
+      "type": "business.approved",
+      "occurred_at": "2026-04-10T11:20:00+00:00",
+      "actor_role": "compliance_officer",
+      "actor_id": "compliance.lead",
+      "subject": {
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "decision_id": "dec_cosd00001g",
+        "evidence_version": 1
+      }
+    },
+    {
+      "event_id": "evt_cos000034",
+      "seq": 3,
+      "type": "payment.created",
+      "occurred_at": "2026-05-05T10:00:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "subject": {
+        "payment": "pay_cos00001h",
+        "business": "biz_sz0015",
+        "beneficiary": "ben_ben0193h"
+      },
+      "payload": {
+        "amount_minor": 840000,
+        "currency": "SGD",
+        "purpose_code": "SUPPLIER_INVOICE",
+        "evidence_ids": [
+          "ev_cos00003g",
+          "ev_cos00004o"
+        ]
+      }
+    },
+    {
+      "event_id": "evt_cos00004e",
+      "seq": 4,
+      "type": "risk.assessed",
+      "occurred_at": "2026-05-05T10:00:00+00:00",
+      "actor_role": "system",
+      "actor_id": "risk.rules",
+      "subject": {
+        "payment": "pay_cos00001h",
+        "beneficiary": "ben_ben0193h"
+      },
+      "payload": {
+        "assessment_id": "ra_cos00001q",
+        "band": "low",
+        "score": 10,
+        "signals": [
+          "first_payment_to_beneficiary"
+        ],
+        "rules_version": "1.0.0"
+      }
+    },
+    {
+      "event_id": "evt_cos00005j",
+      "seq": 5,
+      "type": "intervention.required",
+      "occurred_at": "2026-05-05T10:00:00+00:00",
+      "actor_role": "system",
+      "actor_id": "intervention.engine",
+      "subject": {
+        "payment": "pay_cos00001h",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "payment_id": "pay_cos00001h",
+        "selected_level": 1,
+        "amount_tier": "t1",
+        "amount_floor": 0,
+        "payee_known": true,
+        "drivers": [
+          "signal_rule"
+        ],
+        "signal_ids": [
+          "first_payment_to_beneficiary"
+        ],
+        "required_approvals": 1,
+        "required_verifications": [],
+        "policy": "The amount alone warrants a reminder to check the payee against the contract.",
+        "why_not_weaker": "A weaker level would not address first_payment_to_beneficiary.",
+        "why_not_stronger": "No deterministic rule supports a stronger intervention from the available inputs.",
+        "engine_version": "1.0.0"
+      }
+    },
+    {
+      "event_id": "evt_cos00006m",
+      "seq": 6,
+      "type": "payment.approved",
+      "occurred_at": "2026-05-05T11:00:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.chen",
+      "subject": {
+        "payment": "pay_cos00001h",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "approvals": [
+          "dec_cosd00002s"
+        ],
+        "required_approvals": 1,
+        "intervention_level": 1
+      }
+    },
+    {
+      "event_id": "evt_cos00007g",
+      "seq": 7,
+      "type": "payment.submitted",
+      "occurred_at": "2026-05-05T11:05:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.chen",
+      "subject": {
+        "payment": "pay_cos00001h",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "amount_minor": 840000,
+        "currency": "SGD"
+      }
+    },
+    {
+      "event_id": "evt_cos000080",
+      "seq": 8,
+      "type": "payment.settled",
+      "occurred_at": "2026-05-06T16:00:00+00:00",
+      "actor_role": "system",
+      "actor_id": "provider.webhook",
+      "subject": {
+        "payment": "pay_cos00001h",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "settlement_id": "stl_cos00001y"
+      }
+    },
+    {
+      "event_id": "evt_cos00009r",
+      "seq": 9,
+      "type": "beneficiary.changed",
+      "occurred_at": "2026-09-08T08:40:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "subject": {
+        "beneficiary": "ben_ben0193h",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "previous_account_last4": "4417",
+        "new_account_last4": "8830",
+        "source": "email_from_supplier",
+        "change_count": 1
+      }
+    },
+    {
+      "event_id": "evt_cos000106",
+      "seq": 10,
+      "type": "payment.created",
+      "occurred_at": "2026-09-14T09:05:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "subject": {
+        "payment": "pay_cos00002c",
+        "business": "biz_sz0015",
+        "beneficiary": "ben_ben0193h"
+      },
+      "payload": {
+        "amount_minor": 1250000,
+        "currency": "SGD",
+        "purpose_code": "SUPPLIER_INVOICE",
+        "evidence_ids": [
+          "ev_cos00005u",
+          "ev_cos00006m"
+        ]
+      }
+    },
+    {
+      "event_id": "evt_cos00011x",
+      "seq": 11,
+      "type": "risk.assessed",
+      "occurred_at": "2026-09-14T09:07:00+00:00",
+      "actor_role": "system",
+      "actor_id": "risk.rules",
+      "subject": {
+        "payment": "pay_cos00002c",
+        "beneficiary": "ben_ben0193h"
+      },
+      "payload": {
+        "assessment_id": "ra_cos000026",
+        "band": "critical",
+        "score": 100,
+        "signals": [
+          "payee_account_change",
+          "beneficiary_unverified",
+          "evidence_incomplete",
+          "prepayment_pressure"
+        ],
+        "rules_version": "1.0.0"
+      }
+    },
+    {
+      "event_id": "evt_cos000124",
+      "seq": 12,
+      "type": "intervention.required",
+      "occurred_at": "2026-09-14T09:07:00+00:00",
+      "actor_role": "system",
+      "actor_id": "intervention.engine",
+      "subject": {
+        "payment": "pay_cos00002c",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "payment_id": "pay_cos00002c",
+        "selected_level": 4,
+        "amount_tier": "t2",
+        "amount_floor": 2,
+        "payee_known": false,
+        "drivers": [
+          "large_payment_payee_change_override",
+          "signal_rule"
+        ],
+        "signal_ids": [
+          "payee_account_change",
+          "beneficiary_unverified",
+          "evidence_incomplete",
+          "prepayment_pressure"
+        ],
+        "required_approvals": 2,
+        "required_verifications": [
+          "callback_known_contact",
+          "obtain_change_authorisation",
+          "hold_and_document"
+        ],
+        "policy": "Stop. A second approver and an independent callback are required before this payment may be submitted.",
+        "why_not_weaker": "A payee-account change or payee-name mismatch on a payment of this size is pinned to a stop; averaging it against the other inputs is exactly the mistake this rule exists to prevent.",
+        "why_not_stronger": "Level 4 is the maximum.",
+        "engine_version": "1.0.0"
+      }
+    },
+    {
+      "event_id": "evt_cos000138",
+      "seq": 13,
+      "type": "case.opened",
+      "occurred_at": "2026-09-14T09:07:00+00:00",
+      "actor_role": "system",
+      "actor_id": "risk.rules",
+      "subject": {
+        "payment": "pay_cos00002c",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "case_id": "case_cos00001n",
+        "kind": "aml_investigation",
+        "priority": 1
+      }
+    },
+    {
+      "event_id": "evt_cos00014b",
+      "seq": 14,
+      "type": "payment.approved",
+      "occurred_at": "2026-09-14T13:05:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.chen",
+      "subject": {
+        "payment": "pay_cos00002c",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "approvals": [
+          "dec_cosd00005j",
+          "dec_cosd00006r"
+        ],
+        "required_approvals": 2,
+        "intervention_level": 4
+      }
+    },
+    {
+      "event_id": "evt_cos00015m",
+      "seq": 15,
+      "type": "payment.submitted",
+      "occurred_at": "2026-09-14T13:10:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.chen",
+      "subject": {
+        "payment": "pay_cos00002c",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "amount_minor": 1250000,
+        "currency": "SGD"
+      }
+    },
+    {
+      "event_id": "evt_cos00016f",
+      "seq": 16,
+      "type": "payment.settled",
+      "occurred_at": "2026-09-15T15:05:00+00:00",
+      "actor_role": "system",
+      "actor_id": "provider.webhook",
+      "subject": {
+        "payment": "pay_cos00002c",
+        "business": "biz_sz0015"
+      },
+      "payload": {
+        "settlement_id": "stl_cos00002d"
+      }
+    }
+  ],
+  "quarantined_events": [],
+  "audit": [
+    {
+      "entry_id": "aud_cos00001j",
+      "seq": 1,
+      "occurred_at": "2026-04-02T09:00:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "merchant.finance",
+      "action": "business.submit",
+      "object_type": "business",
+      "object_id": "biz_sz0015",
+      "summary": "Anchor Commerce (Singapore) Pte. Ltd. submitted for KYB review",
+      "payload_json": "{\"entity_country\": \"SG\", \"uen\": \"202604821K\"}",
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "entry_hash": "fe8f82c3638627570f9fb5edf031af56904604241e80489b0365582a9d055eb5"
+    },
+    {
+      "entry_id": "aud_cos00002g",
+      "seq": 2,
+      "occurred_at": "2026-04-10T11:20:00+00:00",
+      "actor_role": "compliance_officer",
+      "actor_id": "compliance.lead",
+      "action": "business.approve",
+      "object_type": "business",
+      "object_id": "biz_sz0015",
+      "summary": "compliance.lead committed business.approve (kyb_evidence_complete)",
+      "payload_json": "{\"decision_id\": \"dec_cosd00001g\", \"note\": \"Evidence complete.\", \"reason_code\": \"kyb_evidence_complete\"}",
+      "previous_hash": "fe8f82c3638627570f9fb5edf031af56904604241e80489b0365582a9d055eb5",
+      "entry_hash": "711dc3570a81ddbae12edced1c3fcee8075fb9a817db54ce00ab94a012710b27"
+    },
+    {
+      "entry_id": "aud_cos00003l",
+      "seq": 3,
+      "occurred_at": "2026-04-15T10:30:00+00:00",
+      "actor_role": "system",
+      "actor_id": "provider.webhook",
+      "action": "collection.attribute",
+      "object_type": "intent",
+      "object_id": "col_cos00001o",
+      "summary": "attributed 240,000.00 SGD to ANCHOR-COLLECT-0417",
+      "payload_json": "{\"provider_event_id\": \"pe_collect_0417\"}",
+      "previous_hash": "711dc3570a81ddbae12edced1c3fcee8075fb9a817db54ce00ab94a012710b27",
+      "entry_hash": "0032203fd13204545a03a423efec91d90eaca9f15acff3ebe6b5f4a62fda4535"
+    },
+    {
+      "entry_id": "aud_cos00004x",
+      "seq": 4,
+      "occurred_at": "2026-05-02T14:00:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "action": "beneficiary.create",
+      "object_type": "beneficiary",
+      "object_id": "ben_ben0193h",
+      "summary": "registered Meridian Components Pte. Ltd. (SG)",
+      "payload_json": "{\"account_last4\": \"4417\"}",
+      "previous_hash": "0032203fd13204545a03a423efec91d90eaca9f15acff3ebe6b5f4a62fda4535",
+      "entry_hash": "e0b63bbbea10818eefdde284c2f2b6c41fb79b80b0476fc39c923fb5e8acf13c"
+    },
+    {
+      "entry_id": "aud_cos000053",
+      "seq": 5,
+      "occurred_at": "2026-05-03T09:30:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "action": "beneficiary.verify",
+      "object_type": "beneficiary",
+      "object_id": "ben_ben0193h",
+      "summary": "treasury.ops verified bank details by callback_to_number_on_file",
+      "payload_json": "{\"evidence_id\": null, \"method\": \"callback_to_number_on_file\"}",
+      "previous_hash": "e0b63bbbea10818eefdde284c2f2b6c41fb79b80b0476fc39c923fb5e8acf13c",
+      "entry_hash": "8bfb0784fb572a29829e41a1cde0210dc0995424880b40bcdffbede073e55f9a"
+    },
+    {
+      "entry_id": "aud_cos000061",
+      "seq": 6,
+      "occurred_at": "2026-05-20T09:00:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "action": "beneficiary.create",
+      "object_type": "beneficiary",
+      "object_id": "ben_ben02072",
+      "summary": "registered Straits Freight Services Pte. Ltd. (SG)",
+      "payload_json": "{\"account_last4\": \"9022\"}",
+      "previous_hash": "8bfb0784fb572a29829e41a1cde0210dc0995424880b40bcdffbede073e55f9a",
+      "entry_hash": "8e14c496215180c1f85df889175b07c79d66c0804515a261a36e6ff1e5dc253b"
+    },
+    {
+      "entry_id": "aud_cos000075",
+      "seq": 7,
+      "occurred_at": "2026-05-05T10:00:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "action": "payment.create",
+      "object_type": "payment",
+      "object_id": "pay_cos00001h",
+      "summary": "created 8,400.00 SGD to ben_ben0193h for SUPPLIER_INVOICE",
+      "payload_json": "{\"business_instruction_id\": \"PO-4402\", \"evidence_ids\": [\"ev_cos00003g\", \"ev_cos00004o\"]}",
+      "previous_hash": "8e14c496215180c1f85df889175b07c79d66c0804515a261a36e6ff1e5dc253b",
+      "entry_hash": "1a583a475b8a4a7e419b9a03024cab77f2e554dd32004b9d74b20e1f0c1b0844"
+    },
+    {
+      "entry_id": "aud_cos00008e",
+      "seq": 8,
+      "occurred_at": "2026-05-05T10:00:00+00:00",
+      "actor_role": "system",
+      "actor_id": "risk.rules",
+      "action": "risk.assess",
+      "object_type": "payment",
+      "object_id": "pay_cos00001h",
+      "summary": "1 signal(s), band low (rules 1.0.0); no model participated",
+      "payload_json": "{\"assessment_id\": \"ra_cos00001q\", \"score\": 10, \"signals\": [\"first_payment_to_beneficiary\"]}",
+      "previous_hash": "1a583a475b8a4a7e419b9a03024cab77f2e554dd32004b9d74b20e1f0c1b0844",
+      "entry_hash": "8f40665e61585d79481673c727bd737d0e26055cf8c3ebc628e9b9ff332353ed"
+    },
+    {
+      "entry_id": "aud_cos00009s",
+      "seq": 9,
+      "occurred_at": "2026-05-05T10:00:00+00:00",
+      "actor_role": "system",
+      "actor_id": "intervention.engine",
+      "action": "payment.create",
+      "object_type": "payment",
+      "object_id": "pay_cos00001h",
+      "summary": "intervention level 1: 1 approver(s), verifications required: none",
+      "payload_json": "{\"intervention_level\": 1, \"required_approvals\": 1, \"required_verifications\": []}",
+      "previous_hash": "8f40665e61585d79481673c727bd737d0e26055cf8c3ebc628e9b9ff332353ed",
+      "entry_hash": "6a3c8f789ed158782ecfaf65bb0cb60389b9183513442e5036b32476e5c077ef"
+    },
+    {
+      "entry_id": "aud_cos00010d",
+      "seq": 10,
+      "occurred_at": "2026-05-05T11:00:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.chen",
+      "action": "payment.approve",
+      "object_type": "payment",
+      "object_id": "pay_cos00001h",
+      "summary": "approver.chen committed payment.approve (reviewed_and_authorised)",
+      "payload_json": "{\"decision_id\": \"dec_cosd00002s\", \"note\": \"\", \"reason_code\": \"reviewed_and_authorised\"}",
+      "previous_hash": "6a3c8f789ed158782ecfaf65bb0cb60389b9183513442e5036b32476e5c077ef",
+      "entry_hash": "3616070d8755c6e392b5cf52603885bb3914bffd81ff81bf75569106e83dc1e0"
+    },
+    {
+      "entry_id": "aud_cos00011z",
+      "seq": 11,
+      "occurred_at": "2026-05-05T11:05:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.chen",
+      "action": "payment.submit",
+      "object_type": "payment",
+      "object_id": "pay_cos00001h",
+      "summary": "submitted 8,400.00 SGD to the rail",
+      "payload_json": "{\"beneficiary_id\": \"ben_ben0193h\"}",
+      "previous_hash": "3616070d8755c6e392b5cf52603885bb3914bffd81ff81bf75569106e83dc1e0",
+      "entry_hash": "1ac8323d8f93b704f403fcd6c4b3b9208276e4cf0e81bda045ea00acdec27bf5"
+    },
+    {
+      "entry_id": "aud_cos00012r",
+      "seq": 12,
+      "occurred_at": "2026-09-08T08:40:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "action": "beneficiary.change",
+      "object_type": "beneficiary",
+      "object_id": "ben_ben0193h",
+      "summary": "account changed from ...4417 to ...8830 (source: email_from_supplier)",
+      "payload_json": "{\"new_account_last4\": \"8830\", \"previous_account_last4\": \"4417\", \"source\": \"email_from_supplier\"}",
+      "previous_hash": "1ac8323d8f93b704f403fcd6c4b3b9208276e4cf0e81bda045ea00acdec27bf5",
+      "entry_hash": "b9212d64b72ad68fcea45500193c8c0b11f694525db864e5eddab57a7ccab588"
+    },
+    {
+      "entry_id": "aud_cos00013l",
+      "seq": 13,
+      "occurred_at": "2026-09-14T09:05:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "action": "payment.create",
+      "object_type": "payment",
+      "object_id": "pay_cos00002c",
+      "summary": "created 12,500.00 SGD to ben_ben0193h for SUPPLIER_INVOICE",
+      "payload_json": "{\"business_instruction_id\": \"PO-4821\", \"evidence_ids\": [\"ev_cos00005u\", \"ev_cos00006m\"]}",
+      "previous_hash": "b9212d64b72ad68fcea45500193c8c0b11f694525db864e5eddab57a7ccab588",
+      "entry_hash": "f3c132d1f878d2db622f851dc1150c761d7dc1075727904bee71226eca22b129"
+    },
+    {
+      "entry_id": "aud_cos000141",
+      "seq": 14,
+      "occurred_at": "2026-09-14T09:07:00+00:00",
+      "actor_role": "system",
+      "actor_id": "risk.rules",
+      "action": "risk.assess",
+      "object_type": "payment",
+      "object_id": "pay_cos00002c",
+      "summary": "4 signal(s), band critical (rules 1.0.0); no model participated",
+      "payload_json": "{\"assessment_id\": \"ra_cos000026\", \"score\": 100, \"signals\": [\"payee_account_change\", \"beneficiary_unverified\", \"evidence_incomplete\", \"prepayment_pressure\"]}",
+      "previous_hash": "f3c132d1f878d2db622f851dc1150c761d7dc1075727904bee71226eca22b129",
+      "entry_hash": "cbb4acd4286580cd7def062e6536179f800f4ae1cd40e67dccfa6fef97e2747b"
+    },
+    {
+      "entry_id": "aud_cos00015b",
+      "seq": 15,
+      "occurred_at": "2026-09-14T09:07:00+00:00",
+      "actor_role": "system",
+      "actor_id": "intervention.engine",
+      "action": "payment.create",
+      "object_type": "payment",
+      "object_id": "pay_cos00002c",
+      "summary": "intervention level 4: 2 approver(s), verifications required: callback_known_contact, obtain_change_authorisation, hold_and_document",
+      "payload_json": "{\"intervention_level\": 4, \"required_approvals\": 2, \"required_verifications\": [\"callback_known_contact\", \"obtain_change_authorisation\", \"hold_and_document\"]}",
+      "previous_hash": "cbb4acd4286580cd7def062e6536179f800f4ae1cd40e67dccfa6fef97e2747b",
+      "entry_hash": "62a8a64463fe8c58058396487e2ba4be7a4895ccfa5cfcc6aafb8a939a40fa02"
+    },
+    {
+      "entry_id": "aud_cos00016v",
+      "seq": 16,
+      "occurred_at": "2026-09-14T09:07:00+00:00",
+      "actor_role": "system",
+      "actor_id": "risk.rules",
+      "action": "case.open",
+      "object_type": "case",
+      "object_id": "case_cos00001n",
+      "summary": "12,500.00 SGD to Meridian Components Pte. Ltd.: payee_account_change, beneficiary_unverified, evidence_incomplete, prepayment_pressure",
+      "payload_json": "{\"payment_id\": \"pay_cos00002c\", \"priority\": 1, \"signals\": [\"payee_account_change\", \"beneficiary_unverified\", \"evidence_incomplete\", \"prepayment_pressure\"]}",
+      "previous_hash": "62a8a64463fe8c58058396487e2ba4be7a4895ccfa5cfcc6aafb8a939a40fa02",
+      "entry_hash": "40d2e44857574e6c3fc9f776da220fc299ec992370725d3e3ce308b88fe774a0"
+    },
+    {
+      "entry_id": "aud_cos00017k",
+      "seq": 17,
+      "occurred_at": "2026-09-14T11:15:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "action": "payment.verify",
+      "object_type": "payment",
+      "object_id": "pay_cos00002c",
+      "summary": "treasury.ops completed obtain_change_authorisation",
+      "payload_json": "{\"evidence_id\": \"ev_cos00008o\", \"note\": \"\", \"verification\": \"obtain_change_authorisation\"}",
+      "previous_hash": "40d2e44857574e6c3fc9f776da220fc299ec992370725d3e3ce308b88fe774a0",
+      "entry_hash": "6d1bf9b289d4bb764ddc5da729425cecab3587088894c59cee4170dcec4d0556"
+    },
+    {
+      "entry_id": "aud_cos000186",
+      "seq": 18,
+      "occurred_at": "2026-09-14T11:20:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "action": "payment.verify",
+      "object_type": "payment",
+      "object_id": "pay_cos00002c",
+      "summary": "treasury.ops completed callback_known_contact",
+      "payload_json": "{\"evidence_id\": \"ev_cos000077\", \"note\": \"\", \"verification\": \"callback_known_contact\"}",
+      "previous_hash": "6d1bf9b289d4bb764ddc5da729425cecab3587088894c59cee4170dcec4d0556",
+      "entry_hash": "228453e90257e67fe26e2f0feb0b2f6a928ec944ecef70ddf480ed2849de1392"
+    },
+    {
+      "entry_id": "aud_cos00019h",
+      "seq": 19,
+      "occurred_at": "2026-09-14T11:20:00+00:00",
+      "actor_role": "treasury_operator",
+      "actor_id": "treasury.ops",
+      "action": "beneficiary.verify",
+      "object_type": "beneficiary",
+      "object_id": "ben_ben0193h",
+      "summary": "treasury.ops verified bank details by callback_to_number_on_file",
+      "payload_json": "{\"evidence_id\": \"ev_cos000077\", \"method\": \"callback_to_number_on_file\"}",
+      "previous_hash": "228453e90257e67fe26e2f0feb0b2f6a928ec944ecef70ddf480ed2849de1392",
+      "entry_hash": "89f94f1017f36c8c4ee59e318043f6cdf73edb42d9e0a3e3e820b88bcbe790e9"
+    },
+    {
+      "entry_id": "aud_cos00020o",
+      "seq": 20,
+      "occurred_at": "2026-09-14T11:25:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.lim",
+      "action": "payment.verify",
+      "object_type": "payment",
+      "object_id": "pay_cos00002c",
+      "summary": "approver.lim completed hold_and_document",
+      "payload_json": "{\"evidence_id\": null, \"note\": \"Held pending callback; both documents filed against the payment.\", \"verification\": \"hold_and_document\"}",
+      "previous_hash": "89f94f1017f36c8c4ee59e318043f6cdf73edb42d9e0a3e3e820b88bcbe790e9",
+      "entry_hash": "bbc651b929448b68c7546179299bee6d31ac778b833ecac87e46a3d0d341a1c8"
+    },
+    {
+      "entry_id": "aud_cos00021y",
+      "seq": 21,
+      "occurred_at": "2026-09-14T12:05:00+00:00",
+      "actor_role": "compliance_officer",
+      "actor_id": "compliance.lead",
+      "action": "case.close",
+      "object_type": "case",
+      "object_id": "case_cos00001n",
+      "summary": "compliance.lead committed case.close (verified_change_no_further_action)",
+      "payload_json": "{\"decision_id\": \"dec_cosd00003d\", \"note\": \"Callback and signed authorisation reviewed; account change is genuine.\", \"reason_code\": \"verified_change_no_further_action\"}",
+      "previous_hash": "bbc651b929448b68c7546179299bee6d31ac778b833ecac87e46a3d0d341a1c8",
+      "entry_hash": "79426fabcf61293fbf1b2bd48a900309faad47dd6b69bef69b08b4a66389ce48"
+    },
+    {
+      "entry_id": "aud_cos00022u",
+      "seq": 22,
+      "occurred_at": "2026-09-14T12:35:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.lim",
+      "action": "payment.approve",
+      "object_type": "payment",
+      "object_id": "pay_cos00002c",
+      "summary": "approver.lim committed payment.approve (reviewed_and_authorised)",
+      "payload_json": "{\"decision_id\": \"dec_cosd00005j\", \"note\": \"\", \"reason_code\": \"reviewed_and_authorised\"}",
+      "previous_hash": "79426fabcf61293fbf1b2bd48a900309faad47dd6b69bef69b08b4a66389ce48",
+      "entry_hash": "ad5409c88bee189cd99dc2769595e310177c8b14b0dcf9aef45ae88f014a873a"
+    },
+    {
+      "entry_id": "aud_cos00023e",
+      "seq": 23,
+      "occurred_at": "2026-09-14T13:05:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.chen",
+      "action": "payment.approve",
+      "object_type": "payment",
+      "object_id": "pay_cos00002c",
+      "summary": "approver.chen committed payment.approve (reviewed_and_authorised)",
+      "payload_json": "{\"decision_id\": \"dec_cosd00006r\", \"note\": \"\", \"reason_code\": \"reviewed_and_authorised\"}",
+      "previous_hash": "ad5409c88bee189cd99dc2769595e310177c8b14b0dcf9aef45ae88f014a873a",
+      "entry_hash": "2fd3e5c8b954c95a711660762e9d8c213af40cfeb96e5ca74a94934d2d4da8c9"
+    },
+    {
+      "entry_id": "aud_cos00024r",
+      "seq": 24,
+      "occurred_at": "2026-09-14T13:10:00+00:00",
+      "actor_role": "payment_approver",
+      "actor_id": "approver.chen",
+      "action": "payment.submit",
+      "object_type": "payment",
+      "object_id": "pay_cos00002c",
+      "summary": "submitted 12,500.00 SGD to the rail",
+      "payload_json": "{\"beneficiary_id\": \"ben_ben0193h\"}",
+      "previous_hash": "2fd3e5c8b954c95a711660762e9d8c213af40cfeb96e5ca74a94934d2d4da8c9",
+      "entry_hash": "277cde4ad325258b29fca6fa485a1621ebfabc0a2185e3eceb8f2473dd65b174"
+    },
+    {
+      "entry_id": "aud_cos00025a",
+      "seq": 25,
+      "occurred_at": "2026-09-16T07:00:00+00:00",
+      "actor_role": "finance_operator",
+      "actor_id": "finance.ops",
+      "action": "reconciliation.run",
+      "object_type": "reconciliation",
+      "object_id": "run-2026-09-16",
+      "summary": "three-way reconciliation over 2 settlement(s)",
+      "payload_json": "{\"bank_lines\": 2, \"settlements\": 2}",
+      "previous_hash": "277cde4ad325258b29fca6fa485a1621ebfabc0a2185e3eceb8f2473dd65b174",
+      "entry_hash": "fe20db13e4e6d84a43d05f55ca6dd463ef35bb28a3a162e79e01128cfc4b76a9"
+    }
+  ],
+  "ai_boundary": {
+    "allowed": [
+      "evidence.abstain",
+      "evidence.answer",
+      "evidence.assemble",
+      "evidence.draft_request",
+      "evidence.identify_missing",
+      "evidence.summarise"
+    ],
+    "refused_examples": [
+      {
+        "occurred_at": "2026-09-14T12:20:00+00:00",
+        "actor_role": "ai_copilot",
+        "actor_id": "copilot",
+        "action": "payment.approve",
+        "object_id": "pay_cos00002c",
+        "error": "the AI copilot may not commit a decision"
+      }
+    ],
+    "note": "The copilot's permitted actions are the whole of its permission set in corridoros/core/authority.py. Its output object has no field in which a decision could be placed, and the audit log rejects it as the author of one."
+  }
+}
