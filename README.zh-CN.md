@@ -37,7 +37,7 @@
 
 | 产品案例 | 核心运营问题 | 证明的能力 |
 | --- | --- | --- |
-| **[CorridorOS](corridor-os/README.zh-CN.md)** · [English](corridor-os/README.md) | 中国企业进入新加坡后，如何完成企业准入、SGD收款、FX、供应商付款、风险检查、结算与对账，并让每一个资金与合规决定都有可追溯证据和明确的人工权限？ | 一个平台、四个模块、一套统一ID：11个领域对象、12个事件、复式账本、双人审批、哈希链审计，以及七个端到端场景 |
+| **[CorridorOS](corridor-os/README.zh-CN.md)** · [English](corridor-os/README.md) | 中国企业进入新加坡后，如何完成企业准入、SGD收款、FX、供应商付款、风险检查、结算与对账，并让每一个资金与合规决定都有可追溯证据和明确的人工权限？ | 一个平台、四个模块、一套统一ID：复式账本、双人审批、21 条支付规则与 6 种 AML 典型模式跑在同一条资金流上、会如实报告积压的产能队列、哈希链审计，以及七个端到端场景 |
 | **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | 900个账户预警、团队每天只能调查60个时，哪些案件应优先，AI又可以做什么？ | 支付生命周期、AML/风险运营、证据、队列产能、人工权限和可复现评测 |
 | **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | 金融问题信息不足时，产品该澄清什么，又能相信哪些证据？ | 每轮一个关键澄清、官方证据检索、引用/版本治理，以及政策与计算边界 |
 | **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | 个人或企业即将发出高风险付款前，产品应该怎样介入？ | 支付前干预、确定性控制、独立验证和考虑金额的企业支付保护 |

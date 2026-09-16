@@ -97,6 +97,7 @@ def build_world(namespace: str = "cos") -> World:
         entity_country="SG",
         expected_monthly_volume=Money.from_major("400000.00", "SGD"),
         occurred_at=ONBOARDING_DATE,
+        industry="wholesale_trade",
     )
     system.evidence.add(
         kind="incorporation_document",

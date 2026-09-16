@@ -26,15 +26,23 @@ Implemented and tested: the domain model and identifiers, the twelve events with
 idempotency and ordering, the permission matrix, the hash-chained audit log, the
 double-entry ledger, KYB, collection, FX quoting with expiry, the payout
 lifecycle with idempotency and dual approval, settlement, three-way
-reconciliation with typed exceptions, the intervention ladder, the payment-risk
-signal set, the evidence register with checksums, and the copilot with both
-guardrail gates.
+reconciliation with typed exceptions, the intervention ladder, the evidence
+register with checksums, the copilot with both guardrail gates, and — since
+phase P2 — the twenty-one payment rules, the six AML typologies, alert
+deduplication, case aggregation, eight-factor prioritisation, the capacity
+queue with its backlog, and the evaluation harness behind `docs/EVALUATION.md`.
 
-Not yet ported (phase P2, see `MIGRATION.md`): the twenty transaction-integrity
-rules and six AML typologies from CrossBorder RiskOps, the analyst workbench,
-and WealthGuard's official-source corpus. Where this repository shows a risk
-queue, it is running the smaller signal set described in `risk/signals.py`, and
-says so in the console.
+Not yet ported (phase P3, see `MIGRATION.md`): WealthGuard's thirteen official
+documents and 1,714 checksummed evidence chunks, and its citation-trace
+evaluation. The evidence register here holds the synthetic invoices, purchase
+orders, callback records and authorisations the demonstration creates.
+
+**On the rule set.** It is *adapted*, not copied: eleven of RiskOps' twenty
+acquiring rules carry over with the subject changed, ten card-specific rules
+(authorisation gaps, chargebacks, merchant category codes, device fingerprints)
+were replaced by corridor equivalents, and one was added for instruction-text
+patterns. The source project's own recall and precision figures therefore do
+**not** transfer, and `docs/EVALUATION.md` keeps the two sets apart.
 
 ## What the audit chain proves
 

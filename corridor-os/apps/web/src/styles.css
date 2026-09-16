@@ -188,3 +188,37 @@ button.link {
   main { padding: 18px 16px 48px; }
   .two-up { grid-template-columns: 1fr; }
 }
+
+/* --- analyst workbench ------------------------------------------------- */
+
+.aml-case { align-items: stretch; }
+.aml-case-body { width: 100%; }
+.aml-case-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Every factor that moved a case up the queue is visible, because an
+ * investigator who disagrees with the ordering has to see which one did it. */
+.factors { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 4px 14px; margin: 8px 0 2px; }
+.factor { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.factor-label { flex: 0 0 auto; }
+.factor-bar { flex: 1 1 auto; height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.factor-bar span { display: block; height: 100%; background: var(--accent); }
+.factor-points { flex: 0 0 auto; }
+
+.aml-detail { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 10px; }
+.aml-detail table { margin-bottom: 12px; }
+.alert { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; }
+.alert p { margin: 4px 0; }
+.alert ul { margin: 4px 0 0; padding-left: 18px; }

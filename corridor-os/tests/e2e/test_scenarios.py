@@ -436,3 +436,25 @@ def test_the_demo_records_the_copilot_being_refused_an_approval():
     assert all(
         decision.actor_role != AI_COPILOT for decision in world.system.audit.decisions
     )
+
+
+# --- the AML layer sees the platform's own money -------------------------
+
+
+def test_the_flagship_payment_appears_in_the_monitoring_feed():
+    """Scenario 4, widened: the payment the platform released is in the same feed
+    the typology detectors read, rather than in a separate demonstration."""
+    from corridoros.scenario.feed import run_monitoring
+
+    world = build_demo()
+    queue, context, population = run_monitoring(world.system, capacity=12)
+
+    in_feed = [item for item in context.transfers if item.payment_id == world.flagship_payment_id]
+    assert in_feed, "a settled payout must reach transaction monitoring"
+    assert in_feed[0].beneficiary_information_status == "complete"
+
+    assert queue.raw_alerts, "the corridor's traffic produces alerts"
+    assert queue.cases, "alerts become cases"
+    assert len(queue.within_capacity) == 12
+    assert queue.backlog, "and a queue with a capacity has a backlog"
+    assert population.planted, "the ground truth the evaluation measures against"

@@ -94,6 +94,10 @@ class BusinessProfile:
     expected_monthly_volume: Money
     evidence_ids: tuple[str, ...] = ()
     evidence_version: int = 1
+    # What the entity said it does at onboarding. A purpose code outside this
+    # activity is a question for a reviewer, which is why the declaration is
+    # stored rather than inferred from behaviour.
+    industry: str = ""
     decided_at: datetime | None = None
     decided_by: str | None = None
     outstanding_requests: tuple[str, ...] = ()

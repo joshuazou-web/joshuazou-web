@@ -8,7 +8,14 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { loadSnapshot } from "./data";
-import type { CaseView, PaymentView, SectionId, Snapshot } from "./types";
+import type {
+  AmlCaseView,
+  CaseView,
+  PaymentView,
+  SectionId,
+  Snapshot,
+  TypologyView,
+} from "./types";
 
 const SECTIONS: { id: SectionId; label: string; blurb: string }[] = [
   { id: "overview", label: "Overview", blurb: "What happened, and what the platform refuses to do" },
@@ -72,6 +79,9 @@ function Overview({ snapshot, onOpen }: { snapshot: Snapshot; onOpen: (id: strin
           value={String(o.ai_refusals)}
           tone={o.ai_refusals ? "good" : ""}
         />
+        <Stat label="alerts today" value={String(snapshot.aml.run.raw_alerts)} />
+        <Stat label="cases opened" value={String(snapshot.aml.run.within_capacity)} tone="good" />
+        <Stat label="waiting, not cleared" value={String(snapshot.aml.run.backlog)} tone="warn" />
       </div>
 
       <section className="card">
@@ -507,71 +517,283 @@ function CaseRow({ item, onOpen }: { item: CaseView; onOpen: (id: string) => voi
   );
 }
 
+function usd(minor: number): string {
+  return `${(minor / 100).toLocaleString(undefined, { maximumFractionDigits: 0 })} USD`;
+}
+
+function bandTone(band: string): string {
+  if (band === "critical") return "bad";
+  if (band === "high") return "warn";
+  return "";
+}
+
+function AmlCaseCard({ item }: { item: AmlCaseView }) {
+  const [open, setOpen] = useState(false);
+  const top = [...item.contributions].sort((a, b) => b.points - a.points).slice(0, 4);
+  return (
+    <div className="row-card static aml-case">
+      <div className="aml-case-body">
+        <button className="aml-case-head" onClick={() => setOpen(!open)}>
+          <span>
+            <strong>P{item.queue_position}</strong> {item.subject_name}
+            <span className="muted"> · {item.typology_keys.join(", ")}</span>
+            <br />
+            <span className="muted mono">
+              {item.alert_count} alert(s) · {item.transfer_count} transfers · {usd(item.total_usd_minor)}
+              {item.duplicates_absorbed ? ` · ${item.duplicates_absorbed} duplicate observation(s) absorbed` : ""}
+            </span>
+          </span>
+          <span className="row-tags">
+            <Pill text={`${item.priority_band} ${item.priority_score.toFixed(3)}`} tone={bandTone(item.priority_band)} />
+            <span className="muted">{open ? "hide" : "why"}</span>
+          </span>
+        </button>
+
+        <div className="factors">
+          {top.map((factor) => (
+            <div key={factor.factor} className="factor" title={factor.detail}>
+              <span className="factor-label">{factor.label}</span>
+              <span className="factor-bar">
+                <span style={{ width: `${Math.round((factor.points / 0.2) * 100)}%` }} />
+              </span>
+              <span className="factor-points mono">+{factor.points.toFixed(3)}</span>
+            </div>
+          ))}
+        </div>
+
+        {open ? (
+          <div className="aml-detail">
+            <p className="note">{item.merge_rationale}</p>
+            <h4>All eight priority factors</h4>
+            <table>
+              <tbody>
+                {item.contributions.map((factor) => (
+                  <tr key={factor.factor}>
+                    <td>{factor.label}</td>
+                    <td className="muted">{factor.detail}</td>
+                    <td className="mono">
+                      {factor.raw.toFixed(2)} × {factor.weight} = {factor.points.toFixed(3)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {item.alerts.map((alert) => (
+              <div key={alert.alert_id} className="alert">
+                <p>
+                  <code>{alert.alert_id}</code> <Pill text={alert.severity} tone={bandTone(alert.severity)} />
+                </p>
+                <p>{alert.explanation}</p>
+                <h4>What would argue against this</h4>
+                <ul>
+                  {alert.counter_evidence.map((line) => (
+                    <li key={line} className="muted">
+                      {line}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function TypologyTable({
+  typologies,
+  recall,
+}: {
+  typologies: TypologyView[];
+  recall: Record<string, { mean: number; stdev: number }> | null;
+}) {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Typology</th>
+          <th>Fires when</th>
+          <th>Severity</th>
+          <th>Recall</th>
+        </tr>
+      </thead>
+      <tbody>
+        {typologies.map((typology) => {
+          const measured = recall?.[typology.typology_id];
+          return (
+            <tr key={typology.typology_id}>
+              <td>
+                <strong>{typology.title}</strong>
+                <br />
+                <span className="muted">{typology.question}</span>
+              </td>
+              <td className="mono muted">
+                {Object.entries(typology.thresholds)
+                  .map(([key, value]) => `${key}=${value}`)
+                  .join(", ")}
+              </td>
+              <td>
+                <Pill text={typology.severity} tone={bandTone(typology.severity)} />
+              </td>
+              <td className="mono">
+                {measured ? `${measured.mean.toFixed(3)} ± ${measured.stdev.toFixed(3)}` : "—"}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+}
+
 function Risk({ snapshot, onOpen }: { snapshot: Snapshot; onOpen: (id: string) => void }) {
-  const signals = useMemo(() => {
-    const counts = new Map<string, number>();
-    for (const payment of snapshot.payments) {
-      for (const signal of payment.assessment?.signals ?? []) {
-        counts.set(signal.signal_id, (counts.get(signal.signal_id) ?? 0) + 1);
-      }
+  const aml = snapshot.aml;
+  const headline = aml.evaluation?.headline ?? null;
+  const [showRules, setShowRules] = useState(false);
+
+  const families = useMemo(() => {
+    const grouped = new Map<string, typeof aml.rules>();
+    for (const rule of aml.rules) {
+      grouped.set(rule.family, [...(grouped.get(rule.family) ?? []), rule]);
     }
-    return [...counts.entries()].sort((a, b) => b[1] - a[1]);
-  }, [snapshot]);
+    return [...grouped.entries()];
+  }, [aml.rules]);
 
   return (
     <>
+      <div className="stats">
+        <Stat label="monitored transfers" value={aml.monitored_transfers.toLocaleString()} />
+        <Stat label="raw alerts" value={String(aml.run.raw_alerts)} />
+        <Stat label="after deduplication" value={String(aml.run.deduplicated_alerts)} />
+        <Stat label="cases" value={String(aml.run.cases)} />
+        <Stat label="review capacity" value={String(aml.run.capacity)} tone="good" />
+        <Stat label="backlog" value={String(aml.run.backlog)} tone="warn" />
+      </div>
+
       <section className="card">
         <header className="card-head">
-          <h3>Investigation queue</h3>
+          <div>
+            <h3>Investigation queue</h3>
+            <p className="muted">
+              {aml.run.raw_alerts} alerts → {aml.run.deduplicated_alerts} after deduplication →{" "}
+              {aml.run.cases} cases → {aml.run.capacity} a team of this size can open today.
+            </p>
+          </div>
+          <Pill text={`capacity ${aml.run.capacity}`} />
+        </header>
+        {aml.queue.map((item) => (
+          <AmlCaseCard key={item.case_key} item={item} />
+        ))}
+      </section>
+
+      <section className="card">
+        <h3 className="warn-text">Below the capacity line — {aml.backlog.length} case(s), not cleared</h3>
+        <p className="note">{aml.backlog_note}</p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Subject</th>
+              <th>Typologies</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            {aml.backlog.map((item) => (
+              <tr key={item.case_key}>
+                <td className="mono">P{item.queue_position}</td>
+                <td>{item.subject_name}</td>
+                <td className="muted">{item.typology_keys.join(", ")}</td>
+                <td className="mono">
+                  {item.priority_band} {item.priority_score.toFixed(3)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section className="card">
+        <header className="card-head">
+          <h3>Six typologies, deterministic, no model</h3>
+          {headline ? (
+            <Pill
+              text={`recall ${headline.recall_clear.mean.toFixed(3)} clear / ${headline.recall_borderline.mean.toFixed(
+                3
+              )} borderline`}
+            />
+          ) : null}
+        </header>
+        <TypologyTable typologies={aml.typologies} recall={aml.evaluation?.recall_by_typology ?? null} />
+        {headline ? (
+          <p className="note">
+            Alert precision is {headline.raw_alert_precision.mean.toFixed(3)} raw and{" "}
+            {headline.precision_at_capacity.mean.toFixed(3)} at review capacity — the ordering is the
+            product. {headline.planted_patterns_left_in_backlog.mean.toFixed(0)} planted patterns are
+            sitting in the backlog, which is a headline row rather than an omission. Synthetic
+            evaluation over {aml.evaluation?.dataset.seeds.length} seeded worlds; the population is
+            deliberately enriched, so neither figure transfers to production traffic.
+          </p>
+        ) : null}
+      </section>
+
+      <section className="card">
+        <header className="card-head">
+          <div>
+            <h3>Payment-review cases</h3>
+            <p className="muted">Opened by the payment controls, not by monitoring.</p>
+          </div>
           <Pill text={`capacity ${snapshot.cases.capacity}`} />
         </header>
         {snapshot.cases.within_capacity.map((item) => (
           <CaseRow key={item.case_id} item={item} onOpen={onOpen} />
         ))}
-        {snapshot.cases.backlog.length ? (
-          <>
-            <h4 className="warn-text">Below the capacity line — not cleared</h4>
-            {snapshot.cases.backlog.map((item) => (
-              <CaseRow key={item.case_id} item={item} onOpen={onOpen} />
-            ))}
-          </>
-        ) : (
-          <p className="note">
-            Nothing is waiting below the capacity line today. When something is, it appears here
-            rather than being reported as handled.
-          </p>
-        )}
+        {snapshot.cases.within_capacity.length === 0 ? (
+          <p className="note">No open payment-review case in this run.</p>
+        ) : null}
       </section>
 
       <section className="card">
-        <h3>Signals fired</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Signal</th>
-              <th>Payments</th>
-            </tr>
-          </thead>
-          <tbody>
-            {signals.map(([signal, count]) => (
-              <tr key={signal}>
-                <td>
-                  <code>{signal}</code>
-                </td>
-                <td>{count}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <header className="card-head">
+          <h3>{aml.rules.length} deterministic rules over one payment</h3>
+          <button className="link" onClick={() => setShowRules(!showRules)}>
+            {showRules ? "hide" : "show catalogue"}
+          </button>
+        </header>
         <p className="note">
-          A signal is a reason to look, not a finding of wrongdoing. Detection and prioritisation are
-          deterministic; the twenty transaction-integrity rules and six AML typologies from
-          CrossBorder RiskOps are ported onto this event stream in phase P2.
+          A signal is a reason to investigate, not a finding of wrongdoing. Every rule names the
+          fields it read, so an operator can argue with it.
         </p>
+        {showRules
+          ? families.map(([family, rules]) => (
+              <div key={family}>
+                <h4>{family.replace("_", " ")}</h4>
+                <table>
+                  <tbody>
+                    {rules.map((rule) => (
+                      <tr key={rule.rule_id}>
+                        <td className="mono">{rule.rule_id}</td>
+                        <td>
+                          <strong>{rule.title}</strong>
+                          <br />
+                          <span className="muted">{rule.reason}</span>
+                        </td>
+                        <td>
+                          <Pill text={rule.severity} tone={bandTone(rule.severity)} />
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ))
+          : null}
       </section>
     </>
   );
 }
+
 
 function Evidence({ snapshot, onOpen }: { snapshot: Snapshot; onOpen: (id: string) => void }) {
   return (

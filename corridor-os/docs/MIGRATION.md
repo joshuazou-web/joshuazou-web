@@ -64,10 +64,25 @@ The four source repositories are unchanged and remain readable as the originals.
 | P4 | Pre-payment Intervention Engine | **done** |
 | P5 | one console, snapshot export, FastAPI | **done** |
 | — | end-to-end scenarios 1–7 | **done** |
-| P2 | port the 20 transaction-integrity rules and 6 AML typologies onto the event stream; analyst workbench; queue evaluation | next |
+| P2 | the rule set and the six AML typologies on the event stream; analyst workbench; queue evaluation | **done** |
 | P3 | WealthGuard's official-source corpus as `EvidenceItem`s; retrieval evaluation | next |
 | P6 | rewrite the portfolio README around one system; cross-link the source repositories | next |
 
-`risk/` currently carries the payment-risk signal set described in
-`risk/signals.py`. The console and `TRUTH_AND_LIMITATIONS.md` both say so rather
-than implying the AML layer is already here.
+### What phase P2 actually moved
+
+| Source | Here | Change |
+| --- | --- | --- |
+| `riskops/aml/typology.py` | `risk/typologies.py` | Thresholds, severities and counter-evidence hints unchanged; explanations re-worded for suppliers and corridors instead of wallets |
+| `riskops/aml/detect.py` | `risk/detect.py` | Six detectors, same matching conditions, rewritten against `Transfer` records instead of pandas frames — the domain layer keeps its zero dependencies |
+| `riskops/aml/priority.py` | `risk/priority.py` | Eight factors, weights summing to 1.0 and asserted; KYC tier → KYB status, device breadth → counterparty-and-country breadth |
+| `riskops/aml/aggregate.py` | `risk/aggregate.py` | Dedup window and case window unchanged; the forbidden case states carried over verbatim |
+| `riskops/aml/world.py` | `scenario/population.py` | A corridor population instead of a wallet population, with **clear** and **borderline** planted patterns so recall reports which half moved |
+| `riskops/risk/rules.py` (20) | `risk/rules.py` (21) | Adapted, not copied: eleven carry over with the subject changed, ten card-specific rules replaced by corridor equivalents, one added for instruction-text patterns |
+| `riskops/eval/runner.py` | `risk/evaluate.py` | Recall split by difficulty, precision raw and at capacity, and the planted patterns left in the backlog as a headline row |
+
+The provenance guard came with them: the generator marks what it planted, and
+`MonitoringContext.blind()` removes those marks before any detector sees the feed. Without it the
+recall figures would restate the label instead of measuring detection.
+
+**Still ahead (P3).** WealthGuard's 13 official documents and 1,714 checksummed evidence chunks
+become `EvidenceItem`s, with its citation-trace evaluation re-run here.

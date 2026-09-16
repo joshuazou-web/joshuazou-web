@@ -27,6 +27,7 @@ from datetime import datetime, timedelta
 
 from .core.audit import AuditLog
 from .core.domain import (
+    Beneficiary,
     BusinessProfile,
     PaymentInstruction,
     ReviewCase,
@@ -49,6 +50,7 @@ from .payments.reconciliation import BankStatementLine, ReconciliationEngine, Re
 from .payments.settlement import SettlementBook
 from .risk.assess import Assessor
 from .risk.cases import CaseBook
+from .risk.rules import PaymentContext
 
 # A case at this priority or better holds the payment until a compliance
 # officer closes it.
@@ -114,6 +116,7 @@ class CorridorOS:
         entity_country: str,
         expected_monthly_volume: Money,
         occurred_at: datetime,
+        industry: str = "",
     ) -> BusinessProfile:
         profile = BusinessProfile(
             business_id=business_id,
@@ -123,6 +126,7 @@ class CorridorOS:
             review_status="draft",
             submitted_at=occurred_at,
             expected_monthly_volume=expected_monthly_volume,
+            industry=industry,
         )
         return self.businesses.submit(profile, occurred_at=occurred_at)
 
@@ -206,14 +210,20 @@ class CorridorOS:
         payment = self.payouts.get(payment_id)
         beneficiary = self.beneficiaries.get(payment.beneficiary_id)
 
+        business = self.businesses.get(payment.business_id)
         packet = assemble_for_payment(self.evidence, payment, beneficiary, now=now)
         assessment = self.assessor.assess(
             payment,
             beneficiary,
             now=now,
-            prior_payments=self.payouts.for_business(payment.business_id),
-            missing_evidence_kinds=packet.missing_kinds,
-            instruction_note=instruction_note,
+            context=self._rule_context(
+                payment,
+                beneficiary,
+                business,
+                packet.missing_kinds,
+                instruction_note,
+                now=now,
+            ),
         )
         intervention = decide(payment, assessment, beneficiary, now=now)
         self.interventions[payment_id] = intervention
@@ -265,6 +275,71 @@ class CorridorOS:
             untrusted_text=instruction_note,
         )
         return ControlOutcome(payment, assessment, packet, intervention, case, brief)
+
+    def _rule_context(
+        self,
+        payment: PaymentInstruction,
+        beneficiary: Beneficiary,
+        business: BusinessProfile,
+        missing_evidence_kinds: tuple[str, ...],
+        instruction_note: str,
+        *,
+        now: datetime,
+    ) -> PaymentContext:
+        """Gather everything the rule set is allowed to read, once.
+
+        Fields the platform cannot supply are left absent, and the rules that
+        read them return nothing rather than guessing — which is why a payment
+        assessed before settlement is scored on fewer rules rather than on
+        invented values.
+        """
+        prior = self.payouts.for_business(payment.business_id)
+        month_to_date = Money.zero(payment.amount.currency)
+        for item in prior:
+            if (
+                item.payment_id != payment.payment_id
+                and item.created_at.year == payment.created_at.year
+                and item.created_at.month == payment.created_at.month
+                and item.amount.currency == payment.amount.currency
+            ):
+                month_to_date = month_to_date + item.amount
+
+        payers_of_account = {
+            item.business_id
+            for item in self.payouts.all
+            if item.beneficiary_id == payment.beneficiary_id
+        }
+        settlement = self.settlements.for_payment(payment.payment_id)
+        ledger_outflow = None
+        if settlement is not None:
+            ledger_outflow = self.reconciliation._ledger_outflow(
+                payment.payment_id, payment.amount.currency
+            )
+
+        return PaymentContext(
+            payment=payment,
+            beneficiary=beneficiary,
+            now=now,
+            prior_payments=prior,
+            missing_evidence_kinds=missing_evidence_kinds,
+            instruction_note=instruction_note,
+            business=business,
+            industry=business.industry,
+            duplicate_attempt=any(
+                attempt.business_instruction_id == payment.business_instruction_id
+                for attempt in self.payouts.duplicate_attempts
+            ),
+            quarantined_event_count=sum(
+                1
+                for item in self.bus.quarantine
+                if item.event.subject.get("payment") == payment.payment_id
+            ),
+            ledger_outflow=ledger_outflow,
+            settlement_gross=settlement.gross if settlement else None,
+            settlement_fee=settlement.fee if settlement else None,
+            other_payer_count=len(payers_of_account),
+            month_to_date=month_to_date + payment.amount,
+        )
 
     def complete_verification(
         self,

@@ -13,7 +13,7 @@ from ..core.audit import AuditLog
 from ..core.domain import Beneficiary, PaymentInstruction, RiskAssessment
 from ..core.events import EventBus
 from ..core.ids import IdFactory
-from .signals import RULES_VERSION, PaymentContext, band_of, evaluate, score_of
+from .rules import RULES_VERSION, PaymentContext, band_of, evaluate, score_of
 
 
 class Assessor:
@@ -32,15 +32,27 @@ class Assessor:
         prior_payments: tuple[PaymentInstruction, ...] = (),
         missing_evidence_kinds: tuple[str, ...] = (),
         instruction_note: str = "",
+        context: PaymentContext | None = None,
+        **rule_inputs: object,
     ) -> RiskAssessment:
+        """Run the rule set over one payment and publish the result.
+
+        A caller with more of the picture — the entity's declared activity, the
+        settlement, how many other businesses pay this account — passes a
+        prepared `PaymentContext` or the extra fields as keyword arguments. A
+        rule whose inputs are absent returns nothing rather than guessing, so a
+        thin caller still gets a valid assessment from a smaller rule set.
+        """
         signals = evaluate(
-            PaymentContext(
+            context
+            or PaymentContext(
                 payment=payment,
                 beneficiary=beneficiary,
                 now=now,
                 prior_payments=prior_payments,
                 missing_evidence_kinds=missing_evidence_kinds,
                 instruction_note=instruction_note,
+                **rule_inputs,  # type: ignore[arg-type]
             )
         )
         score = score_of(signals)

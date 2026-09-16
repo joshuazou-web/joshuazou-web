@@ -159,6 +159,118 @@ export interface CaseView {
   closure_reason: string | null;
 }
 
+export interface ContributionView {
+  factor: string;
+  label: string;
+  raw: number;
+  weight: number;
+  points: number;
+  detail: string;
+}
+
+export interface AmlAlertView {
+  alert_id: string;
+  typology_id: string;
+  severity: string;
+  subject_account: string;
+  transfer_count: number;
+  total_usd_minor: number;
+  explanation: string;
+  counter_evidence: string[];
+  window_start: string;
+  window_end: string;
+}
+
+export interface AmlCaseView {
+  case_key: string;
+  subject_account: string;
+  subject_name: string;
+  state: string;
+  priority_score: number;
+  priority_band: string;
+  queue_position: number;
+  within_capacity: boolean;
+  sla_due_at: string | null;
+  alert_count: number;
+  duplicates_absorbed: number;
+  typologies: string[];
+  typology_keys: string[];
+  max_severity: string;
+  transfer_count: number;
+  total_usd_minor: number;
+  merge_rationale: string;
+  contributions: ContributionView[];
+  alerts: AmlAlertView[];
+}
+
+export interface TypologyView {
+  typology_id: string;
+  key: string;
+  title: string;
+  severity: string;
+  question: string;
+  thresholds: Record<string, number>;
+  counter_evidence: string[];
+}
+
+export interface RuleView {
+  rule_id: string;
+  family: string;
+  severity: string;
+  title: string;
+  reason: string;
+  reads: string[];
+  signal_id: string;
+}
+
+export interface Spread {
+  mean: number;
+  stdev: number;
+  min: number;
+  max: number;
+  n_seeds: number;
+}
+
+export interface AmlSection {
+  run: {
+    run_at: string;
+    raw_alerts: number;
+    deduplicated_alerts: number;
+    duplicates_removed: number;
+    cases: number;
+    capacity: number;
+    within_capacity: number;
+    backlog: number;
+    aggregation_version: string;
+  };
+  monitored_transfers: number;
+  monitored_accounts: number;
+  platform_movements_in_feed: number;
+  queue: AmlCaseView[];
+  backlog: {
+    case_key: string;
+    subject_name: string;
+    subject_account: string;
+    priority_score: number;
+    priority_band: string;
+    queue_position: number;
+    typology_keys: string[];
+    alert_count: number;
+  }[];
+  backlog_note: string;
+  typologies: TypologyView[];
+  rules: RuleView[];
+  planted_patterns: number;
+  evaluation: {
+    eval_version: string;
+    typology_version: string;
+    dataset: { seeds: number[]; transfers_per_seed: number; review_capacity: number; caveat: string };
+    headline: Record<string, Spread>;
+    recall_by_typology: Record<string, Spread>;
+    boundary: string;
+  } | null;
+}
+
 export interface Snapshot {
   generated_at: string;
   disclaimer: string;
@@ -252,6 +364,7 @@ export interface Snapshot {
     entry_hash: string;
     previous_hash: string;
   }[];
+  aml: AmlSection;
   ai_boundary: {
     allowed: string[];
     refused_examples: Record<string, unknown>[];

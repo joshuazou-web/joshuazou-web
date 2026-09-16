@@ -2,14 +2,14 @@
 
 ## The six it may do
 
-| Capability | Where |
-| --- | --- |
-| Assemble an evidence packet from existing records | `evidence/packet.py` |
-| Write a case summary from an assembled packet | `Copilot.summarise_payment` |
-| Name the documents a decision still lacks | `Copilot.identify_missing` |
-| Answer a reviewer's question with citations | `Copilot.answer` |
-| Draft an information request for a person to send | `Copilot.draft_information_request` |
-| Abstain when the evidence will not carry an answer | any of the above |
+| Capability | Action | Where |
+| --- | --- | --- |
+| Assemble an evidence packet from existing records | `evidence.assemble` | `evidence/packet.py` |
+| Write a case summary from an assembled packet | `evidence.summarise` | `Copilot.summarise_payment` |
+| Name the documents a decision still lacks | `evidence.identify_missing` | `Copilot.identify_missing` |
+| Answer a reviewer's question with citations | `evidence.answer` | `Copilot.answer` |
+| Draft an information request for a person to send | `evidence.draft_request` | `Copilot.draft_information_request` |
+| Abstain when the evidence will not carry an answer | `evidence.abstain` | any of the above |
 
 ## The six it cannot do
 

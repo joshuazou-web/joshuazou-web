@@ -44,9 +44,30 @@ never calls.
 | --- | --- | --- |
 | `core` | new, with `money.py` and `audit/chain.py` ported from CrossBorder RiskOps | identifiers, the eleven objects, the twelve events, the permission matrix, the hash-chained audit log |
 | `payments` | the China-to-Singapore Corridor blueprint, implemented for the first time | KYB, collection, double-entry ledger, FX quoting, payout lifecycle, settlement, three-way reconciliation |
-| `risk` | CrossBorder AML RiskOps | deterministic signals, assessment, cases, priority, SLA, queue capacity |
+| `risk` | CrossBorder AML RiskOps | **two deterministic layers**: 21 rules over one payment, and 6 AML typologies over the monitored transfer feed — plus deduplication, case aggregation, eight-factor priority, SLA and an honest backlog |
 | `intervention` | ThinkBeforeClick FinSafe (`b2b-engine.js`) | amount tiers, signal levels, the five-step ladder, required verifications |
 | `evidence` | WealthGuard Proofline | the evidence register, packets, citation-validated briefs, guardrails, abstention |
+
+## Two layers inside `risk`
+
+```
+one payment ──▶ rules.py (21 rules, 8 families) ──▶ RiskAssessment ──▶ intervention
+                                                                  └──▶ payment-review case
+
+the monitored feed ──▶ detect.py (6 typologies) ──▶ alerts
+                                                     │  aggregate.py
+                                                     ▼
+                              deduplicate (7d) ──▶ cases (30d) ──▶ priority.py (8 factors)
+                                                                          │
+                                                          ┌───────────────┴───────────────┐
+                                                     within capacity                  backlog
+                                                     (a team's day)            (not cleared — not looked at)
+```
+
+The feed is the union of the platform's own settled movements and the synthetic corridor
+population, so the flagship payment appears in the AML queue's world rather than in a separate
+demonstration. `scenario/feed.py` builds it; `MonitoringContext.blind()` strips the generator's
+labels before any detector sees it.
 
 ## Flow of one payment
 
@@ -84,6 +105,8 @@ claim about production architecture: what is being demonstrated is the contract
 ```bash
 pip install -e '.[dev]'
 python -m corridoros.cli demo          # the flagship story, printed
+python -m corridoros.cli aml           # a day's transaction monitoring
+python -m corridoros.cli aml-eval      # reports/aml_evaluation.json
 python -m corridoros.cli snapshot      # data/snapshot.json
 python -m pytest                       # the specification
 

@@ -18,6 +18,11 @@ from pathlib import Path
 from typing import Any
 
 from ..platform import CorridorOS
+from ..risk.evaluate import DEFAULT_CAPACITY
+from ..risk.evaluate import evaluate as evaluate_aml
+from ..risk.rules import RULES
+from ..risk.typologies import TYPOLOGIES
+from .feed import run_monitoring
 from .world import RECONCILIATION_DATE, World, build_demo
 
 
@@ -27,7 +32,12 @@ def _money(value) -> dict[str, Any] | None:
     return {"minor_units": value.minor_units, "currency": value.currency, "display": value.format()}
 
 
-def build_snapshot(world: World, *, now: datetime = RECONCILIATION_DATE) -> dict[str, Any]:
+def build_snapshot(
+    world: World,
+    *,
+    now: datetime = RECONCILIATION_DATE,
+    include_evaluation: bool = True,
+) -> dict[str, Any]:
     system: CorridorOS = world.system
     verification = system.audit.verify()
     queue, backlog = system.cases.queue(capacity=3)
@@ -56,6 +66,13 @@ def build_snapshot(world: World, *, now: datetime = RECONCILIATION_DATE) -> dict
     ]
 
     payments = [system.payment_view(payment.payment_id, now=now) for payment in system.payouts.all]
+
+    # The AML layer runs over the corridor's whole monitored feed — the
+    # platform's own settled movements included — not over a separate world.
+    aml_queue, aml_context, population = run_monitoring(
+        system, capacity=DEFAULT_CAPACITY, now=now
+    )
+    aml_evaluation = evaluate_aml() if include_evaluation else None
 
     return {
         "generated_at": now.isoformat(),
@@ -189,6 +206,59 @@ def build_snapshot(world: World, *, now: datetime = RECONCILIATION_DATE) -> dict
                 }
                 for exception in system.reconciliation.exceptions
             ],
+        },
+        "aml": {
+            "run": aml_queue.as_row(),
+            "monitored_transfers": len(aml_context.transfers),
+            "monitored_accounts": len(aml_context.monitored_accounts()),
+            "platform_movements_in_feed": sum(
+                1 for transfer in aml_context.transfers if transfer.payment_id
+            ),
+            "queue": [case.as_row() for case in aml_queue.within_capacity],
+            "backlog": [
+                {
+                    "case_key": case.case_key,
+                    "subject_name": case.subject_name,
+                    "subject_account": case.subject_account,
+                    "priority_score": round(case.priority_score, 4),
+                    "priority_band": case.priority_band,
+                    "queue_position": case.queue_position,
+                    "typology_keys": list(case.typology_keys),
+                    "alert_count": len(case.alerts),
+                }
+                for case in aml_queue.backlog
+            ],
+            "backlog_note": (
+                "Cases below the capacity line were not cleared. They were not looked at. The "
+                "count of planted patterns sitting in this backlog is a headline row of the "
+                "evaluation rather than an omission."
+            ),
+            "typologies": [
+                {
+                    "typology_id": typology.typology_id,
+                    "key": typology.key,
+                    "title": typology.title,
+                    "severity": typology.severity,
+                    "question": typology.question,
+                    "thresholds": typology.thresholds,
+                    "counter_evidence": list(typology.counter_evidence_hints),
+                }
+                for typology in TYPOLOGIES
+            ],
+            "rules": [
+                {
+                    "rule_id": spec.rule_id,
+                    "family": spec.family,
+                    "severity": spec.severity,
+                    "title": spec.title,
+                    "reason": spec.reason,
+                    "reads": list(spec.reads),
+                    "signal_id": spec.signal_key(),
+                }
+                for spec in RULES.values()
+            ],
+            "evaluation": aml_evaluation,
+            "planted_patterns": len(population.planted),
         },
         "events": [event.as_row() for event in system.bus.events],
         "quarantined_events": [item.as_row() for item in system.bus.quarantine],

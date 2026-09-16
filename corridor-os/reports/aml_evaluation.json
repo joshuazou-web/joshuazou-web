@@ -1,0 +1,240 @@
+{
+  "eval_version": "1.0.0",
+  "typology_version": "1.0.0",
+  "priority_version": "1.0.0",
+  "aggregation_version": "1.0.0",
+  "world_version": "1.0.0",
+  "generated_at": "2026-09-16T07:00:00+00:00",
+  "dataset": {
+    "kind": "synthetic, seeded, deliberately enriched with planted patterns",
+    "seeds": [
+      20260914,
+      20260915,
+      20260916
+    ],
+    "transfers_per_seed": 846,
+    "review_capacity": 12,
+    "caveat": "Every figure here was produced by corridoros.scenario.population. No real business, account, supplier or transfer is involved. The population is deliberately enriched, so recall and precision are both far higher than any real monitoring system would see, and neither transfers to production traffic."
+  },
+  "headline": {
+    "scenario_recall": {
+      "mean": 0.9565,
+      "stdev": 0.0,
+      "min": 0.9565,
+      "max": 0.9565,
+      "n_seeds": 3
+    },
+    "recall_clear": {
+      "mean": 1.0,
+      "stdev": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_seeds": 3
+    },
+    "recall_borderline": {
+      "mean": 0.875,
+      "stdev": 0.0,
+      "min": 0.875,
+      "max": 0.875,
+      "n_seeds": 3
+    },
+    "raw_alert_precision": {
+      "mean": 0.1619,
+      "stdev": 0.016,
+      "min": 0.1475,
+      "max": 0.1842,
+      "n_seeds": 3
+    },
+    "precision_at_capacity": {
+      "mean": 0.8333,
+      "stdev": 0.068,
+      "min": 0.75,
+      "max": 0.9167,
+      "n_seeds": 3
+    },
+    "planted_patterns_left_in_backlog": {
+      "mean": 8.0,
+      "stdev": 0.0,
+      "min": 8.0,
+      "max": 8.0,
+      "n_seeds": 3
+    }
+  },
+  "funnel": {
+    "raw_alerts": {
+      "mean": 333.6667,
+      "stdev": 25.3815,
+      "min": 304.0,
+      "max": 366.0,
+      "n_seeds": 3
+    },
+    "after_deduplication": {
+      "mean": 106.0,
+      "stdev": 5.7155,
+      "min": 98.0,
+      "max": 111.0,
+      "n_seeds": 3
+    },
+    "cases": {
+      "mean": 30.6667,
+      "stdev": 0.4714,
+      "min": 30.0,
+      "max": 31.0,
+      "n_seeds": 3
+    },
+    "within_capacity": {
+      "mean": 12.0,
+      "stdev": 0.0,
+      "min": 12.0,
+      "max": 12.0,
+      "n_seeds": 3
+    },
+    "backlog_cases": {
+      "mean": 18.6667,
+      "stdev": 0.4714,
+      "min": 18.0,
+      "max": 19.0,
+      "n_seeds": 3
+    }
+  },
+  "recall_by_typology": {
+    "AML_T01_STRUCTURING": {
+      "mean": 0.8,
+      "stdev": 0.0,
+      "min": 0.8,
+      "max": 0.8,
+      "n_seeds": 3
+    },
+    "AML_T02_RAPID_MOVEMENT": {
+      "mean": 1.0,
+      "stdev": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_seeds": 3
+    },
+    "AML_T03_FUNNEL_ACCOUNT": {
+      "mean": 1.0,
+      "stdev": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_seeds": 3
+    },
+    "AML_T04_CIRCULAR_FLOW": {
+      "mean": 1.0,
+      "stdev": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_seeds": 3
+    },
+    "AML_T05_PROFILE_MISMATCH": {
+      "mean": 1.0,
+      "stdev": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_seeds": 3
+    },
+    "AML_T06_MISSING_INFORMATION": {
+      "mean": 1.0,
+      "stdev": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "n_seeds": 3
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 20260914,
+      "transfers": 846,
+      "raw_alerts": 331,
+      "deduplicated_alerts": 109,
+      "duplicates_removed": 222,
+      "cases": 30,
+      "capacity": 12,
+      "backlog_cases": 18,
+      "planted": 23,
+      "detected": 22,
+      "scenario_recall": 0.9565,
+      "recall_clear": 1.0,
+      "recall_borderline": 0.875,
+      "recall_by_typology": {
+        "structuring": 0.8,
+        "rapid_movement": 1.0,
+        "funnel": 1.0,
+        "circular": 1.0,
+        "profile_mismatch": 1.0,
+        "missing_information": 1.0
+      },
+      "raw_alert_precision": 0.1541,
+      "precision_at_capacity": 0.9167,
+      "planted_in_backlog": 8,
+      "band_mix": {
+        "critical": 20,
+        "high": 7,
+        "medium": 3
+      }
+    },
+    {
+      "seed": 20260915,
+      "transfers": 902,
+      "raw_alerts": 366,
+      "deduplicated_alerts": 111,
+      "duplicates_removed": 255,
+      "cases": 31,
+      "capacity": 12,
+      "backlog_cases": 19,
+      "planted": 23,
+      "detected": 22,
+      "scenario_recall": 0.9565,
+      "recall_clear": 1.0,
+      "recall_borderline": 0.875,
+      "recall_by_typology": {
+        "structuring": 0.8,
+        "rapid_movement": 1.0,
+        "funnel": 1.0,
+        "circular": 1.0,
+        "profile_mismatch": 1.0,
+        "missing_information": 1.0
+      },
+      "raw_alert_precision": 0.1475,
+      "precision_at_capacity": 0.8333,
+      "planted_in_backlog": 8,
+      "band_mix": {
+        "critical": 21,
+        "high": 7,
+        "medium": 3
+      }
+    },
+    {
+      "seed": 20260916,
+      "transfers": 838,
+      "raw_alerts": 304,
+      "deduplicated_alerts": 98,
+      "duplicates_removed": 206,
+      "cases": 31,
+      "capacity": 12,
+      "backlog_cases": 19,
+      "planted": 23,
+      "detected": 22,
+      "scenario_recall": 0.9565,
+      "recall_clear": 1.0,
+      "recall_borderline": 0.875,
+      "recall_by_typology": {
+        "structuring": 0.8,
+        "rapid_movement": 1.0,
+        "funnel": 1.0,
+        "circular": 1.0,
+        "profile_mismatch": 1.0,
+        "missing_information": 1.0
+      },
+      "raw_alert_precision": 0.1842,
+      "precision_at_capacity": 0.75,
+      "planted_in_backlog": 8,
+      "band_mix": {
+        "critical": 16,
+        "high": 9,
+        "medium": 6
+      }
+    }
+  ],
+  "boundary": "No model participates in detection, deduplication, aggregation or prioritisation. Every alert above is reproducible from the transfer feed alone."
+}

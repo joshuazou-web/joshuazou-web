@@ -44,7 +44,7 @@ approval raises.
 | Was | Is now | What changed |
 | --- | --- | --- |
 | **[China-to-Singapore Payment Corridor](../portfolio/china-to-singapore-payment-corridor.md)** — two Markdown documents, no code | `payments/` — **Payment Core** | The blueprint was implemented: KYB, collection, a double-entry ledger, FX with expiry, the payout lifecycle, settlement, three-way reconciliation |
-| **CrossBorder AML RiskOps** | `risk/` + `core/audit.py` | Reads the platform's events instead of generating its own world; its money arithmetic, hash chain and guardrails became shared infrastructure |
+| **CrossBorder AML RiskOps** | `risk/` + `core/audit.py` | Its six AML typologies, alert deduplication, case aggregation and eight-factor priority now run over this platform's own transfer feed; its money arithmetic, hash chain and guardrails became shared infrastructure |
 | **WealthGuard Proofline** | `evidence/` — **Evidence & Policy Copilot** | Its method kept, its subject changed: checksummed, located, citable evidence for KYB, payment review and investigations instead of investment research |
 | **ThinkBeforeClick FinSafe** | `intervention/` — **Pre-payment Intervention Engine** | Same ladder, real inputs: a payment instruction, a risk assessment and the state of the evidence, rather than pasted text |
 
@@ -97,6 +97,39 @@ Twelve events: `business.submitted`, `business.approved`, `payment.created`,
 `payment.approved`, `payment.submitted`, `payment.settled`,
 `reconciliation.failed`, `exception.resolved`.
 
+## The AML layer
+
+Two deterministic layers sit in `risk/`: **21 rules** over one payment, and **6 AML typologies**
+over the monitored transfer feed — which is the platform's own settled movements plus the
+synthetic corridor population, so the flagship payment appears in the same world the detectors
+read. [Rule and typology catalogue](docs/AML_RULE_CATALOG.md)
+
+```
+331 alerts  →  109 after deduplication  →  30 cases  →  12 a team can open today  →  18 waiting
+```
+
+That last number is the point. Cases below the capacity line **were not cleared — they were not
+looked at**, and the count of planted patterns sitting there is a headline row of the evaluation
+rather than an omission.
+
+| Synthetic evaluation, 3 seeded worlds | |
+| --- | --- |
+| Recall, patterns planted well inside their thresholds | **1.000 ± 0.000** |
+| Recall, patterns planted *just* inside them | **0.875 ± 0.000** |
+| Alert precision, raw | **0.162 ± 0.016** |
+| Precision at review capacity | **0.833 ± 0.068** |
+| Planted patterns left in the backlog | **8** |
+
+The detectors never see the generator's labels — `MonitoringContext.blind()` strips them and the
+constructor raises on a feed that still carries them — so recall measures detection rather than
+restating the label. The population is deliberately enriched, so neither figure transfers to
+production traffic. [Evaluation](docs/EVALUATION.md)
+
+Priority is an ordering, not a verdict: eight factors, weights summing to 1.0, every contribution
+rendered beside the case, because an investigator who disagrees has to see which factor did it.
+
+![The analyst workbench: the queue, the eight factors behind a case's position, the alert, and what would argue against it](docs/screenshots/04-aml-workbench.png)
+
 ## The seven scenarios
 
 `tests/e2e/test_scenarios.py` — these are the specification, not illustrations.
@@ -111,13 +144,15 @@ Twelve events: `business.submitted`, `business.approved`, `payment.created`,
 | 6 | Duplicated / out-of-order webhook | A replay changes nothing; an early lifecycle event is quarantined, not applied |
 | 7 | Reconciliation mismatch | A typed exception with an owner and a due time; the run **cannot** be marked reconciled while a difference is unexplained |
 
-65 tests total, `python -m pytest`, no third-party dependency in the domain layer.
+124 tests, `python -m pytest`, no third-party dependency in the domain layer.
 
 ## Running it
 
 ```bash
 pip install -e '.[dev]'
 python -m corridoros.cli demo          # the flagship story
+python -m corridoros.cli aml           # a day's transaction monitoring
+python -m corridoros.cli aml-eval      # reports/aml_evaluation.json
 python -m corridoros.cli boundary      # what the copilot may and may not do
 python -m corridoros.cli verify-audit  # recompute the hash chain
 python -m pytest                       # the seven scenarios and the rest
@@ -132,12 +167,15 @@ cannot drift away from the code that produced it.
 
 ## What is not here yet
 
-Phase P2 ports CrossBorder RiskOps' twenty transaction-integrity rules and six
-AML typologies onto this event stream, with the analyst workbench and its queue
-evaluation. Phase P3 brings WealthGuard's 13 official documents and 1,714
-checksummed evidence chunks into the evidence register. The console says which
-signal set it is currently running rather than implying the AML layer has
-already arrived.
+Phase P3 brings WealthGuard's 13 official documents and 1,714 checksummed evidence chunks into the
+evidence register, with its citation-trace evaluation re-run here. The evidence register currently
+holds the synthetic invoices, purchase orders, callback records and authorisations the
+demonstration creates.
+
+The rule set is **adapted, not copied**: eleven of RiskOps' twenty acquiring rules carry over with
+the subject changed, ten card-specific ones were replaced by corridor equivalents, and one was
+added. Its original recall and precision figures therefore do not transfer, and the evaluation
+keeps the two sets apart.
 
 Figures inherited from the four source projects are labelled with the project
 and dataset that produced them and are not restated as CorridorOS results.
