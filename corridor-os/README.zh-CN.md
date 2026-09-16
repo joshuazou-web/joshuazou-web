@@ -37,7 +37,7 @@ payment.submitted → payment.settled      扣除 SGD 9.80 手续费后净额 SG
 
 | 原来 | 现在 | 变化 |
 | --- | --- | --- |
-| **China-to-Singapore Payment Corridor**（两篇 Markdown，零代码） | `payments/` **Payment Core** | 把 blueprint 真正实现：KYB、收款、复式账本、带过期的 FX、付款状态机、结算、三方对账 |
+| **[China-to-Singapore Payment Corridor](../portfolio/china-to-singapore-payment-corridor.zh-CN.md)**（两篇 Markdown，零代码） | `payments/` **Payment Core** | 把 blueprint 真正实现：KYB、收款、复式账本、带过期的 FX、付款状态机、结算、三方对账 |
 | **CrossBorder AML RiskOps** | `risk/` + `core/audit.py` | 改为读取平台事件，不再自造世界；它的金额算术、哈希链、AI guardrails 升级为全平台基础设施 |
 | **WealthGuard Proofline** | `evidence/` **Evidence & Policy Copilot** | 方法保留、主题更换：为 KYB、付款审核和调查提供带校验和、带定位、可引用的证据 |
 | **ThinkBeforeClick FinSafe** | `intervention/` **Pre-payment Intervention Engine** | 同一套干预阶梯，输入换成真实的付款指令、风险评估和证据状态，而不是粘贴的文本 |

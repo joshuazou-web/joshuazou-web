@@ -43,7 +43,7 @@ approval raises.
 
 | Was | Is now | What changed |
 | --- | --- | --- |
-| **China-to-Singapore Payment Corridor** — two Markdown documents, no code | `payments/` — **Payment Core** | The blueprint was implemented: KYB, collection, a double-entry ledger, FX with expiry, the payout lifecycle, settlement, three-way reconciliation |
+| **[China-to-Singapore Payment Corridor](../portfolio/china-to-singapore-payment-corridor.md)** — two Markdown documents, no code | `payments/` — **Payment Core** | The blueprint was implemented: KYB, collection, a double-entry ledger, FX with expiry, the payout lifecycle, settlement, three-way reconciliation |
 | **CrossBorder AML RiskOps** | `risk/` + `core/audit.py` | Reads the platform's events instead of generating its own world; its money arithmetic, hash chain and guardrails became shared infrastructure |
 | **WealthGuard Proofline** | `evidence/` — **Evidence & Policy Copilot** | Its method kept, its subject changed: checksummed, located, citable evidence for KYB, payment review and investigations instead of investment research |
 | **ThinkBeforeClick FinSafe** | `intervention/` — **Pre-payment Intervention Engine** | Same ladder, real inputs: a payment instruction, a risk assessment and the state of the evidence, rather than pasted text |
