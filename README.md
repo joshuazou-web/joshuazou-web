@@ -1,383 +1,105 @@
-<p align="left">
-  <strong>English</strong> · <a href="README.zh-CN.md">中文</a>
-</p>
+<p align="right"><strong>EN</strong> &nbsp;·&nbsp; <a href="README.zh-CN.md">中文</a></p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img alt="Zou Zhihua (Josh) — Cross-border FinTech Product. Payments, risk and AI across China, the Greater Bay Area and Singapore." src="assets/hero-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-n1-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-n1-light.svg">
+  <img alt="Zou Zhihua — building boundaries for AI economic power" src="assets/hero-n1-light.svg" width="100%">
 </picture>
 
 <p align="center">
-  <a href="mailto:zouzhihuajosh@outlook.com">Email</a> ·
-  <a href="https://www.linkedin.com/in/zouzhihuajosh">LinkedIn</a> ·
-  <a href="https://github.com/joshuazou-web?tab=repositories">All repositories</a> ·
-  <a href="ABOUT_JOSH.md">Beyond the portfolio</a>
+  <a href="mailto:zouzhihuajosh@outlook.com">Email</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/zouzhihuajosh">LinkedIn</a> &nbsp;·&nbsp;
+  <a href="https://joshuazou-web.github.io/money-ai-is-allowed-to-move/en/">Book</a> &nbsp;·&nbsp;
+  <a href="https://github.com/joshuazou-web?tab=repositories">All work</a>
 </p>
 
-## Read first
+## 01 / The question
+
+I have worked across economics, venture scouting, investment research, FinTech products, AI hardware commercialization, and software. They gradually led me to one question:
+
+> ### As AI learns to earn, spend, invest, sign contracts, and control assets, how do we keep its economic power bounded, auditable, and ultimately under human control?
+
+I call this direction **AI Economic Governance**. I am writing about it, building prototypes, and looking for real situations where the idea can be tested.
+
+## 02 / Start here
 
 <table>
 <tr>
-<td width="50%" align="center" valign="bottom">
-<a href="https://joshuazou-web.github.io/money-ai-is-allowed-to-move/en/"><img src="assets/thumb-money-ai-en.png" alt="The Money AI Is Allowed to Move — cover" width="252"></a>
-</td>
-<td width="50%" align="center" valign="bottom">
-<a href="assets/zhihua-zou-ai-product-business-casebook-zh-cn.pdf"><img src="assets/thumb-casebook.png" alt="AI 产品商业案例集 — cover" width="252"></a>
-</td>
-</tr>
-<tr>
-<td valign="top">
+<td width="50%" valign="top">
 
-**[The Money AI Is Allowed to Move · 被允许动的钱](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/en/)**
-40 pages · industry projection · 2026 · English & Mandarin
+### The Money AI Is Allowed to Move
 
-One variable decides fintech's next decade: how much money an AI is allowed to move without a human reviewing each transaction. An L0–L4 ladder graded on liability rather than capability, the four control rights, and six falsifiable bets with dated windows.
+**A short book and working thesis.**
 
-English: [Web](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/en/) · [PDF](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/The_Money_AI_Is_Allowed_to_Move_Fintechs_Next_Decade.pdf)  
-中文：[网页](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/) · [PDF](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/%E8%A2%AB%E5%85%81%E8%AE%B8%E5%8A%A8%E7%9A%84%E9%92%B1_%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8D%81%E5%B9%B4.pdf) · [Repo](https://github.com/joshuazou-web/money-ai-is-allowed-to-move)
+An L0–L4 framework for how much economic authority AI should receive, based on liability and control—not just model capability.
+
+[Read online →](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/en/)
 
 </td>
-<td valign="top">
+<td width="50%" valign="top">
 
-**[AI 产品商业案例集 · AI Product Business Casebook](assets/zhihua-zou-ai-product-business-casebook-zh-cn.pdf)**
-21 pages · 14 public projects · Mandarin
+### CrossBorder AML RiskOps
 
-Each case carries the business proposition, the product mechanism, reproducible validation evidence, the commercial model, and an independent development path. Every number in it can be recomputed from the matching repository.
+**A working product prototype.**
 
-[PDF](assets/zhihua-zou-ai-product-business-casebook-zh-cn.pdf)
+When 900 accounts trigger alerts and a team can review only 60, the system prioritizes evidence while keeping the final decision with a human.
+
+[View repository →](https://github.com/joshuazou-web/crossborder-riskops)
 
 </td>
 </tr>
 </table>
 
-## Cross-border FinTech portfolio
+## 03 / Selected builds
 
-I focus on one domain: **how businesses move money across borders, and how product, risk, compliance,
-and AI should work together around that movement.** I grew up in Shenzhen, studied applied economics
-in Macau, and now study Digital Financial Technology at NUS in Singapore. That route connects Chinese
-business context, the Greater Bay Area, and Southeast Asia in one product perspective.
-
-> **Cross-border FinTech is the domain. Payments and risk are the product core. AI is a controlled
-> workflow capability—not the identity of the product.**
-
-| Product case | The operating question | What it proves |
+| Build | The real question | Evidence |
 | --- | --- | --- |
-| **[CorridorOS](corridor-os/README.md)** · [中文](corridor-os/README.zh-CN.md) | How does a Chinese company entering Singapore complete onboarding, collection, FX, supplier payout, risk checks, settlement and reconciliation—with traceable evidence and explicit human authority behind every decision? | One platform, four modules, one set of identifiers: a double-entry ledger, dual approval, 21 payment rules and 6 AML typologies over one transfer feed, a capacity queue that reports its backlog, a hash-chained audit log, and seven end-to-end scenarios |
-| **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | When 900 accounts alert and a team can open only 60, which cases deserve attention—and what may AI do? | Payment lifecycle, AML/risk operations, evidence, queue capacity, human authority, and reproducible evaluation |
-| **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | When a financial question is underspecified, what should the product clarify and what evidence can it trust? | One-question clarification, official-source retrieval, citation/version governance, policy and calculation boundaries |
-| **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | What should happen in the final seconds before a consumer or business sends a risky payment? | Payment-stage intervention, deterministic controls, independent verification, and amount-aware business safeguards |
-
-The three implemented projects below CorridorOS answer the hard parts of the same problem, and
-CorridorOS is what they add up to once they share one payment, one identifier set, and one audit
-log: **enter a market, move money, monitor risk, explain financial evidence, and intervene before
-an unsafe decision—without giving a model hidden authority.**
-
-## The question behind my work
-
-A lot of AI and digital products try to answer faster, automate more, and look more capable. But
-when a product can affect money, risk, or a person's next action, a plausible answer is nowhere near
-enough.
-
-What evidence did the system use? Who calculated the important number? Is the source still current?
-Who has authority to decide? Will the model stop when it is uncertain? And when it should not decide,
-does the product still help a person take the next step?
-
-My projects keep returning to the same idea:
-
-> **Turn an ambiguous problem into an explicit task, put model and automation capability inside inspectable boundaries, and make the next human action clear.**
-
-That direction grew out of experiences that initially looked unrelated: researching cybersecurity
-companies at Sequoia, working on a blockchain-finance product at Huatai International, studying
-digital financial technology at NUS, and building and investing in early-stage products. They now
-converge on one way of working: make the risks, exceptions, and ownership explicit before deciding
-where AI belongs.
-
-## Where a model is allowed to speak
-
-Three of the projects below integrate a language model. Two deliberately do not. It is the same
-decision made once per problem, and the boundary is written in code rather than in a prompt.
-
-| Project | What the model may do | What it can never do |
-| --- | --- | --- |
-| **CrossBorder RiskOps** | Summarise a case, explain signals with citations, answer the analyst's second question, abstain | Detect, prioritise, route, or commit an outcome—the brief schema has no decision field and the audit log rejects an AI actor |
-| **WealthGuard Proofline** | Turn already-selected, dated evidence into language | Choose policy, compute a number, date a source, or set a confidence level |
-| **FinSafe** | Suggest candidate signals from existing IDs and explain them in plain language | Lower an intervention level a deterministic rule has already set |
-| **DEBUG.CN** | Turn an API failure into evidence, root cause, a minimal fix, and verification steps | Reach a live key, skip server-side redaction, or bypass rate and token controls |
-
-Four properties are shared. The deterministic provider is the default, so the demo, the tests, and
-every published number run without a key. Model output is schema-validated and rejected when it
-invents an identifier. A timeout or malformed response degrades to the rules rather than to a
-partial recommendation. And every metric is labelled with the provider that produced it.
-
-The two projects that say no are the other half of the same judgment: **Converge** and
-**OpsSignal** already had interpretable, reproducible rules that were sufficient, so a model would
-have added cost and variance without adding correctness.
-
-## If you have five minutes
-
-Three projects. They move from a payment-operations decision, to an investment-research question, to
-the last seconds before a payment—but follow the same product logic: keep consequential authority
-explicit, make the evidence inspectable, and design what happens next.
-
-### 1 · Nine risk signals fire on a cross-border payment. What should the AI do?
-
-[**CrossBorder AML RiskOps →**](https://github.com/joshuazou-web/crossborder-riskops)
-
-It should not decide whether to release or hold the payment. It should identify the two signals that
-matter, expose missing evidence, and leave the decision to a person.
-
-I built a cross-border payment lifecycle, 20 deterministic risk rules, an interpretable model, a
-human review queue, and a hash-chained audit trail. No language model participates in detection,
-prioritisation, or routing. A copilot now sits in the one place it belongs: it summarises the case,
-explains each signal with citations, names the missing information that would settle the question,
-answers the analyst's follow-up question from a wider packet, and may abstain. A tired analyst
-asking it to "just approve this one" is refused before any model call—and the refusal is not the
-safeguard. The brief schema has no decision field and the audit log rejects an AI actor, so the
-answer has no path to become an outcome.
+| **[CorridorOS](corridor-os/README.md)** | Once a Chinese company opens in Singapore, who is allowed to decide each movement of its money—and what evidence stands behind that decision? | 21 payment rules · 6 AML typologies · 124 tests · 7 end-to-end scenarios · hash-chained audit |
+| **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | Which alerts deserve human attention—and what must AI never decide? | 6,000 synthetic transactions · 20 rules · 453 tests · 97.01% recall |
+| **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | How can a financial answer prove where every important claim came from? | 13 official documents · 1,714 evidence chunks · 165 regression and citation checks |
+| **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | Can safety appear in the final seconds before money moves? | 243 locked cases · deterministic intervention · amount-aware business controls |
 
 <details>
-<summary><strong>Measured results and limits</strong></summary>
+<summary><strong>More experiments</strong></summary>
 
 <br>
 
-- 6,000 synthetic transactions across five independently generated worlds: 97.01% ± 0.42% recall,
-  80.06% ± 1.49% precision, and a 6.95% ± 0.47% false-positive rate at a 27.08% ± 0.42% review rate;
-- raw alert precision 0.223, rising to 0.870 at review capacity—the ordering is the product;
-- 453 automated tests, including an adversarial suite aimed at the copilot's grounding gate;
-- a real OpenAI-compatible model is opt-in through one environment variable; the demo, the tests,
-  and every published metric run on the deterministic provider with no key, and figures from a live
-  model are labelled separately;
-- all data is synthetic, and the system has never run in production.
+- **[Converge](https://github.com/joshuazou-web/techjam-converge)** — an interpretable shopping agent that asks the question most likely to reduce uncertainty; 0.976 technical score with zero model tokens.
+- **[OpsSignal](https://github.com/joshuazou-web/opssignal)** — routes 3,600 synthetic operations tickets using confidence gates and a human-review queue.
+- **[DEBUG.CN](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot)** — turns API failures into evidence, root causes, minimal fixes, and verification steps for Mandarin-speaking developers.
+- **[Agent Control Plane](https://github.com/joshuazou-web/agent-control-plane)** — makes an agent's authority executable through default-deny policy, approval gates, budgets, and audit trails.
 
 </details>
 
-### 2 · A user asks, "Is SPY suitable for me?" Why not answer immediately?
-
-[**WealthGuard Proofline →**](https://github.com/joshuazou-web/wealthguard-proofline)
-
-Because horizon, liquidity needs, or loss tolerance could each change the research path.
-
-WealthGuard identifies the one missing fact most likely to change that path and asks one question.
-It then retrieves dated, page-level official evidence, delegates financial arithmetic to
-deterministic tools, and exposes the full research trail. Requests to trade or guarantee a return
-are refused by a policy engine outside the model.
-
-The project has since been repositioned around what a fluent securities assistant cannot easily
-prove on its own: **evidence and version validation before an answer is trusted, and bad-case
-governance after one fails.** A language model may turn already-selected evidence into language.
-Its output has to pass schema and citation validation, and a timeout or a malformed response
-degrades to the deterministic path, a caution, or an abstention. Policy, arithmetic, dates,
-confidence, and audit never depend on a model name.
-
-<details>
-<summary><strong>Measured results and limits</strong></summary>
-
-<br>
-
-- 13 original documents from the SEC, HKEX, SZSE, and CSRC, parsed into 1,714 evidence chunks bound
-  to page or paragraph locations and SHA-256 checksums;
-- 126 fixed-seed policy regression cases and 39 official citation-trace cases;
-- a quality-operations surface with 16 error types, expected-versus-actual traces, ownership, and
-  regression links, so a failed answer becomes an attributable case instead of a complaint;
-- for education and research only—not investment advice; no brokerage connection or execution
-  path; an independent prototype with no institutional affiliation.
-
-</details>
-
-### 3 · What if the anti-scam lesson arrived at the moment the money was about to move?
-
-[**ThinkBeforeClick FinSafe →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
-[**Live demo**](https://joshuazou-web.github.io/think-before-click-product-case/finsafe/) ·
-[**Original team-prototype case**](https://joshuazou-web.github.io/think-before-click-product-case/)
-
-ThinkBeforeClick began as a five-person NUS Cloud Computing team project: an AWS serverless
-prototype connecting localised phishing education for individuals with authorised campaign
-analytics for enterprises. The course report records 23 participants, 4.3/5 usability, and an
-Honourable Mention at the 27th NUS STePS Showcase.
-
-The harder product question came next: would any of that knowledge still surface while urgency,
-authority, secrecy, or a promised return was pushing someone toward an irreversible payment?
-FinSafe moves the intervention to that moment—`message → risk signals → scam stage → deterministic
-intervention → independent verification → user decision → micro-learning`—with 10 scam categories,
-16 sourced signals, a nine-stage state model, and a five-level intervention ladder. A business
-payment pack adds the dimension the consumer flow never modelled: **how much money is about to
-move** sets a floor under the intervention level that signal rules may raise but never lower.
-
-The result worth reading is a baseline rather than the headline. An LLM without deterministic
-safety rules reached 95.2% critical-signal recall but only 29.2% intervention accuracy. With rules
-owning the intervention level and the model restricted to suggesting known signal IDs and
-explaining them, accuracy is 97.5% at the same recall, with 0% over-intervention.
-
-<details>
-<summary><strong>Measured results and limits</strong></summary>
-
-<br>
-
-- 161 fixed consumer cases and 82 locked business cases, each measured against three baselines;
-  removing only the amount dimension pushes business under-intervention from 0% to 22.0%;
-- six failing indirect-language cases stay visible rather than being deleted to improve the score;
-- the demo runs entirely in the browser on a deterministic mock provider—no API key, no email, no
-  tracking, and pasted text is redacted before analysis;
-- the 23-person pilot tested the original prototype, not FinSafe, and no figure from it is
-  presented as a FinSafe result; the private team implementation stays private;
-- a portfolio P0—not a bank product, a fraud verdict, or a payment blocker.
-
-</details>
-
-## The same product logic, applied elsewhere
-
-<details>
-<summary><strong>Ask the question that reduces uncertainty</strong> — Converge</summary>
-
-<br>
-
-[**Converge →**](https://github.com/joshuazou-web/techjam-converge)
-
-Instead of appending every utterance to a search query, Converge asks a different question: if this
-product were the target, could it have generated what the shopper just said? And which next question
-would eliminate the most wrong answers?
-
-Converge combines an inverse user model, expected information gain, and confidence-gated
-recommendations to make the conversation converge. It also let me test an important product
-judgment: **when interpretable and reproducible rules are already sufficient, adding an LLM does
-not automatically make the product better**—which is also why the projects that do use one keep it
-inside a schema and outside the decision.
-
-- TechnicalScore **0.976 versus a 0.107 baseline** on the official 200-session evaluator;
-- the target was surfaced in 200/200 sessions, in 1.96 turns on average;
-- zero tokens and zero model cost;
-- public ablations and paraphrase stress tests;
-- bounded to a closed catalog and synthetic users—not evidence of real conversion or retention.
-
-</details>
-
-<details>
-<summary><strong>Put uncertainty into the workflow instead of hiding it inside a score</strong> — OpsSignal, DEBUG.CN</summary>
-
-<br>
-
-[**OpsSignal**](https://github.com/joshuazou-web/opssignal) finds structure in 3,600 synthetic
-operations tickets. I chose an interpretable model over an LLM, then drew an explicit human-AI
-boundary: high-confidence results can flow automatically; uncertain cases enter a review queue.
-
-- 0.842 held-out accuracy and 0.836 Macro-F1;
-- at a 0.65 threshold, 84.0% auto-coverage and 92.3% agreement among auto-classified samples;
-- 19 data validations and 166 automated tests.
-
-[**DEBUG.CN**](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot) turns OpenAI
-API and SDK failures into reviewable evidence, root causes, minimal fixes, and verification steps.
-It is designed to help Mandarin-speaking developers know what to inspect next—not to generate one
-more plausible explanation. The project covers eight error categories, 24 backend tests, and a
-20/20 public evaluation, with server-side secret redaction, rate and token controls, and a
-deterministic fallback.
-
-</details>
-
-<details>
-<summary><strong>Give agents boundaries before giving them authority</strong> — Volc Agent Launchpad, Agent Control Plane, DecisiveEval, PropTech Lab</summary>
-
-<br>
-
-[**Volc Agent Launchpad**](https://github.com/joshuazou-web/volc-agent-launchpad) maps prompt
-injection, privilege escalation, and dangerous-command risk into allow, block, or human-review
-outcomes. It includes eight demo scenarios, false-positive corpora, audit traces, and 138 passing
-tests with one skipped. It is a security prototype, not proof of complete attack coverage.
-
-[**Agent Control Plane**](https://github.com/joshuazou-web/agent-control-plane) turns "what an agent
-may do" from prompt text into executable policy: default deny, human approval, runtime budgets,
-one-shot gates, and hash-linked audit. The goal is not to make the agent smarter. It is to make its
-authority explicit and harder to bypass accidentally.
-
-[**DecisiveEval**](https://github.com/joshuazou-web/decisive-eval) asks a deeper evaluation
-question: does a coding-agent conclusion survive defensible changes to the grader, runtime,
-failure policy, cost, or latency assumptions? It ships 26 public JSON Schemas, 103 tests,
-immutable evidence receipts, and the experiments that did not work.
-
-[**PropTech Agent Reliability Lab**](https://github.com/joshuazou-web/proptech-agent-reliability-lab)
-puts those reliability questions inside a synthetic but recognisable customer workflow, using
-FastAPI and Streamlit to observe how agents fail, recover, and get debugged.
-
-</details>
-
-<details>
-<summary><strong>Other financial and product experiments</strong> — DeFi lending, FX, SoAI, wbox</summary>
-
-<br>
-
-- [**Risk-Based DeFi Lending**](https://github.com/joshuazou-web/risk-based-defi-lending-case-study):
-  external risk signals translated into explicit LTV, interest-rate, liquidation-threshold, and
-  health-factor policy. [Interactive demo](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/)
-- [**Algorithmic FX Trading & Monitoring**](https://github.com/joshuazou-web/algorithmic-fx-product-case):
-  market-regime logic challenged by causal backtesting, turnover cost, and fail-closed practice
-  execution. [Interactive demo](https://joshuazou-web.github.io/algorithmic-fx-product-case/)
-- [**SoAI 2026 High-Beta Leader**](https://github.com/joshuazou-web/SoAI-2026-High-Beta-Leader):
-  a strategy frozen before the competition outcome rather than fitted afterward.
-- [**白盒 · wbox**](https://github.com/joshuazou-web/wbox):
-  a Mandarin-first presentation rehearsal product that helps students genuinely understand the
-  AI-assisted coursework they are about to defend.
-
-</details>
-
-## How I build
-
-I usually begin with a problem that is not polished, but is real:
+## 04 / How I work
 
 ```text
-a market, user, or risk signal
-        ↓
-a reproducible problem
-        ↓
-explicit assumptions, authority, and failure boundaries
-        ↓
-the smallest complete product loop
-        ↓
-evaluation, failure analysis, and human review
-        ↓
-publish the number—and where the number stops being valid
+real problem
+    ↓
+explicit assumptions and authority boundaries
+    ↓
+smallest complete product loop
+    ↓
+evaluation, failure analysis, human review
+    ↓
+publish the result — and where it stops being valid
 ```
 
-| Build | Validate | Communicate |
-| --- | --- | --- |
-| Python, TypeScript, SQL, FastAPI, React, AWS Serverless, DuckDB, Solidity, Git, OpenAI-compatible LLM providers behind a schema | Metric trees, rule/model evaluation, schema-bound model output, provider-labelled metrics, confidence and failure analysis, audit trails, redaction, rate limits, usability testing | PRDs, workflow design, conversational UI, Mandarin/English demos, acceptance and retrospectives |
+I use AI to help with research, code, and first drafts. I remain responsible for the product judgment, evaluation design, evidence, and the decision about what the system is allowed to do.
 
-I use Codex and Claude Code to assist with ideation and first drafts of code and tests. I own the
-product judgment, validation design, reproducibility, and truth boundaries.
+## 05 / The path here
 
-<details>
-<summary><strong>Where I come from</strong></summary>
+- **NUS** · MSc Digital Financial Technology · 2025–2027
+- **Huatai International** · FinTech Product Intern · translated financial rules into product requirements
+- **Sequoia China** · Investment Research Analyst · studied technology and cybersecurity companies
+- **MiraclePlus** · Campus Scout · met young founders and evaluated early ideas
+- **AI Star** · Investor & Product Commercialization Lead · worked with customers, factories, product cost, pricing, and delivery
 
-<br>
-
-- **Huatai International · FinTech Intern, Jul–Nov 2024**
-  Worked on iteration and launch coordination for a blockchain-finance product; evaluated AI risk,
-  CBDC, DLT, DeFi, and digital-human concepts through user value, feasibility, risk, and cost.
-- **AI Star · Angel Investor and Co-founder, 2022–present**
-  Worked on segmentation, pricing and unit economics, feature prioritisation, and partner
-  communication for an early-stage education product.
-- **Sequoia Capital · Investment Analyst Intern, Jan–May 2024**
-  Researched dozens of cybersecurity companies through customer need, commercialisation, and
-  technology trends.
-- **MiraclePlus · Campus Scout, Mar–Aug 2023**
-  Sourced and screened early-stage ventures and interviewed founders about pain points,
-  differentiation, and validation paths.
-- **Other work**
-  First Prize and Best Entrepreneurship Award, National Innovation & Entrepreneurship Challenge
-  (cross-border e-commerce); Budweiser digital-transformation research,
-  [DOI 10.54691/bcpbm.v38i.3909](https://doi.org/10.54691/bcpbm.v38i.3909).
-
-</details>
-
-## Public-work boundary
-
-Public repositories contain portfolio-safe code, architecture, evaluation, and reviewed examples.
-Team-owned implementations, credentials, private data, and restricted configuration remain
-private. Demo datasets are synthetic unless stated otherwise. Full employment and education details
-are available directly to recruiters.
+The path is not perfectly straight. The question is becoming clearer.
 
 ---
 
 <p align="center">
-  Open to FinTech and AI product roles in Shenzhen, Hong Kong, Singapore, and other major technology and financial hubs.<br>
-  If you are also thinking about what AI should do—and where it should stop—I would be glad to talk.
+  <strong>I am looking for people who want to challenge this question—or build something around it.</strong><br><br>
+  <a href="mailto:zouzhihuajosh@outlook.com">zouzhihuajosh@outlook.com</a>
 </p>

@@ -1,280 +1,105 @@
-<p align="left">
-  <a href="README.md">English</a> · <strong>中文</strong>
-</p>
+<p align="right"><a href="README.md">EN</a> &nbsp;·&nbsp; <strong>中文</strong></p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-n1-dark-zh.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-n1-light-zh.svg">
+  <img alt="邹志华——为 AI 的经济权力建立边界" src="assets/hero-n1-light-zh.svg" width="100%">
+</picture>
 
 <p align="center">
-  <a href="assets/zhihua-zou-ai-product-business-casebook-zh-cn.pdf"><strong>AI 产品商业案例集合（中文版，PDF）→</strong></a>
+  <a href="mailto:zouzhihuajosh@outlook.com">邮箱</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/zouzhihuajosh">LinkedIn</a> &nbsp;·&nbsp;
+  <a href="https://joshuazou-web.github.io/money-ai-is-allowed-to-move/">书</a> &nbsp;·&nbsp;
+  <a href="https://github.com/joshuazou-web?tab=repositories">全部作品</a>
 </p>
 
-<h1 align="center">邹志华 Josh</h1>
+## 01 / 我在追的问题
 
-<p align="center">
-  <strong>我不希望 AI 与数字产品把重要决定藏在一个精致的界面背后。<br>
-  我希望它让证据清晰可见、权限边界明确，也让人的下一步行动更安全。</strong>
-</p>
+我做过经济学、早期项目寻找、投资研究、金融科技产品、AI 硬件商业化和软件开发。这些经历逐渐把我带到同一个问题：
 
-<p align="center">
-  跨境金融科技产品 · 支付 / 风控 / AI · 中国—澳门/横琴—新加坡<br>
-  新加坡国立大学 数字金融科技硕士 · 2027 年 1 月毕业 · 中文 / English
-</p>
+> ### 当 AI 可以自己赚钱、花钱、投资、签合同和控制资产，我们怎样确保它的经济权力始终有边界、可审计，并最终由人控制？
 
-<p align="center">
-  <a href="mailto:zouzhihuajosh@outlook.com">邮箱</a> ·
-  <a href="https://www.linkedin.com/in/zouzhihuajosh">LinkedIn</a> ·
-  <a href="https://github.com/joshuazou-web?tab=repositories">全部仓库</a> ·
-  <a href="ABOUT_JOSH.md">作品集之外</a>
-</p>
+我把这个方向叫作 **AI Economic Governance（AI 经济治理）**。我正在写、做原型，也在寻找能真正检验这个想法的现实场景。
 
-<img align="right" width="150" src="assets/avatar-josh-500.png" alt="" />
+## 02 / 从这里开始
 
-## 跨境金融科技产品作品集
+<table>
+<tr>
+<td width="50%" valign="top">
 
-我现在聚焦一条明确的主线：**企业如何跨境移动资金，以及产品、支付、风险、合规与 AI
-应该如何围绕资金流协同。**我在深圳成长，在澳门学习应用经济学，现在在新加坡国立大学学习
-数字金融科技。这条路径把中国企业环境、大湾区与东南亚连接成了一个完整的产品视角。
+### 《AI 被允许动的钱》
 
-> **跨境金融科技是主赛道，支付与风险是产品核心，AI是受控制的工作流能力，而不是产品身份。**
+**一本小书，也是一套还在生长的假设。**
 
-| 产品案例 | 核心运营问题 | 证明的能力 |
+它提出 L0–L4 经济权限框架：不只看模型有多强，而是看它能承担什么责任、获得多少控制权。
+
+[在线阅读 →](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/)
+
+</td>
+<td width="50%" valign="top">
+
+### CrossBorder AML RiskOps
+
+**一个可以运行的产品原型。**
+
+当 900 个账户触发预警、团队每天只能调查 60 个时，系统负责整理和排序证据，最终决定仍然留给人。
+
+[查看项目 →](https://github.com/joshuazou-web/crossborder-riskops)
+
+</td>
+</tr>
+</table>
+
+## 03 / 代表作品
+
+| 作品 | 它真正回答的问题 | 可验证的结果 |
 | --- | --- | --- |
-| **[CorridorOS](corridor-os/README.zh-CN.md)** · [English](corridor-os/README.md) | 中国企业进入新加坡后，如何完成企业准入、SGD收款、FX、供应商付款、风险检查、结算与对账，并让每一个资金与合规决定都有可追溯证据和明确的人工权限？ | 一个平台、四个模块、一套统一ID：复式账本、双人审批、21 条支付规则与 6 种 AML 典型模式跑在同一条资金流上、会如实报告积压的产能队列、哈希链审计，以及七个端到端场景 |
-| **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | 900个账户预警、团队每天只能调查60个时，哪些案件应优先，AI又可以做什么？ | 支付生命周期、AML/风险运营、证据、队列产能、人工权限和可复现评测 |
-| **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | 金融问题信息不足时，产品该澄清什么，又能相信哪些证据？ | 每轮一个关键澄清、官方证据检索、引用/版本治理，以及政策与计算边界 |
-| **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | 个人或企业即将发出高风险付款前，产品应该怎样介入？ | 支付前干预、确定性控制、独立验证和考虑金额的企业支付保护 |
+| **[CorridorOS](corridor-os/README.zh-CN.md)** | 中国企业进入新加坡后，每一笔资金的决定由谁来做，背后又有什么证据？ | 21 条支付规则 · 6 种 AML 模式 · 124 个测试 · 7 个端到端场景 · 哈希链审计 |
+| **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | 哪些风险预警值得人优先处理？哪些决定绝不能交给 AI？ | 6,000 笔合成交易 · 20 条规则 · 453 个测试 · 97.01% 召回率 |
+| **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | 一个金融答案怎样证明每项重要结论从哪里来？ | 13 份官方文件 · 1,714 个证据块 · 165 项回归与引用检查 |
+| **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | 安全提示能否出现在钱真正转出去之前的最后几秒？ | 243 个锁定案例 · 确定性干预 · 考虑金额的企业支付控制 |
 
-下面三个已实现的项目分别解决同一条链路上最难的环节，而 CorridorOS 是它们共享同一笔付款、
-同一套标识和同一条审计链之后合成的那个系统：**进入市场、移动资金、监控风险、解释金融证据，
-并在不安全决策发生前介入；同时不让模型获得隐藏的执行权限。**
+<details>
+<summary><strong>更多实验</strong></summary>
 
-## 我一直在追一个问题
+<br>
 
-很多 AI 与数字产品都在努力回答得更快、自动完成更多事情，也显得更有能力。但当一个产品会影响
-资金、风险或人的下一步行动时，“听起来合理”远远不够。
+- **[Converge](https://github.com/joshuazou-web/techjam-converge)**：用可解释规则寻找最能减少不确定性的下一问；不用模型，技术评分 0.976。
+- **[OpsSignal](https://github.com/joshuazou-web/opssignal)**：根据置信度分流 3,600 条合成运营工单，把不确定案例交给人工复核。
+- **[DEBUG.CN](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot)**：把 API 报错转化为证据、根因、最小修复与验证步骤。
+- **[Agent Control Plane](https://github.com/joshuazou-web/agent-control-plane)**：用默认拒绝、审批、预算与审计记录，把 Agent 的权限从一句提示词变成可执行规则。
 
-系统依据了什么？关键数字是谁算的？资料是否已经过期？模型不确定时会不会停下来？如果它与人
-意见不同，最后是谁做决定？当它本来就不该替人做决定时，产品还能不能帮助人走好下一步？
+</details>
 
-我做的项目都围绕这组问题展开：
-
-> **把模糊问题变成明确任务，把模型与自动化能力放进可检查的边界，并让人的下一步行动清晰可执行。**
-
-这条方向来自几段看似不同的经历：在红杉研究网络安全企业，在华泰参与区块链金融产品，在 NUS
-学习数字金融科技，也做过创业、投资与产品落地。它们最终汇聚成同一种工作方式——先把业务里的
-风险、例外和责任说清楚，再决定 AI 应该站在哪一层。
-
-<br clear="right" />
-
-## 如果你只有五分钟
-
-先看这三个项目。它们从支付运营决策，走到投资研究问题，再走到付款前的最后几秒，但遵循的是同一套
-产品逻辑：让重要权限边界清晰、让证据可检查，并把“接下来怎么办”设计进产品。
-
-### 1. 当一笔跨境支付触发九个风险信号，AI 应该做什么？
-
-[**CrossBorder AML RiskOps →**](https://github.com/joshuazou-web/crossborder-riskops)
-
-不是替分析师决定放行或拦截，而是找出真正重要的两项证据、指出缺失信息，并把决定留给人。
-
-我构建了完整的跨境支付生命周期、20 条确定性风险规则、一个可解释模型、人工复核队列与
-hash-chained 审计记录。检测、定级与路由中没有任何语言模型参与。新接入的 AI copilot 只站在它该
-站的位置：归纳案件、逐条解释信号并附引用、指出还缺哪条信息才能下结论、用更宽的案件包回答分析
-师的追问，也可以选择弃权。当疲惫的分析师说“你帮我直接放行吧”，它在调用模型之前就被拒绝——而
-真正的保障并不是这句拒绝：简报 schema 里没有决策字段，审计日志拒绝 AI 身份的执行者，所以这个
-回答根本没有变成结果的路径。
-
-- 6,000 笔合成交易，跨 5 个独立生成的世界：召回率 97.01% ± 0.42%，精确率 80.06% ± 1.49%，
-  误报率 6.95% ± 0.47%，对应 27.08% ± 0.42% 的人工复核比例；
-- 原始告警精确率 0.223，在复核产能这条线上升到 0.870——真正的产品价值在排序；
-- 453 个自动化测试，其中包含专门攻击 copilot 事实约束闸门的对抗用例；
-- 真实 OpenAI 兼容模型通过一个环境变量选配开启；演示、测试与所有公开指标都跑在无需 key 的
-  确定性 provider 上，真实模型产生的数字在评测报告中单独标注；
-- 所有数据均为合成数据，从未在生产环境运行。
-
-### 2. 当用户问“SPY 适合我吗”，为什么不能马上回答？
-
-[**WealthGuard Proofline →**](https://github.com/joshuazou-web/wealthguard-proofline)
-
-因为投资期限、流动性需求和亏损承受能力中的任何一项，都可能改变研究路径。
-
-WealthGuard 先找出最可能改变路径的那一项缺失信息，只问一个问题；随后检索带日期和页码的官方
-资料，用确定性程序完成金融计算，并展示从问题到结论的完整研究轨迹。要求交易或保证收益时，
-系统通过模型之外的策略引擎拒绝。
-
-项目后来被重新定位到一件流畅的证券助手很难自证的事上：**回答被信任之前的证据与版本校验，
-以及回答失败之后的 bad case 治理。** 语言模型可以把已经选定的证据组织成语言，但它的输出必须通过
-schema 与引用校验；一旦超时或格式异常，就降级回确定性路径、提示谨慎或直接弃权。策略、计算、
-资料日期、置信度与审计，都不依赖任何模型名字。
-
-- 13 份 SEC、港交所、深交所与证监会官方原始文件，解析为 1,714 个带页码/段落位置与 SHA-256
-  checksum 的证据片段；
-- 126 个固定种子策略回归案例和 39 个官方引用追溯案例；
-- 质量运营面板覆盖 16 类错误、预期与实际对照轨迹、责任归属与回归用例链接，让一次失败的回答
-  变成可追责的质量案例，而不是一句投诉；
-- 仅用于教育与研究，不构成投资建议；不连接券商，也不执行交易；独立原型，无任何机构关联。
-
-### 3. 如果反诈提醒出现在钱要转出去的那一刻，会怎样？
-
-[**ThinkBeforeClick FinSafe →**](https://github.com/joshuazou-web/think-before-click-product-case) ·
-[**FinSafe 在线演示**](https://joshuazou-web.github.io/think-before-click-product-case/finsafe/) ·
-[**原团队原型案例**](https://joshuazou-web.github.io/think-before-click-product-case/)
-
-ThinkBeforeClick 最初是一个 5 人 NUS 云计算课程团队项目：用 AWS Serverless 原型连接面向个人的
-本地化钓鱼识别教育与面向企业的授权模拟分析。课程报告记录了 23 名参与者、4.3/5 的可用性评分，
-以及第 27 届 NUS STePS 的 Honourable Mention。
-
-接下来的产品问题更难：当紧迫感、权威身份、保密要求或高收益承诺正在把一个人推向不可逆的付款
-时，那些课堂上学到的东西还会浮现出来吗？FinSafe 把干预挪到了那一刻——`可疑信息 → 风险信号 →
-诈骗阶段 → 确定性干预 → 独立核实 → 用户决定 → 微学习`——包含 10 类诈骗、16 个带官方来源的信号、
-九阶段状态模型和五级干预阶梯。企业付款包又补上了个人流程从未建模的一个维度：**这笔钱有多大**
-决定干预等级的下限，信号规则只能往上抬，不能往下压。
-
-真正值得读的不是主指标，而是基线对比：不带确定性安全规则的 LLM 能拿到 95.2% 的关键信号召回率，
-但干预等级准确率只有 29.2%。当规则掌握干预等级、模型只负责在已有信号 ID 里给候选并做通俗解释
-时，同样的召回率下准确率是 97.5%，过度干预率为 0%。
-
-- 161 个固定个人用例与 82 个锁定企业用例，各自对照三条基线；只移除金额维度，企业侧的干预不足
-  率就从 0% 升到 22.0%；
-- 6 个含蓄话术的失败用例被保留在评测里，而不是删掉去把分数做好看；
-- 演示完全在浏览器内运行，使用确定性 mock provider——不需要 API key，不发邮件、无追踪，粘贴的
-  文本在分析前先做脱敏；
-- 23 人测试针对的是原始团队原型而不是 FinSafe，其中任何数字都没有被当作 FinSafe 的成绩；团队
-  私有实现仍然保持私有；
-- 这是作品集级别的 P0，不是银行产品、诈骗判定或支付拦截系统。
-
-## 模型可以在哪里说话
-
-上面三个项目现在都接入了语言模型，另外两个则刻意没有接。这是同一个判断在不同问题上各做一次，
-而且边界写在代码里，不写在 Prompt 里。
-
-| 项目 | 模型可以做什么 | 模型永远不能做什么 |
-| --- | --- | --- |
-| **CrossBorder RiskOps** | 归纳案件、带引用解释信号、回答分析师的第二个问题、弃权 | 参与检测、定级、路由或提交结果——简报 schema 没有决策字段，审计日志拒绝 AI 执行者 |
-| **WealthGuard Proofline** | 把已经选定的、带日期的证据组织成语言 | 决定策略、计算数字、给资料定日期或设定置信度 |
-| **FinSafe** | 在已有信号 ID 内给出候选，并做通俗解释 | 下调确定性规则已经设定的干预等级 |
-| **DEBUG.CN** | 把一次 API 报错整理成证据、根因、最小修复与验证步骤 | 接触真实密钥、跳过服务端脱敏或绕过速率与 token 控制 |
-
-它们共享四条工程性质：确定性 provider 是默认选项，所以演示、测试和所有公开数字都不需要 key；
-模型输出经过 schema 校验，凭空捏造的 ID 会被拒绝；超时或格式异常降级回规则，而不是给出半个建议；
-每一个指标都标明由哪个 provider 产生。
-
-说“不”的那两个项目是同一判断的另一半：**Converge** 和 **OpsSignal** 已经有足够可解释、可复现的
-规则，接模型只会增加成本与波动，不会增加正确性。
-
-## 同一套产品逻辑，应用到更多场景
-
-后面的项目把这套方法继续展开：先决定该问什么，再让不确定性进入工作流，最后把权限边界写进软件。
-
-### 先问最能减少不确定性的那个问题
-
-[**Converge →**](https://github.com/joshuazou-web/techjam-converge)
-
-不是把顾客的每句话继续塞进搜索框，而是反过来问：如果某个商品真是目标，顾客会不会说出刚才
-那些话？下一道问题又能排除多少错误答案？
-
-Converge 用逆向用户模型、期望信息增益和置信度门控，把推荐变成一个逐轮收敛的过程。它也让我
-验证了一件很重要的事：**能解释、能复现的规则已经足够时，不必为了“更 AI”而调用 LLM**——这也是
-为什么真正接入模型的那些项目，都把它关在 schema 里、放在决策之外。
-
-- 官方 200 会话评测 TechnicalScore：**0.976，对比基线 0.107**；
-- 200/200 会话找到目标，平均 1.96 轮；
-- 零 token、零模型费用；
-- 消融实验与改写压力测试公开在仓库中；
-- 限定于封闭商品目录和合成用户，不代表真实转化率或留存。
-
-### 让“不确定”进入工作流，而不是藏在模型分数里
-
-[**OpsSignal**](https://github.com/joshuazou-web/opssignal) 从 3,600 条合成运营工单中识别问题结构。
-我选择可解释模型而不是 LLM，并设计了一条明确的人机分工线：高置信度结果自动流转，低置信度结果
-进入复核队列。
-
-- 留出集准确率 0.842，Macro-F1 0.836；
-- 在 0.65 阈值下，自动覆盖率 84.0%，自动分类样本一致率 92.3%；
-- 19 项数据校验与 166 个自动化测试。
-
-[**DEBUG.CN**](https://github.com/joshuazou-web/mandarin-openai-api-debugging-copilot) 把 OpenAI API
-和 SDK 报错整理成可复核的证据、根因、最小修复与验证步骤。它不是再生成一段“可能有用”的解释，
-而是帮助中文开发者知道下一步应该检查什么。项目覆盖 8 类错误、24 个后端测试和 20/20 公开评测，
-并包含服务端密钥脱敏、速率限制、token 控制与确定性兜底。
-
-### 让 Agent 在获得能力之前，先获得边界
-
-[**Volc Agent Launchpad**](https://github.com/joshuazou-web/volc-agent-launchpad) 把提示注入、
-权限提升和危险命令映射成放行、拦截与人工复核三种结果。它包含 8 个演示场景、误报语料、
-审计轨迹，以及 138 个通过、1 个跳过的测试。它是安全原型，不代表完整攻击覆盖。
-
-[**Agent Control Plane**](https://github.com/joshuazou-web/agent-control-plane) 把“你可以做什么”
-从 Prompt 文本变成机器可执行的权限策略：default deny、人工审批、预算限制、一次性 gate 和
-hash-linked audit。目标不是让 Agent 更聪明，而是让它的权力更明确、更难被意外绕过。
-
-[**DecisiveEval**](https://github.com/joshuazou-web/decisive-eval) 追问更底层的问题：一个 Coding
-Agent 的结论，换一套合理的评分方式、运行时、失败政策、成本或延迟假设后，还成立吗？项目包含
-26 个公开 JSON Schema、103 个测试、不可变证据回执，也公开没有成功的实验。
-
-[**PropTech Agent Reliability Lab**](https://github.com/joshuazou-web/proptech-agent-reliability-lab)
-则把这些可靠性问题放进一个合成的真实客户场景里，用 FastAPI 与 Streamlit 观察 Agent 如何失败、
-恢复和被调试。
-
-### 其他金融与产品实验
-
-- [**Risk-Based DeFi Lending**](https://github.com/joshuazou-web/risk-based-defi-lending-case-study)：
-  把外部风险信号变成明确的 LTV、利率、清算阈值和健康因子策略。
-  [交互演示](https://joshuazou-web.github.io/risk-based-defi-lending-case-study/)
-- [**Algorithmic FX Trading & Monitoring**](https://github.com/joshuazou-web/algorithmic-fx-product-case)：
-  用因果回测、换手成本和 fail-closed 模拟执行检查市场状态逻辑。
-  [交互演示](https://joshuazou-web.github.io/algorithmic-fx-product-case/)
-- [**SoAI 2026 High-Beta Leader**](https://github.com/joshuazou-web/SoAI-2026-High-Beta-Leader)：
-  在比赛规则下提前冻结策略，而不是看到结果后再拟合。
-- [**白盒 · wbox**](https://github.com/joshuazou-web/wbox)：
-  面向学生的中文答辩陪练，帮助他们真正理解自己即将展示的 AI 辅助课程项目。
-
-## 我怎么做产品
-
-我通常从一个不太漂亮、但很真实的问题开始：
+## 04 / 我怎样做东西
 
 ```text
-一个市场、用户或风险信号
+一个真实但模糊的问题
         ↓
-把它变成可以复现的问题
-        ↓
-写清假设、权限与失败边界
+明确假设、权限与失败边界
         ↓
 做出最小但完整的产品闭环
         ↓
-评测、找失败、设计人工复核
+评测、分析失败、引入人工复核
         ↓
-公开数字，也公开数字在哪里失效
+公开结果，也公开结果在哪里失效
 ```
 
-| 构建 | 验证 | 沟通 |
-| --- | --- | --- |
-| Python、TypeScript、SQL、FastAPI、React、AWS Serverless、DuckDB、Solidity、Git、schema 约束下的 OpenAI 兼容大模型接入 | 指标树、规则与模型评测、模型输出 schema 校验、按 provider 标注指标、置信度与失败分析、审计轨迹、脱敏、限流、可用性测试 | PRD、流程设计、对话式界面、中英文演示、验收与复盘 |
+我会用 AI 辅助研究、代码和初稿，但产品判断、评测设计、证据，以及系统到底可以做什么，由我负责。
 
-我使用 Codex 和 Claude Code 协助构思，以及生成代码与测试初稿。产品判断、验证设计、可复现性和
-真实性边界由我负责。
+## 05 / 我怎样走到这里
 
-## 我从哪里来
+- **新加坡国立大学** · 数字金融科技硕士 · 2025–2027
+- **华泰国际** · 金融科技产品实习生 · 把复杂金融规则转化为产品需求
+- **红杉中国** · 投资研究实习生 · 研究科技与网络安全公司
+- **MiraclePlus** · Campus Scout · 寻找年轻创业者，判断早期想法
+- **AI Star** · 投资人兼产品商业化负责人 · 参与客户、工厂、成本、定价与交付
 
-- **华泰国际｜金融科技实习，2024.07–2024.11**  
-  参与区块链金融产品的迭代与上线协调；从用户价值、可行性、风险和成本角度评估 AI 风险、
-  CBDC、DLT、DeFi 与数字人等方向。
-- **AI Star｜天使投资人与联合创始人，2022–至今**  
-  负责早期教育产品的用户分层、定价与单位经济模型、功能优先级和合作方沟通。
-- **红杉资本｜投资分析实习，2024.01–2024.05**  
-  从客户需求、商业化和技术趋势出发，研究数十家网络安全企业。
-- **奇绩创坛｜校园寻访，2023.03–2023.08**  
-  寻找并筛选早期项目，与创始人讨论痛点、差异化和验证路径。
-- **其他成果**  
-  全国创新创业挑战赛一等奖及最佳创业奖（跨境电商方向）；百威数字化转型研究，
-  [DOI 10.54691/bcpbm.v38i.3909](https://doi.org/10.54691/bcpbm.v38i.3909)。
-
-## 公开范围
-
-公开仓库只包含适合公开的代码、架构、评测与示例。团队所有的实现、凭证、私有数据和受限配置
-不会公开。除非另有说明，演示数据均为合成数据。完整工作与教育经历可直接向招聘方提供。
+这条路并不完全笔直，但我想解决的问题正变得越来越清楚。
 
 ---
 
 <p align="center">
-  正在寻找深圳、香港、新加坡及其他主要科技与金融中心的金融科技 / AI 产品岗位。<br>
-  如果你也在思考 AI 应该做什么、又应该在哪里停下，欢迎联系我。
+  <strong>如果你也想挑战这个问题，或者一起做点什么，欢迎找我。</strong><br><br>
+  <a href="mailto:zouzhihuajosh@outlook.com">zouzhihuajosh@outlook.com</a>
 </p>
