@@ -20,7 +20,7 @@
 <table>
 <tr>
 <td width="50%" align="center" valign="bottom">
-<a href="https://joshuazou-web.github.io/money-ai-is-allowed-to-move/"><img src="assets/thumb-money-ai.png" alt="被允许动的钱 — cover" width="252"></a>
+<a href="https://joshuazou-web.github.io/money-ai-is-allowed-to-move/en/"><img src="assets/thumb-money-ai-en.png" alt="The Money AI Is Allowed to Move — cover" width="252"></a>
 </td>
 <td width="50%" align="center" valign="bottom">
 <a href="assets/zhihua-zou-ai-product-business-casebook-zh-cn.pdf"><img src="assets/thumb-casebook.png" alt="AI 产品商业案例集 — cover" width="252"></a>
@@ -29,12 +29,13 @@
 <tr>
 <td valign="top">
 
-**[被允许动的钱 · The Money AI Is Allowed to Move](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/)**
-40 pages · industry projection · 2026
+**[The Money AI Is Allowed to Move · 被允许动的钱](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/en/)**
+40 pages · industry projection · 2026 · English & Mandarin
 
 One variable decides fintech's next decade: how much money an AI is allowed to move without a human reviewing each transaction. An L0–L4 ladder graded on liability rather than capability, the four control rights, and six falsifiable bets with dated windows.
 
-[Web](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/) · [PDF](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/%E8%A2%AB%E5%85%81%E8%AE%B8%E5%8A%A8%E7%9A%84%E9%92%B1_%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8D%81%E5%B9%B4.pdf) · [Repo](https://github.com/joshuazou-web/money-ai-is-allowed-to-move)
+English: [Web](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/en/) · [PDF](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/The_Money_AI_Is_Allowed_to_Move_Fintechs_Next_Decade.pdf)  
+中文：[网页](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/) · [PDF](https://joshuazou-web.github.io/money-ai-is-allowed-to-move/%E8%A2%AB%E5%85%81%E8%AE%B8%E5%8A%A8%E7%9A%84%E9%92%B1_%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8D%81%E5%B9%B4.pdf) · [Repo](https://github.com/joshuazou-web/money-ai-is-allowed-to-move)
 
 </td>
 <td valign="top">
