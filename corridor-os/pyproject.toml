@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corridoros"
+version = "0.1.0"
+description = "CorridorOS - China-Singapore cross-border payment operations platform (synthetic data)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Zhihua Zou" }]
+keywords = [
+    "fintech",
+    "cross-border payments",
+    "payment operations",
+    "kyb",
+    "aml",
+    "human-in-the-loop",
+    "ai guardrails",
+]
+
+# The domain layer has no third-party dependencies at all. That is deliberate:
+# the ledger, the state machines, the permission matrix and the audit chain are
+# the part that has to be readable and reproducible, and they run on the
+# standard library alone.
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn>=0.29"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+corridoros = "corridoros.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q --strict-markers"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+src = ["src", "apps", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501", "B008"]

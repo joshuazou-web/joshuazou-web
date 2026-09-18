@@ -54,6 +54,7 @@ When 900 accounts trigger alerts and a team can review only 60, the system prior
 
 | Build | The real question | Evidence |
 | --- | --- | --- |
+| **[CorridorOS](corridor-os/README.md)** | Once a Chinese company opens in Singapore, who is allowed to decide each movement of its money—and what evidence stands behind that decision? | 21 payment rules · 6 AML typologies · 124 tests · 7 end-to-end scenarios · hash-chained audit |
 | **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | Which alerts deserve human attention—and what must AI never decide? | 6,000 synthetic transactions · 20 rules · 453 tests · 97.01% recall |
 | **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | How can a financial answer prove where every important claim came from? | 13 official documents · 1,714 evidence chunks · 165 regression and citation checks |
 | **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | Can safety appear in the final seconds before money moves? | 243 locked cases · deterministic intervention · amount-aware business controls |

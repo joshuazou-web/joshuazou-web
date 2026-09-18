@@ -50,10 +50,11 @@
 </tr>
 </table>
 
-## 03 / 三个代表作品
+## 03 / 代表作品
 
 | 作品 | 它真正回答的问题 | 可验证的结果 |
 | --- | --- | --- |
+| **[CorridorOS](corridor-os/README.zh-CN.md)** | 中国企业进入新加坡后，每一笔资金的决定由谁来做，背后又有什么证据？ | 21 条支付规则 · 6 种 AML 模式 · 124 个测试 · 7 个端到端场景 · 哈希链审计 |
 | **[CrossBorder AML RiskOps](https://github.com/joshuazou-web/crossborder-riskops)** | 哪些风险预警值得人优先处理？哪些决定绝不能交给 AI？ | 6,000 笔合成交易 · 20 条规则 · 453 个测试 · 97.01% 召回率 |
 | **[WealthGuard Proofline](https://github.com/joshuazou-web/wealthguard-proofline)** | 一个金融答案怎样证明每项重要结论从哪里来？ | 13 份官方文件 · 1,714 个证据块 · 165 项回归与引用检查 |
 | **[ThinkBeforeClick FinSafe](https://github.com/joshuazou-web/think-before-click-product-case)** | 安全提示能否出现在钱真正转出去之前的最后几秒？ | 243 个锁定案例 · 确定性干预 · 考虑金额的企业支付控制 |
