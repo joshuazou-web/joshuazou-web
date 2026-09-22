@@ -38,13 +38,13 @@
 </td>
 <td width="50%" valign="top">
 
-### CrossBorder AML RiskOps
+### AI 产品与商业案例集
 
-**一个可以运行的产品原型。**
+**14 个项目，写成了案例。**
 
-当 900 个账户触发预警、团队每天只能调查 60 个时，系统负责整理和排序证据，最终决定仍然留给人。
+一份 PDF 合集：我做过的产品和商业问题——真正要回答的问题是什么、我做了什么、最后改变了什么。
 
-[查看项目 →](https://github.com/joshuazou-web/crossborder-riskops)
+[阅读 PDF →](assets/zhihua-zou-ai-product-business-casebook-zh-cn.pdf)
 
 </td>
 </tr>

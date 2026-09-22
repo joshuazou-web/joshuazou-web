@@ -38,13 +38,13 @@ An L0–L4 framework for how much economic authority AI should receive, based on
 </td>
 <td width="50%" valign="top">
 
-### CrossBorder AML RiskOps
+### AI Product & Business Casebook
 
-**A working product prototype.**
+**14 projects, written up as cases.**
 
-When 900 accounts trigger alerts and a team can review only 60, the system prioritizes evidence while keeping the final decision with a human.
+A PDF collection of the products and business problems I have worked on—what the real question was, what I built, and what it changed.
 
-[View repository →](https://github.com/joshuazou-web/crossborder-riskops)
+[Read the PDF →](assets/zhihua-zou-ai-product-business-casebook-zh-cn.pdf)
 
 </td>
 </tr>
