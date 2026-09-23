@@ -19,7 +19,7 @@
 
 ## 文件
 
-- `邹志华_AI解决方案简历.pdf`：投递用，A4 单页。
-- `邹志华_AI解决方案简历.docx`：Word 版，行距固定。中文用微软雅黑，英文用 Times New Roman。
-- `邹志华_AI解决方案简历.png`：直接查看用的图片，200 dpi。
+- `邹志华_AI解决方案_NUS硕士_27届.pdf`：投递用，A4 单页。
+- `邹志华_AI解决方案_NUS硕士_27届.docx`：Word 版，行距固定。中文用微软雅黑，英文用 Times New Roman。
+- `邹志华_AI解决方案_NUS硕士_27届.png`：直接查看用的图片，200 dpi。
 - `resume-editable.html`：ASu 可编辑版，要和 `logos/`、`icons/` 放在同一个目录。
