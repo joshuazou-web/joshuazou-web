@@ -88,7 +88,7 @@
     .small { font-size: 9pt; }
   </style>
   <style>
-    body { font-family: "Times New Roman", "Liberation Serif", "SimHei", "黑体", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; font-size: 9.4pt; line-height: 1.3; }
+    body { font-family: "Times New Roman", "Liberation Serif", "SimHei", "黑体", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; font-size: 9.4pt; line-height: 1.28; }
     h1 { font-family: "Times New Roman", "Liberation Serif", "SimHei", "Noto Sans CJK SC", serif; font-size: 23pt; margin: 0 0 2px; }
     .header-grid { grid-template-columns: minmax(0, 1fr); }
     .meta-row { font-size: 9.6pt; line-height: 1.32; margin: 1px 0; }
@@ -181,7 +181,7 @@
         <div class="project-title">跨境业务规则落地<span class="bar">|</span>业务访谈 → 需求拆解 → 联调验收 → Bad Case 闭环</div>
         <ul>
           <li><strong>背景与目标：</strong>跨境规则复杂、异常处置无统一流程、各市场口径不一，需求反复；目标是把专家经验变成可验收的规则。</li>
-          <li><strong>我的职责：</strong>访谈业务、合规、研发三方，把规则拆成<strong>合约逻辑、API、对账、分账、异常处置 5 类需求</strong>，写清流程、规则边界与验收口径，跟进评审与联调。</li>
+          <li><strong>我的职责：</strong>访谈业务、合规、研发三方，把规则拆成<strong>合约逻辑、API、对账、分账、异常处置 5 类需求</strong>，写清边界与验收口径。</li>
           <li><strong>交付与结果：</strong>建立 <strong>Bad Case 分类与归因机制</strong>并按根因回流需求；评估 AI 风控方案，给出自研/外采与分阶段落地建议。</li>
         </ul>
       </article>
@@ -236,7 +236,7 @@
         <div class="project-title">从企业痛点到上线交付<span class="bar">|</span>需求诊断 → Serverless 部署 → 用户验证 → 迭代</div>
         <ul>
           <li><strong>背景与方案：</strong>安全团队反馈演练模板过时、缺脆弱度指标；带 5 人团队设计 Freemium 与“打开→点击→提交凭证→上报”漏斗。</li>
-          <li><strong>部署交付：</strong>主导 <strong>AWS Serverless 架构与上线</strong>（Cognito、API Gateway、Lambda、DynamoDB、SES、CloudFront，自有域名 HTTPS），<strong>3 年 TCO 比本地部署低 45%</strong>；6 周监控核心接口均值 <strong>239 ms</strong>、223 次调用<strong>成功率 100%</strong>。</li>
+          <li><strong>部署交付：</strong>主导 <strong>AWS Serverless 架构与上线</strong>，<strong>3 年 TCO 低 45%</strong>；6 周监控接口均值 <strong>239 ms</strong>、<strong>成功率 100%</strong>。</li>
           <li><strong>验证与迭代：</strong><strong>23 人测试</strong>（含 8 位企业负责人），满意度 4.2/5、4.5/5，<strong>82–87% 愿推荐</strong>，反馈收敛为 6 项迭代；获 STePS 提名。</li>
         </ul>
       </article>
@@ -247,24 +247,25 @@
         <div class="company-meta">2021 – 至今</div>
       </div>
       <article class="project">
-        <div class="project-title">产业资产盘活方案<span class="bar">|</span>需求澄清 → 证据建模 → 路径比选 → 推进落地</div>
+        <div class="project-title">AI 驱动的资产尽调与盘活<span class="bar">|</span>LLM 证据抽取 → 法规检索 → 决策建模 → Agent 推进</div>
         <ul>
-          <li><strong>背景与目标：</strong>约 <strong>26,500㎡</strong> 产业厂房年租金约 <strong>700–800 万元</strong>，但权属材料分散、历史出资与签约主体不一致，“继续运营还是出售”长期悬而未决；目标是形成可执行的盘活方案。</li>
-          <li><strong>我的职责：</strong>对接合作方、村集体、租户及律师/会计师，梳理运营与决策流程、绘制相关方关系图；整合合作建房协议、出资流水与工程付款，建立<strong>证据台账与缺口清单</strong>。</li>
-          <li><strong>交付与结果：</strong>搭建持有运营、主体重组、整体出售三条路径的<strong>决策模型</strong>（现金流、风险、周期），把法律与财务意见拆成 30/60/90 天任务路线，推动项目从停滞进入材料补全与交易准备。</li>
+          <li><strong>背景与目标：</strong>约 <strong>26,500㎡</strong> 厂房年租金约 <strong>700–800 万元</strong>，但权属材料分散、出资与签约主体不一致，运营还是出售久拖未决。</li>
+          <li><strong>AI 方案：</strong>用 <strong>OCR + LLM</strong> 从协议、流水、付款与聊天记录抽取关键字段，建成可回溯原件的<strong>证据台账</strong>；用 AI 检索集体土地、合作建房与横琴政策，形成问题清单交律师核实。</li>
+          <li><strong>交付与结果：</strong>对接村集体、租户与律师/会计师，用 AI 搭建持有、重组、出售<strong>三路径决策模型</strong>并生成方案报告；以 <strong>AI Agent 工作区</strong>维护事实基线与 30/60/90 天路线，推动项目进入交易准备。</li>
         </ul>
       </article>
 
       <div class="company">
         <img class="company-logo" src="logos/store.png" alt="Store">
-        <div class="company-name">Chaoshan Deli Chain (Guangxi) · 线下门店 0→1 落地<span class="dot">·</span>Project Lead</div>
+        <div class="company-name">Chaoshan Deli Chain (Guangxi) · AI 赋能线下门店<span class="dot">·</span>Project Lead</div>
         <div class="company-meta">2026 – 至今</div>
       </div>
       <article class="project">
-        <div class="project-title">社区直营小店落地<span class="bar">|</span>远程勘测 → 方案设计 → 采购施工 → 试营业数据复盘</div>
+        <div class="project-title">AI 赋能线下门店 0→1<span class="bar">|</span>视频抽帧勘测 → AI 设计 → 采购施工 → 数据复盘</div>
         <ul>
-          <li><strong>现场诊断与方案：</strong>远程看现场视频、复尺定动线；开工前设许可、排风、电力、给排水 <strong>4 道核验门槛</strong>，导视按反馈迭代 <strong>6 版</strong>。</li>
-          <li><strong>落地与运营：</strong>制定三家同规格比价与施工—联调—热态测试计划；设计门店日报口径（SKU 销量、成本、报损、现金差异）。</li>
+          <li><strong>AI 勘测与设计：</strong>现场视频抽帧交 AI 识别排风、尺寸等约束，完成商超档口<strong>动线设计</strong>；借助 AI 完成 Logo、门店效果图、导视（迭代 <strong>6 版</strong>）与品牌推广方案。</li>
+          <li><strong>AI 工作流：</strong>用 <strong>Codex</strong> 搭项目工作区，AGENTS.md 定执行规则、项目记忆作事实基线，外发与付款须人工确认；AI 脚本生成施工与采购清单。</li>
+          <li><strong>落地与结果：</strong>开工前设 <strong>4 道核验门槛</strong>，设计门店日报口径（SKU 销量、成本、报损）；经持续调整，<strong>门店销量显著提升</strong>。</li>
         </ul>
       </article>
 
@@ -281,7 +282,7 @@
     <section class="section">
       <h2 class="section-title">专业技能与成果</h2>
       <ul class="skills">
-        <li><strong>工程实现：</strong>Python / FastAPI / SQL、API 联调、AWS Serverless 部署与监控；LLM / Agent、RAG、Tool Calling、回归评测。</li>
+        <li><strong>工程实现：</strong>Python / FastAPI / SQL、AWS Serverless 部署与监控；LLM / Agent（Codex）、RAG、OCR 抽取、回归评测。</li>
         <li><strong>著作与论文：</strong>著作 <em>The Money AI Is Allowed to Move</em>（AI 经济权限 L0–L4 分级框架）；论文 DOI: 10.54691/bcpmb.v38i.3909。</li>
         <li><strong>荣誉与语言：</strong>全国大学生电子商务“三创赛”最佳创业奖（团队组长）；英语熟练，普通话/潮汕话/客家话母语，粤语基础。</li>
       </ul>
