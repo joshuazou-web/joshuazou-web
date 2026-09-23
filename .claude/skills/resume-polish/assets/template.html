@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../">
+  <title>姓名 - 目标岗位简历</title>
+  <link rel="stylesheet" href="frame/asu/base.css">
+  <style>
+    @page { size: A4; margin: 6.9mm 8.7mm 6mm 9mm; }
+    :root { --blue: #2458b8; --title: #1f4e9c; --ink: #222222; }
+    body { font-family: "Times New Roman", "Liberation Serif", "Songti SC", "STSong", "SimSun", "宋体", "Noto Serif CJK SC", serif; font-size: 8.64pt; line-height: 1.25; color: var(--ink); }
+    @media screen { .sheet { padding: 6.9mm 8.7mm 6mm 9mm; } }
+    @media print { .sheet { padding: 0 !important; } }
+    strong { color: #3a3a3a; font-weight: 600; font-family: "Times New Roman", "Liberation Serif", "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", serif; }
+    h1 { font-family: "Microsoft YaHei", "PingFang SC", "SimHei", "Noto Sans CJK SC", sans-serif; font-size: 21.1pt; line-height: 1.15; margin: 0 0 3px; color: var(--ink); }
+    .header-grid { display: block; }
+    .meta-row { font-size: 8.82pt; margin: 0; line-height: 1.32; }
+    .meta-row strong { font-family: "Microsoft YaHei", "PingFang SC", "SimHei", "Noto Sans CJK SC", sans-serif; }
+    .meta-icon { width: 12px; height: 12px; }
+    .separator { padding: 0 6px; color: #2d2d2d; }
+    .lead { margin: 0; font-size: 8.82pt; line-height: 1.32; color: var(--ink); font-weight: 400; }
+    .section { margin-top: 3px; }
+    .section-title { font-family: "Microsoft YaHei", "PingFang SC", "SimHei", "Noto Sans CJK SC", sans-serif; font-size: 13.43pt; line-height: 1.2; margin: 0 0 3px; padding-bottom: 1px; border-bottom: 0.72pt solid var(--blue); color: var(--blue); }
+    .company { min-height: 0; height: 15.1pt; margin: 3pt 0 1pt; padding: 0 8px; border-radius: 4px; background: #f0f1f4; gap: 6px; }
+    .company-name { font-size: 9.21pt; font-weight: 400; color: var(--ink); }
+    .company-name b { font-weight: 700; color: var(--ink); }
+    .company-meta { font-size: 8.82pt; font-weight: 700; color: #202020; }
+    .company-logo { width: 16px; height: 16px; object-fit: contain; }
+    .edu-logo { width: 14px; height: 14px; object-fit: contain; vertical-align: -2px; margin-right: 5px; }
+    .edu-row { display: flex; justify-content: space-between; gap: 10px; margin: 0; font-size: 8.82pt; line-height: 1.4; }
+    .edu-row .school { font-weight: 700; color: var(--ink); }
+    .edu-row .major { margin-left: 10px; }
+    .edu-row .date { font-weight: 700; color: #202020; white-space: nowrap; }
+    .project { margin: 0 0 1px; }
+    .project-title { font-size: 9.21pt; margin: 1pt 0 1pt; line-height: 1.3; color: var(--title); font-weight: 700; }
+    .project-title .sep { color: var(--title); font-weight: 400; padding: 0 5px; }
+    ul { margin: 0 0 0 10pt; padding: 0; }
+    li { margin: 0; text-align: justify; }
+    li.nested { margin-left: 11.5pt; list-style: none; position: relative; }
+    li.nested::before { content: "○"; position: absolute; left: -11px; font-size: .75em; top: .15em; }
+    li::marker { font-size: .8em; }
+    li.nested::marker { content: none; }
+    a { color: inherit; text-decoration: none; }
+    .doc-link { line-height: 1; color: var(--blue); font-size: 8.44pt; font-weight: 700; margin-right: 8px; white-space: nowrap; }
+  </style>
+</head>
+<body data-page-mode="paged">
+  <!-- @ASU_TOOLBAR -->
+
+  <main class="sheet" contenteditable="true">
+    <header class="header-grid">
+      <div>
+        <h1>姓名</h1>
+        <div class="meta-row"><img class="meta-icon" src="icons/user.svg" alt=""><strong>求职意向：目标岗位　|　方向一 · 方向二 · 方向三</strong></div>
+        <div class="meta-row"><img class="meta-icon" src="icons/phone.svg" alt=""><span>电话</span><span class="separator">|</span><img class="meta-icon" src="icons/envelope.svg" alt=""><span>邮箱</span><span class="separator">|</span><span>LinkedIn: linkedin.com/in/…</span><span class="separator">|</span><img class="meta-icon" src="logos/github.svg" alt=""><span>github.com/…</span></div>
+        <div class="lead"><strong>个人定位：</strong>一句话定位：能力链路 + 差异化证据。</div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">教育经历</h2>
+      <div class="edu-row"><span><span class="school"><img class="edu-logo" src="logos/school.png" alt="">School Name</span><span class="major">School · Degree</span></span><span class="date">YYYY.MM – YYYY.MM</span></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">实习经历</h2>
+      <div class="company">
+        <img class="company-logo" src="logos/company.png" alt="">
+        <div class="company-name"><b>Company Name</b>　·　Official Title</div>
+        <div class="company-meta">YYYY.MM – YYYY.MM</div>
+      </div>
+      <article class="project">
+        <div class="project-title">项目标题<span class="sep">|</span>关键动作 · 关键动作 · 关键动作</div>
+        <ul>
+          <li><strong>背景与目标：</strong>为什么要做、用户/业务的真实问题；目标。</li>
+          <li><strong>我的职责：</strong>本人负责的范围（引出下面的子要点）</li>
+          <li class="nested"><strong>子动作：</strong>具体动作 → 产出，带可核验数字；</li>
+          <li><strong>结果：</strong>可核验结果（区分实际结果与测算）。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">项目经历</h2>
+      <div class="company">
+        <img class="company-logo" src="logos/project.png" alt="">
+        <div class="company-name"><b>Project Name</b>　·　Role</div>
+        <a class="doc-link" href="https://github.com/…/evidence/Report.pdf">Product Report ↗</a>
+        <div class="company-meta">YYYY.MM – 至今</div>
+      </div>
+      <article class="project">
+        <ul>
+          <li><strong>要点：</strong>一行一条，刚好写满一行。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">技能与成果</h2>
+      <ul class="skills">
+        <li><strong>类别：</strong>技能与成果，一行一条。</li>
+      </ul>
+    </section>
+  </main>
+  <!-- @ASU_EDITOR -->
+</body>
+</html>
