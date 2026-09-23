@@ -14,9 +14,8 @@
 | TBC：均值 239 ms、223 次调用成功率 100% | 报告 §3.8 | 监控对象是 GetEmployees Lambda，时长 6 周 |
 | TBC：23 人测试（含 8 位企业负责人），满意度 4.2/5、4.5/5，82–87% 愿推荐，6 项迭代 | 报告 §4.1–4.3 | 2025 年 10 月的真实用户测试 |
 | 广西潮汕卤味门店：项目负责人、4 道开工核验、导视迭代 6 版、比价与施工计划、日报口径 | 私有项目资料（本人确认） | 不写门店名称、地址、预算和经营数字；三家比价与施工计划是已制定的方案 |
+| 横琴产业资产盘活：约 26,500㎡、年租金约 700–800 万元、权属与出资问题、证据台账、多路径决策模型、30/60/90 天路线图（2021 至今） | 本人陈述与确认 | 标注为 Family Business；不写具体出资比例和涉及的个人 |
 | AI Star：27 款设备、客户含安踏和李宁 | `evidence/AIStar_Product_Catalogue.pdf` | — |
-| Converge：5 万件商品、平均 1.96 轮、0.9760 vs 基线 0.1067 | techjam-converge README | 用的是 TikTok TechJam 官方赛题和未改动的官方评测器；商品目录来自 Amazon Reviews 2023 |
-| WealthGuard：13 份官方文件、1,714 个证据块 | wealthguard-proofline README · Data and provenance | 文件均来自 SEC/HKEX/SZSE/CSRC 官方站点 |
 
 ## 文件
 
