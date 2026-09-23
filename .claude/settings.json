@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "asu": {
+      "source": {
+        "source": "github",
+        "repo": "Hisn00w/ASu-skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "asu-skills@asu": true
+  }
+}
