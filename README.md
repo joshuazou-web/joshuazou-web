@@ -92,7 +92,7 @@ I use AI to help with research, code, and first drafts. I remain responsible for
 - **Huatai International** · FinTech Product Intern · translated financial rules into product requirements
 - **Sequoia China** · Investment Research Analyst · studied technology and cybersecurity companies
 - **MiraclePlus** · Campus Scout · met young founders and evaluated early ideas
-- **AI Star** · Investor & Product Commercialization Lead · worked with customers, factories, product cost, pricing, and delivery
+- **AI Star** · Investor & Product Commercialization Lead · worked with customers, factories, product cost, pricing, and delivery · [product catalogue](evidence/AIStar_Product_Catalogue.pdf)
 
 The path is not perfectly straight. The question is becoming clearer.
 
