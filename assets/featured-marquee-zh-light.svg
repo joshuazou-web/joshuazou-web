@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260" role="img" aria-label="精选三项：跨境支付反洗钱调查分诊方案、IT 工单智能分诊与运营看板、存量合同档案 LLM 梳理与确权">
+  <style>
+    .track { animation: flow 24s linear infinite; }
+    @keyframes flow { from { transform: translateX(0); } to { transform: translateX(-1260px); } }
+    @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
+  </style>
+  <rect width="1200" height="260" fill="#F4F1EB"/>
+  <clipPath id="window"><rect x="0" y="0" width="1200" height="260"/></clipPath>
+  <g clip-path="url(#window)" font-family="Arial,'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif">
+    <g class="track">
+    <g transform="translate(0,32)">
+      <rect width="400" height="196" fill="#FBF9F5" stroke="#171716" stroke-width="2"/>
+      <text x="24" y="36" font-size="14" letter-spacing="2.5" fill="#8B6843">精选 01 · 金融合规 · 可运行原型</text>
+      <text x="24" y="76" font-size="24" font-weight="700" fill="#171716">跨境支付反洗钱调查分诊方案</text>
+      <text x="24" y="102" font-size="14" letter-spacing="1" fill="#6B6760">CrossBorder RiskOps</text>
+      <line x1="24" y1="122" x2="376" y2="122" stroke="#171716" stroke-width="1" opacity="0.25"/>
+      <text x="24" y="152" font-size="18" font-weight="700" fill="#171716">产能内精确率 0.223 → 0.870</text>
+      <text x="24" y="178" font-size="13.5" fill="#6B6760">6,000 笔合成交易 · 20 条规则 · 453 项测试</text>
+    </g>
+    <g transform="translate(420,32)">
+      <rect width="400" height="196" fill="#FBF9F5" stroke="#171716" stroke-width="2"/>
+      <text x="24" y="36" font-size="14" letter-spacing="2.5" fill="#8B6843">精选 02 · 企业运营 · 完整数据管线</text>
+      <text x="24" y="76" font-size="24" font-weight="700" fill="#171716">IT 工单智能分诊与运营看板</text>
+      <text x="24" y="102" font-size="14" letter-spacing="1" fill="#6B6760">OpsSignal</text>
+      <line x1="24" y1="122" x2="376" y2="122" stroke="#171716" stroke-width="1" opacity="0.25"/>
+      <text x="24" y="152" font-size="18" font-weight="700" fill="#171716">自动接受 84% · 与人工一致 92.3%</text>
+      <text x="24" y="178" font-size="13.5" fill="#6B6760">3,600 条合成工单 · 51 值分类法 · 166 项测试</text>
+    </g>
+    <g transform="translate(840,32)">
+      <rect width="400" height="196" fill="#FBF9F5" stroke="#171716" stroke-width="2"/>
+      <text x="24" y="36" font-size="14" letter-spacing="2.5" fill="#8B6843">精选 03 · 真实场景 · 脱敏报告</text>
+      <text x="24" y="76" font-size="24" font-weight="700" fill="#171716">存量合同档案 LLM 梳理与确权</text>
+      <text x="24" y="102" font-size="14" letter-spacing="1" fill="#6B6760">Project Report A</text>
+      <line x1="24" y1="122" x2="376" y2="122" stroke="#171716" stroke-width="1" opacity="0.25"/>
+      <text x="24" y="152" font-size="18" font-weight="700" fill="#171716">39 页扫描件 → 1 条时间线 + 5 份文书</text>
+      <text x="24" y="178" font-size="13.5" fill="#6B6760">每条结论溯源原件 · 置信度分级 · 30 天计划</text>
+    </g>
+    <g transform="translate(1260,32)">
+      <rect width="400" height="196" fill="#FBF9F5" stroke="#171716" stroke-width="2"/>
+      <text x="24" y="36" font-size="14" letter-spacing="2.5" fill="#8B6843">精选 01 · 金融合规 · 可运行原型</text>
+      <text x="24" y="76" font-size="24" font-weight="700" fill="#171716">跨境支付反洗钱调查分诊方案</text>
+      <text x="24" y="102" font-size="14" letter-spacing="1" fill="#6B6760">CrossBorder RiskOps</text>
+      <line x1="24" y1="122" x2="376" y2="122" stroke="#171716" stroke-width="1" opacity="0.25"/>
+      <text x="24" y="152" font-size="18" font-weight="700" fill="#171716">产能内精确率 0.223 → 0.870</text>
+      <text x="24" y="178" font-size="13.5" fill="#6B6760">6,000 笔合成交易 · 20 条规则 · 453 项测试</text>
+    </g>
+    <g transform="translate(1680,32)">
+      <rect width="400" height="196" fill="#FBF9F5" stroke="#171716" stroke-width="2"/>
+      <text x="24" y="36" font-size="14" letter-spacing="2.5" fill="#8B6843">精选 02 · 企业运营 · 完整数据管线</text>
+      <text x="24" y="76" font-size="24" font-weight="700" fill="#171716">IT 工单智能分诊与运营看板</text>
+      <text x="24" y="102" font-size="14" letter-spacing="1" fill="#6B6760">OpsSignal</text>
+      <line x1="24" y1="122" x2="376" y2="122" stroke="#171716" stroke-width="1" opacity="0.25"/>
+      <text x="24" y="152" font-size="18" font-weight="700" fill="#171716">自动接受 84% · 与人工一致 92.3%</text>
+      <text x="24" y="178" font-size="13.5" fill="#6B6760">3,600 条合成工单 · 51 值分类法 · 166 项测试</text>
+    </g>
+    <g transform="translate(2100,32)">
+      <rect width="400" height="196" fill="#FBF9F5" stroke="#171716" stroke-width="2"/>
+      <text x="24" y="36" font-size="14" letter-spacing="2.5" fill="#8B6843">精选 03 · 真实场景 · 脱敏报告</text>
+      <text x="24" y="76" font-size="24" font-weight="700" fill="#171716">存量合同档案 LLM 梳理与确权</text>
+      <text x="24" y="102" font-size="14" letter-spacing="1" fill="#6B6760">Project Report A</text>
+      <line x1="24" y1="122" x2="376" y2="122" stroke="#171716" stroke-width="1" opacity="0.25"/>
+      <text x="24" y="152" font-size="18" font-weight="700" fill="#171716">39 页扫描件 → 1 条时间线 + 5 份文书</text>
+      <text x="24" y="178" font-size="13.5" fill="#6B6760">每条结论溯源原件 · 置信度分级 · 30 天计划</text>
+    </g>
+    <g transform="translate(2520,32)">
+      <rect width="400" height="196" fill="#FBF9F5" stroke="#171716" stroke-width="2"/>
+      <text x="24" y="36" font-size="14" letter-spacing="2.5" fill="#8B6843">精选 01 · 金融合规 · 可运行原型</text>
+      <text x="24" y="76" font-size="24" font-weight="700" fill="#171716">跨境支付反洗钱调查分诊方案</text>
+      <text x="24" y="102" font-size="14" letter-spacing="1" fill="#6B6760">CrossBorder RiskOps</text>
+      <line x1="24" y1="122" x2="376" y2="122" stroke="#171716" stroke-width="1" opacity="0.25"/>
+      <text x="24" y="152" font-size="18" font-weight="700" fill="#171716">产能内精确率 0.223 → 0.870</text>
+      <text x="24" y="178" font-size="13.5" fill="#6B6760">6,000 笔合成交易 · 20 条规则 · 453 项测试</text>
+    </g>
+    <g transform="translate(2940,32)">
+      <rect width="400" height="196" fill="#FBF9F5" stroke="#171716" stroke-width="2"/>
+      <text x="24" y="36" font-size="14" letter-spacing="2.5" fill="#8B6843">精选 02 · 企业运营 · 完整数据管线</text>
+      <text x="24" y="76" font-size="24" font-weight="700" fill="#171716">IT 工单智能分诊与运营看板</text>
+      <text x="24" y="102" font-size="14" letter-spacing="1" fill="#6B6760">OpsSignal</text>
+      <line x1="24" y1="122" x2="376" y2="122" stroke="#171716" stroke-width="1" opacity="0.25"/>
+      <text x="24" y="152" font-size="18" font-weight="700" fill="#171716">自动接受 84% · 与人工一致 92.3%</text>
+      <text x="24" y="178" font-size="13.5" fill="#6B6760">3,600 条合成工单 · 51 值分类法 · 166 项测试</text>
+    </g>
+    <g transform="translate(3360,32)">
+      <rect width="400" height="196" fill="#FBF9F5" stroke="#171716" stroke-width="2"/>
+      <text x="24" y="36" font-size="14" letter-spacing="2.5" fill="#8B6843">精选 03 · 真实场景 · 脱敏报告</text>
+      <text x="24" y="76" font-size="24" font-weight="700" fill="#171716">存量合同档案 LLM 梳理与确权</text>
+      <text x="24" y="102" font-size="14" letter-spacing="1" fill="#6B6760">Project Report A</text>
+      <line x1="24" y1="122" x2="376" y2="122" stroke="#171716" stroke-width="1" opacity="0.25"/>
+      <text x="24" y="152" font-size="18" font-weight="700" fill="#171716">39 页扫描件 → 1 条时间线 + 5 份文书</text>
+      <text x="24" y="178" font-size="13.5" fill="#6B6760">每条结论溯源原件 · 置信度分级 · 30 天计划</text>
+    </g>
+    </g>
+  </g>
+  <text x="1180" y="250" text-anchor="end" font-family="Arial,'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif" font-size="12" letter-spacing="2" fill="#6B6760">SELECTED WORK · 向下查看全部项目 ↓</text>
+</svg>
