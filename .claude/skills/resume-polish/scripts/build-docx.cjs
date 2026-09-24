@@ -65,8 +65,8 @@ for (const x of blocks) {
   else if (x.k === 'company') kids.push(new Paragraph({
     spacing: { before: 70, after: 20, line: LINE + 40, lineRule: LineRuleType.EXACT }, keepNext: true,
     shading: { type: ShadingType.CLEAR, color: 'auto', fill: 'F0F1F4' },
-    // Link ends at a fixed column left of the date so links line up whatever the date length.
-    tabStops: [{ type: TabStopType.RIGHT, position: W - 60 - 1260 }, { type: TabStopType.RIGHT, position: W - 60 }],
+    // Links start at one fixed column (left-aligned) so they line up whatever the date or link length.
+    tabStops: [{ type: TabStopType.LEFT, position: W - 60 - 1260 - 1650 }, { type: TabStopType.RIGHT, position: W - 60 }],
     children: [
       new TextRun({ text: ' ', font: F, size: 20 }),
       ...(x.logo ? run({ img: x.logo }, { imgh: 12 }) : []),
