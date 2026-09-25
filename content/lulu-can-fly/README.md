@@ -4,6 +4,22 @@
 >
 > **为什么叫「中国噜会飞」**：跟原句「中国人会飞」一样是五个字，只把「人」换成「噜」。节奏不变，**能直接跟着原曲唱**，一眼就认得出是这个梗，又好念、好打成话题。
 
+## 成片
+
+**[中国噜会飞.mp4](中国噜会飞.mp4)**：1080×1920 竖屏，30fps，18 秒，按下面第 3 节分镜做的。封面图是 [cover.jpg](cover.jpg)。
+
+- 角色是**原创橘色水豚**，头上顶个橘子，不是官方噜噜的形象，对应第 4 节的版本 B。
+- 视频里只有音效：泡泡、弹射、呼啸、坠落、落水，而且音量压得比较低。**没放 BGM**：发布时在抖音里「选择音乐」，搜《中国人能飞》原曲。原声保留在 30% 左右，镜头切换大致对着副歌的节奏，需要的话可以在剪映里微调起点。
+- 发布时记得勾选「作品含 AI 生成内容」。
+- 想改台词或镜头，就改 `video/scene.html`，再用 `video/render.js` 和 `video/sfx.py` 重新渲染：
+
+```bash
+pip install imageio-ffmpeg numpy
+FF=$(python3 -c "import imageio_ffmpeg as f;print(f.get_ffmpeg_exe())")
+python3 video/sfx.py /tmp/sfx.wav
+node video/render.js "$FF" /tmp/sfx.wav 中国噜会飞.mp4   # 需要 playwright + chromium
+```
+
 ## 0. 素材是什么
 
 | 素材 | 事实 | 对我们的意义 |
