@@ -17,56 +17,64 @@ const ell=(x,y,rx,ry)=>{ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);};
 function grad(y0,y1,stops){const g=ctx.createLinearGradient(0,y0,0,y1);stops.forEach((c,i)=>g.addColorStop(i/(stops.length-1),c));return g;}
 function mix(a,b,t){const p=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16));const A=p(a),B=p(b);return'rgb('+A.map((v,i)=>Math.round(lerp(v,B[i],t))).join(',')+')';}
 
-// ---------- 原创橘色水豚（侧面，朝右） ----------
-function orange(x,y,rot){
+// ---------- 噜噜（正面，参照官方形象的同人绘制） ----------
+function softEll(cx,cy,rx,ry,stops,hx=-.3,hy=-.4){
+  ctx.save();ctx.translate(cx,cy);ctx.scale(1,ry/rx);
+  const g=ctx.createRadialGradient(rx*hx,rx*hy,rx*.05,0,0,rx*1.02);
+  stops.forEach((c,i)=>g.addColorStop(i/(stops.length-1),c));
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,rx,0,Math.PI*2);ctx.fill();ctx.restore();}
+const YEL=['#FFF3A8','#FFDD55','#F4BC2E'],ORG=['#FFC060','#FF9E24','#F0820E'];
+function tangerine(x,y,rot){
   ctx.save();ctx.translate(x,y);ctx.rotate(rot);
-  ctx.lineWidth=8;ctx.strokeStyle='#8a4a10';circ(0,0,44);ctx.stroke();
-  ctx.fillStyle='#FF9A1F';circ(0,0,44);ctx.fill();
-  ctx.fillStyle='rgba(255,255,255,.45)';ell(-14,-16,12,8);ctx.fill();
-  ctx.fillStyle='#e07b0c';[[12,10],[-6,18],[20,-6]].forEach(([a,b])=>{circ(a,b,2.5);ctx.fill();});
-  ctx.strokeStyle='#5b3a12';ctx.lineWidth=6;ctx.beginPath();ctx.moveTo(0,-42);ctx.lineTo(3,-54);ctx.stroke();
-  ctx.fillStyle='#3fa34d';ctx.beginPath();ctx.ellipse(18,-56,20,9,-.5,0,Math.PI*2);ctx.fill();
-  ctx.restore();
-}
+  softEll(0,0,64,40,['#FFD08A','#FFA533','#EE8414'],-.25,-.5);
+  ctx.strokeStyle='#5f8a3a';ctx.lineWidth=5;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(0,-38);ctx.quadraticCurveTo(3,-50,9,-54);ctx.stroke();
+  ctx.restore();}
+function eye(x,y,open,lx,ly){
+  if(open<=.06){ctx.strokeStyle='#5a3212';ctx.lineWidth=7;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x-22,y);ctx.quadraticCurveTo(x,y+14,x+22,y);ctx.stroke();return;}
+  ctx.save();ctx.beginPath();ctx.arc(x,y,27,0,Math.PI*2);ctx.clip();
+  ctx.fillStyle='#8a9ce6';circ(x,y,27);ctx.fill();
+  ctx.fillStyle='#14121e';circ(x+lx*5,y+ly*5,22);ctx.fill();
+  ctx.fillStyle='#fff';circ(x+lx*5+8,y+ly*5-9,7.5);ctx.fill();circ(x+lx*5-8,y+ly*5+8,3);ctx.fill();
+  if(open<1){ctx.fillStyle='#FFDA50';ctx.fillRect(x-30,y-30,60,54*(1-open)+3);
+    ctx.strokeStyle='#c9901c';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x-28,y-27+54*(1-open));ctx.lineTo(x+28,y-27+54*(1-open));ctx.stroke();}
+  ctx.restore();}
 function capy(x,y,s,o={}){
-  const {rot=0,eye=.45,pose='sit',orangeOn=true,ox=0,oy=0,orot=0,legT=0}=o;
+  const {rot=0,eyeL=1,eyeR=1,pose='stand',orangeOn=true,ox=0,oy=0,orot=0,legT=0,mouth='wavy',lx=0,ly=0}=o;
   ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.scale(s,s);
-  const fur='#C98B4F',dark='#9b6433',line='#6e421d';
-  const sw=Math.sin(legT)*8;
-  const legs=pose==='fly'
-    ?[[-250+sw,15,120,42],[-238-sw,52,110,40],[120+sw,40,115,40],[108-sw,72,105,38]]
-    :[[-140,40,56,100],[-70,55,56,92],[60,55,56,92],[125,40,56,100]];
-  const shapes=[
-    ()=>legs.forEach(l=>{ctx.roundRect(l[0],l[1],l[2],l[3],20);}),
-    ()=>ctx.ellipse(0,0,190,112,0,0,Math.PI*2),
-    ()=>ctx.ellipse(118,-150,24,22,0,0,Math.PI*2),
-    ()=>ctx.roundRect(70,-165,236,178,78),
-  ];
-  // 描边 pass
-  ctx.strokeStyle=line;ctx.lineWidth=14;ctx.lineJoin='round';
-  shapes.forEach(f=>{ctx.beginPath();f();ctx.stroke();});
-  // 填充 pass
-  ctx.fillStyle=dark;ctx.beginPath();shapes[0]();ctx.fill();
-  ctx.fillStyle=fur;ctx.beginPath();shapes[1]();ctx.fill();
-  ctx.fillStyle=dark;ctx.beginPath();shapes[2]();ctx.fill();
-  ctx.fillStyle=fur;ctx.beginPath();shapes[3]();ctx.fill();
-  ctx.fillStyle='rgba(255,220,170,.35)';ell(-30,-45,120,42);ctx.fill();
-  // 鼻口
-  ctx.fillStyle='#b27745';rr(238,-118,68,112,34);ctx.fill();
-  ctx.fillStyle='#3a2210';ell(284,-92,9,6);ctx.fill();
-  ctx.strokeStyle='#3a2210';ctx.lineWidth=5;ctx.lineCap='round';
-  ctx.beginPath();ctx.moveTo(290,-42);ctx.quadraticCurveTo(278,-34,266,-40);ctx.stroke();
-  // 腮红
-  ctx.fillStyle='rgba(255,120,120,.35)';ell(215,-52,24,12);ctx.fill();
-  // 眼睛：eye=0 闭眼，.45 半睁（情绪稳定）
-  const ex=196,ey=-92;
-  if(eye>.08){ctx.fillStyle='#24140a';ell(ex,ey,13,13*eye);ctx.fill();
-    ctx.fillStyle='#fff';circ(ex+4,ey-2*eye,3);ctx.fill();}
-  ctx.strokeStyle='#3a2210';ctx.lineWidth=6;ctx.beginPath();
-  if(eye>.08){ctx.moveTo(ex-18,ey-13*eye);ctx.lineTo(ex+18,ey-13*eye);}
-  else{ctx.moveTo(ex-16,ey);ctx.quadraticCurveTo(ex,ey+9,ex+16,ey);}
-  ctx.stroke();
-  if(orangeOn)orange(165+ox,-200+oy,orot);
+  const sw=Math.sin(legT)*.12;
+  // 耳朵
+  [-1,1].forEach(d=>{ctx.save();ctx.translate(d*182,-332);ctx.rotate(d*.55);softEll(0,0,32,44,YEL);ctx.fillStyle='rgba(255,160,60,.35)';ell(0,6,14,22);ctx.fill();ctx.restore();});
+  // 腿
+  [-1,1].forEach(d=>softEll(d*78,228+(d>0?sw:-sw)*40,54,44,YEL));
+  // 身体 + 短裤
+  softEll(0,70,168,152,YEL);
+  ctx.save();ctx.beginPath();ctx.ellipse(0,70,168,152,0,0,Math.PI*2);ctx.clip();
+  const g=ctx.createLinearGradient(0,110,0,230);g.addColorStop(0,'#F4A04C');g.addColorStop(1,'#D8762A');
+  ctx.fillStyle=g;ctx.fillRect(-200,112,400,140);
+  ctx.strokeStyle='rgba(150,70,20,.35)';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(-170,118);ctx.quadraticCurveTo(0,132,170,118);ctx.stroke();
+  ctx.restore();
+  // 手臂
+  if(pose==='fly'){
+    ctx.save();ctx.translate(-150,-40);ctx.rotate(.18+sw);softEll(0,-90,38,100,YEL);softEll(0,-178,40,40,YEL);ctx.restore();
+    ctx.save();ctx.translate(158,30);ctx.rotate(-.6-sw);softEll(0,40,36,62,YEL);ctx.restore();
+  } else {
+    [-1,1].forEach(d=>{ctx.save();ctx.translate(d*158,30);ctx.rotate(-d*.35+sw);softEll(0,40,36,62,YEL);ctx.restore();});
+  }
+  // 头
+  softEll(0,-192,216,182,YEL,-.25,-.45);
+  // 嘴套（边缘柔化）
+  ctx.save();ctx.shadowColor='rgba(255,150,30,.8)';ctx.shadowBlur=18;softEll(0,-128,196,118,ORG,-.2,-.35);ctx.restore();
+  ctx.fillStyle='rgba(255,120,150,.28)';ell(-122,-102,28,14);ctx.fill();ell(122,-102,28,14);ctx.fill();
+  // 嘴
+  ctx.strokeStyle='#B85A0C';ctx.lineWidth=6;ctx.lineCap='round';
+  if(mouth==='wavy'){ctx.beginPath();ctx.moveTo(-40,-92);ctx.bezierCurveTo(-22,-104,-10,-80,0,-92);ctx.bezierCurveTo(10,-104,22,-80,40,-92);ctx.stroke();}
+  else if(mouth==='o'){ctx.fillStyle='#5a2410';ell(0,-92,20,24);ctx.fill();}
+  else if(mouth==='grin'){ctx.save();ctx.beginPath();ctx.moveTo(-92,-128);ctx.quadraticCurveTo(0,-112,92,-128);ctx.quadraticCurveTo(0,-10,-92,-128);ctx.closePath();
+    ctx.fillStyle='#4a1e0e';ctx.fill();ctx.clip();ctx.fillStyle='#b8474e';ell(0,-58,60,30);ctx.fill();
+    ctx.fillStyle='#fff';rr(-26,-128,52,30,10);ctx.fill();ctx.restore();}
+  // 眼睛
+  eye(-92,-262,eyeL,lx,ly);eye(92,-262,eyeR,lx,ly);
+  if(orangeOn)tangerine(ox,-378+oy,orot);
   ctx.restore();
 }
 
@@ -93,7 +101,7 @@ function splash(t,t0,cx,cy,seed,n=40,power=1){if(t<t0||t>t0+1.2)return;const r=r
     ctx.globalAlpha=clamp(1-dt/1.1)*.9;ctx.fillStyle=i%3?'#bfe9ff':'#fff';circ(x,y,rad);ctx.fill();}ctx.restore();}
 
 // ---------- 场景：户外泡澡桶 ----------
-const TUB={cx:540,rim:1150},SITY=1115;
+const TUB={cx:540,rim:1150},SITY=1150;
 function onsenBg(t){
   ctx.fillStyle=grad(0,H,['#8fd0ff','#cdeaff','#ffe9cc']);ctx.fillRect(0,0,W,H);
   cloud(120+Math.sin(t*.3)*10,420,1.1,.9);cloud(760,300,.8,.8);
@@ -108,11 +116,12 @@ function onsenBg(t){
   ctx.fillStyle='#4f8d4f';[[70,1240,90],[1010,1250,100]].forEach(([x,y,r])=>{circ(x,y,r);ctx.fill();});
 }
 function tubBack(){ctx.fillStyle='#6d4526';ell(TUB.cx,TUB.rim,380,70);ctx.fill();}
+function tubWater(t,rip){
+  ctx.save();ctx.fillStyle=grad(TUB.rim-60,TUB.rim+60,['#8fdcff','#5fb8ec']);ell(TUB.cx,TUB.rim,362,60);ctx.fill();
+  if(rip){ctx.strokeStyle='rgba(255,255,255,.75)';ctx.lineWidth=5;
+  for(let k=0;k<3;k++){const p=((t*.6+k/3)%1);ctx.globalAlpha=1-p;ell(TUB.cx,TUB.rim+14,150+p*180,20+p*30);ctx.stroke();}}
+  ctx.restore();}
 function tubFront(t){
-  ctx.save();ctx.fillStyle='rgba(120,200,255,.78)';ell(TUB.cx,TUB.rim,362,60);ctx.fill();
-  ctx.strokeStyle='rgba(255,255,255,.7)';ctx.lineWidth=5;
-  for(let k=0;k<3;k++){const p=((t*.6+k/3)%1);ctx.globalAlpha=1-p;ell(700,TUB.rim+10,80+p*200,14+p*30);ctx.stroke();}
-  ctx.restore();
   ctx.save();ctx.beginPath();ctx.moveTo(160,TUB.rim);ctx.lineTo(195,1460);
   ctx.ellipse(TUB.cx,1460,345,60,0,Math.PI,0,true);ctx.lineTo(920,TUB.rim);
   ctx.ellipse(TUB.cx,TUB.rim,380,70,0,0,Math.PI,false);ctx.closePath();
@@ -134,9 +143,12 @@ function tubScene(t,c){ // c: capy 状态 + 镜头
   ctx.translate(W/2+Math.sin(t*90)*shake,H/2+Math.cos(t*77)*shake);ctx.scale(c.zoom||1,c.zoom||1);
   ctx.translate(-(c.fx||W/2),-(c.fy||H/2));
   onsenBg(t);tubBack();
-  if(c.capyY<TUB.rim+60)capy(470,c.capyY,1.25,c);
+  const inTub=c.capyY>SITY-150;
+  tubWater(t,inTub);
+  if(inTub){ctx.save();ctx.beginPath();ctx.rect(0,0,W,TUB.rim+12);ctx.clip();capy(540,c.capyY,1.05,c);ctx.restore();
+    ctx.strokeStyle='rgba(255,255,255,.8)';ctx.lineWidth=6;ell(540,TUB.rim+12,160,22);ctx.stroke();}
   tubFront(t);
-  if(c.capyY<1000&&c.pose==='fly')capy(470,c.capyY,1.25,c); // 飞出桶后画在桶前
+  if(!inTub)capy(540,c.capyY,1.05,c); // 飞出桶后画在桶前
   steam(t,c.steam??1);
   if(c.splash)c.splash();
   ctx.restore();
@@ -161,7 +173,7 @@ function wallScene(t){
     ctx.fillStyle='#b0906a';for(let k=0;k<5;k++)ctx.fillRect(x-70+k*30,y-185,18,26);
     ctx.fillStyle='#4a3a2a';[-35,15].forEach(d=>{rr(x+d,y-120,22,40,[11,11,0,0]);ctx.fill();});}
   speedLines(t,'h',3,22,.5);
-  capy(540,960+Math.sin(t*3)*18,.95,{pose:'fly',legT:t*6,rot:Math.sin(t*2)*.03});
+  capy(540,1000+Math.sin(t*3)*18,.8,{pose:'fly',legT:t*6,rot:.5+Math.sin(t*2)*.04,mouth:'grin'});
 }
 
 // ---------- 场景：高铁 ----------
@@ -194,7 +206,7 @@ function trainScene(t){
     ctx.restore();}
   for(let k=1;k<5;k++){const gx=nose-260-k*700;ctx.fillStyle='#8e98a3';ctx.fillRect(gx,top,8,bot-top);}
   speedLines(t,'h',5,18,.45);
-  capy(560,900+Math.sin(t*3.2)*14,.85,{pose:'fly',legT:t*6});
+  capy(560,930+Math.sin(t*3.2)*14,.66,{pose:'fly',legT:t*6,rot:.5,ly:1,lx:-.3});
 }
 
 // ---------- 场景：太空 ----------
@@ -221,8 +233,8 @@ function spaceScene(t){
   ctx.fillStyle='rgba(255,255,255,.7)';ell(-116,0,6,4);ctx.fill();
   ctx.restore();
   const ex=pop(t,12.3);if(ex>0)cap('!',sx-100,sy-120,110,{color:'#ffd23f',scale:ex});
-  const cx=lerp(-260,240,easeOut(prog(t,11,12.4)));
-  capy(cx,820+Math.sin(t*1.6)*20,.8,{pose:'fly',rot:-.08+Math.sin(t*.9)*.08,legT:t*2});
+  const cx=lerp(-260,260,easeOut(prog(t,11,12.4)));
+  capy(cx,860+Math.sin(t*1.6)*20,.68,{pose:'fly',rot:.25+Math.sin(t*.9)*.1,legT:t*2,lx:1,mouth:t>12.3?'o':'wavy'});
 }
 
 // ---------- 场景：坠落 ----------
@@ -232,10 +244,10 @@ function fallScene(t){
   if(p<.5){const r=rng(31);ctx.fillStyle='#fff';for(let i=0;i<80;i++){ctx.globalAlpha=(1-p*2)*.8;circ(r()*W,r()*H,1.5+r()*2);ctx.fill();}ctx.globalAlpha=1;}
   const r=rng(33);for(let i=0;i<8;i++){const y=H+300-((r()*(H+600)+(t-14)*2600)%(H+600));cloud(r()*W-100,y,.7+r()*.8,.85*p+.1);}
   speedLines(t,'v',9,26,.5);
-  const cy=lerp(250,1250,easeIn(p));
+  const cy=lerp(520,1300,easeIn(p));
   const g=ctx.createLinearGradient(0,cy-1300,0,cy);g.addColorStop(0,'rgba(255,140,0,0)');g.addColorStop(.7,'rgba(255,150,20,.7)');g.addColorStop(1,'rgba(255,230,120,.95)');
   ctx.fillStyle=g;ctx.beginPath();ctx.moveTo(540-30,cy-1300);ctx.lineTo(540+30,cy-1300);ctx.lineTo(540+150,cy-80);ctx.lineTo(540-150,cy-80);ctx.fill();
-  capy(540,cy,.8,{pose:'fly',rot:Math.PI/2,legT:t*10});
+  capy(540,cy,.72,{pose:'fly',rot:Math.PI,legT:t*10});
 }
 
 // ---------- 时间线 ----------
@@ -258,11 +270,11 @@ function strikeTitle(t){
 function render(t){
   ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,W,H);
   if(t<3.9){
-    let c={capyY:SITY,pose:'sit',eye:0,zoom:1};
-    if(t>=2&&t<3){const z=easeIO(prog(t,2,2.35));c.zoom=lerp(1,2.1,z);c.fx=lerp(W/2,730,z);c.fy=lerp(H/2,1020,z);
-      c.eye=.45*easeOut(prog(t,2.35,2.8));}
-    if(t>=3){c.eye=.45;const po=prog(t,3,3.4);c.oy=-1500*easeOut(po);c.orot=po*6;
-      if(t>=3.2){const q=prog(t,3.2,3.75);c.capyY=lerp(SITY,-700,easeIn(q));c.pose='fly';c.orangeOn=true;c.legT=t*12;}
+    let c={capyY:SITY,pose:'stand',eyeL:0,eyeR:0,zoom:1};
+    if(t>=2&&t<3){const z=easeIO(prog(t,2,2.35));c.zoom=lerp(1,2.0,z);c.fx=W/2;c.fy=lerp(H/2,930,z);
+      c.eyeR=easeOut(prog(t,2.35,2.8));c.lx=.4;}
+    if(t>=3){c.eyeL=c.eyeR=1;c.mouth='o';const po=prog(t,3,3.4);c.oy=-1500*easeOut(po);c.orot=po*6;
+      if(t>=3.2){const q=prog(t,3.2,3.75);c.capyY=lerp(SITY,-900,easeIn(q));c.pose='fly';c.legT=t*12;}
       c.shake=t<3.45?18*(1-prog(t,3.2,3.45)):0;
       c.splash=()=>splash(t,3.2,560,1130,5,46,1.1);}
     tubScene(t,c);
@@ -275,7 +287,7 @@ function render(t){
     const r=rng(41);for(let i=0;i<7;i++){const y=((r()*(H+600)+(t-3.9)*1800)%(H+600))-300;cloud(r()*W-100,y,.8+r()*.6,.9);}
     speedLines(t,'v',13,24,.5);
     const oq=prog(t,3.95,4.5);
-    capy(540,1050+Math.sin(t*4)*12,.95,{pose:'fly',rot:-.35,legT:t*8,oy:-1500*(1-bounceOut(oq)),orot:(1-oq)*5});
+    capy(540,1150+Math.sin(t*4)*12,.9,{pose:'fly',rot:.12,legT:t*8,mouth:'grin',oy:-1500*(1-bounceOut(oq)),orot:(1-oq)*5});
     strikeTitle(t);flash(t,3.9);
   } else if(t<8){
     wallScene(t);header();
@@ -283,15 +295,16 @@ function render(t){
     const k=pop(t,5.4);if(k>0){ctx.font=`bold 112px ${FONT}`;const w=ctx.measureText('橘皮肤也对').width;cap('橘',W/2-w/2+56,600,112,{color:'#FF9A1F',scale:k});}
     flash(t,5);
   } else if(t<11){
-    trainScene(t);header();cap('（高铁乘客：？？？）',W/2,600,76,{scale:pop(t,9.1)});flash(t,8);
+    trainScene(t);header();cap('（高铁乘客：？？？）',W/2,540,76,{scale:pop(t,9.1)});flash(t,8);
   } else if(t<14){
     spaceScene(t);header();cap('（对视）',W/2,1250,80,{scale:pop(t,12.6)});flash(t,11);
   } else if(t<16){
     fallScene(t);header();cap('咻——',270,600,130,{scale:pop(t,14.2)});flash(t,14);
   } else {
     const land=prog(t,16,16.25);
-    const c={capyY:lerp(-500,SITY,easeIn(land)),pose:land<1?'fly':'sit',rot:lerp(Math.PI/2,0,easeOut(prog(t,16,16.2))),
-      eye:t<17.1?.45:.45*(1-prog(t,17.1,17.35)),zoom:1,
+    const ec=t<17.1?1:1-prog(t,17.1,17.35);
+    const c={capyY:lerp(-700,SITY,easeIn(land)),pose:land<1?'fly':'stand',rot:lerp(Math.PI,0,easeOut(prog(t,16,16.2))),
+      eyeL:ec,eyeR:ec,mouth:t<16.6?'o':'wavy',zoom:1,
       oy:-1500*(1-bounceOut(prog(t,16.35,16.95))),orot:(1-prog(t,16.35,16.95))*4,
       shake:t>=16.25&&t<16.55?22*(1-prog(t,16.25,16.55)):0,
       splash:()=>splash(t,16.25,560,1130,8,60,1.3)};
