@@ -13,8 +13,8 @@
 | 状态 | 概念方案，待审核 |
 | 整理与发布 | 邹志华 (Zou Zhihua) |
 | 首次公开时间 | 2026-09-26（UTC，以本仓库 Git 提交时间为准） |
-| 版权 | © 2026 邹志华 (Zou Zhihua)。文字按 [CC BY-NC-ND 4.0](LICENSE.md) 授权，详见 [LICENSE.md](LICENSE.md) |
-| 时间戳与文件指纹 | 见 [PROVENANCE.md](PROVENANCE.md)（SHA-256 + Git 提交记录） |
+| 版权 | © 2026 邹志华 (Zou Zhihua)。文字按 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans) 授权，详见 [LICENSE](LICENSE) |
+| 时间戳与文件指纹 | 见 [PROVENANCE.md](PROVENANCE.md)（SHA-256 指纹 + 首次提交哈希 + GitHub 服务器时间） |
 
 ![iPhone Duo Split — AI-GENERATED UNOFFICIAL CONCEPT｜AI生成的非官方概念内容，与 Apple 无关](images/duo-split-ai-generated-unofficial-concept.png)
 
@@ -455,4 +455,22 @@ iPhone Duo Split 的本质不是折叠屏创新，而是个人多身份计算系
 - 状态：概念方案，待审核
 - 下一步：根据审核意见确定硬件结构、交互原型和视觉设计方向。
 
-<sub>© 2026 邹志华 (Zou Zhihua) · 首次公开 2026-09-26 (UTC) · 文字按 CC BY-NC-ND 4.0 授权 · “iPhone”“Apple” 为 Apple Inc. 的商标，本仓库与 Apple Inc. 无任何关联。</sub>
+## 作者
+
+**邹志华　策划、整理与发布**
+
+方案文字、名称、概念图与参数由 AI 生成；选题、取舍、编辑与编排由作者完成。
+
+v1.2 · 首次公开 2026-09-26 (UTC)
+
+## 版权与授权
+
+**© 2026 邹志华　保留著作权。**
+
+本方案以 [**CC BY-NC-ND 4.0**](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans) 授权 —— 可自由转载、引用与分享，**须完整署名并注明出处，并保留“AI生成的非官方概念内容｜与 Apple 无关”声明**；不得用于商业用途，不得改编后发布。评论、教学与学术引用不受此限。“Apple”“iPhone” 商标归 Apple Inc. 所有，不在授权范围内。详见 [LICENSE](LICENSE) 与 [DISCLAIMER.md](DISCLAIMER.md)。
+
+商业使用、翻译或改编后再发布，请先联系作者。
+
+**关于时间与作者证明**：本仓库的提交历史是发布过程的同期记录，作为著作权与时间证据刻意保留，不做重写；首次发布版本的 SHA-256 文件指纹与提交哈希见 [PROVENANCE.md](PROVENANCE.md)。
+
+<sub>© 2026 邹志华 (Zou Zhihua) · 首次公开 2026-09-26 (UTC) · CC BY-NC-ND 4.0 · “iPhone”“Apple” 为 Apple Inc. 的商标，本仓库与 Apple Inc. 无任何关联。</sub>
