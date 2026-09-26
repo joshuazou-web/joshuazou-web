@@ -64,15 +64,17 @@ for (const x of blocks) {
   }));
   else if (x.k === 'company') kids.push(new Paragraph({
     spacing: { before: 70, after: 20, line: LINE + 40, lineRule: LineRuleType.EXACT }, keepNext: true,
-    shading: { type: ShadingType.CLEAR, color: 'auto', fill: 'F0F1F4' }, tabStops: [{ type: TabStopType.RIGHT, position: W - 60 }],
+    shading: { type: ShadingType.CLEAR, color: 'auto', fill: 'F0F1F4' },
+    // Links end ~10pt before a fixed-width date column (year-only dates ≈ 44pt), so their right edges line up.
+    // Only rows with a link get the link stop; otherwise long dates would snap to it and wrap.
+    tabStops: [...(x.link ? [{ type: TabStopType.RIGHT, position: W - 60 - 880 - 200 }] : []), { type: TabStopType.RIGHT, position: W - 60 }],
     children: [
       new TextRun({ text: ' ', font: F, size: 20 }),
       ...(x.logo ? run({ img: x.logo }, { imgh: 12 }) : []),
       ...runs(x.runs, { size: 19, color: '333333' }),
-      new TextRun({ text: '\t', font: F, size: SZ }),
-      ...(x.link ? [new ExternalHyperlink({ link: x.link.href, children: [new TextRun({ text: x.link.t, bold: true, font: F, size: 18, color: BLUE })] }),
-        new TextRun({ text: '   ', font: F, size: SZ })] : []),
-      new TextRun({ text: x.date, bold: true, font: F, size: SZ }),
+      ...(x.link ? [new TextRun({ text: '\t', font: F, size: SZ }),
+        new ExternalHyperlink({ link: x.link.href, children: [new TextRun({ text: x.link.t, bold: true, font: F, size: 18, color: BLUE })] })] : []),
+      new TextRun({ text: '\t' + x.date, bold: true, font: F, size: SZ }),
     ],
   }));
   else if (x.k === 'ptitle') kids.push(new Paragraph({
