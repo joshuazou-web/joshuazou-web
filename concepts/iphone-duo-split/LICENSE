@@ -1,0 +1,77 @@
+Copyright (c) 2026 邹志华 (Zou Zhihua). All rights reserved.
+First published 2026-09-26 (UTC).
+
+This directory (concepts/iphone-duo-split/) contains an AI-generated,
+unofficial product concept. It is NOT affiliated with, published,
+authorised, sponsored or endorsed by Apple Inc.
+
+
+────────────────────────────────────────────────────────────────────────
+1. THE CONCEPT PLAN AND IMAGE
+────────────────────────────────────────────────────────────────────────
+
+Covers:
+  README.md
+  DISCLAIMER.md
+  PROVENANCE.md
+  images/duo-split-ai-generated-unofficial-concept.png
+  and every other text, figure, table, and layout in this directory.
+
+Licensed under the Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International Licence
+(CC BY-NC-ND 4.0).
+
+You are free to:
+  • Share — copy and redistribute the material in any medium or format.
+
+Under the following terms:
+  • Attribution — You must give appropriate credit to 邹志华 (Zou Zhihua),
+    provide a link to the source, and indicate if changes were made.
+  • NonCommercial — You may not use the material for commercial purposes.
+  • NoDerivatives — If you remix, transform, or build upon the material,
+    you may not distribute the modified material.
+  • Keep the disclaimer — Any redistribution must keep the
+    "AI-GENERATED UNOFFICIAL CONCEPT" label and the notice
+    "AI生成的非官方概念内容｜与 Apple 无关", and must not crop it out
+    of the image.
+
+Quotation for the purposes of review, comment, teaching, news reporting,
+and academic citation remains permitted under applicable copyright law
+regardless of this licence.
+
+Licence deed:  https://creativecommons.org/licenses/by-nc-nd/4.0/
+Full legal code: https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+For permissions beyond this licence — including commercial use,
+translation, or republication in edited form — contact the author.
+
+
+────────────────────────────────────────────────────────────────────────
+2. AUTHORSHIP AND AI GENERATION
+────────────────────────────────────────────────────────────────────────
+
+The text, product name, concept image, parameters and feature
+descriptions were generated with AI, and were selected, edited,
+arranged and published by the author. In some jurisdictions purely
+AI-generated material may not be eligible for copyright protection;
+this licence applies only to the extent the author holds rights, and
+covers in particular the author's selection, editing and arrangement.
+
+The commit history of this repository is a contemporaneous record of
+publication and is preserved deliberately as evidence of authorship
+and date. It is not rewritten. SHA-256 fingerprints of the first
+published version are listed in PROVENANCE.md.
+
+
+────────────────────────────────────────────────────────────────────────
+3. THIRD-PARTY MATERIAL AND TRADEMARKS
+────────────────────────────────────────────────────────────────────────
+
+Apple and iPhone are trademarks of Apple Inc., registered in the U.S.
+and other countries and regions. They are used here descriptively only,
+to indicate the product ecosystem the concept imagines. No trademark
+rights are claimed, no official Apple logo is used, and these marks are
+excluded from the licence above. See DISCLAIMER.md.
+
+This licence covers this directory only and does not change the terms
+of any other content in this repository.
