@@ -70,7 +70,7 @@ for (const x of blocks) {
   else if (x.k === 'h2') kids.push(new Paragraph({
     spacing: { before: 120, after: 50 }, keepNext: true,
     border: { bottom: { style: BorderStyle.SINGLE, size: 12, color: BLUE, space: 1 } },
-    children: [new TextRun({ text: x.text, bold: true, font: H, size: 26, color: BLUE })],
+    children: [new TextRun({ text: x.text, bold: true, font: mono ? F : H, size: mono ? 24 : 26, color: BLUE })],
   }));
   else if (x.k === 'edu') kids.push(new Paragraph({
     spacing: { ...sp }, tabStops: [{ type: TabStopType.RIGHT, position: W }],
