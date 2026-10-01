@@ -47,8 +47,8 @@ const { launch } = require('./browser.cjs');
         } else if (el.matches('.project')) {
           const t = el.querySelector('.project-title');
           if (t) blocks.push({ k: 'ptitle', text: t.textContent });
-          el.querySelectorAll('li').forEach((li) => blocks.push({ k: 'li', lvl: li.classList.contains('nested') ? 1 : 0, runs: runs(li) }));
-        } else if (el.matches('ul')) el.querySelectorAll('li').forEach((li) => blocks.push({ k: 'li', lvl: 0, runs: runs(li) }));
+          el.querySelectorAll('li').forEach((li) => blocks.push({ k: 'li', lvl: li.classList.contains('nested') ? 1 : 0, full: getComputedStyle(li).textAlignLast === 'justify', runs: runs(li) }));
+        } else if (el.matches('ul')) el.querySelectorAll('li').forEach((li) => blocks.push({ k: 'li', lvl: 0, full: getComputedStyle(li).textAlignLast === 'justify', runs: runs(li) }));
       });
     });
     const h2 = document.querySelector('.section-title');

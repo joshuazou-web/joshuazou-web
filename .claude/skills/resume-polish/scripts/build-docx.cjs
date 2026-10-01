@@ -93,7 +93,7 @@ for (const x of blocks) {
     spacing: { ...sp, before: 10 }, keepNext: true,
     children: [new TextRun({ text: x.text.replace(/\s*\|\s*/g, '  |  '), bold: true, font: F, size: 18, color: TITLE_BLUE })],
   }));
-  else if (x.k === 'li') kids.push(new Paragraph({ numbering: { reference: 'b', level: x.lvl || 0 }, alignment: AlignmentType.JUSTIFIED, spacing: { ...sp }, children: runs(x.runs) }));
+  else if (x.k === 'li') kids.push(new Paragraph({ numbering: { reference: 'b', level: x.lvl || 0 }, alignment: x.full ? AlignmentType.DISTRIBUTE : AlignmentType.JUSTIFIED, spacing: { ...sp }, children: runs(x.runs) }));
 }
 
 const doc = new Document({
