@@ -54,14 +54,14 @@ function runs(list, o = {}) {
 
 const kids = [];
 for (const x of blocks) {
-  // topbar: name left, first contact row right-aligned, accent rule underneath (one paragraph).
+  // topbar: name, then the first contact row right next to it, accent rule underneath (one paragraph).
   if (topbar && x.k === 'name') {
     const meta = blocks.find((b) => b.k === 'meta');
     if (meta) meta.used = true;
     kids.push(new Paragraph({
       spacing: { after: 60 }, tabStops: [{ type: TabStopType.RIGHT, position: W }],
       border: { bottom: { style: BorderStyle.SINGLE, size: 8, color: BLUE, space: 2 } },
-      children: [new TextRun({ text: x.text, bold: true, font: H, size: 40 }), new TextRun({ text: '\t', font: F, size: SZ }), ...(meta ? runs(meta.runs) : [])],
+      children: [new TextRun({ text: x.text, bold: true, font: H, size: 40 }), new TextRun({ text: '     ', font: F, size: SZ }), ...(meta ? runs(meta.runs) : [])],
     }));
   } else if (x.used) continue;
   else if (x.k === 'name') kids.push(new Paragraph({ spacing: { after: 20 }, alignment: mono ? AlignmentType.CENTER : undefined, children: [new TextRun({ text: x.text, bold: true, font: H, size: 42 })] }));
