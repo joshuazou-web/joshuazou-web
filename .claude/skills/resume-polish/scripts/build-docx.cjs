@@ -11,10 +11,10 @@ const {
 } = require('docx');
 
 const [jsonPath, outPath, lineArg = '212', baseDir = path.dirname(path.resolve(process.argv[2]))] = process.argv.slice(2);
-const { title, mono, blocks } = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+const { title, mono, accent, blocks } = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 const LINE = +lineArg;
 // mono (<body class="mono">): all-black text, no grey bars, centred header like the NUS template.
-const BLUE = mono ? '000000' : '2458B8', TITLE_BLUE = mono ? '000000' : '1F4E9C';
+const BLUE = mono ? (accent || '000000') : '2458B8', TITLE_BLUE = mono ? '000000' : '1F4E9C';
 const INK = mono ? '000000' : '222222', BOLD_INK = mono ? '000000' : '3A3A3A';
 const MARGIN = { top: 391, bottom: 340, left: 510, right: 493 }; // = 6.9 / 6 / 9 / 8.7 mm
 const W = 11906 - MARGIN.left - MARGIN.right;
@@ -74,7 +74,7 @@ for (const x of blocks) {
       ...(x.logo ? run({ img: x.logo }, { imgh: 12 }) : []),
       ...runs(x.runs, { size: 19, color: mono ? INK : '333333' }),
       new TextRun({ text: '\t', font: F, size: SZ }),
-      ...(x.link ? [new ExternalHyperlink({ link: x.link.href, children: [new TextRun({ text: x.link.t, bold: !mono, underline: mono ? {} : undefined, font: F, size: 18, color: BLUE })] }),
+      ...(x.link ? [new ExternalHyperlink({ link: x.link.href, children: [new TextRun({ text: x.link.t, bold: !mono, underline: mono ? {} : undefined, font: F, size: 18, color: mono ? INK : BLUE })] }),
         new TextRun({ text: '   ', font: F, size: SZ })] : []),
       new TextRun({ text: x.date, bold: true, font: F, size: SZ }),
     ],
