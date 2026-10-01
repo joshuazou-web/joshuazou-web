@@ -54,7 +54,7 @@ const { launch } = require('./browser.cjs');
     const h2 = document.querySelector('.section-title');
     const rgb = h2 ? getComputedStyle(h2).color.match(/\d+/g).slice(0, 3) : null;
     const accent = rgb ? rgb.map((v) => (+v).toString(16).padStart(2, '0')).join('').toUpperCase() : null;
-    return { title: document.title, mono: document.body.classList.contains('mono'), accent, blocks };
+    return { title: document.title, mono: document.body.classList.contains('mono'), topbar: !!document.querySelector('.topbar'), accent, blocks };
   });
   fs.writeFileSync(out, JSON.stringify(data, null, 1));
   console.log('blocks', data.blocks.length);

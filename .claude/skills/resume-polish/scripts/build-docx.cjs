@@ -11,7 +11,7 @@ const {
 } = require('docx');
 
 const [jsonPath, outPath, lineArg = '212', baseDir = path.dirname(path.resolve(process.argv[2]))] = process.argv.slice(2);
-const { title, mono, accent, blocks } = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+const { title, mono, topbar, accent, blocks } = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 const LINE = +lineArg;
 // mono (<body class="mono">): all-black text, no grey bars, centred header like the NUS template.
 const BLUE = mono ? (accent || '000000') : '2458B8', TITLE_BLUE = mono ? '000000' : '1F4E9C';
@@ -54,7 +54,17 @@ function runs(list, o = {}) {
 
 const kids = [];
 for (const x of blocks) {
-  if (x.k === 'name') kids.push(new Paragraph({ spacing: { after: 20 }, alignment: mono ? AlignmentType.CENTER : undefined, children: [new TextRun({ text: x.text, bold: true, font: H, size: 42 })] }));
+  // topbar: name left, first contact row right-aligned, accent rule underneath (one paragraph).
+  if (topbar && x.k === 'name') {
+    const meta = blocks.find((b) => b.k === 'meta');
+    if (meta) meta.used = true;
+    kids.push(new Paragraph({
+      spacing: { after: 60 }, tabStops: [{ type: TabStopType.RIGHT, position: W }],
+      border: { bottom: { style: BorderStyle.SINGLE, size: 8, color: BLUE, space: 2 } },
+      children: [new TextRun({ text: x.text, bold: true, font: H, size: 40 }), new TextRun({ text: '\t', font: F, size: SZ }), ...(meta ? runs(meta.runs) : [])],
+    }));
+  } else if (x.used) continue;
+  else if (x.k === 'name') kids.push(new Paragraph({ spacing: { after: 20 }, alignment: mono ? AlignmentType.CENTER : undefined, children: [new TextRun({ text: x.text, bold: true, font: H, size: 42 })] }));
   else if (x.k === 'meta') kids.push(new Paragraph({ spacing: { ...sp, after: 0 }, alignment: mono ? AlignmentType.CENTER : undefined, children: runs(x.runs) }));
   else if (x.k === 'lead') kids.push(new Paragraph({ spacing: { ...sp, before: 20 }, alignment: AlignmentType.JUSTIFIED, children: runs(x.runs) }));
   else if (x.k === 'h2') kids.push(new Paragraph({
