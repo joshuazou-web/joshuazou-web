@@ -11,9 +11,11 @@ const {
 } = require('docx');
 
 const [jsonPath, outPath, lineArg = '212', baseDir = path.dirname(path.resolve(process.argv[2]))] = process.argv.slice(2);
-const { title, blocks } = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+const { title, mono, blocks } = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 const LINE = +lineArg;
-const BLUE = '2458B8', TITLE_BLUE = '1F4E9C';
+// mono (<body class="mono">): all-black text, no grey bars, centred header like the NUS template.
+const BLUE = mono ? '000000' : '2458B8', TITLE_BLUE = mono ? '000000' : '1F4E9C';
+const INK = mono ? '000000' : '222222', BOLD_INK = mono ? '000000' : '3A3A3A';
 const MARGIN = { top: 391, bottom: 340, left: 510, right: 493 }; // = 6.9 / 6 / 9 / 8.7 mm
 const W = 11906 - MARGIN.left - MARGIN.right;
 const F = { ascii: 'Times New Roman', hAnsi: 'Times New Roman', eastAsia: 'SimSun', cs: 'Times New Roman' };
@@ -35,7 +37,7 @@ function run(r, o = {}) {
   const sep = r.t.trim() === '|';
   return [new TextRun({
     text: sep ? '  |  ' : r.t, bold: !!r.b || o.b, italics: !!r.i, font: F, size: o.size || SZ,
-    color: sep ? '8A909B' : (o.color || (r.b ? '3A3A3A' : '222222')),
+    color: sep ? (mono ? '000000' : '8A909B') : (o.color || (r.b ? BOLD_INK : INK)),
   })];
 }
 
@@ -50,8 +52,8 @@ function runs(list, o = {}) {
 
 const kids = [];
 for (const x of blocks) {
-  if (x.k === 'name') kids.push(new Paragraph({ spacing: { after: 20 }, children: [new TextRun({ text: x.text, bold: true, font: H, size: 42 })] }));
-  else if (x.k === 'meta') kids.push(new Paragraph({ spacing: { ...sp, after: 0 }, children: runs(x.runs) }));
+  if (x.k === 'name') kids.push(new Paragraph({ spacing: { after: 20 }, alignment: mono ? AlignmentType.CENTER : undefined, children: [new TextRun({ text: x.text, bold: true, font: H, size: 42 })] }));
+  else if (x.k === 'meta') kids.push(new Paragraph({ spacing: { ...sp, after: 0 }, alignment: mono ? AlignmentType.CENTER : undefined, children: runs(x.runs) }));
   else if (x.k === 'lead') kids.push(new Paragraph({ spacing: { ...sp, before: 20 }, alignment: AlignmentType.JUSTIFIED, children: runs(x.runs) }));
   else if (x.k === 'h2') kids.push(new Paragraph({
     spacing: { before: 120, after: 50 }, keepNext: true,
@@ -64,13 +66,13 @@ for (const x of blocks) {
   }));
   else if (x.k === 'company') kids.push(new Paragraph({
     spacing: { before: 70, after: 20, line: LINE + 40, lineRule: LineRuleType.EXACT }, keepNext: true,
-    shading: { type: ShadingType.CLEAR, color: 'auto', fill: 'F0F1F4' }, tabStops: [{ type: TabStopType.RIGHT, position: W - 60 }],
+    ...(mono ? {} : { shading: { type: ShadingType.CLEAR, color: 'auto', fill: 'F0F1F4' } }), tabStops: [{ type: TabStopType.RIGHT, position: mono ? W : W - 60 }],
     children: [
-      new TextRun({ text: ' ', font: F, size: 20 }),
+      ...(mono ? [] : [new TextRun({ text: ' ', font: F, size: 20 })]),
       ...(x.logo ? run({ img: x.logo }, { imgh: 12 }) : []),
-      ...runs(x.runs, { size: 19, color: '333333' }),
+      ...runs(x.runs, { size: 19, color: mono ? INK : '333333' }),
       new TextRun({ text: '\t', font: F, size: SZ }),
-      ...(x.link ? [new ExternalHyperlink({ link: x.link.href, children: [new TextRun({ text: x.link.t, bold: true, font: F, size: 18, color: BLUE })] }),
+      ...(x.link ? [new ExternalHyperlink({ link: x.link.href, children: [new TextRun({ text: x.link.t, bold: !mono, underline: mono ? {} : undefined, font: F, size: 18, color: BLUE })] }),
         new TextRun({ text: '   ', font: F, size: SZ })] : []),
       new TextRun({ text: x.date, bold: true, font: F, size: SZ }),
     ],

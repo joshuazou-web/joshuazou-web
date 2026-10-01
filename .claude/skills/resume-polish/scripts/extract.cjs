@@ -50,7 +50,7 @@ const { launch } = require('./browser.cjs');
         } else if (el.matches('ul')) el.querySelectorAll('li').forEach((li) => blocks.push({ k: 'li', lvl: 0, runs: runs(li) }));
       });
     });
-    return { title: document.title, blocks };
+    return { title: document.title, mono: document.body.classList.contains('mono'), blocks };
   });
   fs.writeFileSync(out, JSON.stringify(data, null, 1));
   console.log('blocks', data.blocks.length);
