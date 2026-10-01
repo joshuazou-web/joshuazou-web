@@ -34,17 +34,19 @@ function image(src, heightPt) {
 
 function run(r, o = {}) {
   if (r.img) { const im = image(r.img, o.imgh || 11); return im ? [im, new TextRun({ text: ' ', font: F, size: SZ })] : []; }
-  const sep = r.t.trim() === '|';
-  return [new TextRun({
-    text: sep ? '  |  ' : r.t, bold: !!r.b || o.b, italics: !!r.i, font: F, size: o.size || SZ,
+  const sep = r.t.trim() === '|', dot = r.t.trim() === '·';
+  const tr = new TextRun({
+    text: sep ? '  |  ' : dot ? '  ·  ' : r.t, bold: (!!r.b || o.b) && !dot && !r.u, italics: !!r.i, underline: r.u ? {} : undefined,
+    font: F, size: o.size || SZ,
     color: sep ? (mono ? '000000' : '8A909B') : (o.color || (r.b ? BOLD_INK : INK)),
-  })];
+  });
+  return [r.href ? new ExternalHyperlink({ link: r.href, children: [tr] }) : tr];
 }
 
 function runs(list, o = {}) {
   const out = [];
   list.forEach((r, i) => {
-    if (r.t && !r.b && i > 0 && list[i - 1].b && !/^\s/.test(r.t) && r.t.trim() !== '|') out.push(...run({ t: '  ' }, o));
+    if (r.t && !r.b && i > 0 && list[i - 1].b && !/^\s/.test(r.t) && !['|', '·'].includes(r.t.trim())) out.push(...run({ t: '  ' }, o));
     out.push(...run(r, o));
   });
   return out;

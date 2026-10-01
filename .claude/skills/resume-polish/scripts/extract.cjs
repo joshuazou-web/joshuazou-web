@@ -19,6 +19,7 @@ const { launch } = require('./browser.cjs');
         if (n.tagName === 'IMG') { acc.push({ img: n.getAttribute('src') }); return; }
         const s = { ...st };
         if (['STRONG', 'B'].includes(n.tagName) || n.matches('.school,.date')) s.b = true;
+        if (n.tagName === 'A' && n.getAttribute('href')) { s.href = n.getAttribute('href'); s.u = n.classList.contains('doc-link'); }
         if (n.tagName === 'EM') s.i = true;
         n.childNodes.forEach((c) => walk(c, s));
       };
@@ -40,7 +41,7 @@ const { launch } = require('./browser.cjs');
           blocks.push({ k: 'edu', runs: runs(el.firstElementChild), date: d ? d.textContent : '' });
         } else if (el.matches('.company')) {
           const lg = el.querySelector('.company-logo');
-          const ln = el.querySelector('.doc-link');
+          const ln = el.querySelector(':scope > .doc-link'); // links inside .company-name stay inline runs
           blocks.push({ k: 'company', runs: runs(el.querySelector('.company-name')), date: el.querySelector('.company-meta').textContent,
             logo: lg ? lg.getAttribute('src') : null, link: ln ? { t: ln.textContent, href: ln.getAttribute('href') } : null });
         } else if (el.matches('.project')) {
