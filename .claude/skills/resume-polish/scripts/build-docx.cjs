@@ -38,7 +38,7 @@ function run(r, o = {}) {
   const tr = new TextRun({
     text: sep ? '  |  ' : dot ? '  ·  ' : r.t, bold: (!!r.b || o.b) && !dot && !r.u, italics: !!r.i, underline: r.u ? {} : undefined,
     font: F, size: o.size || SZ,
-    color: sep ? (mono ? '000000' : '8A909B') : (o.color || (r.b ? BOLD_INK : INK)),
+    color: sep ? (mono ? '000000' : '8A909B') : r.u ? BLUE : (o.color || (r.b ? BOLD_INK : INK)),
   });
   return [r.href ? new ExternalHyperlink({ link: r.href, children: [tr] }) : tr];
 }
