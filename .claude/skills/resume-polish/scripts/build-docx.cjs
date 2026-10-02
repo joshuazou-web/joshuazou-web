@@ -93,6 +93,8 @@ for (const x of blocks) {
     spacing: { ...sp, before: 10 }, keepNext: true,
     children: [new TextRun({ text: x.text.replace(/\s*\|\s*/g, '  |  '), bold: true, font: F, size: 18, color: TITLE_BLUE })],
   }));
+  // li.intro: one-line project summary under the company row, unbulleted and in a softer ink.
+  else if (x.k === 'li' && x.intro) kids.push(new Paragraph({ indent: { left: 260 }, alignment: AlignmentType.LEFT, spacing: { ...sp }, children: runs(x.runs, { color: '444444' }) }));
   else if (x.k === 'li') kids.push(new Paragraph({ numbering: { reference: 'b', level: x.lvl || 0 }, alignment: x.full ? AlignmentType.DISTRIBUTE : AlignmentType.JUSTIFIED, spacing: { ...sp }, children: runs(x.runs) }));
 }
 
