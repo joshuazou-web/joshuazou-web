@@ -32,7 +32,8 @@ const { launch } = require('./browser.cjs');
     if (h1) blocks.push({ k: 'name', text: h1.textContent });
     sheet.querySelectorAll('.meta-row').forEach((m) => blocks.push({ k: 'meta', runs: runs(m) }));
     const lead = sheet.querySelector('.lead');
-    if (lead) blocks.push({ k: 'lead', runs: runs(lead) });
+    // A lead split into display:block .ll lines exports as one paragraph per line.
+    if (lead) for (const part of lead.querySelectorAll('.ll').length ? lead.querySelectorAll('.ll') : [lead]) blocks.push({ k: 'lead', runs: runs(part) });
     sheet.querySelectorAll('section').forEach((sec) => {
       sec.querySelectorAll(':scope > *').forEach((el) => {
         if (el.matches('.section-title')) blocks.push({ k: 'h2', text: el.textContent });
