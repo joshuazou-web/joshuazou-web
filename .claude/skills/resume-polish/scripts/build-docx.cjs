@@ -16,11 +16,14 @@ const LINE = +lineArg;
 // mono (<body class="mono">): all-black text, no grey bars, centred header like the NUS template.
 const BLUE = mono ? (accent || '000000') : '2458B8', TITLE_BLUE = mono ? '000000' : '1F4E9C';
 const INK = mono ? '000000' : '222222', BOLD_INK = mono ? '000000' : '3A3A3A';
-const MARGIN = { top: 391, bottom: 340, left: 510, right: 493 }; // = 6.9 / 6 / 9 / 8.7 mm
+// DOCX_MARGIN="top,right,bottom,left" (twips) and DOCX_SZ (half-points) let a two-page résumé match its PDF;
+// the defaults are the original one-page settings.
+const [mt, mr, mb, ml] = (process.env.DOCX_MARGIN || '391,493,340,510').split(',').map(Number);
+const MARGIN = { top: mt, bottom: mb, left: ml, right: mr }; // default = 6.9 / 6 / 9 / 8.7 mm
 const W = 11906 - MARGIN.left - MARGIN.right;
 const F = { ascii: 'Times New Roman', hAnsi: 'Times New Roman', eastAsia: 'SimSun', cs: 'Times New Roman' };
 const H = { ascii: 'Microsoft YaHei', hAnsi: 'Microsoft YaHei', eastAsia: 'Microsoft YaHei' };
-const SZ = 17; // half-points, ≈ 8.5pt body
+const SZ = +(process.env.DOCX_SZ || 17); // half-points, default ≈ 8.5pt body
 const sp = { line: LINE, lineRule: LineRuleType.EXACT };
 
 function image(src, heightPt) {
@@ -74,7 +77,9 @@ for (const x of blocks) {
   }));
   else if (x.k === 'edu') kids.push(new Paragraph({
     spacing: { ...sp }, tabStops: [{ type: TabStopType.RIGHT, position: W }],
-    children: [...runs(x.runs, { imgh: 11 }), ...(x.date ? [new TextRun({ text: '\t' + x.date, bold: true, font: F, size: SZ })] : [])],
+    // A long row (e.g. two schools plus day-precision dates) drops half a point so it stays on one line.
+    children: (() => { const z = x.runs.map((r) => r.t || '').join('').length + (x.date || '').length > 115 ? SZ - 1 : SZ;
+      return [...runs(x.runs, { imgh: 11, size: z }), ...(x.date ? [new TextRun({ text: '\t' + x.date, bold: true, font: F, size: z })] : [])]; })(),
   }));
   else if (x.k === 'company') kids.push(new Paragraph({
     spacing: { before: 70, after: 20, line: LINE + 40, lineRule: LineRuleType.EXACT }, keepNext: true,
@@ -95,6 +100,8 @@ for (const x of blocks) {
   }));
   // li.intro: one-line project summary under the company row, unbulleted and in a softer ink.
   else if (x.k === 'li' && x.intro) kids.push(new Paragraph({ indent: { left: 260 }, alignment: AlignmentType.LEFT, spacing: { ...sp }, children: runs(x.runs, { color: '444444' }) }));
+  // Unbulleted lists on the page (core skills, honours) stay unbulleted in Word.
+  else if (x.k === 'li' && x.plain) kids.push(new Paragraph({ alignment: AlignmentType.LEFT, spacing: { ...sp }, children: runs(x.runs) }));
   else if (x.k === 'li') kids.push(new Paragraph({ numbering: { reference: 'b', level: x.lvl || 0 }, alignment: x.full ? AlignmentType.DISTRIBUTE : AlignmentType.JUSTIFIED, spacing: { ...sp }, children: runs(x.runs) }));
 }
 
