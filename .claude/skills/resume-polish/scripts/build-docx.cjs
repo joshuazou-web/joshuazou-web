@@ -11,14 +11,19 @@ const {
 } = require('docx');
 
 const [jsonPath, outPath, lineArg = '212', baseDir = path.dirname(path.resolve(process.argv[2]))] = process.argv.slice(2);
-const { title, blocks } = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+const { title, mono, topbar, accent, blocks } = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 const LINE = +lineArg;
-const BLUE = '2458B8', TITLE_BLUE = '1F4E9C';
-const MARGIN = { top: 391, bottom: 340, left: 510, right: 493 }; // = 6.9 / 6 / 9 / 8.7 mm
+// mono (<body class="mono">): all-black text, no grey bars, centred header like the NUS template.
+const BLUE = mono ? (accent || '000000') : '2458B8', TITLE_BLUE = mono ? '000000' : '1F4E9C';
+const INK = mono ? '000000' : '222222', BOLD_INK = mono ? '000000' : '3A3A3A';
+// DOCX_MARGIN="top,right,bottom,left" (twips) and DOCX_SZ (half-points) let a two-page résumé match its PDF;
+// the defaults are the original one-page settings.
+const [mt, mr, mb, ml] = (process.env.DOCX_MARGIN || '391,493,340,510').split(',').map(Number);
+const MARGIN = { top: mt, bottom: mb, left: ml, right: mr }; // default = 6.9 / 6 / 9 / 8.7 mm
 const W = 11906 - MARGIN.left - MARGIN.right;
 const F = { ascii: 'Times New Roman', hAnsi: 'Times New Roman', eastAsia: 'SimSun', cs: 'Times New Roman' };
 const H = { ascii: 'Microsoft YaHei', hAnsi: 'Microsoft YaHei', eastAsia: 'Microsoft YaHei' };
-const SZ = 17; // half-points, ≈ 8.5pt body
+const SZ = +(process.env.DOCX_SZ || 17); // half-points, default ≈ 8.5pt body
 const sp = { line: LINE, lineRule: LineRuleType.EXACT };
 
 function image(src, heightPt) {
@@ -32,17 +37,19 @@ function image(src, heightPt) {
 
 function run(r, o = {}) {
   if (r.img) { const im = image(r.img, o.imgh || 11); return im ? [im, new TextRun({ text: ' ', font: F, size: SZ })] : []; }
-  const sep = r.t.trim() === '|';
-  return [new TextRun({
-    text: sep ? '  |  ' : r.t, bold: !!r.b || o.b, italics: !!r.i, font: F, size: o.size || SZ,
-    color: sep ? '8A909B' : (o.color || (r.b ? '3A3A3A' : '222222')),
-  })];
+  const sep = r.t.trim() === '|', dot = r.t.trim() === '·';
+  const tr = new TextRun({
+    text: sep ? '  |  ' : dot ? '  ·  ' : r.t, bold: (!!r.b || o.b) && !dot && !r.u, italics: !!r.i, underline: r.u ? {} : undefined,
+    font: F, size: o.size || SZ,
+    color: sep ? (mono ? '000000' : '8A909B') : r.u ? BLUE : (o.color || (r.b ? BOLD_INK : INK)),
+  });
+  return [r.href ? new ExternalHyperlink({ link: r.href, children: [tr] }) : tr];
 }
 
 function runs(list, o = {}) {
   const out = [];
   list.forEach((r, i) => {
-    if (r.t && !r.b && i > 0 && list[i - 1].b && !/^\s/.test(r.t) && r.t.trim() !== '|') out.push(...run({ t: '  ' }, o));
+    if (r.t && !r.b && i > 0 && list[i - 1].b && !/^\s/.test(r.t) && !['|', '·'].includes(r.t.trim())) out.push(...run({ t: '  ' }, o));
     out.push(...run(r, o));
   });
   return out;
@@ -50,27 +57,39 @@ function runs(list, o = {}) {
 
 const kids = [];
 for (const x of blocks) {
-  if (x.k === 'name') kids.push(new Paragraph({ spacing: { after: 20 }, children: [new TextRun({ text: x.text, bold: true, font: H, size: 42 })] }));
-  else if (x.k === 'meta') kids.push(new Paragraph({ spacing: { ...sp, after: 0 }, children: runs(x.runs) }));
+  // topbar: name, then the first contact row right next to it, accent rule underneath (one paragraph).
+  if (topbar && x.k === 'name') {
+    const meta = blocks.find((b) => b.k === 'meta');
+    if (meta) meta.used = true;
+    kids.push(new Paragraph({
+      spacing: { after: 60 }, tabStops: [{ type: TabStopType.RIGHT, position: W }],
+      border: { bottom: { style: BorderStyle.SINGLE, size: 8, color: BLUE, space: 2 } },
+      children: [new TextRun({ text: x.text, bold: true, font: H, size: 40 }), new TextRun({ text: '     ', font: F, size: SZ }), ...(meta ? runs(meta.runs) : [])],
+    }));
+  } else if (x.used) continue;
+  else if (x.k === 'name') kids.push(new Paragraph({ spacing: { after: 20 }, alignment: mono ? AlignmentType.CENTER : undefined, children: [new TextRun({ text: x.text, bold: true, font: H, size: 42 })] }));
+  else if (x.k === 'meta') kids.push(new Paragraph({ spacing: { ...sp, after: 0 }, alignment: mono ? AlignmentType.CENTER : undefined, children: runs(x.runs) }));
   else if (x.k === 'lead') kids.push(new Paragraph({ spacing: { ...sp, before: 20 }, alignment: AlignmentType.JUSTIFIED, children: runs(x.runs) }));
   else if (x.k === 'h2') kids.push(new Paragraph({
     spacing: { before: 120, after: 50 }, keepNext: true,
     border: { bottom: { style: BorderStyle.SINGLE, size: 12, color: BLUE, space: 1 } },
-    children: [new TextRun({ text: x.text, bold: true, font: H, size: 26, color: BLUE })],
+    children: [new TextRun({ text: x.text, bold: true, font: mono ? F : H, size: mono ? 24 : 26, color: BLUE })],
   }));
   else if (x.k === 'edu') kids.push(new Paragraph({
     spacing: { ...sp }, tabStops: [{ type: TabStopType.RIGHT, position: W }],
-    children: [...runs(x.runs, { imgh: 11 }), ...(x.date ? [new TextRun({ text: '\t' + x.date, bold: true, font: F, size: SZ })] : [])],
+    // A long row (e.g. two schools plus day-precision dates) drops half a point so it stays on one line.
+    children: (() => { const z = x.runs.map((r) => r.t || '').join('').length + (x.date || '').length > 115 ? SZ - 1 : SZ;
+      return [...runs(x.runs, { imgh: 11, size: z }), ...(x.date ? [new TextRun({ text: '\t' + x.date, bold: true, font: F, size: z })] : [])]; })(),
   }));
   else if (x.k === 'company') kids.push(new Paragraph({
     spacing: { before: 70, after: 20, line: LINE + 40, lineRule: LineRuleType.EXACT }, keepNext: true,
-    shading: { type: ShadingType.CLEAR, color: 'auto', fill: 'F0F1F4' }, tabStops: [{ type: TabStopType.RIGHT, position: W - 60 }],
+    ...(mono ? {} : { shading: { type: ShadingType.CLEAR, color: 'auto', fill: 'F0F1F4' } }), tabStops: [{ type: TabStopType.RIGHT, position: mono ? W : W - 60 }],
     children: [
-      new TextRun({ text: ' ', font: F, size: 20 }),
+      ...(mono ? [] : [new TextRun({ text: ' ', font: F, size: 20 })]),
       ...(x.logo ? run({ img: x.logo }, { imgh: 12 }) : []),
-      ...runs(x.runs, { size: 19, color: '333333' }),
+      ...runs(x.runs, { size: 19, color: mono ? INK : '333333' }),
       new TextRun({ text: '\t', font: F, size: SZ }),
-      ...(x.link ? [new ExternalHyperlink({ link: x.link.href, children: [new TextRun({ text: x.link.t, bold: true, font: F, size: 18, color: BLUE })] }),
+      ...(x.link ? [new ExternalHyperlink({ link: x.link.href, children: [new TextRun({ text: x.link.t, bold: !mono, underline: mono ? {} : undefined, font: F, size: 18, color: mono ? INK : BLUE })] }),
         new TextRun({ text: '   ', font: F, size: SZ })] : []),
       new TextRun({ text: x.date, bold: true, font: F, size: SZ }),
     ],
@@ -79,7 +98,11 @@ for (const x of blocks) {
     spacing: { ...sp, before: 10 }, keepNext: true,
     children: [new TextRun({ text: x.text.replace(/\s*\|\s*/g, '  |  '), bold: true, font: F, size: 18, color: TITLE_BLUE })],
   }));
-  else if (x.k === 'li') kids.push(new Paragraph({ numbering: { reference: 'b', level: x.lvl || 0 }, alignment: AlignmentType.JUSTIFIED, spacing: { ...sp }, children: runs(x.runs) }));
+  // li.intro: one-line project summary under the company row, unbulleted and in a softer ink.
+  else if (x.k === 'li' && x.intro) kids.push(new Paragraph({ indent: { left: 260 }, alignment: AlignmentType.LEFT, spacing: { ...sp }, children: runs(x.runs, { color: '444444' }) }));
+  // Unbulleted lists on the page (core skills, honours) stay unbulleted in Word.
+  else if (x.k === 'li' && x.plain) kids.push(new Paragraph({ alignment: AlignmentType.LEFT, spacing: { ...sp }, children: runs(x.runs) }));
+  else if (x.k === 'li') kids.push(new Paragraph({ numbering: { reference: 'b', level: x.lvl || 0 }, alignment: x.full ? AlignmentType.DISTRIBUTE : AlignmentType.JUSTIFIED, spacing: { ...sp }, children: runs(x.runs) }));
 }
 
 const doc = new Document({

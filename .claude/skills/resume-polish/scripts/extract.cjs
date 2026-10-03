@@ -19,6 +19,7 @@ const { launch } = require('./browser.cjs');
         if (n.tagName === 'IMG') { acc.push({ img: n.getAttribute('src') }); return; }
         const s = { ...st };
         if (['STRONG', 'B'].includes(n.tagName) || n.matches('.school,.date')) s.b = true;
+        if (n.tagName === 'A' && n.getAttribute('href')) { s.href = n.getAttribute('href'); s.u = n.classList.contains('doc-link'); }
         if (n.tagName === 'EM') s.i = true;
         n.childNodes.forEach((c) => walk(c, s));
       };
@@ -31,7 +32,8 @@ const { launch } = require('./browser.cjs');
     if (h1) blocks.push({ k: 'name', text: h1.textContent });
     sheet.querySelectorAll('.meta-row').forEach((m) => blocks.push({ k: 'meta', runs: runs(m) }));
     const lead = sheet.querySelector('.lead');
-    if (lead) blocks.push({ k: 'lead', runs: runs(lead) });
+    // A lead split into display:block .ll lines exports as one paragraph per line.
+    if (lead) for (const part of lead.querySelectorAll('.ll').length ? lead.querySelectorAll('.ll') : [lead]) blocks.push({ k: 'lead', runs: runs(part) });
     sheet.querySelectorAll('section').forEach((sec) => {
       sec.querySelectorAll(':scope > *').forEach((el) => {
         if (el.matches('.section-title')) blocks.push({ k: 'h2', text: el.textContent });
@@ -40,17 +42,20 @@ const { launch } = require('./browser.cjs');
           blocks.push({ k: 'edu', runs: runs(el.firstElementChild), date: d ? d.textContent : '' });
         } else if (el.matches('.company')) {
           const lg = el.querySelector('.company-logo');
-          const ln = el.querySelector('.doc-link');
+          const ln = el.querySelector(':scope > .doc-link'); // links inside .company-name stay inline runs
           blocks.push({ k: 'company', runs: runs(el.querySelector('.company-name')), date: el.querySelector('.company-meta').textContent,
             logo: lg ? lg.getAttribute('src') : null, link: ln ? { t: ln.textContent, href: ln.getAttribute('href') } : null });
         } else if (el.matches('.project')) {
           const t = el.querySelector('.project-title');
           if (t) blocks.push({ k: 'ptitle', text: t.textContent });
-          el.querySelectorAll('li').forEach((li) => blocks.push({ k: 'li', lvl: li.classList.contains('nested') ? 1 : 0, runs: runs(li) }));
-        } else if (el.matches('ul')) el.querySelectorAll('li').forEach((li) => blocks.push({ k: 'li', lvl: 0, runs: runs(li) }));
+          el.querySelectorAll('li').forEach((li) => blocks.push({ k: 'li', lvl: li.classList.contains('nested') ? 1 : 0, intro: li.classList.contains('intro'), full: getComputedStyle(li).textAlignLast === 'justify', runs: runs(li) }));
+        } else if (el.matches('ul')) el.querySelectorAll('li').forEach((li) => blocks.push({ k: 'li', lvl: 0, plain: getComputedStyle(li).listStyleType === 'none', full: getComputedStyle(li).textAlignLast === 'justify', runs: runs(li) }));
       });
     });
-    return { title: document.title, blocks };
+    const h2 = document.querySelector('.section-title');
+    const rgb = h2 ? getComputedStyle(h2).color.match(/\d+/g).slice(0, 3) : null;
+    const accent = rgb ? rgb.map((v) => (+v).toString(16).padStart(2, '0')).join('').toUpperCase() : null;
+    return { title: document.title, mono: document.body.classList.contains('mono'), topbar: !!document.querySelector('.topbar'), accent, blocks };
   });
   fs.writeFileSync(out, JSON.stringify(data, null, 1));
   console.log('blocks', data.blocks.length);
