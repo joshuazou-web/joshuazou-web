@@ -25,5 +25,14 @@ description: 用纯 CPU、离线模型给中文歌词做"真唱"人声 + 伴奏 
 ## 验收线
 pitch 中位 ≤8c、p90 ≤25c、>50c 的音 ≤1；覆盖率 ≥0.95；LUFS -14±0.5；峰值 ≤ -1 dBFS。
 
-## 还缺的"耳朵"（需在环境 Allowed domains 放行 huggingface.co 等）
-Whisper 歌词识别率、UTMOS/DNSMOS 自然度分、Audiobox Aesthetics 审美分。放行后加进 evalv.py。
+## 耳朵（`scripts/ears.py`，已装，不依赖 HuggingFace）
+- **SenseVoice ASR**（sherpa-onnx，模型在 GitHub releases：`https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17.tar.bz2`，放 `../models/`）：逐句歌词识别 → CER，报出"被听成了什么"。
+- **DNSMOS**（`pip install speechmos librosa`，模型随 wheel 附带）：只对**干声**有意义；对整首混音会把音乐当噪声，分数无参考价值。
+- 实测：v3 Kokoro 男声可懂度 36% → DiffSinger 绮萱 82–84%。
+
+## 自迭代经验（耳朵发现的问题 → 改法）
+- **倒字**是中文歌听不清的头号原因：旋律走向和声调相反就会被听成别的字（闪亮→善良、向上→享受）。
+  改法：去声字(4)用"高起下落"（score 里 fall=2 半音的落音），上声字(3)放低音，句尾 4 声字不要往上跳。
+- **编曲遮字**：铜管/弦乐不能压在长音的尾韵(-ng/-n)上，否则"上"被听成"山"、"向上"被听成"潇洒"。应答放在字唱完之后。
+- ASR 逐句窗口会串进邻句的字，要同时看整首 CER；重复的副歌 ASR 会合并，CER 偏高，只作相对比较。
+- 同一参数不同 seed 的 take 之间 CER 差 ±0.05 属于噪声：每轮渲 3 个 take，用"音高误差 + 混音 CER"选。

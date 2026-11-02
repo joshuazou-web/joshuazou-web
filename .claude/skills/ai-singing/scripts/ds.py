@@ -87,6 +87,11 @@ def run(out='vox_ds.wav'):
             tt = np.arange(b - a) / FPS
             env = np.minimum(1, tt / 0.3) * np.minimum(1, (b - a - np.arange(b - a)) / 6)
             pitch[0, a:b] += P['vib'] * env * np.sin(2 * np.pi * P['vib_rate'] * tt)
+    # tone-4 fall-ins: start above the note and drop into it (keeps 亮/上 from sounding rising)
+    for n in S.N:
+        if n.get('fall'):
+            a = fr(n['t'] + P['pad']); b = a + fr(0.22)
+            pitch[0, a:b] += n['fall'] * np.cos(np.linspace(0, np.pi / 2, b - a)) ** 2
     # 4) breathiness / voicing
     L = sess('dsvariance/0102_qixuan_muon1_multivar.qixuan.linguistic.onnx'); V = sess('dsvariance/0102_qixuan_muon1_multivar.qixuan.variance.onnx')
     pj, lj = 'dsvariance/0102_qixuan_muon1_multivar.phonemes.json', 'dsvariance/0102_qixuan_muon1_multivar.languages.json'

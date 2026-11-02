@@ -1,6 +1,6 @@
 # Backing track: GM arrangement rendered with FluidSynth (FluidR3_GM)
 import pretty_midi as pm, numpy as np, subprocess, score as S
-B = S.BEAT; T = S.KEY_SHIFT
+B = S.BEAT; T = S.KEY_SHIFT; GLK_VEL = 72
 CH = {'C': (48, [60, 64, 67]), 'F': (41, [57, 60, 65]), 'G': (43, [59, 62, 67]), 'Am': (45, [57, 60, 64])}
 def t(bar, beat): return (bar * 4 + beat) * B
 def note(inst, p, s, e, v): inst.notes.append(pm.Note(velocity=int(np.clip(v, 1, 127)), pitch=int(p), start=s, end=e))
@@ -33,14 +33,14 @@ def build(seed=1, swing=0.0):
         elif hot or sec == 'tag':
             if sec == 'tag':
                 for x in [root, root + 12]: note(bass, x, t(b, 0), t(b, .45), 110)
-                for x in tones + [tones[0] + 12]: note(brs, x + 12, t(b, 0), t(b, .4), 112)
+                for x in tones + [tones[0] + 12]: note(brs, x + 12, t(b, 0), t(b, .3), 100)
                 note(dr, 49, t(b, 0), t(b, 1), 120); note(dr, 36, t(b, 0), t(b, .1), 120); note(dr, 39, t(b, 0), t(b, .1), 110)
                 for k, bb in enumerate([1, 1.5, 2, 2.5]):
                     note(dr, 42, t(b, bb), t(b, bb) + .05, 70)
                     note(bass, root + (0, 2, 4, 7)[k], t(b, bb), t(b, bb + .45), 95)
                 # final hit on 上 and ring
-                for x in tones + [tones[0] + 12, tones[1] + 12]:
-                    note(brs, x + 12, t(b, 2.5), t(b, 4.4), 118); note(strg, x, t(b, 2.5), t(b, 4.6), 95)
+                for x in tones + [tones[0] + 12, tones[1] + 12]:   # final chord: swells under the voice, not over it
+                    note(brs, x, t(b, 2.5), t(b, 4.4), 78); note(strg, x, t(b, 2.5), t(b, 4.6), 70)
                 note(pno, root + 12, t(b, 2.5), t(b, 4.6), 110)
                 for x in tones: note(pno, x + 12, t(b, 2.5), t(b, 4.6), 100)
                 note(dr, 49, t(b, 2.5), t(b, 4.5), 127); note(dr, 36, t(b, 2.5), t(b, 2.6), 127); note(bass, root, t(b, 2.5), t(b, 4.4), 115)
@@ -67,12 +67,12 @@ def build(seed=1, swing=0.0):
             note(strg, tones[0] + 12, t(b, 0), t(b, 4), 64)
             # brass answers in the 天天向上 bars (space while the voice holds 上)
             if b in (3, 4, 7, 8):
-                for x in tones: note(brs, x + 12, t(b, 2.5), t(b, 2.8), 100); note(brs, x + 12, t(b, 3), t(b, 3.6), 108)
+                for x in tones: note(brs, x + 12, t(b, 3.5), t(b, 3.8), 104)   # answer after 上 ends, never on top of it
             if b in (6, 10):
                 for x in tones: note(brs, x + 12, t(b, 2.5), t(b, 3.0), 96); note(brs, x + 12, t(b, 3.5), t(b, 3.9), 108)
     # glockenspiel doubles the hook melody two octaves up (sparkle), only hook bars
     for n in S.N:
-        if S.SECTION[n['bar']] == 'hook': note(glk, n['m'] + 24, n['t'], n['t'] + min(n['len'], .6), 72)
+        if S.SECTION[n['bar']] == 'hook': note(glk, n['m'] + 24, n['t'], n['t'] + min(n['len'], .6), GLK_VEL)
     for i in (dr, bass, pno, brs, strg, glk, pad): m.instruments.append(i)
     return m
 def render(fn='inst.wav', **kw):
